@@ -1,4 +1,4 @@
-import { visit, click } from '@ember/test-helpers';
+import { visit, click, triggerKeyEvent } from '@ember/test-helpers';
 import { setupApplicationTest } from 'ember-qunit';
 import { module, test } from 'qunit';
 
@@ -28,5 +28,16 @@ module('Application | basics', function(hooks) {
 
     await click('.epm-backdrop');
     assert.dom('body', document).hasStyle({ overflow: 'visible' });
+  });
+
+  test('pressing the Escape keyboard button closes the modal', async function(assert) {
+    await visit('/');
+    assert.dom('.epm-modal').doesNotExist();
+
+    await click('[data-test-show-modal]');
+    assert.dom('.epm-modal').exists();
+
+    await triggerKeyEvent(document, 'keydown', 'Escape');
+    assert.dom('.epm-modal').doesNotExist();
   });
 });
