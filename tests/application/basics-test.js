@@ -2,6 +2,8 @@ import { visit, click, triggerKeyEvent } from '@ember/test-helpers';
 import { setupApplicationTest } from 'ember-qunit';
 import { module, test } from 'qunit';
 
+import { animationsSettled } from 'ember-animated/test-support';
+
 module('Application | basics', function(hooks) {
   setupApplicationTest(hooks);
 
@@ -11,10 +13,12 @@ module('Application | basics', function(hooks) {
     assert.dom('.epm-modal').doesNotExist();
 
     await click('[data-test-show-modal]');
+    await animationsSettled();
     assert.dom('.epm-backdrop').exists();
     assert.dom('.epm-modal').exists();
 
     await click('.epm-backdrop');
+    await animationsSettled();
     assert.dom('.epm-backdrop').doesNotExist();
     assert.dom('.epm-modal').doesNotExist();
   });
@@ -24,9 +28,11 @@ module('Application | basics', function(hooks) {
     assert.dom('body', document).hasStyle({ overflow: 'visible' });
 
     await click('[data-test-show-modal]');
+    await animationsSettled();
     assert.dom('body', document).hasStyle({ overflow: 'hidden' });
 
     await click('.epm-backdrop');
+    await animationsSettled();
     assert.dom('body', document).hasStyle({ overflow: 'visible' });
   });
 
@@ -35,9 +41,11 @@ module('Application | basics', function(hooks) {
     assert.dom('.epm-modal').doesNotExist();
 
     await click('[data-test-show-modal]');
+    await animationsSettled();
     assert.dom('.epm-modal').exists();
 
     await triggerKeyEvent(document, 'keydown', 'Escape');
+    await animationsSettled();
     assert.dom('.epm-modal').doesNotExist();
   });
 });

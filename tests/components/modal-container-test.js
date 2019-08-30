@@ -4,6 +4,7 @@ import { module, test } from 'qunit';
 
 import Component from '@ember/component';
 
+import { animationsSettled } from 'ember-animated/test-support';
 import hbs from 'htmlbars-inline-precompile';
 
 module('Component | ModalContainer', function(hooks) {
@@ -26,12 +27,14 @@ module('Component | ModalContainer', function(hooks) {
 
     let modal = modals.open('foo', { bar: 'baz' });
     await settled();
+    await animationsSettled();
     assert.dom('.epm-backdrop').exists();
     assert.dom('.epm-modal').exists({ count: 1 });
     assert.dom('.epm-modal').hasText('foo baz');
 
     modal.close();
     await settled();
+    await animationsSettled();
     assert.dom('.epm-backdrop').doesNotExist();
     assert.dom('.epm-modal').doesNotExist();
     assert.dom(this.element).hasText('');
