@@ -1,5 +1,11 @@
 {{#if this.modals.count}}
-  <div class="epm-backdrop"></div>
+  <div
+    class="epm-backdrop"
+    tabindex="-1"
+    role="presentation"
+    aria-hidden="true"
+    {{action "close" this.modals.top}}
+  ></div>
 {{/if}}
 
 {{#each this.modals._stack as |modal|}}

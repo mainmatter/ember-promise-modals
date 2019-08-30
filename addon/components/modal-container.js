@@ -8,4 +8,10 @@ export default Component.extend({
   tagName: '',
 
   modals: service(),
+
+  actions: {
+    close(modal) {
+      modal.close();
+    },
+  },
 });
