@@ -18,16 +18,19 @@ module('Component | ModalContainer', function(hooks) {
     );
 
     await render(hbs`<ModalContainer />`);
+    assert.dom('.epm-modal').doesNotExist();
     assert.dom(this.element).hasText('');
 
     let modals = this.owner.lookup('service:modals');
 
     let modal = modals.open('foo', { bar: 'baz' });
     await settled();
-    assert.dom(this.element).hasText('foo baz');
+    assert.dom('.epm-modal').exists({ count: 1 });
+    assert.dom('.epm-modal').hasText('foo baz');
 
     modal.close();
     await settled();
+    assert.dom('.epm-modal').doesNotExist();
     assert.dom(this.element).hasText('');
   });
 });
