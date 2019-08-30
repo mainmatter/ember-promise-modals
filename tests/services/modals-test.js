@@ -25,4 +25,14 @@ module('Service | modals', function(hooks) {
     assert.equal(modals.count, 0, '#count');
     assert.strictEqual(modals.top, undefined, '#top');
   });
+
+  test('modals can have results', function(assert) {
+    let modals = this.owner.lookup('service:modals');
+
+    let modal = modals.open('modal');
+    assert.strictEqual(modal.result, undefined);
+
+    modal.close('foo');
+    assert.strictEqual(modal.result, 'foo');
+  });
 });
