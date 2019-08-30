@@ -18,4 +18,15 @@ module('Application | basics', function(hooks) {
     assert.dom('.epm-backdrop').doesNotExist();
     assert.dom('.epm-modal').doesNotExist();
   });
+
+  test('opening a modal disables scrolling on the <body> element', async function(assert) {
+    await visit('/');
+    assert.dom('body', document).hasStyle({ overflow: 'visible' });
+
+    await click('[data-test-show-modal]');
+    assert.dom('body', document).hasStyle({ overflow: 'hidden' });
+
+    await click('.epm-backdrop');
+    assert.dom('body', document).hasStyle({ overflow: 'visible' });
+  });
 });

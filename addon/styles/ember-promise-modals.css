@@ -1,3 +1,7 @@
+.epm-scrolling-disabled {
+  overflow: hidden;
+}
+
 .epm-backdrop {
   position: fixed;
   left: 0;

@@ -7,5 +7,9 @@ export default class Modal {
 
   close() {
     this._service._stack.removeObject(this);
+
+    if (this._service._stack.length === 0) {
+      this._service._onLastModalRemoved();
+    }
   }
 }
