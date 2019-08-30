@@ -1,3 +1,12 @@
+.epm-backdrop {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(61, 65, 77, 0.8);
+}
+
 .epm-modal {
   position: fixed;
   top: 50%;

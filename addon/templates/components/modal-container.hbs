@@ -1,3 +1,7 @@
+{{#if this.modals.count}}
+  <div class="epm-backdrop"></div>
+{{/if}}
+
 {{#each this.modals._stack as |modal|}}
   <div class="epm-modal">
     {{component modal._name data=modal._data}}
