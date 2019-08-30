@@ -1,4 +1,8 @@
-{{#if this.modals.count}}
+{{#animated-if
+  this.modals.count
+  use=this.modals.backdropTransition
+  duration=this.modals.backdropDuration
+}}
   <div
     class="epm-backdrop"
     tabindex="-1"
@@ -6,10 +10,15 @@
     aria-hidden="true"
     {{action "close" this.modals.top}}
   ></div>
-{{/if}}
+{{/animated-if}}
 
-{{#each this.modals._stack as |modal|}}
+{{#animated-each
+  this.modals._stack
+  use=this.modals.modalsTransition
+  duration=this.modals.modalsDuration
+  as |modal|
+}}
   <div class="epm-modal">
     {{component modal._name data=modal._data}}
   </div>
-{{/each}}
+{{/animated-each}}

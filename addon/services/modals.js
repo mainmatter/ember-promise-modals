@@ -2,6 +2,10 @@ import { A } from '@ember/array';
 import { alias } from '@ember/object/computed';
 import Service from '@ember/service';
 
+import { easeOut, easeIn } from 'ember-animated/easings/cosine';
+import move from 'ember-animated/motions/move';
+import fade from 'ember-animated/transitions/fade';
+
 import Modal from '../modal';
 
 const ESCAPE_KEY = 27;
@@ -9,6 +13,26 @@ const ESCAPE_KEY = 27;
 export default Service.extend({
   count: alias('_stack.length'),
   top: alias('_stack.lastObject'),
+
+  backdropDuration: 600,
+  backdropTransition: fade,
+
+  modalsDuration: 250,
+  *modalsTransition({ insertedSprites, keptSprites, removedSprites }) {
+    insertedSprites.forEach(sprite => {
+      sprite.startAtPixel({ y: -window.innerHeight });
+      move(sprite, { easing: easeOut });
+    });
+
+    keptSprites.forEach(sprite => {
+      move(sprite);
+    });
+
+    removedSprites.forEach(sprite => {
+      sprite.endAtPixel({ y: -window.innerHeight });
+      move(sprite, { easing: easeIn });
+    });
+  },
 
   init() {
     this._super(...arguments);
