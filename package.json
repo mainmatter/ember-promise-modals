@@ -5,9 +5,9 @@
   "keywords": [
     "ember-addon"
   ],
-  "repository": "",
+  "repository": "https://github.com/simplabs/ember-promise-modals",
   "license": "MIT",
-  "author": "",
+  "author": "simplabs GmbH",
   "directories": {
     "doc": "doc",
     "test": "tests"
