@@ -14,7 +14,7 @@ module('Component | ModalContainer', function(hooks) {
     this.owner.register(
       'component:foo',
       Component.extend({
-        layout: hbs`foo {{@data.bar}}`,
+        layout: hbs`<button>foo</button> {{@data.bar}}`,
       }),
     );
 
