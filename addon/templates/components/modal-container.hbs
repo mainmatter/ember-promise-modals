@@ -8,7 +8,6 @@
     tabindex="-1"
     role="presentation"
     aria-hidden="true"
-    {{action "close" this.modals.top}}
   ></div>
 {{/animated-if}}
 
@@ -18,7 +17,5 @@
   duration=this.modals.modalsDuration
   as |modal|
 }}
-  <div class="epm-modal">
-    {{component modal._name data=modal._data}}
-  </div>
+  <EpmModal @modal={{modal}}/>
 {{/animated-each}}

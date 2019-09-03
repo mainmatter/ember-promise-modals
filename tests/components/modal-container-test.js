@@ -14,11 +14,11 @@ module('Component | ModalContainer', function(hooks) {
     this.owner.register(
       'component:foo',
       Component.extend({
-        layout: hbs`foo {{@data.bar}}`,
+        layout: hbs`<button>foo</button> {{@data.bar}}`,
       }),
     );
 
-    await render(hbs`<ModalContainer />`);
+    await render(hbs`<EpmModalContainer />`);
     assert.dom('.epm-backdrop').doesNotExist();
     assert.dom('.epm-modal').doesNotExist();
     assert.dom(this.element).hasText('');
