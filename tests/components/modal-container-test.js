@@ -18,7 +18,7 @@ module('Component | ModalContainer', function(hooks) {
       }),
     );
 
-    await render(hbs`<ModalContainer />`);
+    await render(hbs`<EpmModalContainer />`);
     assert.dom('.epm-backdrop').doesNotExist();
     assert.dom('.epm-modal').doesNotExist();
     assert.dom(this.element).hasText('');
