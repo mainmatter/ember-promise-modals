@@ -13,6 +13,7 @@ export default Component.extend({
 
     this.focusTrap = createFocusTrap(this.element, {
       clickOutsideDeactivates: true,
+      fallbackFocus: `#${this.elementId}`,
 
       onDeactivate: () => {
         this.modal.close();
