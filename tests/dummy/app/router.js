@@ -8,6 +8,6 @@ const Router = EmberRouter.extend({
 });
 
 // eslint-disable-next-line array-callback-return
-Router.map(function() {});
+Router.map(function () {});
 
 export default Router;

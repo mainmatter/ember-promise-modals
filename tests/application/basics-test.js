@@ -4,10 +4,10 @@ import { module, test } from 'qunit';
 
 import { animationsSettled } from 'ember-animated/test-support';
 
-module('Application | basics', function(hooks) {
+module('Application | basics', function (hooks) {
   setupApplicationTest(hooks);
 
-  test('clicking the backdrop closes the modal', async function(assert) {
+  test('clicking the backdrop closes the modal', async function (assert) {
     await visit('/');
     assert.dom('.epm-backdrop').doesNotExist();
     assert.dom('.epm-modal').doesNotExist();
@@ -23,7 +23,7 @@ module('Application | basics', function(hooks) {
     assert.dom('.epm-modal').doesNotExist();
   });
 
-  test('opening a modal disables scrolling on the <body> element', async function(assert) {
+  test('opening a modal disables scrolling on the <body> element', async function (assert) {
     await visit('/');
     assert.dom('body', document).hasStyle({ overflow: 'visible' });
 
@@ -36,7 +36,7 @@ module('Application | basics', function(hooks) {
     assert.dom('body', document).hasStyle({ overflow: 'visible' });
   });
 
-  test('pressing the Escape keyboard button closes the modal', async function(assert) {
+  test('pressing the Escape keyboard button closes the modal', async function (assert) {
     await visit('/');
     assert.dom('.epm-modal').doesNotExist();
 
