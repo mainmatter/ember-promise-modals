@@ -24,7 +24,7 @@
     "ember-animated": "^0.8.0",
     "ember-auto-import": "^1.5.3",
     "ember-cli-babel": "^7.19.0",
-    "ember-cli-htmlbars": "^4.2.3",
+    "ember-cli-htmlbars": "^4.3.1",
     "focus-trap": "^5.1.0"
   },
   "devDependencies": {
