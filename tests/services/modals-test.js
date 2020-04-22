@@ -1,10 +1,10 @@
 import { setupTest } from 'ember-qunit';
 import { module, test } from 'qunit';
 
-module('Service | modals', function(hooks) {
+module('Service | modals', function (hooks) {
   setupTest(hooks);
 
-  test('basics', function(assert) {
+  test('basics', function (assert) {
     let modals = this.owner.lookup('service:modals');
     assert.equal(modals.count, 0, '#count');
     assert.strictEqual(modals.top, undefined, '#top');
@@ -26,7 +26,7 @@ module('Service | modals', function(hooks) {
     assert.strictEqual(modals.top, undefined, '#top');
   });
 
-  test('modals can have results', function(assert) {
+  test('modals can have results', function (assert) {
     let modals = this.owner.lookup('service:modals');
 
     let modal = modals.open('modal');
@@ -36,7 +36,7 @@ module('Service | modals', function(hooks) {
     assert.strictEqual(modal.result, 'foo');
   });
 
-  test('modals are promises', async function(assert) {
+  test('modals are promises', async function (assert) {
     let modals = this.owner.lookup('service:modals');
 
     let modal = modals.open('modal');

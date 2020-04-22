@@ -7,10 +7,10 @@ import Component from '@ember/component';
 import { animationsSettled } from 'ember-animated/test-support';
 import hbs from 'htmlbars-inline-precompile';
 
-module('Component | ModalContainer', function(hooks) {
+module('Component | ModalContainer', function (hooks) {
   setupRenderingTest(hooks);
 
-  test('renders the modals for the `modals` service', async function(assert) {
+  test('renders the modals for the `modals` service', async function (assert) {
     this.owner.register(
       'component:foo',
       Component.extend({
