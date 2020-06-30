@@ -1,4 +1,5 @@
 import Component from '@ember/component';
+import { inject as service } from '@ember/service';
 
 import createFocusTrap from 'focus-trap';
 
@@ -8,11 +9,15 @@ export default Component.extend({
   layout,
   classNames: ['epm-modal'],
 
+  modals: service(),
+
   didInsertElement() {
     this._super(...arguments);
 
+    let { clickOutsideDeactivates } = this.modals;
+
     this.focusTrap = createFocusTrap(this.element, {
-      clickOutsideDeactivates: true,
+      clickOutsideDeactivates,
 
       onDeactivate: () => {
         this.modal.close();
