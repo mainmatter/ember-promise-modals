@@ -37,6 +37,10 @@ export default Service.extend({
     this._stack = A([]);
   },
 
+  willDestroy() {
+    this._onLastModalRemoved();
+  },
+
   open(name, data) {
     let modal = new Modal(this, name, data);
     this._stack.pushObject(modal);
