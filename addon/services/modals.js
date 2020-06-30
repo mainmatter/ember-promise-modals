@@ -12,6 +12,8 @@ export default Service.extend({
   count: alias('_stack.length'),
   top: alias('_stack.lastObject'),
 
+  clickOutsideDeactivates: true,
+
   backdropDuration: 600,
   backdropTransition: fade,
 
