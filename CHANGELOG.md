@@ -1,5 +1,21 @@
 # Changelog
 
+## v0.2.1 (2020-06-30)
+
+#### :rocket: Enhancement
+* [#178](https://github.com/simplabs/ember-promise-modals/pull/178) Expose `clickOutsideDeactivates` on the `modals` service ([@Turbo87](https://github.com/Turbo87))
+
+#### :bug: Bug Fix
+* [#181](https://github.com/simplabs/ember-promise-modals/pull/181) service/modals: Reset `.epm-scrolling-disabled` class in the destructor ([@Turbo87](https://github.com/Turbo87))
+* [#180](https://github.com/simplabs/ember-promise-modals/pull/180) components/modal: Fix broken destructor ([@Turbo87](https://github.com/Turbo87))
+
+#### :house: Internal
+* [#179](https://github.com/simplabs/ember-promise-modals/pull/179) Add `qunit-console-grouper` dev dependency ([@Turbo87](https://github.com/Turbo87))
+
+#### Committers: 1
+- Tobias Bieniek ([@Turbo87](https://github.com/Turbo87))
+
+
 ## v0.2.0 (2020-04-22)
 
 #### :boom: Breaking Change
