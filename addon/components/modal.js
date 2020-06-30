@@ -22,7 +22,7 @@ export default Component.extend({
     this.focusTrap.activate();
   },
 
-  willRemoveElement() {
+  willDestroyElement() {
     if (this.focusTrap) {
       this.focusTrap.deactivate({ onDeactivate: null });
     }
