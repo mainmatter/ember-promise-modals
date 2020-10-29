@@ -5175,6 +5175,13 @@ ember-router-generator@^2.0.0:
     "@babel/traverse" "^7.4.5"
     recast "^0.18.1"
 
+ember-set-body-class@^1.0.1:
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/ember-set-body-class/-/ember-set-body-class-1.0.1.tgz#94c0126a5fdb1e780e6568f41c443b0c657f5724"
+  integrity sha512-W4y36lozFstvrv1XERCghgQx8s7RuyJbnPhM+9PTrdwwLpSEQYLEdeASHgeCLqb6Bz7AQeIbyf++2b7u5jPfTw==
+  dependencies:
+    ember-cli-babel "^7.22.1"
+
 ember-source-channel-url@^1.0.1:
   version "1.2.0"
   resolved "https://registry.yarnpkg.com/ember-source-channel-url/-/ember-source-channel-url-1.2.0.tgz#77eb9d0889e5f5370e6c70fcb2696c63ff4a34a1"

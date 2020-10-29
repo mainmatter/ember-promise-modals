@@ -43,14 +43,17 @@ module('Application | basics', function (hooks) {
 
   test('opening a modal disables scrolling on the <body> element', async function (assert) {
     await visit('/');
+    assert.dom('body', document).doesNotHaveClass('epm-scrolling-disabled');
     assert.dom('body', document).hasStyle({ overflow: 'visible' });
 
     await click('[data-test-show-modal]');
     await animationsSettled();
+    assert.dom('body', document).hasClass('epm-scrolling-disabled');
     assert.dom('body', document).hasStyle({ overflow: 'hidden' });
 
     await click('.epm-backdrop');
     await animationsSettled();
+    assert.dom('body', document).doesNotHaveClass('epm-scrolling-disabled');
     assert.dom('body', document).hasStyle({ overflow: 'visible' });
   });
 

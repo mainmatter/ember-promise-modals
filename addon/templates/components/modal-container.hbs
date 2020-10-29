@@ -1,3 +1,7 @@
+{{#if this.modals._stack.length}}
+  {{set-body-class "epm-scrolling-disabled"}}
+{{/if}}
+
 {{#animated-if
   this.modals.count
   use=this.modals.backdropTransition

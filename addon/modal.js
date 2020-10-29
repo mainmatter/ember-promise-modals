@@ -18,10 +18,6 @@ export default class Modal {
 
     this._service._stack.removeObject(this);
     this._deferred.resolve(result);
-
-    if (this._service._stack.length === 0) {
-      this._service._onLastModalRemoved();
-    }
   }
 
   then(onFulfilled, onRejected) {
