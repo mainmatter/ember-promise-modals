@@ -12,6 +12,7 @@ export default Service.extend({
   count: alias('_stack.length'),
   top: alias('_stack.lastObject'),
 
+  focusTrapOptions: undefined,
   clickOutsideDeactivates: true,
 
   backdropDuration: 600,

@@ -187,6 +187,24 @@ EPM will ensure to [focus the first "tabbable element" by default](https://www.w
 If no focusable element is present, focus will be applied on the currently
 visible modal amber-auto-generated container.
 
+The `modals` service can be extended in your applications to modify focus-trap options on the fly. The most important `clickOutsideDeactivates` option is exposed as a separate property on the service. Setting `focusTrapOptions` on the service will override the `clickOutsideDeactivates` property.
+
+```js
+import ModalServices from 'ember-promise-modals/services/modals';
+
+export default ModalServices.extend({
+  clickOutsideDeactivates: false, // defaults to true for EPM
+
+  // or, overriding the above
+
+  focusTrapOptions: {
+    clickOutsideDeactivates: false, // defaults to false in focus-trap. true is recommended
+    preventScroll: true, 
+    // see more options at https://github.com/focus-trap/focus-trap#createfocustrapelement-createoptions
+  },
+});
+```
+
 
 Contributing
 ------------------------------------------------------------------------------
