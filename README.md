@@ -1,27 +1,22 @@
-ember-promise-modals
-==============================================================================
+# ember-promise-modals
 
 ember-promise-modals provides a way to render and handle modals in Ember.js apps.
 
+## Compatibility
 
-Compatibility
-------------------------------------------------------------------------------
+- Ember.js v3.4 or above
+- Ember CLI v2.13 or above
+- ember-animated v0.8
+- Node.js v10, v12, v14 or above
 
-* Ember.js v3.4 or above
-* Ember CLI v2.13 or above
-* ember-animated v0.8
-* Node.js v10, v12, v14 or above
-
-Installation
-------------------------------------------------------------------------------
+## Installation
 
 ```
 ember install ember-animated
 ember install ember-promise-modals
 ```
 
-Usage
-------------------------------------------------------------------------------
+## Usage
 
 To use EPM in your project, you first need to inject the `modals` service:
 
@@ -63,9 +58,10 @@ Then in your template, you can:
 ### Attributes
 
 You can pass custom data into your rendered template like so:
+
 ```javascript
 this.modals.open('file-preview', {
-  fileUrl: this.fileUrl
+  fileUrl: this.fileUrl,
 });
 ```
 
@@ -91,14 +87,14 @@ order to trigger the "close modal" action. It can be called like so:
 
 <button {{on "click" @close}}>Close</button>
 ```
+
 ```javascript
 // app/components/file-preview.js
 
 this.close(); // or this.args.close() in Glimmer components
 ```
 
-Animation
-------------------------------------------------------------------------------
+## Animation
 
 ### Custom animation
 
@@ -144,7 +140,7 @@ bottom-to-up for example, by passing a custom value on EPM invocation:
 
 ```javascript
 this.modals.open('file-preview', {
-  reverseAnimation: true
+  reverseAnimation: true,
 });
 ```
 
@@ -174,9 +170,7 @@ removedSprites.forEach(sprite => {
 
 You can find other ways to create custom animations in the [ember-animated documentation](https://ember-animation.github.io/ember-animated/docs/transitions#custom)
 
-
-Accessibility
-------------------------------------------------------------------------------
+## Accessibility
 
 User can press the `ESC` key to close the modal.
 
@@ -187,14 +181,10 @@ EPM will ensure to [focus the first "tabbable element" by default](https://www.w
 If no focusable element is present, focus will be applied on the currently
 visible modal amber-auto-generated container.
 
-
-Contributing
-------------------------------------------------------------------------------
+## Contributing
 
 See the [Contributing](CONTRIBUTING.md) guide for details.
 
-
-License
-------------------------------------------------------------------------------
+## License
 
 This project is licensed under the [MIT License](LICENSE.md).

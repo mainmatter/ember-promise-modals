@@ -1,4 +1,5 @@
 import { A } from '@ember/array';
+import { set } from '@ember/object';
 import { alias } from '@ember/object/computed';
 import Service from '@ember/service';
 
@@ -36,7 +37,7 @@ export default Service.extend({
 
   init() {
     this._super(...arguments);
-    this._stack = A([]);
+    set(this, '_stack', A([]));
   },
 
   willDestroy() {

@@ -19,3 +19,7 @@
 /.node_modules.ember-try/
 /bower.json.ember-try
 /package.json.ember-try
+
+# Project specific
+CHANGELOG.md
+.github/workflows/ci.yml
