@@ -26,7 +26,7 @@ jobs:
       - run: yarn test
 
   floating-dependencies:
-    name: "Floating Dependencies"
+    name: 'Floating Dependencies'
     runs-on: ubuntu-latest
 
     steps:
@@ -39,7 +39,7 @@ jobs:
       - run: yarn test
 
   try-scenarios:
-    name: "Try: ${{ matrix.ember-try-scenario }}"
+    name: 'Try: ${{ matrix.ember-try-scenario }}'
 
     runs-on: ubuntu-latest
 
