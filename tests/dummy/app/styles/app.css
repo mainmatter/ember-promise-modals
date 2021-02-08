@@ -1,3 +1,5 @@
+/* === Basic styling for the demo modal */
+
 .modal1 {
   width: 600px;
   max-width: 100%;
@@ -7,29 +9,21 @@
   padding: 16px 32px;
 }
 
-.from-bottom {
+/* === Variation 1: Custom animation which animates the modal in from the bottom and back */
+
+.from-bottom { /* this className will be added to the modal when the modal should be animated in */
   animation: from-bottom-in 0.5s;
   opacity: 1;
   transform: translate(0, 0);
 }
 
-.from-top {
-  animation: from-top-in 0.5s;
-  opacity: 1;
-  transform: translate(0, 0);
-}
-
-.from-top.epm-out {
-  animation: from-top-out 0.5s;
-  opacity: 0;
-  transform: translate(0, 100vh);
-}
-
-.from-bottom.epm-out {
+.from-bottom.epm-out { /* this className will be added to the modal when the modal should be animated out */
   animation: from-bottom-out 0.5s;
   opacity: 0;
   transform: translate(0, 100vh);
 }
+
+/* these keyframes describe the animation  */
 
 @keyframes from-bottom-in {
   0% {
@@ -51,6 +45,20 @@
     opacity: 0;
     transform: translate(0, 100%);
   }
+}
+
+/* === Variation 2: Custom animation which animates the modal in from the top and back */
+
+.from-top { /* this className will be added to the modal when the modal should be animated in */
+  animation: from-top-in 0.5s;
+  opacity: 1;
+  transform: translate(0, 0);
+}
+
+.from-top.epm-out { /* this className will be added to the modal when the modal should be animated out */
+  animation: from-top-out 0.5s;
+  opacity: 0;
+  transform: translate(0, 100vh);
 }
 
 @keyframes from-top-in {

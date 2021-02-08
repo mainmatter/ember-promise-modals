@@ -4,12 +4,21 @@ import { inject as service } from '@ember/service';
 export default Controller.extend({
   modals: service(),
 
-  flip: false,
-
   actions: {
-    showModal(options) {
-      this.modals.open('modal1', undefined, options);
-      this.toggleProperty('flip');
+    showModal() {
+      this.modals.open('modal1');
+    },
+
+    showModalFromTop() {
+      this.modals.open('modal1', null, {
+        className: 'from-top',
+      });
+    },
+
+    showModalFromBottom() {
+      this.modals.open('modal1', null, {
+        className: 'from-bottom',
+      });
     },
   },
 });
