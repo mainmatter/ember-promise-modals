@@ -1,7 +1,7 @@
 import Component from '@ember/component';
 import { inject as service } from '@ember/service';
 
-import createFocusTrap from 'focus-trap';
+import { createFocusTrap } from 'focus-trap';
 
 import layout from '../templates/components/modal';
 
