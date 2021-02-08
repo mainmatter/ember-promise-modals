@@ -1,11 +1,16 @@
+'use strict';
+
 module.exports = {
   root: true,
   parserOptions: {
     ecmaVersion: 2018,
     sourceType: 'module',
+    ecmaFeatures: {
+      legacyDecorators: true,
+    },
   },
   plugins: ['ember', 'prettier', 'promise', 'import-helpers'],
-  extends: ['eslint:recommended', 'plugin:ember/recommended', 'prettier'],
+  extends: ['eslint:recommended', 'plugin:ember/recommended', 'plugin:prettier/recommended'],
   env: {
     browser: true,
   },
@@ -82,6 +87,14 @@ module.exports = {
         alphabetize: { order: 'asc', ignoreCase: true },
       },
     ],
+
+    // Legacy Ember
+    'ember/no-actions-hash': 'off',
+    'ember/no-assignment-of-untracked-properties-used-in-tracking-contexts': 'off',
+    'ember/no-classic-classes': 'off',
+    'ember/no-classic-components': 'off',
+    'ember/no-component-lifecycle-hooks': 'off',
+    'ember/require-tagless-components': 'off',
   },
   overrides: [
     // node files
@@ -106,9 +119,7 @@ module.exports = {
         node: true,
       },
       plugins: ['node'],
-      rules: Object.assign({}, require('eslint-plugin-node').configs.recommended.rules, {
-        // add your custom rules and overrides for node files here
-      }),
+      extends: ['plugin:node/recommended'],
     },
   ],
 };

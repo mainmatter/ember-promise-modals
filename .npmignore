@@ -10,8 +10,11 @@
 /.editorconfig
 /.ember-cli
 /.env*
+/.eslintcache
 /.eslintignore
 /.eslintrc.js
+/.prettierrc.js
+/.git/
 /.gitignore
 /.prettierrc.js
 /.template-lintrc.js
@@ -32,4 +35,5 @@
 /bower.json.ember-try
 /package.json.ember-try
 
+# project specific
 /.idea/
