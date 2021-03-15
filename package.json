@@ -28,7 +28,7 @@
   "dependencies": {
     "ember-auto-import": "^1.10.1",
     "ember-cli-babel": "^7.23.1",
-    "ember-cli-htmlbars": "^5.6.4",
+    "ember-cli-htmlbars": "^5.6.5",
     "focus-trap": "^6.3.0"
   },
   "devDependencies": {
