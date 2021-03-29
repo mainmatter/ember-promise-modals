@@ -27,7 +27,7 @@
   },
   "dependencies": {
     "ember-auto-import": "^1.11.2",
-    "ember-cli-babel": "^7.26.2",
+    "ember-cli-babel": "^7.26.3",
     "ember-cli-htmlbars": "^5.7.1",
     "focus-trap": "^6.3.0"
   },
