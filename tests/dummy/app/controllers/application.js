@@ -6,7 +6,12 @@ export default Controller.extend({
 
   actions: {
     showModal() {
-      this.modals.open('modal1');
+      this.modals.open('modal1', {});
+    },
+    showFullscreenModal() {
+      this.modals.open('modal1', {
+        isFullScreenModal: true,
+      });
     },
   },
 });
