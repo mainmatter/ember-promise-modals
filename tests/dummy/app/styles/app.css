@@ -9,18 +9,25 @@
   padding: 16px 32px;
 }
 
-/* === Variation 1: Custom animation which animates the modal in from the bottom and back */
-
-.from-bottom { /* this className will be added to the modal when the modal should be animated in */
-  animation: from-bottom-in 0.5s;
-  opacity: 1;
-  transform: translate(0, 0);
+:root {
+  --epm-animation-in-duration: 0.25s;
+  --epm-animation-out-duration: 0.25s;
 }
 
-.from-bottom.epm-out { /* this className will be added to the modal when the modal should be animated out */
-  animation: from-bottom-out 0.5s;
+/* === Variation 1: Custom animation which animates the modal in from the bottom and back */
+
+/* this className will be added to the modal when the modal should be animated in */
+.from-bottom {
+  opacity: 1;
+  transform: translate(0, 0);
+  animation: from-bottom-in var(--epm-animation-in-duration) ease-out;
+}
+
+/* this className will be added to the modal when the modal should be animated out */
+.from-bottom.epm-out {
   opacity: 0;
   transform: translate(0, 100vh);
+  animation: from-bottom-out var(--epm-animation-out-duration) ease-in;
 }
 
 /* these keyframes describe the animation  */
@@ -28,7 +35,7 @@
 @keyframes from-bottom-in {
   0% {
     opacity: 0;
-    transform: translate(0, 100%);
+    transform: translate(0, calc(100% + 50vh));
   }
   100% {
     opacity: 1;
@@ -43,28 +50,30 @@
   }
   100% {
     opacity: 0;
-    transform: translate(0, 100%);
+    transform: translate(0, calc(100% + 50vh));
   }
 }
 
 /* === Variation 2: Custom animation which animates the modal in from the top and back */
 
-.from-top { /* this className will be added to the modal when the modal should be animated in */
-  animation: from-top-in 0.5s;
+/* this className will be added to the modal when the modal should be animated in */
+.from-top {
   opacity: 1;
   transform: translate(0, 0);
+  animation: from-top-in var(--epm-animation-in-duration) ease-out;
 }
 
-.from-top.epm-out { /* this className will be added to the modal when the modal should be animated out */
-  animation: from-top-out 0.5s;
+/* this className will be added to the modal when the modal should be animated out */
+.from-top.epm-out {
   opacity: 0;
   transform: translate(0, 100vh);
+  animation: from-top-out var(--epm-animation-out-duration) ease-in;
 }
 
 @keyframes from-top-in {
   0% {
     opacity: 0;
-    transform: translate(0, -100%);
+    transform: translate(0, calc(-100vh - 50%));
   }
   100% {
     opacity: 1;
@@ -79,6 +88,6 @@
   }
   100% {
     opacity: 0;
-    transform: translate(0, -100%);
+    transform: translate(0, calc(-100vh - 50%));
   }
 }
