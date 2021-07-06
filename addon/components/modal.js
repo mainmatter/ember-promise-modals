@@ -14,7 +14,6 @@ export default Component.extend({
 
   tagName: '',
   outAnimationClass: 'epm-out',
-  result: undefined,
 
   modals: service(),
 
@@ -65,10 +64,14 @@ export default Component.extend({
 
     this.modals._onModalAnimationStart();
     element.addEventListener('animationend', this.fadeOutEnd);
-    this.set('animatingOutClass', '');
+    set(this, 'animatingOutClass', '');
   },
 
   willDestroyElement() {
+    if (this._timeout) {
+      cancel(this._timeout);
+    }
+
     if (this.focusTrap) {
       this.focusTrap.deactivate({ onDeactivate: null });
     }
@@ -85,24 +88,27 @@ export default Component.extend({
   },
 
   closeModal(result) {
+    // Timeout fallback in case something with the animation goes wrong
     this._timeout = later(() => {
       this.removeModal();
     }, this.outAnimationTimeout);
 
-    this.set('result', result);
-    this.set('animatingOutClass', this.outAnimationClass);
+    // Trigger out animation
+    set(this, 'animatingOutClass', this.outAnimationClass);
 
     if (this.focusTrap) {
       this.focusTrap.deactivate({ onDeactivate: null });
     }
+
+    this.modal.resolve(result);
   },
 
   removeModal() {
-    cancel(this._timeout);
+    if (this._timeout) {
+      cancel(this._timeout);
+    }
 
-    this.modal.close(this.result);
-
-    this.set('animatingOutClass', '');
+    this.modal.close();
   },
 
   actions: {

@@ -32,13 +32,12 @@ module('Service | modals', function (hooks) {
     let modal = modals.open('modal');
     assert.strictEqual(modal.result, undefined);
 
-    modal.close('foo');
+    modal.resolve('foo');
     assert.strictEqual(modal.result, 'foo');
   });
 
   test('modals are promises', async function (assert) {
     let modals = this.owner.lookup('service:modals');
-
     let modal = modals.open('modal');
 
     // eslint-disable-next-line promise/catch-or-return
@@ -48,7 +47,7 @@ module('Service | modals', function (hooks) {
 
     assert.verifySteps([]);
 
-    modal.close('foo');
+    modal.resolve('foo');
 
     let result = await modal;
     assert.verifySteps(['then']);

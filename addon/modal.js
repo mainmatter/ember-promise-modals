@@ -14,11 +14,13 @@ export default class Modal {
     return this._result;
   }
 
-  close(result) {
+  resolve(result) {
     this._result = result;
-
-    this._service._stack.removeObject(this);
     this._deferred.resolve(result);
+  }
+
+  close() {
+    this._service._stack.removeObject(this);
 
     if (this._service._stack.length === 0) {
       this._service._onLastModalRemoved();
