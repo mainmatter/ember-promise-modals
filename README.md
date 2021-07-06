@@ -233,6 +233,10 @@ module('Application | ...', function (hooks) {
 });
 ```
 
+## Migration guide
+
+See the [Migration](MIGRATION.md) guide for details.
+
 ## Contributing
 
 See the [Contributing](CONTRIBUTING.md) guide for details.
