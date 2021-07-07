@@ -6,7 +6,7 @@ import Component from '@ember/component';
 
 import hbs from 'htmlbars-inline-precompile';
 
-import setupPromiseModals from '../../helpers/setup-promise-modals';
+import { setupPromiseModals } from 'ember-promise-modals/test-support';
 
 module('Component | ModalContainer', function (hooks) {
   setupRenderingTest(hooks);
