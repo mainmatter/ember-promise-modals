@@ -1,3 +1,5 @@
+import { waitForPromise } from '@ember/test-waiters';
+
 import { defer } from 'rsvp';
 
 export default class Modal {
@@ -8,6 +10,7 @@ export default class Modal {
     this._options = options;
     this._result = undefined;
     this._deferred = defer();
+    this._deferredOutAnimation = defer();
     this._componentInstance = undefined;
   }
 
@@ -28,6 +31,7 @@ export default class Modal {
   _resolve(result) {
     this._result = result;
     this._deferred.resolve(result);
+    waitForPromise(this._deferredOutAnimation.promise);
   }
 
   _remove() {
@@ -38,5 +42,6 @@ export default class Modal {
     }
 
     this._componentInstance = undefined;
+    this._deferredOutAnimation.resolve();
   }
 }

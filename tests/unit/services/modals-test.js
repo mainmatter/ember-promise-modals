@@ -34,6 +34,8 @@ module('Service | modals', function (hooks) {
 
     modal._resolve('foo');
     assert.strictEqual(modal.result, 'foo');
+
+    modal._remove();
   });
 
   test('modals are promises', async function (assert) {
@@ -52,5 +54,7 @@ module('Service | modals', function (hooks) {
     let result = await modal;
     assert.verifySteps(['then']);
     assert.equal(result, 'foo');
+
+    modal._remove();
   });
 });
