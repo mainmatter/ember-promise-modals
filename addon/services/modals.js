@@ -1,5 +1,4 @@
 import { A } from '@ember/array';
-import { set } from '@ember/object';
 import { alias } from '@ember/object/computed';
 import Service from '@ember/service';
 
@@ -10,19 +9,10 @@ export default Service.extend({
   top: alias('_stack.lastObject'),
 
   clickOutsideDeactivates: true,
-  outAnimationTimeout: 200,
 
   init() {
     this._super(...arguments);
     this._stack = A([]);
-
-    let mediaQueryList = matchMedia('(prefers-reduced-motion: reduce)');
-    let mediaQueryCallback = () => {
-      set(this, 'outAnimationTimeout', mediaQueryList.matches ? 0 : this.outAnimationTimeout);
-    };
-
-    mediaQueryList.addEventListener('change', mediaQueryCallback);
-    mediaQueryCallback();
   },
 
   willDestroy() {

@@ -1,8 +1,7 @@
 import Component from '@ember/component';
 import { set } from '@ember/object';
-import { or, readOnly } from '@ember/object/computed';
+import { readOnly } from '@ember/object/computed';
 import { guidFor } from '@ember/object/internals';
-import { cancel, later } from '@ember/runloop';
 import { inject as service } from '@ember/service';
 
 import { createFocusTrap } from 'focus-trap';
@@ -17,7 +16,6 @@ export default Component.extend({
 
   modals: service(),
 
-  outAnimationTimeout: or('modal._service.outAnimationTimeout', 'modal._options.timeout'),
   optionsClassName: readOnly('modal._options.className'),
 
   modalElementId: null,
@@ -60,7 +58,7 @@ export default Component.extend({
         return;
       }
 
-      this.removeModal();
+      this.modal._remove();
     };
 
     this.modals._onModalAnimationStart();
@@ -69,10 +67,6 @@ export default Component.extend({
   },
 
   willDestroyElement() {
-    if (this._timeout) {
-      cancel(this._timeout);
-    }
-
     if (this.focusTrap) {
       this.focusTrap.deactivate({ onDeactivate: null });
     }
@@ -89,11 +83,6 @@ export default Component.extend({
   },
 
   closeModal(result) {
-    // Timeout fallback in case something with the animation goes wrong
-    this._timeout = later(() => {
-      this.removeModal();
-    }, this.outAnimationTimeout);
-
     // Trigger out animation
     set(this, 'animatingOutClass', this.outAnimationClass);
 
@@ -102,14 +91,6 @@ export default Component.extend({
     }
 
     this.modal._resolve(result);
-  },
-
-  removeModal() {
-    if (this._timeout) {
-      cancel(this._timeout);
-    }
-
-    this.modal._remove();
   },
 
   actions: {

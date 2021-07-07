@@ -169,10 +169,7 @@ this.modals.open(
 ```
 
 The CSS animations which are applied by the custom CSS class _must_ end in
-`-out` to make the animations trigger the modal removal. To ensure proper
-behavior, a `timeout` option is avaialble as well which will remove the modal
-directly. The default timeout can be adjusted on the `modals` service using the
-`outAnimationTimeout` property. The timeout will be set to `0` in tests.
+`-out` to make the animations trigger the modal removal.
 
 #### Examples
 

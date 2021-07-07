@@ -50,7 +50,7 @@ The first step is to add some CSS which replicates the old animations to your ap
     opacity: 1;
     transform: translate(0, 0);
   }
-  100% {a
+  100% {
     opacity: 0;
     transform: translate(0, calc(-100vh - 50%));
   }
@@ -67,17 +67,6 @@ Furthermore, some CSS variables will need to be overridden so that the new anima
   --epm-animation-modal-in: from-top-in var(--epm-animation-in-duration) ease-out;
   --epm-animation-modal-out: from-top-out var(--epm-animation-out-duration) ease-in;
 }
-```
-
-Finally, you'll need to extend the ModalService in order to override the `outAnimationTimeout` so that it matches the `--epm-animation-out-duration` CSS variable.
-
-```javascript
-// app/services/modal.js
-import ModalService from 'ember-promise-modals/services/modal';
-
-export default ModalService.extend({
-  outAnimationTimeout: 250,
-});
 ```
 
 ### Using both animations
