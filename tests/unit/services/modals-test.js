@@ -17,11 +17,11 @@ module('Service | modals', function (hooks) {
     assert.equal(modals.count, 2, '#count');
     assert.strictEqual(modals.top, modal2, '#top');
 
-    modal2.close();
+    modal2._remove();
     assert.equal(modals.count, 1, '#count');
     assert.strictEqual(modals.top, modal1, '#top');
 
-    modal1.close();
+    modal1._remove();
     assert.equal(modals.count, 0, '#count');
     assert.strictEqual(modals.top, undefined, '#top');
   });
@@ -32,7 +32,7 @@ module('Service | modals', function (hooks) {
     let modal = modals.open('modal');
     assert.strictEqual(modal.result, undefined);
 
-    modal.resolve('foo');
+    modal._resolve('foo');
     assert.strictEqual(modal.result, 'foo');
   });
 
@@ -47,7 +47,7 @@ module('Service | modals', function (hooks) {
 
     assert.verifySteps([]);
 
-    modal.resolve('foo');
+    modal._resolve('foo');
 
     let result = await modal;
     assert.verifySteps(['then']);

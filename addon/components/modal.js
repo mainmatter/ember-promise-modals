@@ -2,7 +2,7 @@ import Component from '@ember/component';
 import { set } from '@ember/object';
 import { or, readOnly } from '@ember/object/computed';
 import { guidFor } from '@ember/object/internals';
-import { later, cancel } from '@ember/runloop';
+import { cancel, later } from '@ember/runloop';
 import { inject as service } from '@ember/service';
 
 import { createFocusTrap } from 'focus-trap';
@@ -26,6 +26,7 @@ export default Component.extend({
     this._super(...arguments);
 
     set(this, 'modalElementId', guidFor(this));
+    this.modal._componentInstance = this;
   },
 
   didInsertElement() {
@@ -100,7 +101,7 @@ export default Component.extend({
       this.focusTrap.deactivate({ onDeactivate: null });
     }
 
-    this.modal.resolve(result);
+    this.modal._resolve(result);
   },
 
   removeModal() {
@@ -108,7 +109,7 @@ export default Component.extend({
       cancel(this._timeout);
     }
 
-    this.modal.close();
+    this.modal._remove();
   },
 
   actions: {
