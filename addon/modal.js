@@ -10,7 +10,7 @@ export default class Modal {
     this._options = options;
     this._result = undefined;
     this._deferred = defer();
-    this._deferredOutAnimation = defer();
+    this._deferredOutAnimation = undefined;
     this._componentInstance = undefined;
   }
 
@@ -29,9 +29,14 @@ export default class Modal {
   }
 
   _resolve(result) {
-    this._result = result;
-    this._deferred.resolve(result);
-    waitForPromise(this._deferredOutAnimation.promise);
+    if (!this._deferredOutAnimation) {
+      this._deferredOutAnimation = defer();
+
+      this._result = result;
+      this._deferred.resolve(result);
+
+      waitForPromise(this._deferredOutAnimation.promise);
+    }
   }
 
   _remove() {
@@ -42,6 +47,9 @@ export default class Modal {
     }
 
     this._componentInstance = undefined;
-    this._deferredOutAnimation.resolve();
+
+    if (this._deferredOutAnimation) {
+      this._deferredOutAnimation.resolve();
+    }
   }
 }
