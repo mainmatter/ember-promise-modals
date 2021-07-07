@@ -47,7 +47,7 @@
 }
 
 .epm-animating .epm-modal-container {
-  overflow: hidden;
+  overflow: unset;
 }
 
 .epm-modal {
