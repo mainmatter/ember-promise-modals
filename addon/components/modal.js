@@ -76,6 +76,8 @@ export default Component.extend({
 
       if (element) {
         element.removeEventListener('animationend', this.fadeOutEnd);
+        // make sure that we remove the modal, also resolving the test waiter
+        this.modal._remove();
       }
     }
 
