@@ -14,7 +14,7 @@ The first step is to add some CSS which replicates the old animations to your ap
 @keyframes from-bottom-in {
   0% {
     opacity: 0;
-    transform: translate(0, calc(100% + 50vh));
+    transform: translate(0, calc(50vh + 50%));
   }
   100% {
     opacity: 1;
@@ -29,7 +29,7 @@ The first step is to add some CSS which replicates the old animations to your ap
   }
   100% {
     opacity: 0;
-    transform: translate(0, calc(100% + 50vh));
+    transform: translate(0, calc(50vh + 50%));
   }
 }
 
@@ -37,7 +37,7 @@ The first step is to add some CSS which replicates the old animations to your ap
 @keyframes from-top-in {
   0% {
     opacity: 0;
-    transform: translate(0, calc(-100vh - 50%));
+    transform: translate(0, calc(-50vh - 50%));
   }
   100% {
     opacity: 1;
@@ -52,7 +52,7 @@ The first step is to add some CSS which replicates the old animations to your ap
   }
   100% {
     opacity: 0;
-    transform: translate(0, calc(-100vh - 50%));
+    transform: translate(0, calc(-50vh - 50%));
   }
 }
 ```
@@ -62,8 +62,10 @@ Furthermore, some CSS variables will need to be overridden so that the new anima
 ```css
 /* app/styles/app.css */
 :root {
-  --epm-animation-in-duration: 0.25s;
-  --epm-animation-out-duration: 0.25s;
+  --epm-animation-backdrop-in-duration: 0.6s;
+  --epm-animation-backdrop-out-duration: 0.6s;
+  --epm-animation-modal-in-duration: 0.25s;
+  --epm-animation-modal-out-duration: 0.25s;
   --epm-animation-modal-in: from-top-in var(--epm-animation-in-duration) ease-out;
   --epm-animation-modal-out: from-top-out var(--epm-animation-out-duration) ease-in;
 }
