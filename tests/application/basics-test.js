@@ -11,15 +11,25 @@ module('Application | basics', function (hooks) {
   test('clicking the backdrop closes the modal', async function (assert) {
     await visit('/');
 
-    assert.dom('.epm-backdrop').exists();
+    assert.dom('.epm-backdrop').doesNotExist();
     assert.dom('.epm-modal').doesNotExist();
 
     await click('[data-test-show-modal]');
 
     assert.dom('.epm-modal').exists();
+    assert.dom('.epm-backdrop').exists();
+    assert.dom('.epm-backdrop').hasStyle({
+      opacity: '1',
+      pointerEvents: 'auto',
+    });
 
     await click('.epm-backdrop');
 
+    assert.dom('.epm-backdrop').exists();
+    assert.dom('.epm-backdrop').hasStyle({
+      opacity: '0',
+      pointerEvents: 'none',
+    });
     assert.dom('.epm-modal').doesNotExist();
   });
 
@@ -28,7 +38,7 @@ module('Application | basics', function (hooks) {
 
     await visit('/');
 
-    assert.dom('.epm-backdrop').exists();
+    assert.dom('.epm-backdrop').doesNotExist();
     assert.dom('.epm-modal').doesNotExist();
 
     await click('[data-test-show-modal]');

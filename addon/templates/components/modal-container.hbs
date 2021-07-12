@@ -1,9 +1,11 @@
-<div
-  class="epm-backdrop {{unless this.modals.count "epm-out"}}"
-  tabindex="-1"
-  role="presentation"
-  aria-hidden="true"
-></div>
+{{#if this.modals._renderBackdrop}}
+  <div
+    class="epm-backdrop {{unless this.modals.count "epm-out"}}"
+    tabindex="-1"
+    role="presentation"
+    aria-hidden="true"
+  ></div>
+{{/if}}
 
 {{#each this.modals._stack as |modal|}}
   <div class="epm-modal-container">
