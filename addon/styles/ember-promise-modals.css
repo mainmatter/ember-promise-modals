@@ -1,21 +1,30 @@
 :root {
-  --epm-animation-in-duration: 0.3s;
-  --epm-animation-out-duration: 0.18s;
-  --epm-animation-in-name: epm-backdrop-in;
-  --epm-animation-out-name: epm-backdrop-out;
-  --epm-animation-backdrop-in: var(--epm-animation-in-name) var(--epm-animation-in-duration);
-  --epm-animation-backdrop-out: var(--epm-animation-out-name) var(--epm-animation-out-duration);
-  --epm-animation-modal-in: epm-modal-in var(--epm-animation-in-duration) ease-out;
-  --epm-animation-modal-out: epm-modal-out var(--epm-animation-out-duration) ease-out;
-  --epm-backdrop-background: #2d3748;
-  --epm-backdrop-opacity: 0.8;
-  --epm-container-padding: 1rem;
+  /* The named -duration and -delay variables will be lowered to near zero when using the setupPromiseModals test helper  */
+  --epm-animation-backdrop-in-duration: 0.3s;
+  --epm-animation-backdrop-out-duration: 0.18s;
+  --epm-animation-modal-in-duration: 0.3s;
+  --epm-animation-modal-out-duration: 0.18s;
+  --epm-animation-backdrop-in-delay: 0s;
+  --epm-animation-backdrop-out-delay: 0s;
+  --epm-animation-modal-in-delay: 0s;
+  --epm-animation-modal-out-delay: 0s;
+  --epm-animation-backdrop-in: epm-backdrop-in var(--epm-animation-backdrop-in-duration) ease var(--epm-animation-backdrop-in-delay);
+  --epm-animation-backdrop-out: epm-backdrop-out var(--epm-animation-backdrop-out-duration) ease var(--epm-animation-backdrop-out-delay);
+  --epm-animation-modal-in: var(--epm-animation-modal-in-duration) ease-out var(--epm-animation-modal-in-delay) epm-modal-in;
+  --epm-animation-modal-out: var(--epm-animation-modal-out-duration) ease-out var(--epm-animation-modal-out-delay) epm-modal-out;
+  --epm-backdrop-background: #2d3748CD;
 }
 
 @media (prefers-reduced-motion: reduce) {
   :root {
-    --epm-animation-in-duration: 0;
-    --epm-animation-out-duration: 0;
+  --epm-animation-backdrop-in-duration: 0s;
+  --epm-animation-backdrop-out-duration: 0s;
+  --epm-animation-modal-in-duration: 0s;
+  --epm-animation-modal-out-duration: 0s;
+  --epm-animation-backdrop-in-delay: 0s;
+  --epm-animation-backdrop-out-delay: 0s;
+  --epm-animation-modal-in-delay: 0s;
+  --epm-animation-modal-out-delay: 0s;
   }
 }
 
@@ -34,7 +43,7 @@
 
 .epm-backdrop {
   background-color: var(--epm-backdrop-background);
-  opacity: var(--epm-backdrop-opacity);
+  opacity: 1;
   animation: var(--epm-animation-backdrop-in);
 }
 
@@ -42,7 +51,6 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: var(--epm-container-padding);
   overflow: auto;
 }
 
@@ -74,13 +82,13 @@
     opacity: 0;
   }
   100% {
-    opacity: var(--epm-backdrop-opacity);
+    opacity: 1;
   }
 }
 
 @keyframes epm-backdrop-out {
   0% {
-    opacity: var(--epm-backdrop-opacity);
+    opacity: 1;
   }
   100% {
     opacity: 0;

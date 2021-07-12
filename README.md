@@ -128,9 +128,9 @@ this.modals.open(
     className: 'custom-modal',
     // optional: name the animation triggered by the custom css class
     //           animations ending in "-out" are detected by default!
-    animation: 'custom-animation-name-out',
-    // optional: adjust the timeout for the out animation
-    timeout: 300,
+    //           You most likely do not have to do this unless you absolutely 
+    //           can't have an animation ending in '-out'
+    animationKeyframesOutName: 'custom-animation-name-out',
   },
 );
 ```

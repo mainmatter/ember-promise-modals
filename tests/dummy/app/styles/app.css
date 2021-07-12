@@ -9,25 +9,20 @@
   padding: 16px 32px;
 }
 
-:root {
-  --epm-animation-in-duration: 0.25s;
-  --epm-animation-out-duration: 0.25s;
-}
-
 /* === Variation 1: Custom animation which animates the modal in from the bottom and back */
 
 /* this className will be added to the modal when the modal should be animated in */
 .from-bottom {
   opacity: 1;
   transform: translate(0, 0);
-  animation: from-bottom-in var(--epm-animation-in-duration) ease-out;
+  animation: from-bottom-in var(--epm-animation-modal-in-duration) ease-out;
 }
 
 /* this className will be added to the modal when the modal should be animated out */
 .from-bottom.epm-out {
   opacity: 0;
   transform: translate(0, 100vh);
-  animation: from-bottom-out var(--epm-animation-out-duration) ease-in;
+  animation: from-bottom-out var(--epm-animation-modal-out-duration) ease-in;
 }
 
 /* these keyframes describe the animation  */
@@ -60,14 +55,14 @@
 .from-top {
   opacity: 1;
   transform: translate(0, 0);
-  animation: from-top-in var(--epm-animation-in-duration) ease-out;
+  animation: from-top-in var(--epm-animation-modal-in-duration) ease-out;
 }
 
 /* this className will be added to the modal when the modal should be animated out */
 .from-top.epm-out {
   opacity: 0;
   transform: translate(0, 100vh);
-  animation: from-top-out var(--epm-animation-out-duration) ease-in;
+  animation: from-top-out var(--epm-animation-modal-out-duration) ease-in;
 }
 
 @keyframes from-top-in {

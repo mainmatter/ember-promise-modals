@@ -51,10 +51,9 @@ export default Component.extend({
       this.modals._onModalAnimationEnd();
 
       let isntTarget = target !== element;
-      let wrongAnimation = this.modal._options.animationName && this.modal._options.animationName !== animationName;
       let animationEndsWrong = animationName.substring(animationName.length - 4) !== '-out';
 
-      if (isntTarget || wrongAnimation || animationEndsWrong) {
+      if (isntTarget || animationEndsWrong) {
         return;
       }
 
