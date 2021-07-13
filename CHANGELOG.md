@@ -1,5 +1,23 @@
 # Changelog
 
+## v1.0.0 (2021-07-13)
+
+#### :boom: Breaking Change
+* [#148](https://github.com/simplabs/ember-promise-modals/pull/148) Replace ember-animated with CSS animations ([@pichfl](https://github.com/pichfl))
+
+#### :rocket: Enhancement
+* [#148](https://github.com/simplabs/ember-promise-modals/pull/148) Replace ember-animated with CSS animations ([@pichfl](https://github.com/pichfl))
+
+#### :house: Internal
+* [#407](https://github.com/simplabs/ember-promise-modals/pull/407) upgrade to ember-qunit v5 ([@nickschot](https://github.com/nickschot))
+* [#309](https://github.com/simplabs/ember-promise-modals/pull/309) Update addon layout according to latest ember addon blueprint ([@pichfl](https://github.com/pichfl))
+
+#### Committers: 3
+- Florian Pichler ([@pichfl](https://github.com/pichfl))
+- Nick Schot ([@nickschot](https://github.com/nickschot))
+- [@dependabot-preview[bot]](https://github.com/apps/dependabot-preview)
+
+
 ## v0.2.1 (2020-06-30)
 
 #### :rocket: Enhancement
