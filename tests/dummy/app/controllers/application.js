@@ -8,5 +8,17 @@ export default Controller.extend({
     showModal() {
       this.modals.open('modal1');
     },
+
+    showModalFromTop() {
+      this.modals.open('modal1', null, {
+        className: 'from-top',
+      });
+    },
+
+    showModalFromBottom() {
+      this.modals.open('modal1', null, {
+        className: 'from-bottom',
+      });
+    },
   },
 });

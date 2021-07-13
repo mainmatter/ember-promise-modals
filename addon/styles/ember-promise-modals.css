@@ -1,19 +1,121 @@
+:root {
+  /* The named -duration and -delay variables will be lowered to near zero when using the setupPromiseModals test helper  */
+  --epm-animation-backdrop-in-duration: 0.3s;
+  --epm-animation-backdrop-out-duration: 0.18s;
+  --epm-animation-modal-in-duration: 0.3s;
+  --epm-animation-modal-out-duration: 0.18s;
+  --epm-animation-backdrop-in-delay: 0s;
+  --epm-animation-backdrop-out-delay: 0s;
+  --epm-animation-modal-in-delay: 0s;
+  --epm-animation-modal-out-delay: 0s;
+  --epm-animation-backdrop-in: epm-backdrop-in var(--epm-animation-backdrop-in-duration) ease var(--epm-animation-backdrop-in-delay);
+  --epm-animation-backdrop-out: epm-backdrop-out var(--epm-animation-backdrop-out-duration) ease var(--epm-animation-backdrop-out-delay);
+  --epm-animation-modal-in: var(--epm-animation-modal-in-duration) ease-out var(--epm-animation-modal-in-delay) epm-modal-in;
+  --epm-animation-modal-out: var(--epm-animation-modal-out-duration) ease-out var(--epm-animation-modal-out-delay) epm-modal-out;
+  --epm-backdrop-background: #2d3748CD;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :root {
+  --epm-animation-backdrop-in-duration: 0s;
+  --epm-animation-backdrop-out-duration: 0s;
+  --epm-animation-modal-in-duration: 0s;
+  --epm-animation-modal-out-duration: 0s;
+  --epm-animation-backdrop-in-delay: 0s;
+  --epm-animation-backdrop-out-delay: 0s;
+  --epm-animation-modal-in-delay: 0s;
+  --epm-animation-modal-out-delay: 0s;
+  }
+}
+
 .epm-scrolling-disabled {
   overflow: hidden;
 }
 
-.epm-backdrop {
+.epm-backdrop,
+.epm-modal-container {
   position: fixed;
-  left: 0;
   top: 0;
-  width: 100vw;
-  height: 100vh;
-  background-color: rgba(61, 65, 77, 0.8);
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+.epm-backdrop {
+  background-color: var(--epm-backdrop-background);
+  opacity: 1;
+  animation: var(--epm-animation-backdrop-in);
+}
+
+.epm-modal-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: auto;
+}
+
+.epm-animating .epm-modal-container {
+  overflow: unset;
 }
 
 .epm-modal {
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  margin: auto;
+  animation: var(--epm-animation-modal-in);
+  -webkit-overflow-scrolling: touch; /* momentum-based scrolling for Safari on iOS */
+}
+
+.epm-backdrop.epm-out {
+  opacity: 0;
+  animation: var(--epm-animation-backdrop-out);
+  pointer-events: none;
+}
+
+.epm-modal.epm-out {
+  transform: translate(0, -10vh) scale(0.8);
+  opacity: 0;
+  animation: var(--epm-animation-modal-out);
+  pointer-events: none;
+}
+
+@keyframes epm-backdrop-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes epm-backdrop-out {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes epm-modal-in {
+  0% {
+    transform: translate(0, -30vh) scale(1.1);
+    opacity: 0;
+  }
+  72% {
+    transform: translate(0, 0) scale(0.99);
+    opacity: 1;
+  }
+  100% {
+    transform: translate(0, 0) scale(1);
+  }
+}
+
+@keyframes epm-modal-out {
+  0% {
+    transform: translate(0, 0) scale(1);
+    opacity: 1;
+  }
+  95% {
+    transform: translate(0, -10vh) scale(0.8);
+    opacity: 0;
+  }
 }

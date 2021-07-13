@@ -1,7 +1,7 @@
 {
   "name": "ember-promise-modals",
   "version": "0.2.1",
-  "description": "The default blueprint for ember-cli addons.",
+  "description": "The better way to handle modals in your Ember.js apps.",
   "keywords": [
     "ember-addon"
   ],
@@ -26,16 +26,20 @@
     "test:ember-compatibility": "ember try:each"
   },
   "dependencies": {
+    "@ember/test-waiters": "^2.4.4",
+    "broccoli-funnel": "^3.0.3",
+    "broccoli-merge-trees": "^4.2.0",
+    "broccoli-postcss": "^5.1.0",
     "ember-auto-import": "^1.11.3",
     "ember-cli-babel": "^7.26.6",
     "ember-cli-htmlbars": "^5.7.1",
-    "focus-trap": "^6.6.0"
+    "focus-trap": "^6.6.0",
+    "postcss-preset-env": "^6.7.0"
   },
   "devDependencies": {
     "@ember/optional-features": "^2.0.0",
     "@ember/test-helpers": "^2.2.8",
     "broccoli-asset-rev": "^3.0.0",
-    "ember-animated": "^0.11.0",
     "ember-cli": "~3.26.1",
     "ember-cli-dependency-checker": "^3.1.0",
     "ember-cli-inject-live-reload": "^2.1.0",
@@ -64,9 +68,6 @@
     "qunit": "^2.16.0",
     "qunit-console-grouper": "^0.3.0",
     "qunit-dom": "^1.6.0"
-  },
-  "peerDependencies": {
-    "ember-animated": "0.10.* || 0.9.* || 0.8.*"
   },
   "engines": {
     "node": "10.* || 12.* || >= 14.*"
