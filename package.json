@@ -27,7 +27,7 @@
   },
   "dependencies": {
     "@ember/test-waiters": "^2.4.5",
-    "broccoli-funnel": "^3.0.3",
+    "broccoli-funnel": "^3.0.8",
     "broccoli-merge-trees": "^4.2.0",
     "broccoli-postcss": "^5.1.0",
     "ember-auto-import": "^1.11.3",
