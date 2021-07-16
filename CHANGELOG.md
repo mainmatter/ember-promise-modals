@@ -1,5 +1,18 @@
 # Changelog
 
+## v1.0.1 (2021-07-16)
+
+#### :bug: Bug Fix
+* [#412](https://github.com/simplabs/ember-promise-modals/pull/412) fix backdrop not animating immediately after the last modal is closed ([@nickschot](https://github.com/nickschot))
+
+#### :house: Internal
+* [#413](https://github.com/simplabs/ember-promise-modals/pull/413) use babel-eslint as eslint parser ([@nickschot](https://github.com/nickschot))
+
+#### Committers: 2
+- Nick Schot ([@nickschot](https://github.com/nickschot))
+- [@dependabot-preview[bot]](https://github.com/apps/dependabot-preview)
+
+
 ## v1.0.0 (2021-07-13)
 
 #### :boom: Breaking Change

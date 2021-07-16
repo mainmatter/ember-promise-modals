@@ -1,6 +1,6 @@
 {
   "name": "ember-promise-modals",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "The better way to handle modals in your Ember.js apps.",
   "keywords": [
     "ember-addon"
