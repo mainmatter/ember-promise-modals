@@ -57,4 +57,19 @@ module('Service | modals', function (hooks) {
 
     modal._remove();
   });
+
+  test('modals do not show up in openCount when closing', async function (assert) {
+    let modals = this.owner.lookup('service:modals');
+    let modal = modals.open('modal');
+
+    assert.equal(modals.count, 1);
+
+    modal._resolve();
+
+    assert.equal(modals.count, 0);
+
+    modal._remove();
+
+    assert.equal(modals.count, 0);
+  });
 });
