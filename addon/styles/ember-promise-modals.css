@@ -8,10 +8,10 @@
   --epm-animation-backdrop-out-delay: 0s;
   --epm-animation-modal-in-delay: 0s;
   --epm-animation-modal-out-delay: 0s;
-  --epm-animation-backdrop-in: epm-backdrop-in var(--epm-animation-backdrop-in-duration) ease var(--epm-animation-backdrop-in-delay);
-  --epm-animation-backdrop-out: epm-backdrop-out var(--epm-animation-backdrop-out-duration) ease var(--epm-animation-backdrop-out-delay);
-  --epm-animation-modal-in: var(--epm-animation-modal-in-duration) ease-out var(--epm-animation-modal-in-delay) epm-modal-in;
-  --epm-animation-modal-out: var(--epm-animation-modal-out-duration) ease-out var(--epm-animation-modal-out-delay) epm-modal-out;
+  --epm-animation-backdrop-in: var(--epm-animation-backdrop-in-duration) ease var(--epm-animation-backdrop-in-delay) forwards epm-backdrop-in;
+  --epm-animation-backdrop-out: var(--epm-animation-backdrop-out-duration) ease var(--epm-animation-backdrop-out-delay) forwards epm-backdrop-out;
+  --epm-animation-modal-in: var(--epm-animation-modal-in-duration) ease-out var(--epm-animation-modal-in-delay) forwards epm-modal-in;
+  --epm-animation-modal-out: var(--epm-animation-modal-out-duration) ease-out var(--epm-animation-modal-out-delay) forwards epm-modal-out;
   --epm-backdrop-background: #2d3748CD;
 }
 
@@ -43,7 +43,7 @@
 
 .epm-backdrop {
   background-color: var(--epm-backdrop-background);
-  opacity: 1;
+  opacity: 0;
   animation: var(--epm-animation-backdrop-in);
 }
 
@@ -60,19 +60,21 @@
 
 .epm-modal {
   margin: auto;
+  transform: translate(0, -30vh) scale(1.1);
+  opacity: 0;
   animation: var(--epm-animation-modal-in);
   -webkit-overflow-scrolling: touch; /* momentum-based scrolling for Safari on iOS */
 }
 
 .epm-backdrop.epm-out {
-  opacity: 0;
+  opacity: 1;
   animation: var(--epm-animation-backdrop-out);
   pointer-events: none;
 }
 
 .epm-modal.epm-out {
-  transform: translate(0, -10vh) scale(0.8);
-  opacity: 0;
+  transform: translate(0, 0) scale(1);
+  opacity: 1;
   animation: var(--epm-animation-modal-out);
   pointer-events: none;
 }
@@ -106,6 +108,7 @@
   }
   100% {
     transform: translate(0, 0) scale(1);
+    opacity: 1;
   }
 }
 
@@ -114,7 +117,7 @@
     transform: translate(0, 0) scale(1);
     opacity: 1;
   }
-  95% {
+  100% {
     transform: translate(0, -10vh) scale(0.8);
     opacity: 0;
   }
