@@ -1,4 +1,4 @@
-import { visit, click, triggerKeyEvent } from '@ember/test-helpers';
+import { visit, click, triggerKeyEvent, waitUntil } from '@ember/test-helpers';
 import { setupApplicationTest } from 'ember-qunit';
 import { module, test } from 'qunit';
 
@@ -18,6 +18,13 @@ module('Application | basics', function (hooks) {
 
     assert.dom('.epm-modal').exists();
     assert.dom('.epm-backdrop').exists();
+
+    // we don't have a test waiter on the opening animation, so for this test we wait manually
+    await waitUntil(() => {
+      let { opacity } = window.getComputedStyle(document.querySelector('.epm-backdrop'));
+      return opacity === '1';
+    });
+
     assert.dom('.epm-backdrop').hasStyle({
       opacity: '1',
       pointerEvents: 'auto',
