@@ -1,5 +1,17 @@
 # Changelog
 
+## v1.0.2 (2021-07-26)
+
+#### :bug: Bug Fix
+* [#419](https://github.com/simplabs/ember-promise-modals/pull/419) fix setting a delay on the backdrop or modal makes animation break ([@nickschot](https://github.com/nickschot))
+
+#### :house: Internal
+* [#417](https://github.com/simplabs/ember-promise-modals/pull/417) Delete unused modal service file from dummy app ([@nickschot](https://github.com/nickschot))
+
+#### Committers: 1
+- Nick Schot ([@nickschot](https://github.com/nickschot))
+
+
 ## v1.0.1 (2021-07-16)
 
 #### :bug: Bug Fix
