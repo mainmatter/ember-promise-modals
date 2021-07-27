@@ -131,6 +131,9 @@ this.modals.open(
     //           You most likely do not have to do this unless you absolutely 
     //           can't have an animation ending in '-out'
     animationKeyframesOutName: 'custom-animation-name-out',
+    // optional: a hook that is called when the closing animation of
+    //           the modal (so not the backdrop) has finished.
+    onAnimationModalOutEnd: () => {}
   },
 );
 ```

@@ -38,6 +38,9 @@ export default class Modal {
   _resolve(result) {
     if (!this._deferredOutAnimation) {
       set(this, '_deferredOutAnimation', defer());
+      if (this._options.onAnimationModalOutEnd) {
+        this._deferredOutAnimation.promise.then(() => this._options.onAnimationModalOutEnd()).catch(() => {});
+      }
 
       this._result = result;
       this._deferred.resolve(result);
