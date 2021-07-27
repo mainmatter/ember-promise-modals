@@ -72,4 +72,31 @@ module('Service | modals', function (hooks) {
 
     assert.equal(modals.count, 0);
   });
+
+  test('modals will call the optional onAnimationModalOutEnd hook when it is passed as an option', async function (assert) {
+    let modals = this.owner.lookup('service:modals');
+    let modal = modals.open(
+      'modal',
+      {},
+      {
+        onAnimationModalOutEnd: () => {
+          assert.step('animation ended');
+        },
+      },
+    );
+    assert.step('modal open');
+
+    modal._resolve();
+    assert.step('modal closing');
+
+    modal._remove();
+    assert.step('modal closed');
+
+    // we need to wait a tick for the closing animation promise to be resolved
+    await new Promise(resolve => {
+      setTimeout(resolve, 0);
+    });
+
+    assert.verifySteps(['modal open', 'modal closing', 'modal closed', 'animation ended']);
+  });
 });
