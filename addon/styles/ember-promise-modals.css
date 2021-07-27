@@ -45,6 +45,8 @@
   background-color: var(--epm-backdrop-background);
   opacity: 0;
   animation: var(--epm-animation-backdrop-in);
+  animation-delay: var(--epm-animation-backdrop-in-delay);
+  animation-duration: var(--epm-animation-backdrop-in-duration);
 }
 
 .epm-modal-container {
@@ -63,12 +65,16 @@
   transform: translate(0, -30vh) scale(1.1);
   opacity: 0;
   animation: var(--epm-animation-modal-in);
+  animation-delay: var(--epm-animation-modal-in-delay);
+  animation-duration: var(--epm-animation-modal-in-duration);
   -webkit-overflow-scrolling: touch; /* momentum-based scrolling for Safari on iOS */
 }
 
 .epm-backdrop.epm-out {
   opacity: 1;
   animation: var(--epm-animation-backdrop-out);
+  animation-delay: var(--epm-animation-backdrop-out-delay);
+  animation-duration: var(--epm-animation-backdrop-out-duration);
   pointer-events: none;
 }
 
@@ -76,6 +82,8 @@
   transform: translate(0, 0) scale(1);
   opacity: 1;
   animation: var(--epm-animation-modal-out);
+  animation-delay: var(--epm-animation-modal-out-delay);
+  animation-duration: var(--epm-animation-modal-out-duration);
   pointer-events: none;
 }
 
