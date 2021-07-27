@@ -1,5 +1,14 @@
 # Changelog
 
+## v1.1.1 (2021-07-27)
+
+#### :bug: Bug Fix
+* [#422](https://github.com/simplabs/ember-promise-modals/pull/422) fix promsie-modals from breaking when used in another addon instead of an app ([@nickschot](https://github.com/nickschot))
+
+#### Committers: 1
+- Nick Schot ([@nickschot](https://github.com/nickschot))
+
+
 ## v1.1.0 (2021-07-27)
 
 #### :rocket: Enhancement
