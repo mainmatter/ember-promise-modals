@@ -1,5 +1,17 @@
 # Changelog
 
+## v1.1.0 (2021-07-27)
+
+#### :rocket: Enhancement
+* [#421](https://github.com/simplabs/ember-promise-modals/pull/421) add optional onAnimationModalOutEnd hook ([@nickschot](https://github.com/nickschot))
+
+#### :bug: Bug Fix
+* [#420](https://github.com/simplabs/ember-promise-modals/pull/420) explicitly specify animation delay and duration as separate to make sure they're properly used by the browser ([@nickschot](https://github.com/nickschot))
+
+#### Committers: 1
+- Nick Schot ([@nickschot](https://github.com/nickschot))
+
+
 ## v1.0.2 (2021-07-26)
 
 #### :bug: Bug Fix
