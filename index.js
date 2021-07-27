@@ -33,7 +33,7 @@ module.exports = {
       plugins: [
         PresetEnv({
           stage: 3,
-          overrideBrowserslist: this.app.project._targets.browsers,
+          overrideBrowserslist: app.project._targets.browsers,
         }),
       ],
     });
