@@ -1,6 +1,6 @@
 {{#each this.modals._stack as |modal index|}}
   <div
-    class="epm-backdrop {{unless this.modals.count "epm-out"}}"
+    class="epm-backdrop {{if modal.isClosing "epm-out"}}"
     tabindex="-1"
     role="presentation"
     aria-hidden="true"
