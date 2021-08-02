@@ -1,15 +1,12 @@
 {{#each this.modals._stack as |modal index|}}
+  <div
+    class="epm-backdrop {{unless this.modals.count "epm-out"}}"
+    tabindex="-1"
+    role="presentation"
+    aria-hidden="true"
+    data-test-epm-backdrop="{{index}}"
+  />
   <div class="epm-modal-container">
-    {{#if this.modals._renderBackdrop}}
-      <div
-        class="epm-backdrop {{unless this.modals.count "epm-out"}}"
-        tabindex="-1"
-        role="presentation"
-        aria-hidden="true"
-        data-test-epm-backdrop="{{index}}"
-      ></div>
-    {{/if}}
-
     <EpmModal @modal={{modal}} data-test-epm-modal="{{index}}" />
   </div>
 {{/each}}

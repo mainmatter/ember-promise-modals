@@ -32,11 +32,7 @@ module('Application | basics', function (hooks) {
 
     await click('.epm-backdrop');
 
-    assert.dom('.epm-backdrop').exists();
-    assert.dom('.epm-backdrop').hasStyle({
-      opacity: '0',
-      pointerEvents: 'none',
-    });
+    assert.dom('.epm-backdrop').doesNotExist();
     assert.dom('.epm-modal').doesNotExist();
   });
 
