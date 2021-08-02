@@ -1,12 +1,19 @@
 /* === Basic styling for the demo modal */
 
-.modal1 {
-  width: 600px;
+.modal {
   max-width: 100%;
   border-radius: 6px;
   background-color: white;
   box-shadow: 0 4px 28px 0 rgba(0, 0, 0, 0.36);
   padding: 16px 32px;
+}
+
+.modal1 {
+  width: 600px;
+}
+
+.modal2 {
+  width: 400px;
 }
 
 /* === Variation 1: Custom animation which animates the modal in from the bottom and back */
