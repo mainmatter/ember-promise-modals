@@ -46,7 +46,7 @@
     }
   });
 });
-;define("dummy/components/modal1", ["exports", "@ember/component"], function (_exports, _component) {
+;define("dummy/components/modal1", ["exports", "@ember/component", "@ember/service"], function (_exports, _component, _service) {
   "use strict";
 
   Object.defineProperty(_exports, "__esModule", {
@@ -55,7 +55,13 @@
   _exports.default = void 0;
 
   var _default = _component.default.extend({
-    tagName: ''
+    tagName: '',
+    modals: (0, _service.inject)(),
+    actions: {
+      showModal2: function showModal2() {
+        this.modals.open('modal2');
+      }
+    }
   });
 
   _exports.default = _default;
@@ -227,9 +233,26 @@
   _exports.default = void 0;
 
   var _default = (0, _templateFactory.createTemplateFactory)({
-    "id": "Nhg8ylxk",
-    "block": "[[[10,0],[14,0,\"modal1\"],[12],[1,\"\\n  \"],[11,\"button\"],[24,4,\"button\"],[4,[38,0],[[30,0],[30,1]],null],[12],[1,\"Close\"],[13],[1,\"\\n\\n  \"],[10,\"h2\"],[12],[1,\"Modal 1\"],[13],[1,\"\\n\\n  \"],[10,2],[12],[1,\"\\n    Sociis per justo neque pulvinar orci sagittis tristique tincidunt suspendisse cum est, rhoncus euismod velit interdum condimentum aenean sed hendrerit arcu venenatis, rutrum commodo elementum eros ac at non ullamcorper pellentesque turpis. Tincidunt consequat purus quam ante aliquam mattis scelerisque viverra suspendisse, tellus convallis mollis ornare primis penatibus montes dapibus sagittis fringilla, magna feugiat conubia luctus posuere suscipit praesent quis. Interdum a iaculis aliquet inceptos vulputate torquent dapibus, ultricies nisl congue leo molestie eu rutrum lectus, ac non pretium magna ad primis. Cursus dui tempus iaculis nostra habitant quis platea hendrerit, purus augue massa elementum dapibus morbi ridiculus, magna convallis pretium ac tincidunt inceptos cum.\\n  \"],[13],[1,\"\\n\\n  \"],[10,2],[12],[1,\"\\n    Sociis per justo neque pulvinar orci sagittis tristique tincidunt suspendisse cum est, rhoncus euismod velit interdum condimentum aenean sed hendrerit arcu venenatis, rutrum commodo elementum eros ac at non ullamcorper pellentesque turpis. Tincidunt consequat purus quam ante aliquam mattis scelerisque viverra suspendisse, tellus convallis mollis ornare primis penatibus montes dapibus sagittis fringilla, magna feugiat conubia luctus posuere suscipit praesent quis. Interdum a iaculis aliquet inceptos vulputate torquent dapibus, ultricies nisl congue leo molestie eu rutrum lectus, ac non pretium magna ad primis. Cursus dui tempus iaculis nostra habitant quis platea hendrerit, purus augue massa elementum dapibus morbi ridiculus, magna convallis pretium ac tincidunt inceptos cum.\\n  \"],[13],[1,\"\\n\\n  \"],[10,2],[12],[1,\"\\n    Sociis per justo neque pulvinar orci sagittis tristique tincidunt suspendisse cum est, rhoncus euismod velit interdum condimentum aenean sed hendrerit arcu venenatis, rutrum commodo elementum eros ac at non ullamcorper pellentesque turpis. Tincidunt consequat purus quam ante aliquam mattis scelerisque viverra suspendisse, tellus convallis mollis ornare primis penatibus montes dapibus sagittis fringilla, magna feugiat conubia luctus posuere suscipit praesent quis. Interdum a iaculis aliquet inceptos vulputate torquent dapibus, ultricies nisl congue leo molestie eu rutrum lectus, ac non pretium magna ad primis. Cursus dui tempus iaculis nostra habitant quis platea hendrerit, purus augue massa elementum dapibus morbi ridiculus, magna convallis pretium ac tincidunt inceptos cum.\\n  \"],[13],[1,\"\\n\"],[13]],[\"@close\"],false,[\"action\"]]",
+    "id": "sTDGooRM",
+    "block": "[[[10,0],[14,0,\"modal modal1\"],[12],[1,\"\\n  \"],[11,\"button\"],[24,4,\"button\"],[4,[38,0],[[30,0],[30,1]],null],[12],[1,\"Close\"],[13],[1,\"\\n  \"],[11,\"button\"],[24,\"data-test-show-modal-2\",\"\"],[24,4,\"button\"],[4,[38,0],[[30,0],\"showModal2\"],null],[12],[1,\"Open another modal\"],[13],[1,\"\\n\\n  \"],[10,\"h2\"],[12],[1,\"Modal 1\"],[13],[1,\"\\n\\n  \"],[10,2],[12],[1,\"\\n    Sociis per justo neque pulvinar orci sagittis tristique tincidunt suspendisse cum est, rhoncus euismod velit interdum condimentum aenean sed hendrerit arcu venenatis, rutrum commodo elementum eros ac at non ullamcorper pellentesque turpis. Tincidunt consequat purus quam ante aliquam mattis scelerisque viverra suspendisse, tellus convallis mollis ornare primis penatibus montes dapibus sagittis fringilla, magna feugiat conubia luctus posuere suscipit praesent quis. Interdum a iaculis aliquet inceptos vulputate torquent dapibus, ultricies nisl congue leo molestie eu rutrum lectus, ac non pretium magna ad primis. Cursus dui tempus iaculis nostra habitant quis platea hendrerit, purus augue massa elementum dapibus morbi ridiculus, magna convallis pretium ac tincidunt inceptos cum.\\n  \"],[13],[1,\"\\n\\n  \"],[10,2],[12],[1,\"\\n    Sociis per justo neque pulvinar orci sagittis tristique tincidunt suspendisse cum est, rhoncus euismod velit interdum condimentum aenean sed hendrerit arcu venenatis, rutrum commodo elementum eros ac at non ullamcorper pellentesque turpis. Tincidunt consequat purus quam ante aliquam mattis scelerisque viverra suspendisse, tellus convallis mollis ornare primis penatibus montes dapibus sagittis fringilla, magna feugiat conubia luctus posuere suscipit praesent quis. Interdum a iaculis aliquet inceptos vulputate torquent dapibus, ultricies nisl congue leo molestie eu rutrum lectus, ac non pretium magna ad primis. Cursus dui tempus iaculis nostra habitant quis platea hendrerit, purus augue massa elementum dapibus morbi ridiculus, magna convallis pretium ac tincidunt inceptos cum.\\n  \"],[13],[1,\"\\n\\n  \"],[10,2],[12],[1,\"\\n    Sociis per justo neque pulvinar orci sagittis tristique tincidunt suspendisse cum est, rhoncus euismod velit interdum condimentum aenean sed hendrerit arcu venenatis, rutrum commodo elementum eros ac at non ullamcorper pellentesque turpis. Tincidunt consequat purus quam ante aliquam mattis scelerisque viverra suspendisse, tellus convallis mollis ornare primis penatibus montes dapibus sagittis fringilla, magna feugiat conubia luctus posuere suscipit praesent quis. Interdum a iaculis aliquet inceptos vulputate torquent dapibus, ultricies nisl congue leo molestie eu rutrum lectus, ac non pretium magna ad primis. Cursus dui tempus iaculis nostra habitant quis platea hendrerit, purus augue massa elementum dapibus morbi ridiculus, magna convallis pretium ac tincidunt inceptos cum.\\n  \"],[13],[1,\"\\n\"],[13]],[\"@close\"],false,[\"action\"]]",
     "moduleName": "dummy/templates/components/modal1.hbs",
+    "isStrictMode": false
+  });
+
+  _exports.default = _default;
+});
+;define("dummy/templates/components/modal2", ["exports", "@ember/template-factory"], function (_exports, _templateFactory) {
+  "use strict";
+
+  Object.defineProperty(_exports, "__esModule", {
+    value: true
+  });
+  _exports.default = void 0;
+
+  var _default = (0, _templateFactory.createTemplateFactory)({
+    "id": "QuLeNnmb",
+    "block": "[[[10,0],[14,0,\"modal modal2\"],[12],[1,\"\\n  \"],[11,\"button\"],[24,4,\"button\"],[4,[38,0],[[30,0],[30,1]],null],[12],[1,\"Close\"],[13],[1,\"\\n\\n  \"],[10,\"h2\"],[12],[1,\"Modal 2\"],[13],[1,\"\\n\\n  \"],[10,2],[12],[1,\"\\n    Sociis per justo neque pulvinar orci sagittis tristique tincidunt suspendisse cum est, rhoncus euismod velit interdum condimentum aenean sed hendrerit arcu venenatis, rutrum commodo elementum eros ac at non ullamcorper pellentesque turpis. Tincidunt consequat purus quam ante aliquam mattis scelerisque viverra suspendisse, tellus convallis mollis ornare primis penatibus montes dapibus sagittis fringilla, magna feugiat conubia luctus posuere suscipit praesent quis. Interdum a iaculis aliquet inceptos vulputate torquent dapibus, ultricies nisl congue leo molestie eu rutrum lectus, ac non pretium magna ad primis. Cursus dui tempus iaculis nostra habitant quis platea hendrerit, purus augue massa elementum dapibus morbi ridiculus, magna convallis pretium ac tincidunt inceptos cum.\\n  \"],[13],[1,\"\\n\"],[13]],[\"@close\"],false,[\"action\"]]",
+    "moduleName": "dummy/templates/components/modal2.hbs",
     "isStrictMode": false
   });
 

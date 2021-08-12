@@ -46,14 +46,10 @@ define("dummy/tests/application/basics-test", ["@ember/test-helpers", "ember-qun
                 return (0, _testHelpers.click)('.epm-backdrop');
 
               case 13:
-                assert.dom('.epm-backdrop').exists();
-                assert.dom('.epm-backdrop').hasStyle({
-                  opacity: '0',
-                  pointerEvents: 'none'
-                });
+                assert.dom('.epm-backdrop').doesNotExist();
                 assert.dom('.epm-modal').doesNotExist();
 
-              case 16:
+              case 15:
               case "end":
                 return _context.stop();
             }
@@ -175,6 +171,132 @@ define("dummy/tests/application/basics-test", ["@ember/test-helpers", "ember-qun
 
       return function (_x4) {
         return _ref4.apply(this, arguments);
+      };
+    }());
+  });
+});
+define("dummy/tests/application/overlapping-modals-test", ["@ember/test-helpers", "ember-qunit", "qunit", "ember-promise-modals/test-support"], function (_testHelpers, _emberQunit, _qunit, _testSupport) {
+  "use strict";
+
+  function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
+
+  function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
+
+  (0, _qunit.module)('Application | overlapping modals', function (hooks) {
+    (0, _emberQunit.setupApplicationTest)(hooks);
+    (0, _testSupport.setupPromiseModals)(hooks);
+    (0, _qunit.test)('every modal should have a dedicated backdrop', /*#__PURE__*/function () {
+      var _ref = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee(assert) {
+        return regeneratorRuntime.wrap(function _callee$(_context) {
+          while (1) {
+            switch (_context.prev = _context.next) {
+              case 0:
+                _context.next = 2;
+                return (0, _testHelpers.visit)('/');
+
+              case 2:
+                assert.dom('.epm-backdrop').doesNotExist();
+                assert.dom('.epm-modal').doesNotExist();
+                _context.next = 6;
+                return (0, _testHelpers.click)('[data-test-show-modal]');
+
+              case 6:
+                assert.dom('.epm-modal').exists();
+                assert.dom('.epm-backdrop').exists({
+                  count: 1
+                });
+                _context.next = 10;
+                return (0, _testHelpers.click)('[data-test-show-modal-2]');
+
+              case 10:
+                _context.next = 12;
+                return (0, _testHelpers.waitUntil)(function () {
+                  var _window$getComputedSt = window.getComputedStyle(document.querySelector('[data-test-epm-backdrop="1"]')),
+                      opacity = _window$getComputedSt.opacity;
+
+                  return opacity === '1';
+                });
+
+              case 12:
+                assert.dom('[data-test-epm-backdrop="0"]').hasStyle({
+                  opacity: '1',
+                  pointerEvents: 'auto'
+                });
+                assert.dom('[data-test-epm-backdrop="1"]').hasStyle({
+                  opacity: '1',
+                  pointerEvents: 'auto'
+                });
+
+              case 14:
+              case "end":
+                return _context.stop();
+            }
+          }
+        }, _callee);
+      }));
+
+      return function (_x) {
+        return _ref.apply(this, arguments);
+      };
+    }());
+    (0, _qunit.test)('clicking a backdrop closes the associated modal', /*#__PURE__*/function () {
+      var _ref2 = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee2(assert) {
+        return regeneratorRuntime.wrap(function _callee2$(_context2) {
+          while (1) {
+            switch (_context2.prev = _context2.next) {
+              case 0:
+                _context2.next = 2;
+                return (0, _testHelpers.visit)('/');
+
+              case 2:
+                assert.dom('.epm-backdrop').doesNotExist();
+                assert.dom('.epm-modal').doesNotExist();
+                _context2.next = 6;
+                return (0, _testHelpers.click)('[data-test-show-modal]');
+
+              case 6:
+                _context2.next = 8;
+                return (0, _testHelpers.click)('[data-test-show-modal-2]');
+
+              case 8:
+                assert.dom('.epm-backdrop').exists({
+                  count: 2
+                });
+                assert.dom('.epm-modal').exists({
+                  count: 2
+                });
+                _context2.next = 12;
+                return (0, _testHelpers.click)('[data-test-epm-backdrop="1"]');
+
+              case 12:
+                assert.dom('[data-test-epm-backdrop="1"]').doesNotExist();
+                assert.dom('[data-test-epm-modal="1"]').doesNotExist(); // check that there are still a modal and a backdrop left
+
+                assert.dom('.epm-backdrop').exists({
+                  count: 1
+                });
+                assert.dom('.epm-modal').exists({
+                  count: 1
+                });
+                _context2.next = 18;
+                return (0, _testHelpers.click)('[data-test-epm-backdrop="0"]');
+
+              case 18:
+                assert.dom('[data-test-epm-modal="0"]').doesNotExist(); // check that there are no modals nor backdrops left
+
+                assert.dom('.epm-backdrop').doesNotExist();
+                assert.dom('.epm-modal').doesNotExist();
+
+              case 21:
+              case "end":
+                return _context2.stop();
+            }
+          }
+        }, _callee2);
+      }));
+
+      return function (_x2) {
+        return _ref2.apply(this, arguments);
       };
     }());
   });
