@@ -1,5 +1,5 @@
 import { A } from '@ember/array';
-import { computed, set } from '@ember/object';
+import { computed } from '@ember/object';
 import { alias } from '@ember/object/computed';
 import Service from '@ember/service';
 
@@ -12,7 +12,6 @@ export default Service.extend({
   top: alias('_stack.lastObject'),
 
   clickOutsideDeactivates: true,
-  _renderBackdrop: false,
 
   init() {
     this._super(...arguments);
@@ -36,7 +35,6 @@ export default Service.extend({
   },
 
   _onFirstModalAdded() {
-    set(this, '_renderBackdrop', true);
     document.body.classList.add('epm-scrolling-disabled');
   },
 
