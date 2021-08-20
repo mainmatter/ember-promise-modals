@@ -1,61 +1,50 @@
-<h1>ember-promise-modals</h1>
+<header>
+  <h1>
+    <a href="https://github.com/simplabs/ember-promise-modals">
+      <img src="./ember-promise-modals-logo.svg" alt="ember-promise-modals" width="600" height="400" />
+    </a>
+  </h1>
+</header>
 
-<p>
-  Lorem ipsum dolor sit amet consectetur adipiscing elit tempus iaculis, nunc ridiculus pretium donec justo tempor nulla felis nec, est class libero suscipit duis ut erat eget. Orci ultricies at faucibus accumsan pulvinar dictum, quisque ridiculus dictumst fermentum dui per vivamus, volutpat imperdiet justo taciti sed. Praesent facilisis hac nostra suspendisse volutpat ultrices aliquet vestibulum molestie diam aenean justo, dignissim semper etiam rutrum elementum metus ullamcorper per parturient venenatis orci, phasellus class ac mollis et sagittis varius ridiculus porta vehicula fermentum. Class lacus penatibus nam ornare eleifend etiam parturient posuere ut taciti, euismod ultricies diam purus risus blandit platea netus ac, pharetra integer sed est facilisis nibh venenatis aliquam maecenas.
-</p>
+<main>
+  <p>
+    Code for the demonstrations shown here can be found in the <a href="https://github.com/simplabs/ember-promise-modals/tree/master/tests/dummy" target="_blank" rel="noopener noreferrer">dummy application of the addon</a>.
+  </p>
 
-<p>
-  Turpis placerat faucibus et primis phasellus metus cursus ac pretium, pharetra class feugiat dignissim vulputate magnis nullam. Mollis sodales tempus lacinia montes hac ante viverra, fusce laoreet libero urna integer quam cras, nascetur facilisis vivamus turpis habitasse consequat. Cursus pretium vitae tristique eget sed mauris cras vivamus, tincidunt himenaeos aliquam mi est felis tempus, curabitur dictumst taciti et suspendisse varius euismod.
-</p>
+  <div class="box box-blue">
+    <p>
+      <button type="button" data-test-show-modal {{action "showModal"}}>A simple modal with a button to close it </button>
+    </p>
+  </div>
 
-<p>
-  Laoreet tincidunt blandit tempor viverra dui volutpat natoque, ut vestibulum mauris posuere arcu ante sociosqu nostra, habitant dapibus torquent litora id porttitor. Nec faucibus rhoncus vestibulum ultricies augue imperdiet, accumsan sem penatibus parturient curabitur, hendrerit hac auctor eros natoque. Lacinia placerat eu suscipit curae cubilia potenti sociosqu, iaculis quis per augue vulputate risus sed, nunc netus habitasse vel mollis mauris.
-</p>
+  <p>Examples for custom animations</p>
 
-<button type="button" data-test-show-modal {{action "showModal"}}>Show Modal default</button>
+  <div class="box box-green">
+    <p>
+      <button type="button" data-test-show-modal {{action "showModalFromBottom"}}>From and to the bottom of the window</button>
+    </p>
+    <p>
+      <button type="button" data-test-show-modal {{action "showModalFromTop"}}>From and to the top of the window</button>
+    </p>
+  </div>
 
-<button type="button" data-test-show-modal {{action "showModalFromBottom"}}>Show Modal from bottom</button>
+  <p>See the <a href="https://github.com/simplabs/ember-promise-modals#readme" target="_blank" rel="noopener noreferrer">README on GitHub</a> for setup &amp; further instructions.</p>
 
-<button type="button" data-test-show-modal {{action "showModalFromTop"}}>Show Modal from top</button>
+  <div class="box box-placeholder">
+    <p>
+      <small>
+        Left blank to see <br />how scrolling is handled.
+      </small>
+    </p>
+  </div>
 
-<p>
-  Aenean nostra egestas in eu nunc consequat praesent scelerisque vivamus, mattis curabitur luctus pharetra curae vestibulum phasellus class, natoque dis proin aptent blandit condimentum mi vel. Sapien non integer nulla quam mauris turpis nisl erat, himenaeos inceptos cum aliquam congue consequat donec malesuada, orci a viverra montes cursus posuere nisi, penatibus suscipit magna potenti nostra semper scelerisque. Eu sodales magna accumsan ante lobortis mauris, sollicitudin luctus class aliquam facilisi vulputate, fusce phasellus cubilia porttitor mus.
-</p>
+  <p>ember-promise-modals is <br />made &amp; sponsored with ❤️ by <a href="https://simplabs.com" target="_blank" rel="noopener noreferrer">simplabs</a></p>
+</main>
 
-<p>
-  Consequat libero lobortis primis platea mus, potenti nunc quam urna senectus pretium, suscipit sociosqu pharetra magna. Magnis platea senectus taciti lectus imperdiet volutpat metus nec enim interdum facilisi, mi faucibus laoreet tristique conubia pulvinar dictumst luctus natoque. Nisl arcu blandit phasellus pharetra sagittis facilisis, nascetur at habitant tempus suspendisse, dis morbi fusce euismod litora.
-</p>
-
-<p>
-  Id suspendisse volutpat tortor proin varius senectus mus per laoreet cubilia mattis cras, fermentum velit eros orci tristique elementum quisque morbi fringilla eu. Rhoncus lacus viverra arcu praesent lectus, ridiculus nunc interdum primis est eget, massa senectus mus suscipit. Torquent fermentum taciti massa mauris eros iaculis primis condimentum suspendisse mi odio, nascetur aptent hac habitant eleifend consequat convallis etiam blandit penatibus praesent semper, vitae rutrum ante varius montes augue scelerisque eu mattis purus.
-</p>
-
-<p>
-  Tincidunt quisque nulla mauris semper nisi etiam, nascetur habitasse felis a eu pulvinar fringilla, hendrerit blandit morbi ad condimentum. Maecenas erat facilisis arcu per non auctor proin phasellus, tempus diam nulla placerat hac aliquam suspendisse dignissim, dui vulputate a ultricies dictum convallis tempor.
-</p>
-
-<p>
-  Ut justo leo et sapien lobortis magna senectus, vehicula semper tempus vivamus rhoncus id sociis, habitasse quis arcu viverra curabitur platea, ante velit montes taciti eros vel. Fringilla auctor est aliquam facilisi magnis senectus dictum, diam elementum molestie taciti eleifend sollicitudin pulvinar varius, sapien magna laoreet metus venenatis sociosqu. Libero aliquam magnis volutpat risus semper curabitur sociosqu auctor natoque, lacinia ultricies non justo magna imperdiet at. Platea mi habitant nibh turpis fames sociis, donec non malesuada hac habitasse, aliquam est suspendisse ut cum.
-</p>
-
-<p>
-  Parturient suscipit blandit nisl nam turpis aenean, velit commodo pellentesque erat mus tempor, mollis neque ridiculus dictumst nostra. Nec potenti augue vulputate nascetur quisque ac proin aptent quis, nibh sociosqu ante rhoncus sodales accumsan primis congue, per interdum morbi in ornare habitant semper vestibulum. Pellentesque imperdiet dis nunc molestie congue blandit at, netus etiam pharetra montes tincidunt venenatis interdum taciti, magna tempor tempus sociis mauris ligula.
-</p>
-
-<p>
-  Sociis per justo neque pulvinar orci sagittis tristique tincidunt suspendisse cum est, rhoncus euismod velit interdum condimentum aenean sed hendrerit arcu venenatis, rutrum commodo elementum eros ac at non ullamcorper pellentesque turpis. Tincidunt consequat purus quam ante aliquam mattis scelerisque viverra suspendisse, tellus convallis mollis ornare primis penatibus montes dapibus sagittis fringilla, magna feugiat conubia luctus posuere suscipit praesent quis. Interdum a iaculis aliquet inceptos vulputate torquent dapibus, ultricies nisl congue leo molestie eu rutrum lectus, ac non pretium magna ad primis. Cursus dui tempus iaculis nostra habitant quis platea hendrerit, purus augue massa elementum dapibus morbi ridiculus, magna convallis pretium ac tincidunt inceptos cum.
-</p>
-
-<p>
-  Lorem ipsum dolor sit amet consectetur adipiscing elit tempus iaculis, nunc ridiculus pretium donec justo tempor nulla felis nec, est class libero suscipit duis ut erat eget. Orci ultricies at faucibus accumsan pulvinar dictum, quisque ridiculus dictumst fermentum dui per vivamus, volutpat imperdiet justo taciti sed. Praesent facilisis hac nostra suspendisse volutpat ultrices aliquet vestibulum molestie diam aenean justo, dignissim semper etiam rutrum elementum metus ullamcorper per parturient venenatis orci, phasellus class ac mollis et sagittis varius ridiculus porta vehicula fermentum. Class lacus penatibus nam ornare eleifend etiam parturient posuere ut taciti, euismod ultricies diam purus risus blandit platea netus ac, pharetra integer sed est facilisis nibh venenatis aliquam maecenas.
-</p>
-
-<p>
-  Turpis placerat faucibus et primis phasellus metus cursus ac pretium, pharetra class feugiat dignissim vulputate magnis nullam. Mollis sodales tempus lacinia montes hac ante viverra, fusce laoreet libero urna integer quam cras, nascetur facilisis vivamus turpis habitasse consequat. Cursus pretium vitae tristique eget sed mauris cras vivamus, tincidunt himenaeos aliquam mi est felis tempus, curabitur dictumst taciti et suspendisse varius euismod.
-</p>
-
-<p>
-  Laoreet tincidunt blandit tempor viverra dui volutpat natoque, ut vestibulum mauris posuere arcu ante sociosqu nostra, habitant dapibus torquent litora id porttitor. Nec faucibus rhoncus vestibulum ultricies augue imperdiet, accumsan sem penatibus parturient curabitur, hendrerit hac auctor eros natoque. Lacinia placerat eu suscipit curae cubilia potenti sociosqu, iaculis quis per augue vulputate risus sed, nunc netus habitasse vel mollis mauris.
-</p>
+<footer>
+  <p>
+    <small>ember-promise-modals is not an official part of Ember.js and is not maintained by the Ember.js Core Team.</small>
+  </p>
+</footer>
 
 <EpmModalContainer />
