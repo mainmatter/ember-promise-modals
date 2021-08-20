@@ -44,7 +44,8 @@ module.exports = function (environment) {
   }
 
   if (environment === 'production') {
-    // here you can enable a production-specific feature
+    // Update root URL for GitHub pages
+    ENV.rootURL = '/ember-promise-modals/';
   }
 
   return ENV;
