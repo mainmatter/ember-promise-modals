@@ -1,4 +1,4 @@
-<p align="center"><img src=".github/epm.svg" role="presentation" alt="" /></p>
+<p align="center"><img src="./tests/dummy/public/ember-promise-modals-logo.svg" role="presentation" alt="" width="600" height="400" /></p>
 
 # ember-promise-modals
 
@@ -24,21 +24,7 @@ To use EPM in your project, add the target for the modals to your `application.h
 <EpmModalContainer />
 ```
 
-Then you need to inject the `modals` service wherever you need to open a modal:
-
-```javascript
-@service modals;
-```
-
-Now you can call the `open` method with a component name to render it as a modal:
-
-```javascript
-this.modals.open('component-to-render');
-```
-
-### Basic usage
-
-Here is a basic code example:
+Then you can to inject the `modals` service wherever you need and call its `open` method with a component name to render it as a modal.
 
 ```javascript
 import { inject as service } from '@ember/service';
@@ -53,15 +39,13 @@ export default class extends Component {
 }
 ```
 
-Then in your template, you can:
-
 ```handlebars
-<button {{on "click" this.handleOpenModal}}>
+<button type="button" {{on "click" this.handleOpenModal}}>
   Click Me!
 </button>
 ```
 
-### Attributes
+### Passing data to the rendered component
 
 You can pass custom data into your rendered template like so:
 
@@ -74,30 +58,26 @@ this.modals.open('file-preview', {
 All passed attributes can be accessed from the passed-in `data` object:
 
 ```handlebars
-<!-- app/components/file-preview.hbs -->
-
+<!-- components/file-preview.hbs -->
 <img src={{@data.fileUrl}} />
 ```
 
 ```javascript
-// app/components/file-preview.js
-
-this.data.fileUrl; // or this.args.data.fileUrl in Glimmer components
+// components/file-preview.js
+this.args.data.fileUrl; // or this.data.fileUrl in classic components
 ```
 
 **NOTE:** By default, a `close` method is passed in your rendered component, in
 order to trigger the "close modal" action. It can be called like so:
 
 ```handlebars
-<!-- app/components/file-preview.hbs -->
-
+<!-- components/file-preview.hbs -->
 <button {{on "click" @close}}>Close</button>
 ```
 
 ```javascript
-// app/components/file-preview.js
-
-this.close(); // or this.args.close() in Glimmer components
+// components/file-preview.js
+this.args.close(); // or this.close() in classic components
 ```
 
 ## Animation
