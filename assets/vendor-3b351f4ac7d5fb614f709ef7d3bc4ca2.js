@@ -4294,7 +4294,7 @@ e.default=function e(){(function(e,t){if(!(e instanceof t))throw new TypeError("
 Object.defineProperty(e,"__esModule",{value:!0}),e.default=function(e,t){var n=e
 0
 return n};(0,t.default)("@ember/test-waiters:promise-waiter")})),define("@ember/test-waiters/wait-for",["exports","@ember/test-waiters/wait-for-promise","@ember/test-waiters/build-waiter"],(function(e,t,n){"use strict"
-function r(e,t){return function(e){if(Array.isArray(e))return e}(e)||function(e,t){var n=e&&("undefined"!=typeof Symbol&&e[Symbol.iterator]||e["@@iterator"])
+function r(e,t){return function(e){if(Array.isArray(e))return e}(e)||function(e,t){var n=null==e?null:"undefined"!=typeof Symbol&&e[Symbol.iterator]||e["@@iterator"]
 if(null==n)return
 var r,i,o=[],a=!0,s=!1
 try{for(n=n.call(e);!(a=(r=n.next()).done)&&(o.push(r.value),!t||o.length!==t);a=!0);}catch(u){s=!0,i=u}finally{try{a||null==n.return||n.return()}finally{if(s)throw i}}return o}(e,t)||function(e,t){if(!e)return
