@@ -16,12 +16,8 @@
   padding: 1.5rem;
 }
 
-.modal1 {
-  width: 600px;
-}
-
 .modal2 {
-  width: 400px;
+  max-width: 400px;
 }
 
 /* === Variation 1: Custom animation which animates the modal in from the bottom and back */
