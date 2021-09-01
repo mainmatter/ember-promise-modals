@@ -1,5 +1,29 @@
 # Changelog
 
+## v2.0.0 (2021-09-01)
+
+#### :boom: Breaking Change
+* [#427](https://github.com/simplabs/ember-promise-modals/pull/427) Generate one backdrop per modal ([@aoumiri](https://github.com/aoumiri))
+
+#### :rocket: Enhancement
+* [#427](https://github.com/simplabs/ember-promise-modals/pull/427) Generate one backdrop per modal ([@aoumiri](https://github.com/aoumiri))
+
+#### :memo: Documentation
+* [#432](https://github.com/simplabs/ember-promise-modals/pull/432) Fix responsiveness of dummy app ([@nickschot](https://github.com/nickschot))
+* [#414](https://github.com/simplabs/ember-promise-modals/pull/414) Improve README and dummy application ([@pichfl](https://github.com/pichfl))
+
+#### :house: Internal
+* [#431](https://github.com/simplabs/ember-promise-modals/pull/431) Use env=production when building the dummy application ([@pichfl](https://github.com/pichfl))
+* [#430](https://github.com/simplabs/ember-promise-modals/pull/430) Update production build path for GitHub pages ([@pichfl](https://github.com/pichfl))
+* [#415](https://github.com/simplabs/ember-promise-modals/pull/415) Deploy dummy application to Github pages ([@pichfl](https://github.com/pichfl))
+
+#### Committers: 4
+- Anass OUMIRI ([@aoumiri](https://github.com/aoumiri))
+- Florian Pichler ([@pichfl](https://github.com/pichfl))
+- Nick Schot ([@nickschot](https://github.com/nickschot))
+- [@dependabot-preview[bot]](https://github.com/apps/dependabot-preview)
+
+
 ## v1.1.1 (2021-07-27)
 
 #### :bug: Bug Fix
