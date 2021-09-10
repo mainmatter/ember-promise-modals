@@ -8,7 +8,7 @@ e.default=i})),define("dummy/controllers/application",["exports","@ember/control
 var i=t.default.extend({modals:(0,n.inject)(),actions:{showModal:function(){this.modals.open("modal1")},showModalFromTop:function(){this.modals.open("modal1",null,{className:"from-top"})},showModalFromBottom:function(){this.modals.open("modal1",null,{className:"from-bottom"})}}})
 e.default=i})),define("dummy/initializers/container-debug-adapter",["exports","ember-resolver/resolvers/classic/container-debug-adapter"],(function(e,t){Object.defineProperty(e,"__esModule",{value:!0}),e.default=void 0
 var n={name:"container-debug-adapter",initialize:function(){var e=arguments[1]||arguments[0]
-e.register("container-debug-adapter:main",t.default),e.inject("container-debug-adapter:main","namespace","application:main")}}
+e.register("container-debug-adapter:main",t.default)}}
 e.default=n})),define("dummy/initializers/export-application-global",["exports","ember","dummy/config/environment"],(function(e,t,n){function i(){var e=arguments[1]||arguments[0]
 if(!1!==n.default.exportApplicationGlobal){var i
 if("undefined"!=typeof window)i=window

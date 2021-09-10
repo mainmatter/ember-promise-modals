@@ -4366,17 +4366,17 @@ Object.defineProperty(e,"__esModule",{value:!0}),e.default=void 0
 var n=(0,t.createTemplateFactory)({id:"hXLAIQeB",block:'[[[10,0],[15,1,[30,0,["modalElementId"]]],[15,0,[29,["epm-modal ",[30,0,["optionsClassName"]]," ",[30,0,["animatingOutClass"]]]]],[12],[1,"\\n  "],[46,[30,1,["_name"]],null,[["data","close"],[[30,1,["_data"]],[28,[37,1],[[30,0],"close"],null]]],null],[1,"\\n"],[13]],["@modal"],false,["component","action"]]',moduleName:"ember-promise-modals/templates/components/modal.hbs",isStrictMode:!1})
 e.default=n})),define("ember-resolver/features",[],(function(){})),define("ember-resolver/index",["exports","ember-resolver/resolvers/classic"],(function(e,t){"use strict"
 Object.defineProperty(e,"__esModule",{value:!0}),Object.defineProperty(e,"default",{enumerable:!0,get:function(){return t.default}})})),define("ember-resolver/resolver",["exports","ember-resolver/resolvers/classic"],(function(e,t){"use strict"
-Object.defineProperty(e,"__esModule",{value:!0}),Object.defineProperty(e,"default",{enumerable:!0,get:function(){return t.default}})})),define("ember-resolver/resolvers/classic/container-debug-adapter",["exports","@ember/array","@ember/debug/container-debug-adapter","ember-resolver/resolvers/classic/index"],(function(e,t,n,r){"use strict"
-function i(e,t,n){var r=t.match(new RegExp("^/?"+n+"/(.+)/"+e+"$"))
+Object.defineProperty(e,"__esModule",{value:!0}),Object.defineProperty(e,"default",{enumerable:!0,get:function(){return t.default}})})),define("ember-resolver/resolvers/classic/container-debug-adapter",["exports","@ember/array","@ember/debug/container-debug-adapter","ember-resolver/resolvers/classic/index","@ember/application"],(function(e,t,n,r,i){"use strict"
+function o(e,t,n){var r=t.match(new RegExp("^/?"+n+"/(.+)/"+e+"$"))
 if(null!==r)return r[1]}Object.defineProperty(e,"__esModule",{value:!0}),e.default=void 0
-var o=n.default.extend({_moduleRegistry:null,init:function(){this._super.apply(this,arguments),this._moduleRegistry||(this._moduleRegistry=new r.ModuleRegistry)},canCatalogEntriesByType:function(e){return"model"===e||this._super.apply(this,arguments)},catalogEntriesByType:function(e){for(var n=this._moduleRegistry.moduleNames(),r=(0,t.A)(),o=this.namespace.modulePrefix,a=0,s=n.length;a<s;a++){var u=n[a]
-if(-1!==u.indexOf(e)){var l=i(e,u,this.namespace.podModulePrefix||o)
+var a=n.default.extend({_moduleRegistry:null,init:function(){this._super.apply(this,arguments),this.namespace=(0,i.getOwner)(this).lookup("application:main"),this._moduleRegistry||(this._moduleRegistry=new r.ModuleRegistry)},canCatalogEntriesByType:function(e){return"model"===e||this._super.apply(this,arguments)},catalogEntriesByType:function(e){for(var n=this._moduleRegistry.moduleNames(),r=(0,t.A)(),i=this.namespace.modulePrefix,a=0,s=n.length;a<s;a++){var u=n[a]
+if(-1!==u.indexOf(e)){var l=o(e,u,this.namespace.podModulePrefix||i)
 l||(l=u.split(e+"s/").pop()),r.addObject(l)}}return r}})
-e.default=o})),define("ember-resolver/resolvers/classic/index",["exports","ember","@ember/debug","@ember/object","@ember/string","ember-resolver/utils/class-factory"],(function(e,t,n,r,i,o){"use strict"
+e.default=a})),define("ember-resolver/resolvers/classic/index",["exports","ember","@ember/debug","@ember/object","@ember/string","ember-resolver/utils/class-factory"],(function(e,t,n,r,i,o){"use strict"
 function a(e,t){for(var n=0;n<t.length;n++){var r=t[n]
 r.enumerable=r.enumerable||!1,r.configurable=!0,"value"in r&&(r.writable=!0),Object.defineProperty(e,r.key,r)}}Object.defineProperty(e,"__esModule",{value:!0}),e.default=e.ModuleRegistry=void 0,void 0===requirejs.entries&&(requirejs.entries=requirejs._eak_seen)
 var s=function(){function e(t){(function(e,t){if(!(e instanceof t))throw new TypeError("Cannot call a class as a function")})(this,e),this._entries=t||requirejs.entries}var t,n,r
-return t=e,(n=[{key:"moduleNames",value:function(){return Object.keys(this._entries)}},{key:"has",value:function(e){return e in this._entries}},{key:"get",value:function(e){return require(e)}}])&&a(t.prototype,n),r&&a(t,r),e}()
+return t=e,(n=[{key:"moduleNames",value:function(){return Object.keys(this._entries)}},{key:"has",value:function(e){return e in this._entries}},{key:"get",value:function(){return require.apply(void 0,arguments)}}])&&a(t.prototype,n),r&&a(t,r),e}()
 e.ModuleRegistry=s
 var u=r.default.extend({resolveOther:function(e){var t=this.findModuleName(e)
 if(t){var n=this._extractDefaultExport(t,e)
@@ -4414,7 +4414,7 @@ i=n.fullName.length>60?".":new Array(60-n.fullName.length).join("."),r||(r=this.
 a&&(n[a]=!0)}return n},translateToContainerFullname:function(e,t){var n=this.prefix({type:e}),r=n+"/",i="/"+e,o=t.indexOf(r),a=t.indexOf(i)
 if(0===o&&a===t.length-i.length&&t.length>r.length+i.length)return e+":"+t.slice(o+r.length,a)
 var s=n+"/"+this.pluralize(e)+"/"
-return 0===t.indexOf(s)&&t.length>s.length?e+":"+t.slice(s.length):void 0},_extractDefaultExport:function(e){var t=require(e,null,null,!0)
+return 0===t.indexOf(s)&&t.length>s.length?e+":"+t.slice(s.length):void 0},_extractDefaultExport:function(e){var t=this._moduleRegistry.get(e,null,null,!0)
 return t&&t.default&&(t=t.default),t}})
 u.reopenClass({moduleBasedResolver:!0})
 var l=u
