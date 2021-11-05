@@ -2,8 +2,8 @@
 
 const funnel = require('broccoli-funnel');
 const mergeTrees = require('broccoli-merge-trees');
-const broccoliPostCSS = require('broccoli-postcss');
-const PresetEnv = require('postcss-preset-env');
+const BroccoliPostCSS = require('broccoli-postcss');
+const postcssPresetEnv = require('postcss-preset-env');
 
 const pkg = require('./package.json');
 
@@ -11,11 +11,10 @@ module.exports = {
   name: require('./package').name,
 
   treeForAddon() {
-    let tree = this._super(...arguments);
-    let app = this._findHost();
-    let options = typeof app.options === 'object' ? app.options : {};
-
-    let addonConfig = options[pkg.name] || {};
+    const tree = this._super(...arguments);
+    const app = this._findHost();
+    const options = typeof app.options === 'object' ? app.options : {};
+    const addonConfig = options[pkg.name] || {};
 
     const addonWithoutStyles = funnel(tree, {
       exclude: ['**/*.css'],
@@ -29,12 +28,15 @@ module.exports = {
       include: ['**/*.css'],
     });
 
-    const processedStyles = broccoliPostCSS(addonStyles, {
+    const processedStyles = new BroccoliPostCSS(addonStyles, {
       plugins: [
-        PresetEnv({
-          stage: 3,
-          overrideBrowserslist: app.project._targets.browsers,
-        }),
+        {
+          module: postcssPresetEnv,
+          options: {
+            stage: 3,
+            overrideBrowserslist: app.project._targets.browsers,
+          },
+        },
       ],
     });
 
