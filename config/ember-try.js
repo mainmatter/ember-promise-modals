@@ -46,6 +46,11 @@ module.exports = async function () {
           devDependencies: {
             'ember-source': await getChannelURL('release'),
           },
+          dependencies: {
+            // Will move to package.json when moving to v2 addon format
+            'ember-auto-import': '2.2.3',
+            webpack: '5.61.0',
+          },
         },
       },
       {
