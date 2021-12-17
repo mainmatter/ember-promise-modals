@@ -37,7 +37,7 @@
     "postcss-preset-env": "^6.7.0"
   },
   "devDependencies": {
-    "@babel/eslint-parser": "^7.16.0",
+    "@babel/eslint-parser": "^7.16.5",
     "@ember/optional-features": "^2.0.0",
     "@ember/test-helpers": "^2.6.0",
     "broccoli-asset-rev": "^3.0.0",
