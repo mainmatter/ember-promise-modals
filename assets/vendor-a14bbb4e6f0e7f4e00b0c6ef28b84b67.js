@@ -1,5 +1,5 @@
 window.EmberENV=function(e,t){for(var n in t)e[n]=t[n]
-return e}(window.EmberENV||{},{FEATURES:{},EXTEND_PROTOTYPES:{Date:!1},_APPLICATION_TEMPLATE_WRAPPER:!1,_JQUERY_INTEGRATION:!1})
+return e}(window.EmberENV||{},{FEATURES:{},EXTEND_PROTOTYPES:{Date:!1},_APPLICATION_TEMPLATE_WRAPPER:!1,_DEFAULT_ASYNC_OBSERVERS:!0,_JQUERY_INTEGRATION:!1,_TEMPLATE_ONLY_GLIMMER_COMPONENTS:!0})
 var loader,define,requireModule,require,requirejs,runningTests=!1;(function(e){"use strict"
 function t(){var e=Object.create(null)
 return e.__=void 0,delete e.__,e}var n={loader:loader,define:define,requireModule:requireModule,require:require,requirejs:requirejs}
