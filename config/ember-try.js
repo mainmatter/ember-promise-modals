@@ -33,10 +33,10 @@ module.exports = async function () {
         },
       },
       {
-        name: 'ember-lts-3.16',
+        name: 'ember-lts-3.28',
         npm: {
           devDependencies: {
-            'ember-source': '~3.16.0',
+            'ember-source': '~3.28.0',
           },
         },
       },
@@ -76,6 +76,24 @@ module.exports = async function () {
             // Will move to package.json when moving to v2 addon format
             'ember-auto-import': '2.2.3',
             webpack: '5.61.0',
+          },
+        },
+      },
+      {
+        name: 'ember-classic',
+        env: {
+          EMBER_OPTIONAL_FEATURES: JSON.stringify({
+            'application-template-wrapper': true,
+            'default-async-observers': false,
+            'template-only-glimmer-components': false,
+          }),
+        },
+        npm: {
+          devDependencies: {
+            'ember-source': '~3.28.0',
+          },
+          ember: {
+            edition: 'classic',
           },
         },
       },

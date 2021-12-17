@@ -15,6 +15,7 @@
 /.eslintrc.js
 /.prettierrc.js
 /.git/
+/.github/
 /.gitignore
 /.prettierrc.js
 /.template-lintrc.js
@@ -34,7 +35,12 @@
 # ember-try
 /.node_modules.ember-try/
 /bower.json.ember-try
+/npm-shrinkwrap.json.ember-try
 /package.json.ember-try
 
 # project specific
 /.idea/
+
+# ember-try
+/package-lock.json.ember-try
+/yarn.lock.ember-try
