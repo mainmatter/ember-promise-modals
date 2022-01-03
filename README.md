@@ -199,6 +199,18 @@ EPM will ensure to [focus the first "tabbable element" by default](https://www.w
 If no focusable element is present, focus will be applied on the currently
 visible auto-generated container for the current modal.
 
+To disable focus trap completely, override the default `Modals` service by
+extending it, place it to `app/services/modals.js`, then create a property
+called `disableFocusTrap` set to `true`:
+
+```js
+import BaseModalsService from 'ember-promise-modals/services/modals';
+
+export default class ModalsService extends BaseModalsService {
+  disableFocusTrap = true;
+}
+```
+
 ## Testing
 
 This addon provides a test helper function that reduces the timing for the CSS transitions to near zero to speed up your tests.
