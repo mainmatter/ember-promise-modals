@@ -1,4 +1,5 @@
 import { A } from '@ember/array';
+import { deprecate } from '@ember/debug';
 import { computed } from '@ember/object';
 import { alias } from '@ember/object/computed';
 import Service from '@ember/service';
@@ -11,12 +12,33 @@ export default Service.extend({
   }),
   top: alias('_stack.lastObject'),
 
-  clickOutsideDeactivates: true,
+  focusTrapOptions: undefined,
+  clickOutsideDeactivates: undefined,
   disableFocusTrap: false,
 
   init() {
     this._super(...arguments);
     this._stack = A([]);
+
+    let focusTrapOptions = this.focusTrapOptions ?? {};
+    let clickOutsideDeactivates = focusTrapOptions.clickOutsideDeactivates ?? this.clickOutsideDeactivates ?? true;
+
+    deprecate(
+      'Defining `clickOutsideDeactivates` directly on the `modals` service is deprecated. ' +
+        `Please use \`focusTrapOptions: { clickOutsideDeactivates: ${this.clickOutsideDeactivates} }\` instead.`,
+      typeof this.clickOutsideDeactivates === 'undefined',
+      {
+        id: 'clickOutsideDeactivates-on-modals-service',
+        since: '3.1.0',
+        until: '3.0.0',
+        for: 'ember-promise-modals',
+      },
+    );
+
+    this.focusTrapOptions = {
+      ...this.focusTrapOptions,
+      clickOutsideDeactivates,
+    };
   },
 
   willDestroy() {

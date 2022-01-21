@@ -19,32 +19,49 @@ export default Component.extend({
   optionsClassName: readOnly('modal._options.className'),
 
   modalElementId: null,
+  focusTrapOptions: null,
 
   init() {
     this._super(...arguments);
 
     set(this, 'modalElementId', guidFor(this));
     this.modal._componentInstance = this;
+
+    let { disableFocusTrap, focusTrapOptions: globalFocusTrapOptions } = this.modals;
+
+    if (!disableFocusTrap) {
+      let { focusTrapOptions: localFocusTrapOptions } = this.modal._options;
+
+      this.focusTrapOptions = {
+        ...globalFocusTrapOptions,
+        ...localFocusTrapOptions,
+      };
+    }
   },
 
   didInsertElement() {
     this._super(...arguments);
 
-    let { clickOutsideDeactivates, disableFocusTrap } = this.modals;
     let element = document.getElementById(this.modalElementId);
-    let options = {
-      clickOutsideDeactivates,
-      fallbackFocus: `#${this.modalElementId}`,
-      onDeactivate: () => {
-        if (this.isDestroyed || this.isDestroying) {
-          return;
-        }
 
-        this.closeModal();
-      },
-    };
+    if (this.focusTrapOptions) {
+      let options = {
+        ...this.focusTrapOptions,
+        fallbackFocus: `#${this.modalElementId}`,
+        onDeactivate: () => {
+          let { onDeactivate } = this.focusTrapOptions;
+          if (onDeactivate) {
+            onDeactivate();
+          }
 
-    if (!disableFocusTrap) {
+          if (this.isDestroyed || this.isDestroying) {
+            return;
+          }
+
+          this.closeModal();
+        },
+      };
+
       this.focusTrap = createFocusTrap(element, options);
       this.focusTrap.activate();
     }
@@ -90,7 +107,9 @@ export default Component.extend({
     set(this, 'animatingOutClass', this.outAnimationClass);
 
     if (this.focusTrap) {
-      this.focusTrap.deactivate({ onDeactivate: null });
+      this.focusTrap.deactivate({
+        onDeactivate: this.focusTrapOptions.onDeactivate,
+      });
     }
 
     this.modal._resolve(result);

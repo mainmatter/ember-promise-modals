@@ -199,9 +199,38 @@ EPM will ensure to [focus the first "tabbable element" by default](https://www.w
 If no focusable element is present, focus will be applied on the currently
 visible auto-generated container for the current modal.
 
-To disable focus trap completely, override the default `Modals` service by
-extending it, place it to `app/services/modals.js`, then create a property
-called `disableFocusTrap` set to `true`:
+Focus Trap can be configured both on the `modals` service, and the individual
+modal level when calling `this.modals.open()`. Global and local options are
+merged in that order, which means that if a config key exists at both places,
+the local one will take precedence.
+
+To set global Focus Trap config that all modals inherit, override the default
+`Modals` service by extending it, place it to `app/services/modals.js`, then
+use the `focusTrapOptions` property:
+
+```js
+import BaseModalsService from 'ember-promise-modals/services/modals';
+
+export default class ModalsService extends BaseModalsService {
+  focusTrapOptions = {
+    clickOutsideDeactivates: false,
+  };
+}
+```
+
+Example for local Focus Trap option, when opening a specific modal:
+
+```js
+this.modals.open('file-preview', { fileUrl: this.fileUrl }, {
+  focusTrapOptions: {
+    clickOutsideDeactivates: false,
+  },
+});
+```
+
+To disable Focus Trap completely, create a property called `disableFocusTrap`
+set to `true` on the `modals` service, similarly to the `focusTrapOptions`
+above:
 
 ```js
 import BaseModalsService from 'ember-promise-modals/services/modals';
