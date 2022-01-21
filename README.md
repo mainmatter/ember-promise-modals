@@ -226,17 +226,63 @@ EPM will ensure to [focus the first "tabbable element" by default](https://www.w
 If no focusable element is present, focus will be applied on the currently
 visible auto-generated container for the current modal.
 
-To disable focus trap completely, override the default `Modals` service by
-extending it, place it to `app/services/modals.js`, then create a property
-called `disableFocusTrap` set to `true`:
+Focus Trap can be configured both on the `modals` service, and the individual
+modal level when calling `this.modals.open()`. Global and local options are used
+in that order, which means that local config take precedence.
+
+To set global Focus Trap config that all modals inherit, override the default
+`Modals` service by extending it, place it to `app/services/modals.js`, then
+use the `focusTrapOptions` property:
 
 ```js
 import BaseModalsService from 'ember-promise-modals/services/modals';
 
 export default class ModalsService extends BaseModalsService {
-  disableFocusTrap = true;
+  focusTrapOptions = {
+    clickOutsideDeactivates: false,
+  };
 }
 ```
+
+Example for local Focus Trap option, when opening a specific modal:
+
+```js
+this.modals.open(
+  'file-preview',
+  { fileUrl: this.fileUrl },
+  {
+    focusTrapOptions: {
+      clickOutsideDeactivates: false,
+    },
+  },
+);
+```
+
+To disable Focus Trap completely, set `focusTrapOptions` to `null` on the
+`modals` service:
+
+```js
+import BaseModalsService from 'ember-promise-modals/services/modals';
+
+export default class ModalsService extends BaseModalsService {
+  focusTrapOptions = null;
+}
+```
+
+Or when opening a modal:
+
+```js
+this.modals.open(
+  'file-preview',
+  { fileUrl: this.fileUrl },
+  {
+    focusTrapOptions: null,
+  },
+);
+```
+
+⚠️ _We strongly advise against doing this. This will in most cases worsen the
+accessibility of modals for your users. Be very careful._
 
 ## Testing
 
