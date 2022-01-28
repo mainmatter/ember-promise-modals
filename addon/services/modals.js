@@ -12,6 +12,7 @@ export default Service.extend({
   top: alias('_stack.lastObject'),
 
   clickOutsideDeactivates: true,
+  disableFocusTrap: false,
 
   init() {
     this._super(...arguments);

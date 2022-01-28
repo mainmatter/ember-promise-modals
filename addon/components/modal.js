@@ -30,7 +30,7 @@ export default Component.extend({
   didInsertElement() {
     this._super(...arguments);
 
-    let { clickOutsideDeactivates } = this.modals;
+    let { clickOutsideDeactivates, disableFocusTrap } = this.modals;
     let element = document.getElementById(this.modalElementId);
     let options = {
       clickOutsideDeactivates,
@@ -44,8 +44,10 @@ export default Component.extend({
       },
     };
 
-    this.focusTrap = createFocusTrap(element, options);
-    this.focusTrap.activate();
+    if (!disableFocusTrap) {
+      this.focusTrap = createFocusTrap(element, options);
+      this.focusTrap.activate();
+    }
 
     this.fadeOutEnd = ({ target, animationName }) => {
       this.modals._onModalAnimationEnd();
