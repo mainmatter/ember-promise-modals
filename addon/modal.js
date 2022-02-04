@@ -4,12 +4,31 @@ import { waitForPromise } from '@ember/test-waiters';
 
 import { defer } from 'rsvp';
 
+/**
+ * @typedef {Object} ModalOptions
+ * @property {Function} [onAnimationModalOutEnd]
+ * @property {String} [className] - CSS class name passed to the modal element
+ */
+
+/**
+ * @class Modal
+ * @param {Service} service
+ * @param {String} name
+ * @param {any} data
+ * @param {ModalOptions} options
+ * @method close - closes the modal
+ * @method then - resolves when the modal is closed
+ */
 export default class Modal {
   constructor(service, name, data, options = {}) {
     this._service = service;
     this._name = name;
     this._data = data;
-    this._options = options;
+    this._options = {
+      className: '',
+      onAnimationModalOutEnd: undefined,
+      ...options,
+    };
     this._result = undefined;
     this._deferred = defer();
     this._deferredOutAnimation = undefined;

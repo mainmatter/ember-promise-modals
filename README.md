@@ -33,8 +33,19 @@ export default class extends Component {
   @service modals;
 
   @action
-  handleOpenModal() {
-    this.modals.open('confirmation-modal');
+  async handleOpenModal() {
+    let modal = this.modals.open('confirmation-modal');
+
+    // the instance acts as a promise that resolves with anything passed to the @close function
+    modal.then(results => {
+      // do something with the data
+    });
+
+    // so does `await`ing it!
+    let results = await modal;
+
+    // you can also close the modal from outside
+    modal.close();
   }
 }
 ```
@@ -88,12 +99,12 @@ order to trigger the "close modal" action. It can be called like so:
 
 ```hbs
 <!-- components/file-preview.hbs -->
-<button {{on 'click' @close}}>Close</button>
+<button type='button' {{on 'click' (fn @close results)}}>Close</button>
 ```
 
 ```js
 // components/file-preview.js
-this.args.close(); // or this.close() in classic components
+this.args.close(results); // or this.close() in classic components
 ```
 
 ## Animation

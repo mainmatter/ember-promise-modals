@@ -23,6 +23,12 @@ export default Service.extend({
     this._onLastModalRemoved();
   },
 
+  /**
+   * @param {string} name component path
+   * @param {*} data passed to the component template
+   * @param {ModalOptions} options applied to the modal
+   * @returns {Modal}
+   */
   open(name, data, options) {
     let modal = new Modal(this, name, data, options);
 
