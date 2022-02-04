@@ -45,6 +45,22 @@ export default class extends Component {
 </button>
 ```
 
+### Embroider Optimized Apps
+
+If your application uses [Embroider](https://github.com/embroider-build/embroider), you need to pass the component class to the `open` method instead of just the modals name. This will become the default behavior in the future.
+
+```javascript
+import ConfirmationModal from '../components/confirmation-modal';
+
+export default class extends Component {
+  //...
+  @action
+  handleOpenModal() {
+    this.modals.open(ConfirmationModal);
+  }
+}
+```
+
 ### Passing data to the rendered component
 
 You can pass custom data into your rendered template like so:
