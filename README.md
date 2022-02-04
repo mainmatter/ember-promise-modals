@@ -26,7 +26,7 @@ To use EPM in your project, add the target for the modals to your `application.h
 
 Then you can to inject the `modals` service wherever you need and call its `open` method with a component name to render it as a modal.
 
-```javascript
+```js
 import { inject as service } from '@ember/service';
 
 export default class extends Component {
@@ -39,8 +39,8 @@ export default class extends Component {
 }
 ```
 
-```handlebars
-<button type="button" {{on "click" this.handleOpenModal}}>
+```hbs
+<button type='button' {{on 'click' this.handleOpenModal}}>
   Click Me!
 </button>
 ```
@@ -49,7 +49,7 @@ export default class extends Component {
 
 If your application uses [Embroider](https://github.com/embroider-build/embroider), you need to pass the component class to the `open` method instead of just the modals name. This will become the default behavior in the future.
 
-```javascript
+```js
 import ConfirmationModal from '../components/confirmation-modal';
 
 export default class extends Component {
@@ -65,7 +65,7 @@ export default class extends Component {
 
 You can pass custom data into your rendered template like so:
 
-```javascript
+```js
 this.modals.open('file-preview', {
   fileUrl: this.fileUrl,
 });
@@ -73,12 +73,12 @@ this.modals.open('file-preview', {
 
 All passed attributes can be accessed from the passed-in `data` object:
 
-```handlebars
+```hbs
 <!-- components/file-preview.hbs -->
 <img src={{@data.fileUrl}} />
 ```
 
-```javascript
+```js
 // components/file-preview.js
 this.args.data.fileUrl; // or this.data.fileUrl in classic components
 ```
@@ -86,12 +86,12 @@ this.args.data.fileUrl; // or this.data.fileUrl in classic components
 **NOTE:** By default, a `close` method is passed in your rendered component, in
 order to trigger the "close modal" action. It can be called like so:
 
-```handlebars
+```hbs
 <!-- components/file-preview.hbs -->
-<button {{on "click" @close}}>Close</button>
+<button {{on 'click' @close}}>Close</button>
 ```
 
-```javascript
+```js
 // components/file-preview.js
 this.args.close(); // or this.close() in classic components
 ```
@@ -113,7 +113,7 @@ detected.
 To override the animation for a specific modal, an `options` object containing
 a custom `className` can be handed to the `.open()` method.
 
-```javascript
+```js
 this.modals.open(
   'file-preview',
   {
@@ -124,12 +124,12 @@ this.modals.open(
     className: 'custom-modal',
     // optional: name the animation triggered by the custom css class
     //           animations ending in "-out" are detected by default!
-    //           You most likely do not have to do this unless you absolutely 
+    //           You most likely do not have to do this unless you absolutely
     //           can't have an animation ending in '-out'
     animationKeyframesOutName: 'custom-animation-name-out',
     // optional: a hook that is called when the closing animation of
     //           the modal (so not the backdrop) has finished.
-    onAnimationModalOutEnd: () => {}
+    onAnimationModalOutEnd: () => {},
   },
 );
 ```
@@ -172,12 +172,12 @@ The CSS animations which are applied by the custom CSS class _must_ end in
 
 #### Examples
 
-Examples for custom animations and how to apply them can be found in the addons 
-dummy application. 
+Examples for custom animations and how to apply them can be found in the addons
+dummy application.
 
-See [the application.js controller](./tests/dummy/app/controllers/application.js) 
+See [the application.js controller](./tests/dummy/app/controllers/application.js)
 for how the modals are openend in your JavaScript actions and look at
-[app.css](./tests/dummy/app/styles/app.css) for the style definition of these 
+[app.css](./tests/dummy/app/styles/app.css) for the style definition of these
 custom animations.
 
 ### CSS Variables
