@@ -1,5 +1,6 @@
 // eslint-disable-next-line ember/no-computed-properties-in-native-classes
-import { computed, set } from '@ember/object';
+import EmberObject, { computed, set } from '@ember/object';
+import { alias, notEmpty } from '@ember/object/computed';
 import { waitForPromise } from '@ember/test-waiters';
 
 import { defer } from 'rsvp';
@@ -19,40 +20,47 @@ import { defer } from 'rsvp';
  * @method close - closes the modal
  * @method then - resolves when the modal is closed
  */
-export default class Modal {
-  constructor(service, name, data, options = {}) {
-    this._service = service;
-    this._name = name;
-    this._data = data;
-    this._options = {
-      className: '',
-      onAnimationModalOutEnd: undefined,
-      ...options,
-    };
-    this._result = undefined;
-    this._deferred = defer();
-    this._deferredOutAnimation = undefined;
-    this._componentInstance = undefined;
-  }
+export default EmberObject.extend({
+  _service: null,
+  _name: null,
+  _data: null,
+  _options: null,
+  _result: undefined,
+  _deferred: null,
+  _deferredOutAnimation: undefined,
+  _componentInstance: undefined,
 
-  get result() {
-    return this._result;
-  }
+  init() {
+    this._super(...arguments);
+    this.set('_deferred', defer());
+  },
 
-  @computed('_deferredOutAnimation')
-  get isClosing() {
-    return Boolean(this._deferredOutAnimation);
-  }
+  data: alias('_data'),
+  name: alias('_name'),
+  result: alias('_result'),
+  service: alias('_service'),
+  isClosing: notEmpty('_deferredOutAnimation'),
+
+  options: computed('_options', {
+    get() {
+      return this._options;
+    },
+    set(key, value) {
+      let options = { className: '', onAnimationModalOutEnd: undefined, ...(this._options ?? {}), ...(value ?? {}) };
+      this.set('_options', options);
+      return options;
+    },
+  }),
 
   close(result) {
     if (this._componentInstance) {
       this._componentInstance.closeModal(result);
     }
-  }
+  },
 
   then(onFulfilled, onRejected) {
     return this._deferred.promise.then(onFulfilled, onRejected);
-  }
+  },
 
   _resolve(result) {
     if (!this._deferredOutAnimation) {
@@ -61,12 +69,12 @@ export default class Modal {
         this._deferredOutAnimation.promise.then(() => this._options.onAnimationModalOutEnd()).catch(() => {});
       }
 
-      this._result = result;
+      this.set('_result', result);
       this._deferred.resolve(result);
 
       waitForPromise(this._deferredOutAnimation.promise);
     }
-  }
+  },
 
   _remove() {
     this._service._stack.removeObject(this);
@@ -80,5 +88,5 @@ export default class Modal {
     if (this._deferredOutAnimation) {
       this._deferredOutAnimation.resolve();
     }
-  }
-}
+  },
+});

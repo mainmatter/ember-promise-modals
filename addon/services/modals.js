@@ -30,7 +30,7 @@ export default Service.extend({
    * @returns {Modal}
    */
   open(name, data, options) {
-    let modal = new Modal(this, name, data, options);
+    let modal = Modal.create({ service: this, name, data, options });
 
     this._stack.pushObject(modal);
 
