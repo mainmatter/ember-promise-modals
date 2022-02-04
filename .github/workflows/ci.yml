@@ -7,6 +7,9 @@ on:
       - 'v*'
   pull_request: {}
 
+env:
+  PNPM_VERSION: 6.29.1
+
 concurrency:
    group: ci-${{ github.head_ref || github.ref }}
    cancel-in-progress: true
@@ -18,17 +21,20 @@ jobs:
 
     steps:
       - uses: actions/checkout@v2
+      - uses: pnpm/action-setup@v2.0.1
+        with:
+          version: ${{ env.PNPM_VERSION }}
       - name: Install Node
         uses: actions/setup-node@v2
         with:
-          node-version: 12.x
-          cache: yarn
+          node-version: 14.x
+          cache: pnpm
       - name: Install Dependencies
-        run: yarn install --frozen-lockfile
+        run: pnpm install
       - name: Lint
-        run: yarn lint
+        run: pnpm run lint
       - name: Run Tests
-        run: yarn test
+        run: pnpm run test
 
   floating:
     name: "Floating Dependencies"
@@ -36,14 +42,18 @@ jobs:
 
     steps:
       - uses: actions/checkout@v2
-      - uses: actions/setup-node@v2
+      - uses: pnpm/action-setup@v2.0.1
         with:
-          node-version: 12.x
-          cache: yarn
+          version: ${{ env.PNPM_VERSION }}
+      - name: Install Node
+        uses: actions/setup-node@v2
+        with:
+          node-version: 14.x
+          cache: pnpm
       - name: Install Dependencies
-        run: yarn install --no-lockfile
+        run: pnpm install
       - name: Run Tests
-        run: yarn test
+        run: pnpm run test
 
   try-scenarios:
     name: ${{ matrix.try-scenario }}
@@ -68,12 +78,15 @@ jobs:
 
     steps:
       - uses: actions/checkout@v2
+      - uses: pnpm/action-setup@v2.0.1
+        with:
+          version: ${{ env.PNPM_VERSION }}
       - name: Install Node
         uses: actions/setup-node@v2
         with:
-          node-version: 12.x
-          cache: yarn
+          node-version: 14.x
+          cache: pnpm
       - name: Install Dependencies
-        run: yarn install --frozen-lockfile
+        run: pnpm install
       - name: Run Tests
-        run: ./node_modules/.bin/ember try:one ${{ matrix.try-scenario }}
+        run: pnpm exec ember try:one ${{ matrix.try-scenario }}
