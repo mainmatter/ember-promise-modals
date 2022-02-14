@@ -6,7 +6,7 @@ The better way to handle modals in your Ember.js apps.
 
 ## Compatibility
 
-- Ember.js v3.4 or above
+- Ember.js v2.18 or above
 - Ember CLI v2.13 or above
 - Node.js v12, v14 or above
 
