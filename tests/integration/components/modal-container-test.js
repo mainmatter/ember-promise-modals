@@ -17,7 +17,7 @@ module('Component | ModalContainer', function (hooks) {
       'component:foo',
       Component.extend({
         tagName: '',
-        layout: hbs`<button type="button">foo</button> {{@data.bar}}`,
+        layout: hbs`<button type="button">foo</button> {{this.data.bar}}`,
       }),
     );
 
