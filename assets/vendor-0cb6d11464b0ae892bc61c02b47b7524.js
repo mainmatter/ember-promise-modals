@@ -4346,9 +4346,7 @@ return f(this,n)}}function f(e,t){if(t&&("object"===_typeof(t)||"function"==type
 if(void 0!==t)throw new TypeError("Derived constructors may only return object or undefined")
 return function(e){if(void 0===e)throw new ReferenceError("this hasn't been initialised - super() hasn't been called")
 return e}(e)}function d(e){return(d=Object.setPrototypeOf?Object.getPrototypeOf:function(e){return e.__proto__||Object.getPrototypeOf(e)})(e)}function p(e,t){return"string"==typeof e?function(e,t){var i=(0,n.getOwner)(t)
-return(0,r.lookupCurriedComponentDefinition)(e,i)}(e,t):(0,r.isCurriedComponentDefinition)(e)||null==e?e:function(e,t){var i=(0,n.getOwner)(t),o=function(e,t){var n=t.lookup("service:-ensure-registered")
-return n.register(e,t)}(e,i)
-return(0,r.lookupCurriedComponentDefinition)(o,i)}(e,t)}Object.defineProperty(e,"__esModule",{value:!0}),e.EnsureSafeComponentHelper=void 0,e.ensureSafeComponent=p
+return(0,r.lookupCurriedComponentDefinition)(e,i)}(e,t):(0,r.isCurriedComponentDefinition)(e)||null==e?e:e}Object.defineProperty(e,"__esModule",{value:!0}),e.EnsureSafeComponentHelper=void 0,e.ensureSafeComponent=p
 var h=function(e){(function(e,t){if("function"!=typeof t&&null!==t)throw new TypeError("Super expression must either be null or a function")
 e.prototype=Object.create(t&&t.prototype,{constructor:{value:e,writable:!0,configurable:!0}}),Object.defineProperty(e,"prototype",{writable:!1}),t&&l(e,t)})(a,e)
 var t,n,r,i=c(a)
