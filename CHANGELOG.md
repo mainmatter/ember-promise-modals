@@ -1,5 +1,57 @@
 # Changelog
 
+
+## v3.0.0 (2022-04-11)
+
+#### :boom: Breaking Change
+* [#588](https://github.com/simplabs/ember-promise-modals/pull/588) Use ember-auto-import@2 ([@pichfl](https://github.com/pichfl))
+* [#478](https://github.com/simplabs/ember-promise-modals/pull/478) Update to latest addon blueprint ([@pichfl](https://github.com/pichfl))
+* [#438](https://github.com/simplabs/ember-promise-modals/pull/438) bump @ember/test-waiters to 3.0.0 ([@nickschot](https://github.com/nickschot))
+* [#437](https://github.com/simplabs/ember-promise-modals/pull/437) Drop Node 10 support ([@nickschot](https://github.com/nickschot))
+* [#427](https://github.com/simplabs/ember-promise-modals/pull/427) Generate one backdrop per modal ([@aoumiri](https://github.com/aoumiri))
+* [#148](https://github.com/simplabs/ember-promise-modals/pull/148) Replace ember-animated with CSS animations ([@pichfl](https://github.com/pichfl))
+
+#### :rocket: Enhancement
+* [#549](https://github.com/simplabs/ember-promise-modals/pull/549) Enhance focus trap configuration ([@zeppelin](https://github.com/zeppelin))
+* [#533](https://github.com/simplabs/ember-promise-modals/pull/533) Legacy: Downgrade native class to Ember.Object ([@pichfl](https://github.com/pichfl))
+* [#436](https://github.com/simplabs/ember-promise-modals/pull/436) Embroider optimized compatibility ([@nickschot](https://github.com/nickschot))
+* [#517](https://github.com/simplabs/ember-promise-modals/pull/517) Add option to disable focus trap ([@zeppelin](https://github.com/zeppelin))
+* [#427](https://github.com/simplabs/ember-promise-modals/pull/427) Generate one backdrop per modal ([@aoumiri](https://github.com/aoumiri))
+* [#421](https://github.com/simplabs/ember-promise-modals/pull/421) add optional onAnimationModalOutEnd hook ([@nickschot](https://github.com/nickschot))
+* [#148](https://github.com/simplabs/ember-promise-modals/pull/148) Replace ember-animated with CSS animations ([@pichfl](https://github.com/pichfl))
+
+#### :bug: Bug Fix
+* [#422](https://github.com/simplabs/ember-promise-modals/pull/422) fix promise-modals from breaking when used in another addon instead of an app ([@nickschot](https://github.com/nickschot))
+* [#420](https://github.com/simplabs/ember-promise-modals/pull/420) explicitly specify animation delay and duration as separate to make sure they're properly used by the browser ([@nickschot](https://github.com/nickschot))
+* [#419](https://github.com/simplabs/ember-promise-modals/pull/419) fix setting a delay on the backdrop or modal makes animation break ([@nickschot](https://github.com/nickschot))
+* [#412](https://github.com/simplabs/ember-promise-modals/pull/412) fix backdrop not animating immediately after the last modal is closed ([@nickschot](https://github.com/nickschot))
+
+#### :memo: Documentation
+* [#502](https://github.com/simplabs/ember-promise-modals/pull/502) Provide additional documentation for the Modal class and ModalOptions ([@pichfl](https://github.com/pichfl))
+* [#432](https://github.com/simplabs/ember-promise-modals/pull/432) Fix responsiveness of dummy app ([@nickschot](https://github.com/nickschot))
+* [#414](https://github.com/simplabs/ember-promise-modals/pull/414) Improve README and dummy application ([@pichfl](https://github.com/pichfl))
+
+#### :house: Internal
+* [#594](https://github.com/simplabs/ember-promise-modals/pull/594) Configure release-it ([@pichfl](https://github.com/pichfl))
+* [#570](https://github.com/simplabs/ember-promise-modals/pull/570) Setup Renovatebot ([@nickschot](https://github.com/nickschot))
+* [#477](https://github.com/simplabs/ember-promise-modals/pull/477) Replace Yarn with pnpm ([@pichfl](https://github.com/pichfl))
+* [#530](https://github.com/simplabs/ember-promise-modals/pull/530) Internal: Extend and apply prettier configuration ([@pichfl](https://github.com/pichfl))
+* [#500](https://github.com/simplabs/ember-promise-modals/pull/500) Specify octane edition in package.json & add missing optional features ([@nickschot](https://github.com/nickschot))
+* [#499](https://github.com/simplabs/ember-promise-modals/pull/499) Update ember-release scenario to use auto-import v2 ([@nickschot](https://github.com/nickschot))
+* [#431](https://github.com/simplabs/ember-promise-modals/pull/431) Use env=production when building the dummy application ([@pichfl](https://github.com/pichfl))
+* [#430](https://github.com/simplabs/ember-promise-modals/pull/430) Update production build path for GitHub pages ([@pichfl](https://github.com/pichfl))
+* [#415](https://github.com/simplabs/ember-promise-modals/pull/415) Deploy dummy application to Github pages ([@pichfl](https://github.com/pichfl))
+* [#417](https://github.com/simplabs/ember-promise-modals/pull/417) Delete unused modal service file from dummy app ([@nickschot](https://github.com/nickschot))
+* [#413](https://github.com/simplabs/ember-promise-modals/pull/413) use babel-eslint as eslint parser ([@nickschot](https://github.com/nickschot))
+* [#407](https://github.com/simplabs/ember-promise-modals/pull/407) upgrade to ember-qunit v5 ([@nickschot](https://github.com/nickschot))
+* [#309](https://github.com/simplabs/ember-promise-modals/pull/309) Update addon layout according to latest ember addon blueprint ([@pichfl](https://github.com/pichfl))
+
+#### Committers: 4
+- Anass OUMIRI ([@aoumiri](https://github.com/aoumiri))
+- Florian Pichler ([@pichfl](https://github.com/pichfl))
+- Gabor Babicz ([@zeppelin](https://github.com/zeppelin))
+- Nick Schot ([@nickschot](https://github.com/nickschot))
+
 ## v2.0.0 (2021-09-01)
 
 #### :boom: Breaking Change
