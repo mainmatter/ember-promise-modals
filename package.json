@@ -22,6 +22,7 @@
     "lint:js:fix": "eslint . --fix",
     "lint:md": "prettier --check '**/*.md'",
     "lint:md:fix": "prettier --write '**/*.md'",
+    "release": "release-it",
     "start": "ember serve",
     "test": "ember test",
     "test:all": "npm-run-all lint test:*",
@@ -74,10 +75,22 @@
     "qunit": "2.18.1",
     "qunit-console-grouper": "0.3.0",
     "qunit-dom": "2.0.0",
+    "release-it": "^14.14.1",
+    "release-it-lerna-changelog": "^4.0.1",
     "webpack": "^5.72.0"
   },
   "engines": {
     "node": "12.* || >= 14.*"
+  },
+  "changelog": {
+    "repo": "simplabs/ember-promise-modals",
+    "labels": {
+      "breaking": ":boom: Breaking Change",
+      "enhancement": ":rocket: Enhancement",
+      "bug": ":bug: Bug Fix",
+      "documentation": ":memo: Documentation",
+      "internal": ":house: Internal"
+    }
   },
   "ember": {
     "edition": "octane"
