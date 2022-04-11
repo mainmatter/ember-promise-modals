@@ -44,8 +44,8 @@ export default Component.extend({
       let options = {
         ...this.focusTrapOptions,
         fallbackFocus: `#${this.modalElementId}`,
-        onDeactivate: () => {
-          this.focusTrapOptions.onDeactivate?.();
+        onPostDeactivate: (...args) => {
+          this.focusTrapOptions.onPostDeactivate?.(...args);
 
           if (this.isDestroyed || this.isDestroying) {
             return;
