@@ -107,12 +107,13 @@ module.exports = {
       files: [
         './.eslintrc.js',
         './.prettierrc.js',
+        './.release-it.js',
         './.template-lintrc.js',
+        './blueprints/*/index.js',
+        './config/**/*.js',
         './ember-cli-build.js',
         './index.js',
         './testem.js',
-        './blueprints/*/index.js',
-        './config/**/*.js',
         './tests/dummy/config/**/*.js',
       ],
       parserOptions: {
