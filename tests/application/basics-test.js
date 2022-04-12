@@ -94,7 +94,7 @@ module('Application | basics', function (hooks) {
     assert.dom('.epm-modal').doesNotExist();
 
     await click('[data-test-show-modal]');
-    await click('[data-test-button-close]');
+    await click('[data-test-close]');
 
     assert.deepEqual(applicationController.get('result'), {
       foo: 'bar',

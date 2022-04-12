@@ -1,7 +1,7 @@
 {{!-- template-lint-disable no-action --}}
-<div class="modal modal1">
+<div class="modal modal1" data-test-modal-wrap>
   <header>
-    <button type="button" data-test-button-close {{action @close (hash foo="bar")}}>Close</button>
+    <button type="button" data-test-close {{action @close (hash foo="bar")}}>Close</button>
   </header>
 
   <h2>Modal 1</h2>
@@ -20,5 +20,9 @@
 
   <p>
     Sociis per justo neque pulvinar orci sagittis tristique tincidunt suspendisse cum est, rhoncus euismod velit interdum condimentum aenean sed hendrerit arcu venenatis, rutrum commodo elementum eros ac at non ullamcorper pellentesque turpis. Tincidunt consequat purus quam ante aliquam mattis scelerisque viverra suspendisse, tellus convallis mollis ornare primis penatibus montes dapibus sagittis fringilla, magna feugiat conubia luctus posuere suscipit praesent quis. Interdum a iaculis aliquet inceptos vulputate torquent dapibus, ultricies nisl congue leo molestie eu rutrum lectus, ac non pretium magna ad primis. Cursus dui tempus iaculis nostra habitant quis platea hendrerit, purus augue massa elementum dapibus morbi ridiculus, magna convallis pretium ac tincidunt inceptos cum.
+  </p>
+
+  <p>
+    <button type="button" data-test-submit {{action @close @data}}>Close with return data</button>
   </p>
 </div>
