@@ -108,4 +108,20 @@ module('Application | basics', function (hooks) {
 
     assert.dom('.epm-modal').doesNotExist();
   });
+
+  test('closing the modal via the @close function returns passed values', async function (assert) {
+    await visit('/');
+
+    let applicationController = this.owner.lookup('controller:application');
+
+    assert.strictEqual(applicationController.get('result'), undefined);
+    assert.dom('.epm-modal').doesNotExist();
+
+    await click('[data-test-show-modal]');
+    await click('[data-test-button-close]');
+
+    assert.deepEqual(applicationController.get('result'), {
+      foo: 'bar',
+    });
+  });
 });

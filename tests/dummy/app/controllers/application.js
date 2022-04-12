@@ -8,7 +8,12 @@ export default Controller.extend({
 
   actions: {
     showModal() {
-      this.modals.open(Modal1);
+      this.modals
+        .open(Modal1)
+        .then(result => {
+          this.result = result;
+        })
+        .catch(() => {});
     },
 
     showModalFromTop() {
