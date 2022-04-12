@@ -1,6 +1,18 @@
 # Changelog
 
 
+
+## v3.0.1 (2022-04-12)
+
+#### :bug: Bug Fix
+* [#596](https://github.com/simplabs/ember-promise-modals/pull/596) Ensure calls to @close run before the focus-out deactivation ([@pichfl](https://github.com/pichfl))
+
+#### :house: Internal
+* [#597](https://github.com/simplabs/ember-promise-modals/pull/597) Remove deprecated `clickOutsideDeactivates` option ([@pichfl](https://github.com/pichfl))
+
+#### Committers: 1
+- Florian Pichler ([@pichfl](https://github.com/pichfl))
+
 ## v3.0.0 (2022-04-11)
 
 #### :boom: Breaking Change
