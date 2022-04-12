@@ -4125,8 +4125,8 @@ var e=this.modals.focusTrapOptions,t=this.modal._options.focusTrapOptions
 null!==t&&(this.focusTrapOptions=t||e)},didInsertElement:function(){var e=this
 this._super.apply(this,arguments)
 var t=document.getElementById(this.modalElementId)
-if(this.focusTrapOptions){var r=l(l({},this.focusTrapOptions),{},{fallbackFocus:"#".concat(this.modalElementId),onDeactivate:function(){var t,n
-null===(t=(n=e.focusTrapOptions).onDeactivate)||void 0===t||t.call(n),e.isDestroyed||e.isDestroying||e.closeModal()}})
+if(this.focusTrapOptions){var r=l(l({},this.focusTrapOptions),{},{fallbackFocus:"#".concat(this.modalElementId),onPostDeactivate:function(){for(var t,n,r=arguments.length,i=new Array(r),o=0;o<r;o++)i[o]=arguments[o]
+null===(t=(n=e.focusTrapOptions).onPostDeactivate)||void 0===t||t.call.apply(t,[n].concat(i)),e.isDestroyed||e.isDestroying||e.closeModal()}})
 this.focusTrap=(0,a.createFocusTrap)(t,r),this.focusTrap.activate()}this.fadeOutEnd=function(n){var r=n.target,i=n.animationName
 e.modals._onModalAnimationEnd()
 var o=r!==t,a="-out"!==i.substring(i.length-4)
