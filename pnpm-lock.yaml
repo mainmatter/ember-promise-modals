@@ -27,7 +27,7 @@ specifiers:
   ember-resolver: 8.0.3
   ember-source: 4.3.0
   ember-source-channel-url: 3.0.0
-  ember-template-lint: 4.4.1
+  ember-template-lint: 4.4.2
   ember-try: 2.0.0
   eslint: 8.13.0
   eslint-config-prettier: 8.5.0
@@ -80,7 +80,7 @@ devDependencies:
   ember-resolver: 8.0.3
   ember-source: 4.3.0_webpack@5.72.0
   ember-source-channel-url: 3.0.0
-  ember-template-lint: 4.4.1
+  ember-template-lint: 4.4.2
   ember-try: 2.0.0
   eslint: 8.13.0
   eslint-config-prettier: 8.5.0_eslint@8.13.0
@@ -5446,8 +5446,8 @@ packages:
       - webpack
     dev: true
 
-  /ember-template-lint/4.4.1:
-    resolution: {integrity: sha512-9ejLTAf00yP1XboEHWeATajUfWoe+FOtkr42GHz8Y5ktpbmrqjs0H45JRTBJX7d7pbN1aHveZtkQC7rzO1dApg==}
+  /ember-template-lint/4.4.2:
+    resolution: {integrity: sha512-UUWZnRnlvFeS2H4NfCTmcZFpHkvcPMbQ14jl9HgXI6RRqqhrVN0Tacxe/99s5DV6qIJ9QGWzKp25OzVJetTHQQ==}
     engines: {node: ^12.22.0 || ^14.17.0 || >=16.0.0}
     hasBin: true
     dependencies:
@@ -12509,7 +12509,7 @@ packages:
   /wide-align/1.1.5:
     resolution: {integrity: sha512-eDMORYaPNZ4sQIuuYPDHdQvf4gyCF9rEEV/yPxGfwPkRodwEgiMUUXTx/dex+Me0wxx53S+NgUHaP7y3MGlDmg==}
     dependencies:
-      string-width: 1.0.2
+      string-width: 4.2.3
     dev: true
 
   /widest-line/3.1.0:
