@@ -27,7 +27,7 @@ specifiers:
   ember-resolver: 8.0.3
   ember-source: 4.3.0
   ember-source-channel-url: 3.0.0
-  ember-template-lint: 4.4.2
+  ember-template-lint: 4.5.0
   ember-try: 2.0.0
   eslint: 8.13.0
   eslint-config-prettier: 8.5.0
@@ -80,7 +80,7 @@ devDependencies:
   ember-resolver: 8.0.3
   ember-source: 4.3.0_webpack@5.72.0
   ember-source-channel-url: 3.0.0
-  ember-template-lint: 4.4.2
+  ember-template-lint: 4.5.0
   ember-try: 2.0.0
   eslint: 8.13.0
   eslint-config-prettier: 8.5.0_eslint@8.13.0
@@ -5446,8 +5446,8 @@ packages:
       - webpack
     dev: true
 
-  /ember-template-lint/4.4.2:
-    resolution: {integrity: sha512-UUWZnRnlvFeS2H4NfCTmcZFpHkvcPMbQ14jl9HgXI6RRqqhrVN0Tacxe/99s5DV6qIJ9QGWzKp25OzVJetTHQQ==}
+  /ember-template-lint/4.5.0:
+    resolution: {integrity: sha512-cH4FWDtYG3UqBAI5cBucidUgfGhua5jEc0Ookf+Jv3aeNHJWHt3MZc8g4pH2VYzPlGbEoOBd/EUzUVkmKDZYDQ==}
     engines: {node: ^12.22.0 || ^14.17.0 || >=16.0.0}
     hasBin: true
     dependencies:
@@ -5462,6 +5462,7 @@ packages:
       get-stdin: 9.0.0
       globby: 13.1.1
       is-glob: 4.0.3
+      language-tags: 1.0.5
       micromatch: 4.0.5
       resolve: 1.22.0
       v8-compile-cache: 2.3.0
@@ -7940,6 +7941,16 @@ packages:
   /kleur/4.1.4:
     resolution: {integrity: sha512-8QADVssbrFjivHWQU7KkMgptGTl6WAcSdlbBPY4uNF+mWr6DGcKrvY2w4FQJoXch7+fKMjj0dRrL75vk3k23OA==}
     engines: {node: '>=6'}
+    dev: true
+
+  /language-subtag-registry/0.3.21:
+    resolution: {integrity: sha512-L0IqwlIXjilBVVYKFT37X9Ih11Um5NEl9cbJIuU/SwP/zEEAbBPOnEeeuxVMf45ydWQRDQN3Nqc96OgbH1K+Pg==}
+    dev: true
+
+  /language-tags/1.0.5:
+    resolution: {integrity: sha1-0yHbxNowuovzAk4ED6XBRmH5GTo=}
+    dependencies:
+      language-subtag-registry: 0.3.21
     dev: true
 
   /latest-version/5.1.0:
