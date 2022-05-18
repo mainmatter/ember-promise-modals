@@ -2993,13 +2993,14 @@ return{id:e,type:r,name:i,args:Ie(o),instance:a,template:u,bounds:l,children:c}}
 return{parentElement:t.parentElement(),firstNode:t.firstNode(),lastNode:t.lastNode()}},e}(),jt=(0,n.symbol)("TRANSACTION"),St=function(){function e(){this.scheduledInstallModifiers=[],this.scheduledUpdateModifiers=[],this.createdComponents=[],this.updatedComponents=[]}var t=e.prototype
 return t.didCreate=function(e){this.createdComponents.push(e)},t.didUpdate=function(e){this.updatedComponents.push(e)},t.scheduleInstallModifier=function(e){this.scheduledInstallModifiers.push(e)},t.scheduleUpdateModifier=function(e){this.scheduledUpdateModifiers.push(e)},t.commit=function(){for(var e=this.createdComponents,t=this.updatedComponents,n=0;n<e.length;n++){var r=e[n],i=r.manager,o=r.state
 i.didCreate(o)}for(var a=0;a<t.length;a++){var u=t[a],l=u.manager,c=u.state
-l.didUpdate(c)}for(var f,p,d=this.scheduledInstallModifiers,h=this.scheduledUpdateModifiers,m=0;m<d.length;m++){var v=d[m]
-f=v.manager,p=v.state
-var g=f.getTag(p)
-if(null!==g){var b=(0,s.track)((function(){return f.install(p)}),!1);(0,s.updateTag)(g,b)}else f.install(p)}for(var y=0;y<h.length;y++){var _=h[y]
-f=_.manager,p=_.state
-var O=f.getTag(p)
-if(null!==O){var w=(0,s.track)((function(){return f.update(p)}),!1);(0,s.updateTag)(O,w)}else f.update(p)}},e}(),Mt=function(){function e(e,t){this.delegate=t,this[kt]=null,this.isInteractive=this.delegate.isInteractive,this.debugRenderTree=this.delegate.enableDebugTooling?new At:void 0,e.appendOperations?(this.appendOperations=e.appendOperations,this.updateOperations=e.updateOperations):e.document&&(this.appendOperations=new Pt(e.document),this.updateOperations=new Et(e.document))}var n=e.prototype
+l.didUpdate(c)}var f,p,d=this.scheduledInstallModifiers,h=this.scheduledUpdateModifiers
+for(n=0;n<d.length;n++){var m=d[n]
+f=m.manager,p=m.state
+var v=f.getTag(p)
+if(null!==v){var g=(0,s.track)((function(){return f.install(p)}),!1);(0,s.updateTag)(v,g)}else f.install(p)}for(var b=0;b<h.length;b++){var y=h[b]
+f=y.manager,p=y.state
+var _=f.getTag(p)
+if(null!==_){var O=(0,s.track)((function(){return f.update(p)}),!1);(0,s.updateTag)(_,O)}else f.update(p)}},e}(),Mt=function(){function e(e,t){this.delegate=t,this[kt]=null,this.isInteractive=this.delegate.isInteractive,this.debugRenderTree=this.delegate.enableDebugTooling?new At:void 0,e.appendOperations?(this.appendOperations=e.appendOperations,this.updateOperations=e.updateOperations):e.document&&(this.appendOperations=new Pt(e.document),this.updateOperations=new Et(e.document))}var n=e.prototype
 return n.getAppendOperations=function(){return this.appendOperations},n.getDOM=function(){return this.updateOperations},n.begin=function(){var e
 null===(e=this.debugRenderTree)||void 0===e||e.begin(),this[jt]=new St},n.didCreate=function(e){this.transaction.didCreate(e)},n.didUpdate=function(e){this.transaction.didUpdate(e)},n.scheduleInstallModifier=function(e){this.isInteractive&&this.transaction.scheduleInstallModifier(e)},n.scheduleUpdateModifier=function(e){this.isInteractive&&this.transaction.scheduleUpdateModifier(e)},n.commit=function(){var e,t=this.transaction
 this[jt]=null,t.commit(),null===(e=this.debugRenderTree)||void 0===e||e.commit(),this.delegate.onTransactionCommit()},(0,t.createClass)(e,[{key:"transaction",get:function(){return this[jt]}}]),e}()
