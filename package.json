@@ -29,7 +29,7 @@
     "test:ember-compatibility": "ember try:each"
   },
   "dependencies": {
-    "@ember/test-waiters": "^3.0.1",
+    "@ember/test-waiters": "^3.0.2",
     "@embroider/util": "^1.7.1",
     "broccoli-funnel": "^3.0.8",
     "broccoli-merge-trees": "^4.2.0",
