@@ -64,14 +64,17 @@ export default Component.extend({
     this.fadeOutEnd = ({ target, animationName }) => {
       cancel(this._timeout);
 
-      let isntTarget = target !== element;
-      let animationEndsWrong = animationName.substring(animationName.length - 4) !== '-out';
-
-      if (isntTarget || animationEndsWrong) {
+      if (target !== element) {
         return;
       }
 
-      this.removeModal();
+      this.modals._onModalAnimationEnd();
+
+      let isOutAninmation = animationName.substring(animationName.length - 4) === '-out';
+
+      if (isOutAninmation) {
+        this.removeModal();
+      }
     };
 
     this.modals._onModalAnimationStart();
@@ -98,6 +101,8 @@ export default Component.extend({
   },
 
   closeModal(result) {
+    this.modals._onModalAnimationStart();
+
     // Trigger out animation
     set(this, 'animatingOutClass', this.outAnimationClass);
 
