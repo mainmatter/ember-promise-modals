@@ -29,16 +29,16 @@
     "test:ember-compatibility": "ember try:each"
   },
   "dependencies": {
-    "@ember/test-waiters": "^3.0.1",
-    "@embroider/util": "^1.7.1",
-    "broccoli-funnel": "^3.0.8",
-    "broccoli-merge-trees": "^4.2.0",
-    "broccoli-postcss": "^6.0.1",
-    "ember-auto-import": "^2.4.2",
-    "ember-cli-babel": "^7.26.11",
-    "ember-cli-htmlbars": "^6.0.1",
-    "focus-trap": "^6.9.3",
-    "postcss-preset-env": "^7.6.0"
+    "@ember/test-waiters": "3.0.2",
+    "@embroider/util": "1.7.1",
+    "broccoli-funnel": "3.0.8",
+    "broccoli-merge-trees": "4.2.0",
+    "broccoli-postcss": "6.0.1",
+    "ember-auto-import": "2.4.2",
+    "ember-cli-babel": "7.26.11",
+    "ember-cli-htmlbars": "6.0.1",
+    "focus-trap": "6.9.3",
+    "postcss-preset-env": "7.6.0"
   },
   "devDependencies": {
     "@babel/eslint-parser": "7.18.2",
