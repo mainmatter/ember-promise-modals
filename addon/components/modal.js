@@ -2,8 +2,8 @@ import Component from '@ember/component';
 import { set } from '@ember/object';
 import { readOnly } from '@ember/object/computed';
 import { guidFor } from '@ember/object/internals';
-import { inject as service } from '@ember/service';
 import { cancel, later } from '@ember/runloop';
+import { inject as service } from '@ember/service';
 
 import { createFocusTrap } from 'focus-trap';
 
@@ -102,8 +102,8 @@ export default Component.extend({
     set(this, 'animatingOutClass', this.outAnimationClass);
 
     const element = document.getElementById(this.modalElementId);
-    const animationDuration = window.getComputedStyle(element)['animation-duration'] ?? '0s';
-    this._timeout = later(this, 'removeModal', animationDuration.replace('s' , '') * 1000 + 1);
+    const animationDuration = window.getComputedStyle(element)['animation-duration'] ?? '0.001s';
+    this._timeout = later(this, 'removeModal', animationDuration.replace('s', '') * 1000 + 1);
 
     if (this.focusTrap) {
       this.focusTrap.deactivate({
@@ -115,6 +115,7 @@ export default Component.extend({
   },
 
   removeModal() {
+    cancel(this._timeout);
     this.modals._onModalAnimationEnd();
     this.modal?._remove();
   },

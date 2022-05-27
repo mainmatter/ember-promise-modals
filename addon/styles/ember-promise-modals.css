@@ -17,14 +17,14 @@
 
 @media (prefers-reduced-motion: reduce) {
   :root {
-  --epm-animation-backdrop-in-duration: 0s;
-  --epm-animation-backdrop-out-duration: 0s;
-  --epm-animation-modal-in-duration: 0s;
-  --epm-animation-modal-out-duration: 0s;
-  --epm-animation-backdrop-in-delay: 0s;
-  --epm-animation-backdrop-out-delay: 0s;
-  --epm-animation-modal-in-delay: 0s;
-  --epm-animation-modal-out-delay: 0s;
+  --epm-animation-backdrop-in-duration: 0.001s;
+  --epm-animation-backdrop-out-duration: 0.001s;
+  --epm-animation-modal-in-duration: 0.001s;
+  --epm-animation-modal-out-duration: 0.001s;
+  --epm-animation-backdrop-in-delay: 0.001s;
+  --epm-animation-backdrop-out-delay: 0.001s;
+  --epm-animation-modal-in-delay: 0.001s;
+  --epm-animation-modal-out-delay: 0.001s;
   }
 }
 
