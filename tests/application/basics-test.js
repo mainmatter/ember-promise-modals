@@ -2,6 +2,8 @@ import { visit, click, triggerKeyEvent, waitUntil } from '@ember/test-helpers';
 import { setupApplicationTest } from 'ember-qunit';
 import { module, test } from 'qunit';
 
+import Modal1 from 'dummy/components/modal1';
+
 import { setupPromiseModals } from 'ember-promise-modals/test-support';
 
 module('Application | basics', function (hooks) {
@@ -67,6 +69,45 @@ module('Application | basics', function (hooks) {
     await click('.epm-backdrop');
 
     assert.dom('body', document).hasStyle({ overflow: 'visible' });
+  });
+
+  test('opening a modal calls onAnimationModal*End once the animation ends', async function (assert) {
+    await visit('/');
+
+    assert.dom('.epm-backdrop').doesNotExist();
+    assert.dom('.epm-modal').doesNotExist();
+
+    const applicationController = this.owner.lookup('controller:application');
+    const modalsService = applicationController.modals;
+    const showModal = applicationController.actions.showModal;
+
+    applicationController.actions.showModal = () => {
+      assert.step('open');
+
+      modalsService.open(
+        Modal1,
+        {},
+        {
+          onAnimationModalInEnd: () => {
+            assert.step('onAnimationModalInEnd');
+          },
+          onAnimationModalOutEnd: () => {
+            assert.step('onAnimationModalOutEnd');
+          },
+        },
+      );
+    };
+
+    await click('[data-test-show-modal]');
+    await waitUntil(() => !document.body.classList.contains('epm-animating'));
+    await click('.epm-backdrop');
+
+    assert.dom('.epm-backdrop').doesNotExist();
+    assert.dom('.epm-modal').doesNotExist();
+
+    assert.verifySteps(['open', 'onAnimationModalInEnd', 'onAnimationModalOutEnd']);
+
+    applicationController.actions.showModal = showModal;
   });
 
   test('pressing the Escape keyboard button closes the modal', async function (assert) {

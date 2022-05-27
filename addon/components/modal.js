@@ -74,7 +74,11 @@ export default Component.extend({
 
       if (isOutAninmation) {
         this.removeModal();
+
+        return;
       }
+
+      this.modal.onAnimationModalInEnd(animationName);
     };
 
     this.modals._onModalAnimationStart();

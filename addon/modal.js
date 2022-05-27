@@ -27,6 +27,7 @@ export default class Modal {
     this._options = {
       className: '',
       onAnimationModalOutEnd: undefined,
+      onAnimationModalInEnd: undefined,
       ...options,
     };
     this._result = undefined;
@@ -37,6 +38,14 @@ export default class Modal {
 
   get result() {
     return this._result;
+  }
+
+  onAnimationModalInEnd() {
+    if (!this._options.onAnimationModalInEnd) {
+      return;
+    }
+
+    return this._options.onAnimationModalInEnd(...arguments);
   }
 
   @computed('_deferredOutAnimation')
