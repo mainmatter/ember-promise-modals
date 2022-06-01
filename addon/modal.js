@@ -54,9 +54,19 @@ export default class Modal {
   }
 
   close(result) {
-    if (this._componentInstance) {
-      this._componentInstance.closeModal(result);
+    if (!this._componentInstance) {
+      return;
     }
+
+    this._componentInstance.closeModal(result);
+  }
+
+  destroy() {
+    if (!this._componentInstance) {
+      return;
+    }
+
+    this._componentInstance.destroyModal();
   }
 
   then(onFulfilled, onRejected) {
@@ -64,17 +74,20 @@ export default class Modal {
   }
 
   _resolve(result) {
-    if (!this._deferredOutAnimation) {
-      set(this, '_deferredOutAnimation', defer());
-      if (this._options.onAnimationModalOutEnd) {
-        this._deferredOutAnimation.promise.then(() => this._options.onAnimationModalOutEnd()).catch(() => {});
-      }
-
-      this._result = result;
-      this._deferred.resolve(result);
-
-      waitForPromise(this._deferredOutAnimation.promise);
+    if (this._deferredOutAnimation) {
+      return;
     }
+
+    set(this, '_deferredOutAnimation', defer());
+
+    if (this._options.onAnimationModalOutEnd) {
+      this._deferredOutAnimation.promise.then(() => this._options.onAnimationModalOutEnd()).catch(() => {});
+    }
+
+    this._result = result;
+    this._deferred.resolve(result);
+
+    waitForPromise(this._deferredOutAnimation.promise);
   }
 
   _remove() {

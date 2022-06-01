@@ -87,19 +87,7 @@ export default Component.extend({
   },
 
   willDestroyElement() {
-    if (this.focusTrap) {
-      this.focusTrap.deactivate({ onDeactivate: null });
-    }
-
-    if (this.fadeOutEnd) {
-      let element = document.getElementById(this.modalElementId);
-
-      if (element) {
-        element.removeEventListener('animationend', this.fadeOutEnd);
-        // make sure that we remove the modal, also resolving the test waiter
-        this.removeModal();
-      }
-    }
+    this.destroyModal();
 
     this._super(...arguments);
   },
@@ -121,6 +109,26 @@ export default Component.extend({
     }
 
     this.modal._resolve(result);
+  },
+
+  destroyModal() {
+    if (this.focusTrap) {
+      this.focusTrap.deactivate({
+        onDeactivate: this.focusTrapOptions.onDeactivate,
+      });
+    }
+
+    if (this.fadeOutEnd) {
+      let element = document.getElementById(this.modalElementId);
+
+      if (element) {
+        element.removeEventListener('animationend', this.fadeOutEnd);
+        // make sure that we remove the modal, also resolving the test waiter
+        this.removeModal();
+      }
+
+      this.fadeOutEnd = null;
+    }
   },
 
   removeModal() {
