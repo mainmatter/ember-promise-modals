@@ -96,7 +96,7 @@ try{regeneratorRuntime=runtime}catch(accidentalStrictMode){"object"==typeof glob
  *            Portions Copyright 2008-2011 Apple Inc. All rights reserved.
  * @license   Licensed under MIT license
  *            See https://raw.github.com/emberjs/ember.js/master/LICENSE
- * @version   4.4.0
+ * @version   4.4.1
  */
 var e,t;(function(){var n="undefined"!=typeof globalThis?globalThis:"undefined"!=typeof self?self:"undefined"!=typeof window?window:"undefined"!=typeof global?global:null
 if(null===n)throw new Error("unable to locate global object")
@@ -3599,7 +3599,7 @@ return r.Adapter=i,r.QUnitAdapter=o,Object.defineProperty(L,"Test",{configurable
 var H=L
 t.default=H})),e("ember/version",["exports"],(function(e){"use strict"
 Object.defineProperty(e,"__esModule",{value:!0}),e.default=void 0
-e.default="4.4.0"})),e("route-recognizer",["exports"],(function(e){"use strict"
+e.default="4.4.1"})),e("route-recognizer",["exports"],(function(e){"use strict"
 Object.defineProperty(e,"__esModule",{value:!0}),e.default=void 0
 var t=Object.create
 function n(){var e=t(null)
