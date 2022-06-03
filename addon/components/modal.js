@@ -27,6 +27,7 @@ export default Component.extend({
     this._super(...arguments);
 
     set(this, 'modalElementId', guidFor(this));
+
     this.modal._componentInstance = this;
 
     let { focusTrapOptions: globalFocusTrapOptions } = this.modals;
@@ -48,10 +49,7 @@ export default Component.extend({
   },
 
   willDestroyElement() {
-    // Remove the focus trap without triggering the optional onDeactivate() hook
-    this._removeFocusTrap(null);
-
-    this._removeAnimationListeners();
+    this.destroyModal();
 
     this._super(...arguments);
   },
@@ -126,6 +124,17 @@ export default Component.extend({
     }
 
     this._animationEnd = null;
+  },
+
+  destroyModal() {
+    // Remove the focus trap without triggering the optional onDeactivate() hook
+    this._removeFocusTrap(null);
+
+    // Remove the animation listeners
+    this._removeAnimationListeners();
+
+    // make sure that we remove the modal, also resolving the test waiter
+    this.modal._remove();
   },
 
   closeModal(result) {
