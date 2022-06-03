@@ -2,8 +2,8 @@ import Component from '@ember/component';
 import { set } from '@ember/object';
 import { readOnly } from '@ember/object/computed';
 import { guidFor } from '@ember/object/internals';
-import { inject as service } from '@ember/service';
 import { cancel, later } from '@ember/runloop';
+import { inject as service } from '@ember/service';
 
 import { createFocusTrap } from 'focus-trap';
 
@@ -140,7 +140,6 @@ export default Component.extend({
 
     // make sure that we remove the modal, also resolving the test waiter
     this.modal._remove();
-
   },
 
   closeModal(result) {
@@ -154,8 +153,9 @@ export default Component.extend({
     set(this, 'animatingClass', this.outAnimationClass);
 
     const element = document.getElementById(this.modalElementId);
-    const animationDuration = window.getComputedStyle(element)['animation-duration'] ?? '0s';
-    this._timeout = later(this, 'removeModal', animationDuration.replace('s' , '') * 1000 + 1);
+    const animationDuration = window.getComputedStyle(element)['animation-duration'] ?? '0.001s';
+    const animationDurationS = parseFloat(animationDuration);
+    this._timeout = later(this, 'removeModal', animationDurationS * 1000 + 1);
 
     this.modal._resolve(result);
   },
