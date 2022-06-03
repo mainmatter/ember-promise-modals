@@ -27,6 +27,10 @@ export default Service.extend({
 
   willDestroy() {
     this._onLastModalRemoved();
+    this._onModalAnimationEnd();
+    this._destroyModals();
+
+    this._super(...arguments);
   },
 
   /**
@@ -45,6 +49,12 @@ export default Service.extend({
     }
 
     return modal;
+  },
+
+  _destroyModals() {
+    this._stack.forEach(modal => {
+      modal.close();
+    });
   },
 
   _onFirstModalAdded() {

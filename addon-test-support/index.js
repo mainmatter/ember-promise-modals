@@ -1,13 +1,21 @@
+function setMinimum(propertyName) {
+  document.documentElement.style.setProperty(propertyName, '0.001s');
+}
+
+function unsetMinimum(propertyName) {
+  document.documentElement.style.removeProperty(propertyName);
+}
+
 export function setupPromiseModals(hooks) {
   hooks.beforeEach(function () {
-    document.documentElement.style.setProperty('--epm-animation-backdrop-in-duration', `0.00001s`);
-    document.documentElement.style.setProperty('--epm-animation-backdrop-out-duration', `0.00001s`);
-    document.documentElement.style.setProperty('--epm-animation-backdrop-in-delay', `0.00001s`);
-    document.documentElement.style.setProperty('--epm-animation-backdrop-out-delay', `0.00001s`);
-    document.documentElement.style.setProperty('--epm-animation-modal-in-duration', `0.00001s`);
-    document.documentElement.style.setProperty('--epm-animation-modal-out-duration', `0.00001s`);
-    document.documentElement.style.setProperty('--epm-animation-modal-in-delay', `0.00001s`);
-    document.documentElement.style.setProperty('--epm-animation-modal-out-delay', `0.00001s`);
+    setMinimum('--epm-animation-backdrop-in-duration');
+    setMinimum('--epm-animation-backdrop-out-duration');
+    setMinimum('--epm-animation-backdrop-in-delay');
+    setMinimum('--epm-animation-backdrop-out-delay');
+    setMinimum('--epm-animation-modal-in-duration');
+    setMinimum('--epm-animation-modal-out-duration');
+    setMinimum('--epm-animation-modal-in-delay');
+    setMinimum('--epm-animation-modal-out-delay');
 
     this.modals = this.owner.lookup('service:modals');
   });
@@ -15,16 +23,18 @@ export function setupPromiseModals(hooks) {
   hooks.afterEach(function () {
     // be sure to close all modals after a test
     if (this.modals) {
-      this.modals._stack.forEach(modal => modal.close());
+      this.modals._destroyModals();
     }
 
-    document.documentElement.style.removeProperty('--epm-animation-backdrop-in-duration', `0.00001s`);
-    document.documentElement.style.removeProperty('--epm-animation-backdrop-out-duration', `0.00001s`);
-    document.documentElement.style.removeProperty('--epm-animation-backdrop-in-delay', `0.00001s`);
-    document.documentElement.style.removeProperty('--epm-animation-backdrop-out-delay', `0.00001s`);
-    document.documentElement.style.removeProperty('--epm-animation-modal-in-duration', `0.00001s`);
-    document.documentElement.style.removeProperty('--epm-animation-modal-out-duration', `0.00001s`);
-    document.documentElement.style.removeProperty('--epm-animation-modal-in-delay', `0.00001s`);
-    document.documentElement.style.removeProperty('--epm-animation-modal-out-delay', `0.00001s`);
+    delete this.modals;
+
+    unsetMinimum('--epm-animation-backdrop-in-duration');
+    unsetMinimum('--epm-animation-backdrop-out-duration');
+    unsetMinimum('--epm-animation-backdrop-in-delay');
+    unsetMinimum('--epm-animation-backdrop-out-delay');
+    unsetMinimum('--epm-animation-modal-in-duration');
+    unsetMinimum('--epm-animation-modal-out-duration');
+    unsetMinimum('--epm-animation-modal-in-delay');
+    unsetMinimum('--epm-animation-modal-out-delay');
   });
 }
