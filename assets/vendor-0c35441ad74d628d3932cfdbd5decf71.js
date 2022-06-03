@@ -4148,13 +4148,13 @@ var e=this.modals.focusTrapOptions,t=this.modal._options.focusTrapOptions
 null!==t&&(this.focusTrapOptions=t||e)},didInsertElement:function(){var e=this
 this._super.apply(this,arguments)
 var t=document.getElementById(this.modalElementId)
-if(this.focusTrapOptions){var r=l(l({},this.focusTrapOptions),{},{fallbackFocus:"#".concat(this.modalElementId),onPostDeactivate:function(){for(var t,n,r=arguments.length,i=new Array(r),o=0;o<r;o++)i[o]=arguments[o]
-null===(t=(n=e.focusTrapOptions).onPostDeactivate)||void 0===t||t.call.apply(t,[n].concat(i)),e.isDestroyed||e.isDestroying||e.closeModal()}})
+if(this.focusTrapOptions){var r=l(l({},this.focusTrapOptions),{},{fallbackFocus:"#".concat(this.modalElementId),onDeactivate:function(){for(var t,n,r=arguments.length,i=new Array(r),o=0;o<r;o++)i[o]=arguments[o]
+null===(t=(n=e.focusTrapOptions).onDeactivate)||void 0===t||t.call.apply(t,[n].concat(i)),e.isDestroyed||e.isDestroying||e.closeModal()}})
 this.focusTrap=(0,a.createFocusTrap)(t,r),this.focusTrap.activate()}this.fadeOutEnd=function(n){var r=n.target,i=n.animationName
 e.modals._onModalAnimationEnd()
 var o=r!==t,a="-out"!==i.substring(i.length-4)
 o||a||e.modal._remove()},this.modals._onModalAnimationStart(),t.addEventListener("animationend",this.fadeOutEnd),(0,n.set)(this,"animatingOutClass","")},willDestroyElement:function(){if(this.focusTrap&&this.focusTrap.deactivate({onDeactivate:null}),this.fadeOutEnd){var e=document.getElementById(this.modalElementId)
-e&&(e.removeEventListener("animationend",this.fadeOutEnd),this.modal._remove())}this._super.apply(this,arguments)},closeModal:function(e){(0,n.set)(this,"animatingOutClass",this.outAnimationClass),this.focusTrap&&this.focusTrap.deactivate({onDeactivate:this.focusTrapOptions.onDeactivate}),this.modal._resolve(e)},actions:{close:function(e){this.closeModal(e)}}})
+e&&(e.removeEventListener("animationend",this.fadeOutEnd),this.modal._remove())}this._super.apply(this,arguments)},closeModal:function(e){(0,n.set)(this,"animatingOutClass",this.outAnimationClass),this.modal._resolve(e)},actions:{close:function(e){this.closeModal(e),this.focusTrap&&this.focusTrap.deactivate({onDeactivate:this.focusTrapOptions.onDeactivate})}}})
 e.default=f})),define("ember-promise-modals/modal",["exports","@ember/object","@ember/test-waiters","rsvp"],(function(e,t,n,r){"use strict"
 var i,o
 function a(e,t){var n=Object.keys(e)
