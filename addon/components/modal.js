@@ -13,6 +13,7 @@ export default Component.extend({
 
   tagName: '',
   outAnimationClass: 'epm-out',
+  animatingClass: '',
 
   modals: service(),
 
@@ -20,7 +21,7 @@ export default Component.extend({
 
   modalElementId: null,
   focusTrapOptions: null,
-  fadeOutEnd: null,
+  _animationEnd: null,
 
   init() {
     this._super(...arguments);
@@ -93,39 +94,43 @@ export default Component.extend({
   },
 
   _addAnimationListeners() {
-    this.fadeOutEnd = ({ target, animationName }) => {
-      this.modals._onModalAnimationEnd();
-
-      let isntTarget = target !== this._getElement();
-      let animationEndsWrong = animationName.substring(animationName.length - 4) !== '-out';
-
-      if (isntTarget || animationEndsWrong) {
+    this._animationEnd = ({ target, animationName }) => {
+      // ignore animations bubbling up
+      if (target !== this._getElement()) {
         return;
       }
 
-      this.modal._remove();
-    };
+      // An animation has ended, inform the modals service
+      this.modals._onModalAnimationEnd();
 
-    this._getElement().addEventListener('animationend', this.fadeOutEnd);
-  },
-
-  _removeAnimationListeners() {
-    if (this.fadeOutEnd) {
-      let element = this._getElement();
-
-      if (element) {
-        element.removeEventListener('animationend', this.fadeOutEnd);
-        // make sure that we remove the modal, also resolving the test waiter
+      let isOutAnimation = animationName.substring(animationName.length - 4) === '-out';
+      if (isOutAnimation) {
         this.modal._remove();
       }
+    };
 
-      this.fadeOutEnd = null;
+    let element = this._getElement();
+    if (element) {
+      element.addEventListener('animationend', this._animationEnd);
     }
   },
 
+  _removeAnimationListeners() {
+    if (!this._animationEnd) {
+      return;
+    }
+
+    let element = this._getElement();
+    if (element) {
+      element.removeEventListener('animationend', this._animationEnd);
+    }
+
+    this._animationEnd = null;
+  },
+
   closeModal(result) {
-    // Trigger out animation
-    set(this, 'animatingOutClass', this.outAnimationClass);
+    // This triggers the out animation, which in turn will remove the modal after it completes
+    set(this, 'animatingClass', this.outAnimationClass);
 
     this.modal._resolve(result);
   },
