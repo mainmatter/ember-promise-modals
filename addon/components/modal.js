@@ -3,6 +3,7 @@ import { set } from '@ember/object';
 import { readOnly } from '@ember/object/computed';
 import { guidFor } from '@ember/object/internals';
 import { inject as service } from '@ember/service';
+import { cancel, later } from '@ember/runloop';
 
 import { createFocusTrap } from 'focus-trap';
 
@@ -22,6 +23,7 @@ export default Component.extend({
   modalElementId: null,
   focusTrapOptions: null,
   _animationEnd: null,
+  _timeout: null,
 
   init() {
     this._super(...arguments);
@@ -127,6 +129,9 @@ export default Component.extend({
   },
 
   destroyModal() {
+    cancel(this._timeout);
+    this._timeout = null;
+
     // Remove the focus trap without triggering the optional onDeactivate() hook
     this._removeFocusTrap(null);
 
@@ -135,6 +140,7 @@ export default Component.extend({
 
     // make sure that we remove the modal, also resolving the test waiter
     this.modal._remove();
+
   },
 
   closeModal(result) {
@@ -147,7 +153,18 @@ export default Component.extend({
     // This triggers the out animation, which in turn will remove the modal after it completes
     set(this, 'animatingClass', this.outAnimationClass);
 
+    const element = document.getElementById(this.modalElementId);
+    const animationDuration = window.getComputedStyle(element)['animation-duration'] ?? '0s';
+    this._timeout = later(this, 'removeModal', animationDuration.replace('s' , '') * 1000 + 1);
+
     this.modal._resolve(result);
+  },
+
+  removeModal() {
+    cancel(this._timeout);
+    this._timeout = null;
+    this.modals._onModalAnimationEnd();
+    this.modal?._remove();
   },
 
   actions: {
