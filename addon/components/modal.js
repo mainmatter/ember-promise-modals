@@ -44,8 +44,8 @@ export default Component.extend({
       let options = {
         ...this.focusTrapOptions,
         fallbackFocus: `#${this.modalElementId}`,
-        onPostDeactivate: (...args) => {
-          this.focusTrapOptions.onPostDeactivate?.(...args);
+        onDeactivate: (...args) => {
+          this.focusTrapOptions.onDeactivate?.(...args);
 
           if (this.isDestroyed || this.isDestroying) {
             return;
@@ -99,18 +99,18 @@ export default Component.extend({
     // Trigger out animation
     set(this, 'animatingOutClass', this.outAnimationClass);
 
-    if (this.focusTrap) {
-      this.focusTrap.deactivate({
-        onDeactivate: this.focusTrapOptions.onDeactivate,
-      });
-    }
-
     this.modal._resolve(result);
   },
 
   actions: {
     close(result) {
       this.closeModal(result);
+
+      if (this.focusTrap) {
+        this.focusTrap.deactivate({
+          onDeactivate: this.focusTrapOptions.onDeactivate,
+        });
+      }
     },
   },
 });
