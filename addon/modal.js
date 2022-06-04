@@ -54,6 +54,14 @@ export default class Modal {
     return this._deferred.promise.then(onFulfilled, onRejected);
   }
 
+  _destroy() {
+    if (!this._componentInstance) {
+      return;
+    }
+
+    this._componentInstance.destroyModal();
+  }
+
   _resolve(result) {
     if (!this._deferredOutAnimation) {
       set(this, '_deferredOutAnimation', defer());
