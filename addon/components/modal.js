@@ -132,6 +132,9 @@ export default Component.extend({
     if (this.animatingClass !== '') {
       return;
     }
+
+    this.modals._onModalAnimationStart();
+
     // This triggers the out animation, which in turn will remove the modal after it completes
     set(this, 'animatingClass', this.outAnimationClass);
 
