@@ -38,25 +38,7 @@ export default Component.extend({
   didInsertElement() {
     this._super(...arguments);
 
-    if (this.focusTrapOptions) {
-      let element = this._getElement();
-      let options = {
-        ...this.focusTrapOptions,
-        fallbackFocus: `#${this.modalElementId}`,
-        onDeactivate: (...args) => {
-          this.focusTrapOptions.onDeactivate?.(...args);
-
-          if (this.isDestroyed || this.isDestroying) {
-            return;
-          }
-
-          this.closeModal();
-        },
-      };
-
-      this.focusTrap = createFocusTrap(element, options);
-      this.focusTrap.activate();
-    }
+    this._addFocusTrap();
 
     this.fadeOutEnd = ({ target, animationName }) => {
       this.modals._onModalAnimationEnd();
@@ -77,9 +59,8 @@ export default Component.extend({
   },
 
   willDestroyElement() {
-    if (this.focusTrap) {
-      this.focusTrap.deactivate({ onDeactivate: null });
-    }
+    // Remove the focus trap without triggering the optional onDeactivate() hook
+    this._removeFocusTrap(null);
 
     if (this.fadeOutEnd) {
       let element = this._getElement();
@@ -98,6 +79,39 @@ export default Component.extend({
     return document.getElementById(this.modalElementId);
   },
 
+  _addFocusTrap() {
+    let element = this._getElement();
+
+    if (!this.focusTrapOptions) {
+      return;
+    }
+
+    let options = {
+      ...this.focusTrapOptions,
+      fallbackFocus: element,
+      onDeactivate: (...args) => {
+        this.focusTrapOptions.onDeactivate?.(...args);
+
+        if (this.isDestroyed || this.isDestroying) {
+          return;
+        }
+
+        this.closeModal();
+      },
+    };
+
+    this.focusTrap = createFocusTrap(element, options);
+    this.focusTrap.activate();
+  },
+
+  _removeFocusTrap(onDeactivate = this.focusTrapOptions?.onDeactivate) {
+    if (!this.focusTrap) {
+      return;
+    }
+
+    this.focusTrap.deactivate({ onDeactivate });
+  },
+
   closeModal(result) {
     // Trigger out animation
     set(this, 'animatingOutClass', this.outAnimationClass);
@@ -109,11 +123,8 @@ export default Component.extend({
     close(result) {
       this.closeModal(result);
 
-      if (this.focusTrap) {
-        this.focusTrap.deactivate({
-          onDeactivate: this.focusTrapOptions.onDeactivate,
-        });
-      }
+      // Remove the focus trap, triggering the onDeactivate() hook
+      this._removeFocusTrap();
     },
   },
 });
