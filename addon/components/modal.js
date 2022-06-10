@@ -38,9 +38,8 @@ export default Component.extend({
   didInsertElement() {
     this._super(...arguments);
 
-    let element = document.getElementById(this.modalElementId);
-
     if (this.focusTrapOptions) {
+      let element = this._getElement();
       let options = {
         ...this.focusTrapOptions,
         fallbackFocus: `#${this.modalElementId}`,
@@ -62,7 +61,7 @@ export default Component.extend({
     this.fadeOutEnd = ({ target, animationName }) => {
       this.modals._onModalAnimationEnd();
 
-      let isntTarget = target !== element;
+      let isntTarget = target !== this._getElement();
       let animationEndsWrong = animationName.substring(animationName.length - 4) !== '-out';
 
       if (isntTarget || animationEndsWrong) {
@@ -73,7 +72,7 @@ export default Component.extend({
     };
 
     this.modals._onModalAnimationStart();
-    element.addEventListener('animationend', this.fadeOutEnd);
+    this._getElement().addEventListener('animationend', this.fadeOutEnd);
     set(this, 'animatingOutClass', '');
   },
 
@@ -83,7 +82,7 @@ export default Component.extend({
     }
 
     if (this.fadeOutEnd) {
-      let element = document.getElementById(this.modalElementId);
+      let element = this._getElement();
 
       if (element) {
         element.removeEventListener('animationend', this.fadeOutEnd);
@@ -93,6 +92,10 @@ export default Component.extend({
     }
 
     this._super(...arguments);
+  },
+
+  _getElement() {
+    return document.getElementById(this.modalElementId);
   },
 
   closeModal(result) {
