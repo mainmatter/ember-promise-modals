@@ -4146,15 +4146,13 @@ t%2?u(Object(n),!0).forEach((function(t){c(e,t,n[t])})):Object.getOwnPropertyDes
 var f=t.default.extend({layout:s.default,tagName:"",outAnimationClass:"epm-out",modals:(0,o.inject)(),optionsClassName:(0,r.readOnly)("modal._options.className"),modalElementId:null,focusTrapOptions:null,init:function(){this._super.apply(this,arguments),(0,n.set)(this,"modalElementId",(0,i.guidFor)(this)),this.modal._componentInstance=this
 var e=this.modals.focusTrapOptions,t=this.modal._options.focusTrapOptions
 null!==t&&(this.focusTrapOptions=t||e)},didInsertElement:function(){var e=this
-this._super.apply(this,arguments)
-var t=document.getElementById(this.modalElementId)
-if(this.focusTrapOptions){var r=l(l({},this.focusTrapOptions),{},{fallbackFocus:"#".concat(this.modalElementId),onDeactivate:function(){for(var t,n,r=arguments.length,i=new Array(r),o=0;o<r;o++)i[o]=arguments[o]
+if(this._super.apply(this,arguments),this.focusTrapOptions){var t=this._getElement(),r=l(l({},this.focusTrapOptions),{},{fallbackFocus:"#".concat(this.modalElementId),onDeactivate:function(){for(var t,n,r=arguments.length,i=new Array(r),o=0;o<r;o++)i[o]=arguments[o]
 null===(t=(n=e.focusTrapOptions).onDeactivate)||void 0===t||t.call.apply(t,[n].concat(i)),e.isDestroyed||e.isDestroying||e.closeModal()}})
-this.focusTrap=(0,a.createFocusTrap)(t,r),this.focusTrap.activate()}this.fadeOutEnd=function(n){var r=n.target,i=n.animationName
+this.focusTrap=(0,a.createFocusTrap)(t,r),this.focusTrap.activate()}this.fadeOutEnd=function(t){var n=t.target,r=t.animationName
 e.modals._onModalAnimationEnd()
-var o=r!==t,a="-out"!==i.substring(i.length-4)
-o||a||e.modal._remove()},this.modals._onModalAnimationStart(),t.addEventListener("animationend",this.fadeOutEnd),(0,n.set)(this,"animatingOutClass","")},willDestroyElement:function(){if(this.focusTrap&&this.focusTrap.deactivate({onDeactivate:null}),this.fadeOutEnd){var e=document.getElementById(this.modalElementId)
-e&&(e.removeEventListener("animationend",this.fadeOutEnd),this.modal._remove())}this._super.apply(this,arguments)},closeModal:function(e){(0,n.set)(this,"animatingOutClass",this.outAnimationClass),this.modal._resolve(e)},actions:{close:function(e){this.closeModal(e),this.focusTrap&&this.focusTrap.deactivate({onDeactivate:this.focusTrapOptions.onDeactivate})}}})
+var i=n!==e._getElement(),o="-out"!==r.substring(r.length-4)
+i||o||e.modal._remove()},this.modals._onModalAnimationStart(),this._getElement().addEventListener("animationend",this.fadeOutEnd),(0,n.set)(this,"animatingOutClass","")},willDestroyElement:function(){if(this.focusTrap&&this.focusTrap.deactivate({onDeactivate:null}),this.fadeOutEnd){var e=this._getElement()
+e&&(e.removeEventListener("animationend",this.fadeOutEnd),this.modal._remove())}this._super.apply(this,arguments)},_getElement:function(){return document.getElementById(this.modalElementId)},closeModal:function(e){(0,n.set)(this,"animatingOutClass",this.outAnimationClass),this.modal._resolve(e)},actions:{close:function(e){this.closeModal(e),this.focusTrap&&this.focusTrap.deactivate({onDeactivate:this.focusTrapOptions.onDeactivate})}}})
 e.default=f})),define("ember-promise-modals/modal",["exports","@ember/object","@ember/test-waiters","rsvp"],(function(e,t,n,r){"use strict"
 var i,o
 function a(e,t){var n=Object.keys(e)
