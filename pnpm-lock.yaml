@@ -41,7 +41,7 @@ specifiers:
   loader.js: 4.7.0
   npm-run-all: 4.1.5
   postcss-preset-env: ^7.6.0
-  prettier: 2.6.2
+  prettier: 2.7.0
   qunit: 2.19.1
   qunit-console-grouper: 0.3.0
   qunit-dom: 2.0.0
@@ -87,12 +87,12 @@ devDependencies:
   eslint-plugin-ember: 10.6.1_eslint@8.17.0
   eslint-plugin-import-helpers: 1.2.1_eslint@8.17.0
   eslint-plugin-node: 11.1.0_eslint@8.17.0
-  eslint-plugin-prettier: 4.0.0_ucegkljdju7q4zmvwxzqoprf3y
+  eslint-plugin-prettier: 4.0.0_nguwan5pqsajixjz57ffz7bkde
   eslint-plugin-promise: 6.0.0_eslint@8.17.0
   eslint-plugin-qunit: 7.3.0_eslint@8.17.0
   loader.js: 4.7.0
   npm-run-all: 4.1.5
-  prettier: 2.6.2
+  prettier: 2.7.0
   qunit: 2.19.1
   qunit-console-grouper: 0.3.0
   qunit-dom: 2.0.0
@@ -6212,7 +6212,7 @@ packages:
       semver: 6.3.0
     dev: true
 
-  /eslint-plugin-prettier/4.0.0_ucegkljdju7q4zmvwxzqoprf3y:
+  /eslint-plugin-prettier/4.0.0_nguwan5pqsajixjz57ffz7bkde:
     resolution: {integrity: sha512-98MqmCJ7vJodoQK359bqQWaxOE0CS8paAz/GgjaZLyex4TTk3g9HugoO89EqWCrFiOqn9EVvcoo7gZzONCWVwQ==}
     engines: {node: '>=6.0.0'}
     peerDependencies:
@@ -6225,7 +6225,7 @@ packages:
     dependencies:
       eslint: 8.17.0
       eslint-config-prettier: 8.5.0_eslint@8.17.0
-      prettier: 2.6.2
+      prettier: 2.7.0
       prettier-linter-helpers: 1.0.0
     dev: true
 
@@ -10693,8 +10693,8 @@ packages:
       fast-diff: 1.2.0
     dev: true
 
-  /prettier/2.6.2:
-    resolution: {integrity: sha512-PkUpF+qoXTqhOeWL9fu7As8LXsIUZ1WYaJiY/a7McAQzxjk82OF0tibkFXVCDImZtWxbvojFjerkiLb0/q8mew==}
+  /prettier/2.7.0:
+    resolution: {integrity: sha512-nwoX4GMFgxoPC6diHvSwmK/4yU8FFH3V8XWtLQrbj4IBsK2pkYhG4kf/ljF/haaZ/aii+wNJqISrCDPgxGWDVQ==}
     engines: {node: '>=10.13.0'}
     hasBin: true
 
@@ -11227,7 +11227,7 @@ packages:
       '@babel/core': 7.18.2
       '@babel/plugin-syntax-decorators': 7.17.12_@babel+core@7.18.2
       '@babel/plugin-transform-typescript': 7.18.4_@babel+core@7.18.2
-      prettier: 2.6.2
+      prettier: 2.7.0
     transitivePeerDependencies:
       - supports-color
 
