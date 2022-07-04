@@ -5,7 +5,7 @@ specifiers:
   '@ember/optional-features': 2.0.0
   '@ember/test-helpers': 2.8.1
   '@ember/test-waiters': ^3.0.1
-  '@embroider/test-setup': 1.8.1
+  '@embroider/test-setup': 1.8.3
   '@embroider/util': ^1.7.1
   broccoli-asset-rev: 3.0.0
   broccoli-funnel: ^3.0.8
@@ -65,7 +65,7 @@ devDependencies:
   '@babel/eslint-parser': 7.18.2_eslint@8.19.0
   '@ember/optional-features': 2.0.0
   '@ember/test-helpers': 2.8.1_ember-source@4.5.0
-  '@embroider/test-setup': 1.8.1
+  '@embroider/test-setup': 1.8.3
   broccoli-asset-rev: 3.0.0
   ember-cli: 4.4.0
   ember-cli-dependency-checker: 3.3.1_ember-cli@4.4.0
@@ -1787,8 +1787,8 @@ packages:
       semver: 7.3.7
       typescript-memoize: 1.1.0
 
-  /@embroider/test-setup/1.8.1:
-    resolution: {integrity: sha512-pELZvAWbjuJQmCXb2olCEoHYytzVDr84H63IY0VJXK1UdEFeJN1vjjata2n+DPZanj8Le5nm/SuJlkMQQOknZA==}
+  /@embroider/test-setup/1.8.3:
+    resolution: {integrity: sha512-BCCbBG7UWkCw+cQ401Ip6LnqTRaQDeKImxR+e7Q4oP6H4EBj7p4iGR1z6fhMy4NNyXKPB6jk3bGa9bTiiNoEAw==}
     engines: {node: 12.* || 14.* || >= 16}
     dependencies:
       lodash: 4.17.21
