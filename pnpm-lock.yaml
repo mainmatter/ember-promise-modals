@@ -36,7 +36,7 @@ specifiers:
   eslint-plugin-node: 11.1.0
   eslint-plugin-prettier: 4.2.1
   eslint-plugin-promise: 6.0.0
-  eslint-plugin-qunit: 7.3.0
+  eslint-plugin-qunit: 7.3.1
   focus-trap: ^6.9.3
   loader.js: 4.7.0
   npm-run-all: 4.1.5
@@ -89,7 +89,7 @@ devDependencies:
   eslint-plugin-node: 11.1.0_eslint@8.19.0
   eslint-plugin-prettier: 4.2.1_7uxdfn2xinezdgvmbammh6ev5i
   eslint-plugin-promise: 6.0.0_eslint@8.19.0
-  eslint-plugin-qunit: 7.3.0_eslint@8.19.0
+  eslint-plugin-qunit: 7.3.1_eslint@8.19.0
   loader.js: 4.7.0
   npm-run-all: 4.1.5
   prettier: 2.7.1
@@ -6244,8 +6244,8 @@ packages:
       eslint: 8.19.0
     dev: true
 
-  /eslint-plugin-qunit/7.3.0_eslint@8.19.0:
-    resolution: {integrity: sha512-o80qEsBpnh2hGCLKmNVimPSPY6TP2eyM+wQl9vdOKWJKrQXEgNTMX9mf4X4h3GguaBlmSNnLaPVsycKaZEaGZg==}
+  /eslint-plugin-qunit/7.3.1_eslint@8.19.0:
+    resolution: {integrity: sha512-L1yutkLqCgr70ZmMAbBKPvUOUwhKryZ0RaJKOzw72Bmn8no3JNBL9hhbX2aTvfZqYM/wLXIT0nICZiGrV4xVJw==}
     engines: {node: 12.x || 14.x || >=16.0.0}
     dependencies:
       eslint-utils: 3.0.0_eslint@8.19.0
