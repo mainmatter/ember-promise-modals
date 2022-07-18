@@ -1,7 +1,7 @@
 lockfileVersion: 5.4
 
 specifiers:
-  '@babel/eslint-parser': 7.18.2
+  '@babel/eslint-parser': 7.18.9
   '@ember/optional-features': 2.0.0
   '@ember/test-helpers': 2.8.1
   '@ember/test-waiters': ^3.0.1
@@ -62,7 +62,7 @@ dependencies:
   postcss-preset-env: 7.7.2
 
 devDependencies:
-  '@babel/eslint-parser': 7.18.2_eslint@8.20.0
+  '@babel/eslint-parser': 7.18.9_eslint@8.20.0
   '@ember/optional-features': 2.0.0
   '@ember/test-helpers': 2.8.1_ember-source@4.5.0
   '@embroider/test-setup': 1.8.3
@@ -141,8 +141,8 @@ packages:
     transitivePeerDependencies:
       - supports-color
 
-  /@babel/eslint-parser/7.18.2_eslint@8.20.0:
-    resolution: {integrity: sha512-oFQYkE8SuH14+uR51JVAmdqwKYXGRjEXx7s+WiagVjqQ+HPE+nnwyF2qlVG8evUsUHmPcA+6YXMEDbIhEyQc5A==}
+  /@babel/eslint-parser/7.18.9_eslint@8.20.0:
+    resolution: {integrity: sha512-KzSGpMBggz4fKbRbWLNyPVTuQr6cmCcBhOyXTw/fieOVaw5oYAwcAj4a7UKcDYCPxQq+CG1NCDZH9e2JTXquiQ==}
     engines: {node: ^10.13.0 || ^12.13.0 || >=14.0.0}
     peerDependencies:
       '@babel/core': '>=7.11.0'
