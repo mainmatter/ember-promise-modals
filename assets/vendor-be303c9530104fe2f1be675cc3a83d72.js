@@ -96,7 +96,7 @@ try{regeneratorRuntime=runtime}catch(accidentalStrictMode){"object"==typeof glob
  *            Portions Copyright 2008-2011 Apple Inc. All rights reserved.
  * @license   Licensed under MIT license
  *            See https://raw.github.com/emberjs/ember.js/master/LICENSE
- * @version   4.5.0
+ * @version   4.5.1
  */
 var e,t;(function(){var n="undefined"!=typeof globalThis?globalThis:"undefined"!=typeof self?self:"undefined"!=typeof window?window:"undefined"!=typeof global?global:null
 if(null===n)throw new Error("unable to locate global object")
@@ -511,7 +511,7 @@ return(0,i.isObject)(e)&&(0,u.consumeTag)((0,l.tagForProperty)(e,"[]")),e}))})),
 return(0,s.createInvokableRef)(t)})),qt=Se((function(e){var t=e.positional[0]
 return(0,s.createReadOnlyRef)(t)})),Vt=Se((function(e){var t=e.positional
 e.named
-return(0,s.createUnboundRef)((0,s.valueForRef)(t[0]),"(result of an `unbound` helper)")})),zt=Se((function(){return(0,s.createConstRef)(([1e7]+-1e3+-4e3+-8e3+-1e11).replace(/[018]/g,(function(e){return(e^16*Math.random()>>e/4).toString(16)})),"unique-id")}))
+return(0,s.createUnboundRef)((0,s.valueForRef)(t[0]),"(result of an `unbound` helper)")})),zt=Se((function(){return(0,s.createConstRef)(([3e7]+-1e3+-4e3+-2e3+-1e11).replace(/[0-3]/g,(function(e){return(4*e^16*Math.random()>>(2&e)).toString(16)})),"unique-id")}))
 var Wt=["alt","shift","meta","ctrl"],Gt=/^click|mouse|touch/
 p.ActionManager.registeredActions
 var $t=function(e){var t=e.actionId
@@ -3644,7 +3644,7 @@ return r.Adapter=i,r.QUnitAdapter=o,Object.defineProperty(L,"Test",{configurable
 var q=L
 t.default=q})),e("ember/version",["exports"],(function(e){"use strict"
 Object.defineProperty(e,"__esModule",{value:!0}),e.default=void 0
-e.default="4.5.0"})),e("route-recognizer",["exports"],(function(e){"use strict"
+e.default="4.5.1"})),e("route-recognizer",["exports"],(function(e){"use strict"
 Object.defineProperty(e,"__esModule",{value:!0}),e.default=void 0
 var t=Object.create
 function n(){var e=t(null)
