@@ -31,7 +31,7 @@ specifiers:
   ember-try: 2.0.0
   eslint: 8.22.0
   eslint-config-prettier: 8.5.0
-  eslint-plugin-ember: 10.6.1
+  eslint-plugin-ember: 11.0.6
   eslint-plugin-import-helpers: 1.2.1
   eslint-plugin-node: 11.1.0
   eslint-plugin-prettier: 4.2.1
@@ -84,7 +84,7 @@ devDependencies:
   ember-try: 2.0.0
   eslint: 8.22.0
   eslint-config-prettier: 8.5.0_eslint@8.22.0
-  eslint-plugin-ember: 10.6.1_eslint@8.22.0
+  eslint-plugin-ember: 11.0.6_eslint@8.22.0
   eslint-plugin-import-helpers: 1.2.1_eslint@8.22.0
   eslint-plugin-node: 11.1.0_eslint@8.22.0
   eslint-plugin-prettier: 4.2.1_i2cojdczqdiurzgttlwdgf764e
@@ -6176,11 +6176,11 @@ packages:
       eslint: 8.22.0
     dev: true
 
-  /eslint-plugin-ember/10.6.1_eslint@8.22.0:
-    resolution: {integrity: sha512-R+TN3jwhYQ2ytZCA1VkfJDZSGgHFOHjsHU1DrBlRXYRepThe56PpuGxywAyDvQ7inhoAz3e6G6M60PzpvjzmNg==}
-    engines: {node: 10.* || 12.* || >= 14}
+  /eslint-plugin-ember/11.0.6_eslint@8.22.0:
+    resolution: {integrity: sha512-iQzqn8/GdBbNv2T3YetpjEBemoH0v9e9ea8Bu6JLOX2TN+HMK2l52/QBRFgrnaxLXBjPO3iy2c3sCieYV27EvQ==}
+    engines: {node: 14.* || 16.* || >= 18}
     peerDependencies:
-      eslint: '>= 6'
+      eslint: '>= 7'
     dependencies:
       '@ember-data/rfc395-data': 0.0.4
       css-tree: 2.2.1
