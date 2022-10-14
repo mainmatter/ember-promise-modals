@@ -4218,7 +4218,7 @@ this._animationEnd=function(t){var n=t.target,r=t.animationName
 n===e._getElement()&&(e.modals._onModalAnimationEnd(),"-out"===r.substring(r.length-4)&&e.modal._remove())}
 var t=this._getElement()
 t&&t.addEventListener("animationend",this._animationEnd)},_removeAnimationListeners:function(){if(this._animationEnd){var e=this._getElement()
-e&&e.removeEventListener("animationend",this._animationEnd),this._animationEnd=null}},closeModal:function(e){""===this.animatingClass&&((0,n.set)(this,"animatingClass",this.outAnimationClass),this.modal._resolve(e))},actions:{close:function(e){this.closeModal(e),this._removeFocusTrap()}}})
+e&&e.removeEventListener("animationend",this._animationEnd),this._animationEnd=null}},closeModal:function(e){""===this.animatingClass&&(this.modals._onModalAnimationStart(),(0,n.set)(this,"animatingClass",this.outAnimationClass),this.modal._resolve(e))},actions:{close:function(e){this.closeModal(e),this._removeFocusTrap()}}})
 e.default=f})),define("ember-promise-modals/modal",["exports","@ember/object","@ember/test-waiters","rsvp"],(function(e,t,n,r){"use strict"
 var i,o
 function a(e,t){var n=Object.keys(e)
