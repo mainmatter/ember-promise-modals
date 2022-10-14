@@ -13,6 +13,7 @@ module.exports = async function () {
             'ember-source': '~3.4.0',
             '@ember/test-helpers': '2.7.0',
             'ember-decorators-polyfill': '^1.1.5',
+            'ember-qunit': '5.1.5',
           },
         },
       },
@@ -22,6 +23,7 @@ module.exports = async function () {
           devDependencies: {
             'ember-source': '~3.8.0',
             'ember-decorators-polyfill': '^1.1.5',
+            'ember-qunit': '5.1.5',
           },
         },
       },
@@ -30,6 +32,7 @@ module.exports = async function () {
         npm: {
           devDependencies: {
             'ember-source': '~3.12.0',
+            'ember-qunit': '5.1.5',
           },
         },
       },
