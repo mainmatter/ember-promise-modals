@@ -41,7 +41,7 @@
     "postcss-preset-env": "^7.6.0"
   },
   "devDependencies": {
-    "@babel/eslint-parser": "7.18.9",
+    "@babel/eslint-parser": "7.19.1",
     "@ember/optional-features": "2.0.0",
     "@ember/test-helpers": "2.8.1",
     "@embroider/test-setup": "1.8.3",
