@@ -53,7 +53,7 @@ export default Service.extend({
 
   _destroyModals() {
     this._stack.forEach(modal => {
-      modal.close();
+      modal._remove();
     });
   },
 

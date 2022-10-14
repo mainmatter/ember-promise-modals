@@ -13,6 +13,7 @@ export default Component.extend({
 
   tagName: '',
   outAnimationClass: 'epm-out',
+  animatingClass: '',
 
   modals: service(),
 
@@ -20,6 +21,7 @@ export default Component.extend({
 
   modalElementId: null,
   focusTrapOptions: null,
+  _animationEnd: null,
 
   init() {
     this._super(...arguments);
@@ -39,38 +41,17 @@ export default Component.extend({
     this._super(...arguments);
 
     this._addFocusTrap();
+    this._addAnimationListeners();
 
-    this.fadeOutEnd = ({ target, animationName }) => {
-      this.modals._onModalAnimationEnd();
-
-      let isntTarget = target !== this._getElement();
-      let animationEndsWrong = animationName.substring(animationName.length - 4) !== '-out';
-
-      if (isntTarget || animationEndsWrong) {
-        return;
-      }
-
-      this.modal._remove();
-    };
-
+    // animating in starts when the element is added to the DOM. Inform the service about it.
     this.modals._onModalAnimationStart();
-    this._getElement().addEventListener('animationend', this.fadeOutEnd);
-    set(this, 'animatingOutClass', '');
   },
 
   willDestroyElement() {
     // Remove the focus trap without triggering the optional onDeactivate() hook
     this._removeFocusTrap(null);
 
-    if (this.fadeOutEnd) {
-      let element = this._getElement();
-
-      if (element) {
-        element.removeEventListener('animationend', this.fadeOutEnd);
-        // make sure that we remove the modal, also resolving the test waiter
-        this.modal._remove();
-      }
-    }
+    this._removeAnimationListeners();
 
     this._super(...arguments);
   },
@@ -112,9 +93,47 @@ export default Component.extend({
     this.focusTrap.deactivate({ onDeactivate });
   },
 
+  _addAnimationListeners() {
+    this._animationEnd = ({ target, animationName }) => {
+      // ignore animations bubbling up
+      if (target !== this._getElement()) {
+        return;
+      }
+
+      // An animation has ended, inform the modals service
+      this.modals._onModalAnimationEnd();
+
+      let isOutAnimation = animationName.substring(animationName.length - 4) === '-out';
+      if (isOutAnimation) {
+        this.modal._remove();
+      }
+    };
+
+    let element = this._getElement();
+    if (element) {
+      element.addEventListener('animationend', this._animationEnd);
+    }
+  },
+
+  _removeAnimationListeners() {
+    if (!this._animationEnd) {
+      return;
+    }
+
+    let element = this._getElement();
+    if (element) {
+      element.removeEventListener('animationend', this._animationEnd);
+    }
+
+    this._animationEnd = null;
+  },
+
   closeModal(result) {
-    // Trigger out animation
-    set(this, 'animatingOutClass', this.outAnimationClass);
+    if (this.animatingClass !== '') {
+      return;
+    }
+    // This triggers the out animation, which in turn will remove the modal after it completes
+    set(this, 'animatingClass', this.outAnimationClass);
 
     this.modal._resolve(result);
   },
