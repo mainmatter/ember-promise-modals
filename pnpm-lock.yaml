@@ -7,7 +7,7 @@ specifiers:
   '@ember/test-waiters': ^3.0.1
   '@embroider/test-setup': 1.8.3
   '@embroider/util': ^1.7.1
-  '@release-it-plugins/lerna-changelog': ^5.0.0
+  '@release-it-plugins/lerna-changelog': 5.0.0
   broccoli-asset-rev: 3.0.0
   broccoli-funnel: ^3.0.8
   broccoli-merge-trees: ^4.2.0
@@ -47,7 +47,7 @@ specifiers:
   qunit-console-grouper: 0.3.0
   qunit-dom: 2.0.0
   release-it: 15.5.0
-  sinon: ^14.0.1
+  sinon: 14.0.1
   webpack: 5.74.0
 
 dependencies:
@@ -10485,7 +10485,7 @@ packages:
       got: 12.5.1
       registry-auth-token: 5.0.1
       registry-url: 6.0.1
-      semver: 7.3.7
+      semver: 7.3.8
     dev: true
 
   /pako/1.0.11:
@@ -12081,7 +12081,7 @@ packages:
     resolution: {integrity: sha512-0Ju4+6A8iOnpL/Thra7dZsSlOHYAHIeMxfhWQRI1/VLcT3WDBZKKtQt/QkBOsiIN9ZpuvHE6cGZ0x4glCMmfiA==}
     engines: {node: '>=12'}
     dependencies:
-      semver: 7.3.7
+      semver: 7.3.8
     dev: true
 
   /semver/5.7.1:
@@ -13428,7 +13428,7 @@ packages:
       is-yarn-global: 0.4.0
       latest-version: 7.0.0
       pupa: 3.1.0
-      semver: 7.3.7
+      semver: 7.3.8
       semver-diff: 4.0.0
       xdg-basedir: 5.1.0
     dev: true
