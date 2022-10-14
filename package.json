@@ -5,9 +5,9 @@
   "keywords": [
     "ember-addon"
   ],
-  "repository": "https://github.com/simplabs/ember-promise-modals",
+  "repository": "https://github.com/mainmatter/ember-promise-modals",
   "license": "MIT",
-  "author": "simplabs GmbH",
+  "author": "Mainmatter GmbH",
   "directories": {
     "doc": "doc",
     "test": "tests"
@@ -83,7 +83,7 @@
     "node": "12.* || >= 14.*"
   },
   "changelog": {
-    "repo": "simplabs/ember-promise-modals",
+    "repo": "mainmatter/ember-promise-modals",
     "labels": {
       "breaking": ":boom: Breaking Change",
       "enhancement": ":rocket: Enhancement",
