@@ -104,7 +104,11 @@ export default Component.extend({
       let isOutAnimation = animationName.substring(animationName.length - 4) === '-out';
       if (isOutAnimation) {
         this.modal._remove();
+
+        return;
       }
+
+      this.modal._options.onAnimationModalInEnd?.(animationName);
     };
 
     let element = this._getElement();
