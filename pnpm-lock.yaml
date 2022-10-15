@@ -5,6 +5,7 @@ specifiers:
   '@ember/optional-features': 2.0.0
   '@ember/test-helpers': 2.8.1
   '@ember/test-waiters': ^3.0.1
+  '@embroider/macros': ^1.10.0
   '@embroider/test-setup': 2.0.2
   '@embroider/util': ^1.7.1
   '@release-it-plugins/lerna-changelog': 5.0.0
@@ -66,6 +67,7 @@ devDependencies:
   '@babel/eslint-parser': 7.19.1_eslint@8.28.0
   '@ember/optional-features': 2.0.0
   '@ember/test-helpers': 2.8.1_ember-source@4.9.1
+  '@embroider/macros': 1.10.0
   '@embroider/test-setup': 2.0.2
   '@release-it-plugins/lerna-changelog': 5.0.0_release-it@15.5.0
   broccoli-asset-rev: 3.0.0
@@ -10680,7 +10682,7 @@ packages:
       got: 12.5.1
       registry-auth-token: 5.0.1
       registry-url: 6.0.1
-      semver: 7.3.7
+      semver: 7.3.8
     dev: true
 
   /pako/1.0.11:
@@ -12274,7 +12276,7 @@ packages:
     resolution: {integrity: sha512-0Ju4+6A8iOnpL/Thra7dZsSlOHYAHIeMxfhWQRI1/VLcT3WDBZKKtQt/QkBOsiIN9ZpuvHE6cGZ0x4glCMmfiA==}
     engines: {node: '>=12'}
     dependencies:
-      semver: 7.3.7
+      semver: 7.3.8
     dev: true
 
   /semver/5.7.1:
@@ -13616,7 +13618,7 @@ packages:
       is-yarn-global: 0.4.1
       latest-version: 7.0.0
       pupa: 3.1.0
-      semver: 7.3.7
+      semver: 7.3.8
       semver-diff: 4.0.0
       xdg-basedir: 5.1.0
     dev: true
