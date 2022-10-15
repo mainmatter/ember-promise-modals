@@ -20,9 +20,9 @@ import { defer } from 'rsvp';
  * @method then - resolves when the modal is closed
  */
 export default class Modal {
-  constructor(service, name, data, options = {}) {
+  constructor(service, componentClass, data, options = {}) {
     this._service = service;
-    this._name = name;
+    this._componentClass = componentClass;
     this._data = data;
     this._options = {
       className: '',
