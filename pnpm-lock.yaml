@@ -28,7 +28,7 @@ specifiers:
   ember-resolver: 8.0.3
   ember-source: 4.8.0
   ember-source-channel-url: 3.0.0
-  ember-template-lint: 4.16.0
+  ember-template-lint: 4.16.1
   ember-try: 2.0.0
   eslint: 8.25.0
   eslint-config-prettier: 8.5.0
@@ -82,7 +82,7 @@ devDependencies:
   ember-resolver: 8.0.3
   ember-source: 4.8.0_gsocywzcpltb62s22lnmo6ims4
   ember-source-channel-url: 3.0.0
-  ember-template-lint: 4.16.0_ember-cli-htmlbars@6.1.1
+  ember-template-lint: 4.16.1_ember-cli-htmlbars@6.1.1
   ember-try: 2.0.0
   eslint: 8.25.0
   eslint-config-prettier: 8.5.0_eslint@8.25.0
@@ -6233,8 +6233,8 @@ packages:
       - supports-color
     dev: true
 
-  /ember-template-lint/4.16.0_ember-cli-htmlbars@6.1.1:
-    resolution: {integrity: sha512-nxUORaVKsEADA7CmZmHCFsZ/BJIS1C7rNUwAWyBHhNhIivN0yGHw9woUCcBIbIWGEmdLGwTS69gXXM+SZqp4kA==}
+  /ember-template-lint/4.16.1_ember-cli-htmlbars@6.1.1:
+    resolution: {integrity: sha512-60bWhXYh0aalnd0ogR0RL5bKsNKvJoS4b5KC6cBUj556UMruNh5YBAi/GcBcc0COxP+tThaGC0g/kIqNL03wIg==}
     engines: {node: ^12.22.0 || ^14.17.0 || >=16.0.0}
     hasBin: true
     dependencies:
