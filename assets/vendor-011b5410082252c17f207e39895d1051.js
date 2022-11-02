@@ -96,7 +96,7 @@ try{regeneratorRuntime=runtime}catch(accidentalStrictMode){"object"==typeof glob
  *            Portions Copyright 2008-2011 Apple Inc. All rights reserved.
  * @license   Licensed under MIT license
  *            See https://raw.github.com/emberjs/ember.js/master/LICENSE
- * @version   4.8.0
+ * @version   4.8.1
  */
 var e,t;(function(){var r="undefined"!=typeof globalThis?globalThis:"undefined"!=typeof self?self:"undefined"!=typeof window?window:"undefined"!=typeof global?global:null
 if(null===r)throw new Error("unable to locate global object")
@@ -812,12 +812,13 @@ u&&s.teardown(e,t,a),se(n)?be(e,t,n,a):null==n?ye(e,t,i,u,!0):Object.definePrope
 return i=r(e,t,void 0,n),Object.defineProperty(e,t,i),r}function ye(e,t,r,n,i){return void 0===i&&(i=!0),!0===n||!1===i?Object.defineProperty(e,t,{configurable:!0,enumerable:i,writable:!0,value:r}):e[t]=r,r}var _e=new n.Cache(1e3,(function(e){return e.indexOf(".")}))
 function we(e){return"string"==typeof e&&-1!==_e.get(e)}var Oe=(0,n.symbol)("PROXY_CONTENT")
 function Ee(e){return"object"==typeof e&&null!==e&&"function"==typeof e.unknownProperty}function Re(e,t){return we(t)?ke(e,t):Te(e,t)}function Te(e,t){var r
-if(null!=e)return"object"==typeof e||"function"==typeof e?(void 0===(r=e[t])&&"object"==typeof e&&!(t in e)&&Ee(e)&&(r=e.unknownProperty(t)),(0,u.isTracking)()&&((0,u.consumeTag)((0,u.tagFor)(e,t)),(Array.isArray(r)||(0,n.isEmberArray)(r))&&(0,u.consumeTag)((0,u.tagFor)(r,"[]")))):r=e[t],r}function ke(e,r){for(var n,i="string"==typeof r?r.split("."):r,o=(0,t.createForOfIteratorHelperLoose)(i);!(n=o()).done;){var a=n.value
+if(null!=e)return"object"==typeof e||"function"==typeof e?(void 0===(r=e[t])&&"object"==typeof e&&!(t in e)&&Ee(e)&&(r=e.unknownProperty(t)),(0,u.isTracking)()&&((0,u.consumeTag)((0,u.tagFor)(e,t)),(Array.isArray(r)||(0,n.isEmberArray)(r))&&(0,u.consumeTag)((0,u.tagFor)(r,"[]")))):r=e[t],r}function ke(e,r,n){for(var i,o="string"==typeof r?r.split("."):r,a=(0,t.createForOfIteratorHelperLoose)(o);!(i=a()).done;){var s=i.value
 if(null==e||e.isDestroyed)return
-e=Te(e,a)}return e}e.PROXY_CONTENT=Oe,Te("foo","a"),Te("foo",1),Te({},"a"),Te({},1),Te({unknownProperty:function(){}},"a"),Te({unknownProperty:function(){}},1),Re({},"foo"),Re({},"foo.bar")
+if(n&&("__proto__"===s||"constructor"===s))return
+e=Te(e,s)}return e}e.PROXY_CONTENT=Oe,Te("foo","a"),Te("foo",1),Te({},"a"),Te({},1),Te({unknownProperty:function(){}},"a"),Te({unknownProperty:function(){}},1),Re({},"foo"),Re({},"foo.bar")
 var Pe={}
 function Ce(e,t,r,n){return e.isDestroyed?r:we(t)?je(e,t,r,n):Ae(e,t,r)}function Ae(e,t,r){var i,o=(0,n.lookupDescriptor)(e,t)
-return null!==o&&re.has(o.set)?(e[t]=r,r):(void 0!==(i=e[t])||"object"!=typeof e||t in e||"function"!=typeof e.setUnknownProperty?(e[t]=r,i!==r&&L(e,t)):e.setUnknownProperty(t,r),r)}function je(e,t,r,n){var i=t.split("."),o=i.pop(),a=ke(e,i)
+return null!==o&&re.has(o.set)?(e[t]=r,r):(void 0!==(i=e[t])||"object"!=typeof e||t in e||"function"!=typeof e.setUnknownProperty?(e[t]=r,i!==r&&L(e,t)):e.setUnknownProperty(t,r),r)}function je(e,t,r,n){var i=t.split("."),o=i.pop(),a=ke(e,i,!0)
 if(null!=a)return Ce(a,o,r)
 if(!n)throw new f.default('Property set failed: object in path "'+i.join(".")+'" could not be found.')}(0,n.setProxy)(Pe),(0,u.track)((function(){return Te({},"a")})),(0,u.track)((function(){return Te({},1)})),(0,u.track)((function(){return Te({a:[]},"a")})),(0,u.track)((function(){return Te({a:Pe},"a")}))
 var Se=function(e){function r(){return e.apply(this,arguments)||this}(0,t.inheritsLoose)(r,e)
@@ -3627,7 +3628,7 @@ return n.Adapter=i,n.QUnitAdapter=o,Object.defineProperty(re,"Test",{configurabl
 var ue=re
 t.default=ue})),e("ember/version",["exports"],(function(e){"use strict"
 Object.defineProperty(e,"__esModule",{value:!0}),e.default=void 0
-e.default="4.8.0"})),e("route-recognizer",["exports"],(function(e){"use strict"
+e.default="4.8.1"})),e("route-recognizer",["exports"],(function(e){"use strict"
 Object.defineProperty(e,"__esModule",{value:!0}),e.default=void 0
 var t=Object.create
 function r(){var e=t(null)
