@@ -76,7 +76,7 @@
     "qunit": "2.19.3",
     "qunit-console-grouper": "0.3.0",
     "qunit-dom": "2.0.0",
-    "release-it": "15.5.0",
+    "release-it": "15.5.1",
     "sinon": "15.0.0",
     "webpack": "5.75.0"
   },
