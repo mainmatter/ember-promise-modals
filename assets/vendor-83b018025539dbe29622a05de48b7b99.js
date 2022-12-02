@@ -936,7 +936,7 @@ return r},e.generateGuid=function(e,t){void 0===t&&(t=s)
 var r=t+a().toString()
 i(e)&&u.set(e,r)
 return r},e.getDebugName=void 0,e.getName=function(e){return D.get(e)},e.guidFor=function(e){var t
-if(i(e))void 0===(t=u.get(e))&&(t="ember"+a(),u.set(e,t))
+if(i(e))void 0===(t=u.get(e))&&(t=""+s+a(),u.set(e,t))
 else if(void 0===(t=l.get(e))){var r=typeof e
 t="string"===r?"st"+a():"number"===r?"nu"+a():"symbol"===r?"sy"+a():"("+e+")",l.set(e,t)}return t},e.inspect=function(e){if("number"==typeof e&&2===arguments.length)return this
 return M(e,0)},e.intern=n,e.isEmberArray=function(e){return W.has(e)},e.isInternalSymbol=function(e){return-1!==f.indexOf(e)},e.isObject=i,e.isProxy=function(e){if(i(e))return B.has(e)
@@ -2336,20 +2336,20 @@ R(e,t[3]),R(e,n),R(e,r),e(109)})),O.add(51,(function(e,t){R(e,t[1]),e(110)})),O.
 e(0),T(e,r,null,!1),e(112),e(1),e(36,n.$v0)}))
 var H="&attrs"
 function z(e,t,i,a,s,u){var c=t.compilable,f=t.capabilities,d=t.handle,h=i?[i,[]]:null,v=Array.isArray(u)||null===u?l(u):u
-c?(e(78,d),function(e,t){var i=t.capabilities,a=t.layout,s=t.elementBlock,u=t.positional,l=t.named,c=t.blocks,f=a.symbolTable
-if(f.hasEval||(0,o.hasCapability)(i,4))return void q(e,{capabilities:i,elementBlock:s,positional:u,named:l,atNames:!0,blocks:c,layout:a})
+c?(e(78,d),function(e,t){var i=t.capabilities,a=t.layout,s=t.elementBlock,u=t.positional,l=t.named,c=t.blocks,f=a.symbolTable,d=f.hasEval||(0,o.hasCapability)(i,4)
+if(d)return void q(e,{capabilities:i,elementBlock:s,positional:u,named:l,atNames:!0,blocks:c,layout:a})
 e(36,n.$s0),e(33,n.$sp,1),e(35,n.$s0),e(0)
-var d=f.symbols,h=[],v=[],m=[],g=c.names
-if(null!==s){var b=d.indexOf(H);-1!==b&&(N(e,s),h.push(b))}for(var y=0;y<g.length;y++){var _=g[y],w=d.indexOf("&"+_);-1!==w&&(N(e,c.get(_)),h.push(w))}if((0,o.hasCapability)(i,8)){var O=k(e,u)<<4
-O|=8
-var E=r.EMPTY_STRING_ARRAY
-if(null!==l){E=l[0]
-for(var T=l[1],P=0;P<T.length;P++){var C=d.indexOf(E[P])
-R(e,T[P]),v.push(C)}}e(82,E,r.EMPTY_STRING_ARRAY,O),v.push(-1)}else if(null!==l)for(var S=l[0],A=l[1],j=0;j<A.length;j++){var x=S[j],M=d.indexOf(x);-1!==M&&(R(e,A[j]),v.push(M),m.push(x))}e(97,n.$s0),(0,o.hasCapability)(i,64)&&e(59);(0,o.hasCapability)(i,512)&&e(87,0|c.has("default"),n.$s0)
-e(88,n.$s0),(0,o.hasCapability)(i,8)?e(90,n.$s0):e(90,n.$s0,m)
-e(37,d.length+1,Object.keys(c).length>0?1:0),e(19,0)
-for(var I=v.length-1;I>=0;I--){var L=v[I];-1===L?e(34,1):e(19,L+1)}null!==u&&e(34,u.length)
-for(var D=h.length-1;D>=0;D--){e(20,h[D]+1)}e(28,p(a)),e(61),e(2),e(100,n.$s0),e(1),e(40),(0,o.hasCapability)(i,64)&&e(60)
+var h=f.symbols,v=[],m=[],g=[],b=c.names
+if(null!==s){var y=h.indexOf(H);-1!==y&&(N(e,s),v.push(y))}for(var _=0;_<b.length;_++){var w=b[_],O=h.indexOf("&"+w);-1!==O&&(N(e,c.get(w)),v.push(O))}if((0,o.hasCapability)(i,8)){var E=k(e,u)<<4
+E|=8
+var T=r.EMPTY_STRING_ARRAY
+if(null!==l){T=l[0]
+for(var P=l[1],C=0;C<P.length;C++){var S=h.indexOf(T[C])
+R(e,P[C]),m.push(S)}}e(82,T,r.EMPTY_STRING_ARRAY,E),m.push(-1)}else if(null!==l)for(var A=l[0],j=l[1],x=0;x<j.length;x++){var M=A[x],I=h.indexOf(M);-1!==I&&(R(e,j[x]),m.push(I),g.push(M))}e(97,n.$s0),(0,o.hasCapability)(i,64)&&e(59);(0,o.hasCapability)(i,512)&&e(87,0|c.has("default"),n.$s0)
+e(88,n.$s0),(0,o.hasCapability)(i,8)?e(90,n.$s0):e(90,n.$s0,g)
+e(37,h.length+1,Object.keys(c).length>0?1:0),e(19,0)
+for(var L=m.length-1;L>=0;L--){var D=m[L];-1===D?e(34,1):e(19,D+1)}null!==u&&e(34,u.length)
+for(var F=v.length-1;F>=0;F--){e(20,v[F]+1)}e(28,p(a)),e(61),e(2),e(100,n.$s0),e(1),e(40),(0,o.hasCapability)(i,64)&&e(60)
 e(98),e(35,n.$s0)}(e,{capabilities:f,layout:c,elementBlock:h,positional:a,named:s,blocks:v})):(e(78,d),q(e,{capabilities:f,elementBlock:h,positional:a,named:s,atNames:!0,blocks:v}))}function V(e,t,r,i,o,a,s,u){var f=r?[r,[]]:null,d=Array.isArray(a)||null===a?l(a):a
 U(e,(function(){return R(e,t),e(33,n.$sp,0),2}),(function(){e(66,c("ELSE")),u?e(81):e(80,{type:2,value:void 0}),e(79),q(e,{capabilities:!0,elementBlock:f,positional:i,named:o,atNames:s,blocks:d}),e(1e3,"ELSE")}))}function q(e,t){var i=t.capabilities,a=t.elementBlock,s=t.positional,u=t.named,l=t.atNames,c=t.blocks,f=t.layout,h=!!c,v=!0===i||(0,o.hasCapability)(i,4)||!(!u||0===u[0].length),m=c.with("attrs",a)
 e(36,n.$s0),e(33,n.$sp,1),e(35,n.$s0),e(0),function(e,t,n,i,o){for(var a=i.names,s=0;s<a.length;s++)N(e,i.get(a[s]))
@@ -2603,14 +2603,15 @@ if(!(0,u.hasValue)(l))throw new Error("TODO: unreachable, to be implemented with
 a=(0,s.createCache)((function(){return l.getValue(d)})),(0,o.associateDestroyableChild)(e,a)
 if((0,u.hasDestroyable)(l)){var p=l.getDestroyable(d);(0,o.associateDestroyableChild)(a,p)}return a},Object.defineProperty(e,"isDestroyed",{enumerable:!0,get:function(){return o.isDestroyed}}),Object.defineProperty(e,"isDestroying",{enumerable:!0,get:function(){return o.isDestroying}}),e.isSerializationFirstNode=function(e){return e.nodeValue===Jt},e.isWhitespace=function(e){return wt.test(e)},e.normalizeProperty=j,e.on=void 0,Object.defineProperty(e,"registerDestructor",{enumerable:!0,get:function(){return o.registerDestructor}}),e.rehydrationBuilder=function(e,t){return er.forInitialRender(e,t)},e.reifyArgs=Ie,e.reifyNamed=Me,e.reifyPositional=Ne,e.renderComponent=function(e,t,i,o,a,s,u){void 0===s&&(s={})
 void 0===u&&(u=new d)
+var l=Yt.empty(e,{treeBuilder:t,handle:i.stdlib.main,dynamicScope:u,owner:o},i)
 return function(e,t,n,i,o){var a=Object.keys(o).map((function(e){return[e,o[e]]})),s=["main","else","attrs"],u=a.map((function(e){return"@"+e[0]})),l=e[y].component(i,n)
 e.pushFrame()
 for(var c=0;c<3*s.length;c++)e.stack.push(null)
 e.stack.push(null),a.forEach((function(t){var r=t[1]
 e.stack.push(r)})),e[_].setup(e.stack,u,s,0,!0)
-var f=l.compilable,d={handle:(0,r.unwrapHandle)(f.compile(t)),symbolTable:f.symbolTable}
-return e.stack.push(e[_]),e.stack.push(d),e.stack.push(l),new Xt(e)}(Yt.empty(e,{treeBuilder:t,handle:i.stdlib.main,dynamicScope:u,owner:o},i),i,o,a,(l=s,c=(0,n.createConstRef)(l,"args"),Object.keys(l).reduce((function(e,t){return e[t]=(0,n.childRefFor)(c,t),e}),{})))
-var l,c},e.renderMain=function(e,t,n,i,o,a,s){void 0===s&&(s=new d)
+var f=l.compilable,d=(0,r.unwrapHandle)(f.compile(t)),p={handle:d,symbolTable:f.symbolTable}
+return e.stack.push(e[_]),e.stack.push(p),e.stack.push(l),new Xt(e)}(l,i,o,a,(c=s,f=(0,n.createConstRef)(c,"args"),Object.keys(c).reduce((function(e,t){return e[t]=(0,n.childRefFor)(f,t),e}),{})))
+var c,f},e.renderMain=function(e,t,n,i,o,a,s){void 0===s&&(s=new d)
 var u=(0,r.unwrapHandle)(a.compile(t)),l=a.symbolTable.symbols.length,c=Yt.initial(e,t,{self:i,dynamicScope:s,treeBuilder:o,handle:u,numSymbols:l,owner:n})
 return new Xt(c)},e.renderSync=function(e,t){var r
 return Nt(e,(function(){return r=t.sync()})),r},e.resetDebuggerCallback=function(){ut=st},e.runtimeContext=function(e,t,r,n){return{env:new Mt(e,t),program:new l.RuntimeProgramImpl(r.constants,r.heap),resolver:n}},e.setDebuggerCallback=function(e){ut=e},e.templateOnlyComponent=function(e,t){return new pt(e,t)}
