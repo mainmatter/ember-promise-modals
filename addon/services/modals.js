@@ -20,7 +20,7 @@ export default Service.extend({
     if (this.focusTrapOptions !== null) {
       this.focusTrapOptions = {
         ...(this.focusTrapOptions ?? {}),
-        clickOutsideDeactivates: this.focusTrapOptions?.clickOutsideDeactivate ?? true,
+        clickOutsideDeactivates: this.focusTrapOptions?.clickOutsideDeactivates ?? true,
       };
     }
   },
