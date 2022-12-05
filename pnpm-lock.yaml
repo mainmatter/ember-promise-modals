@@ -28,7 +28,7 @@ specifiers:
   ember-resolver: 8.0.3
   ember-source: 4.9.1
   ember-source-channel-url: 3.0.0
-  ember-template-lint: 5.1.0
+  ember-template-lint: 5.1.1
   ember-try: 2.0.0
   eslint: 8.29.0
   eslint-config-prettier: 8.5.0
@@ -82,7 +82,7 @@ devDependencies:
   ember-resolver: 8.0.3
   ember-source: 4.9.1_klhxxmjkcvtuhwro2kkspsfzna
   ember-source-channel-url: 3.0.0
-  ember-template-lint: 5.1.0_ember-cli-htmlbars@6.1.1
+  ember-template-lint: 5.1.1_ember-cli-htmlbars@6.1.1
   ember-try: 2.0.0
   eslint: 8.29.0
   eslint-config-prettier: 8.5.0_eslint@8.29.0
@@ -2375,7 +2375,7 @@ packages:
     resolution: {integrity: sha512-9K4zoImiZc3HlIp6AVUDE4CWYx22a+lhSZMYNpbjW04+YF0KWj4pJXnEMjdnFTiQibFFmElcsasJXDbdI/EPhA==}
     dependencies:
       '@types/eslint': 8.4.10
-      '@types/estree': 0.0.51
+      '@types/estree': 1.0.0
 
   /@types/eslint/7.29.0:
     resolution: {integrity: sha512-VNcvioYDH8/FxaeTKkM4/TiTwt6pBV9E3OfGmvaw8tPl0rrHCJ4Ll15HRT+pMiFAf/MLQvAzC+6RzUMEL9Ceng==}
@@ -2387,7 +2387,7 @@ packages:
   /@types/eslint/8.4.10:
     resolution: {integrity: sha512-Sl/HOqN8NKPmhWo2VBEPm0nvHnu2LL3v9vKo8MEq0EtbJ4eVzGPl41VNPvn5E1i5poMk4/XD8UriLHpJvEP/Nw==}
     dependencies:
-      '@types/estree': 0.0.51
+      '@types/estree': 1.0.0
       '@types/json-schema': 7.0.11
 
   /@types/estree/0.0.51:
@@ -2395,7 +2395,6 @@ packages:
 
   /@types/estree/1.0.0:
     resolution: {integrity: sha512-WulqXMDUTYAXCjZnk6JtIHPigp55cVtDgDrO2gHRwhyJto21+1zbVCtOYB2L1F9w4qCQ0rOGWBnBe0FNTiEJIQ==}
-    dev: true
 
   /@types/express-serve-static-core/4.17.31:
     resolution: {integrity: sha512-DxMhY+NAsTwMMFHBTtJFNp5qiHKJ7TeqOo23zVEM9alT1Ml27Q3xcTH0xwxn7Q0BbMcVEJOs/7aQtUWupUQN3Q==}
@@ -6288,8 +6287,8 @@ packages:
       - supports-color
     dev: true
 
-  /ember-template-lint/5.1.0_ember-cli-htmlbars@6.1.1:
-    resolution: {integrity: sha512-eikF17YKApHbzGEw32Ooen66LYoFuwPowl6jBom1EgOUZLwL/7qkeHwaHIAJ83VqqzcJZNJ8hAFxEF2Yv2ofVA==}
+  /ember-template-lint/5.1.1_ember-cli-htmlbars@6.1.1:
+    resolution: {integrity: sha512-CPiVV9tQkD1HOR7weoaNAdzshdmJhsi7lprwpburTjLvaQEZqzOhwxaDnU/lDFJmom03gHjaLLdKvBaae/9U3A==}
     engines: {node: ^14.18.0 || ^16.0.0 || >= 18.0.0}
     hasBin: true
     dependencies:
