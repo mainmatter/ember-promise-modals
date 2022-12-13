@@ -47,7 +47,7 @@
     "@embroider/test-setup": "2.0.2",
     "@release-it-plugins/lerna-changelog": "5.0.0",
     "broccoli-asset-rev": "3.0.0",
-    "ember-cli": "4.9.1",
+    "ember-cli": "4.9.2",
     "ember-cli-dependency-checker": "3.3.1",
     "ember-cli-inject-live-reload": "2.1.0",
     "ember-cli-sri": "2.1.1",
