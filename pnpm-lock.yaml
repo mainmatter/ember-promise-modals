@@ -3,7 +3,7 @@ lockfileVersion: 5.4
 specifiers:
   '@babel/eslint-parser': 7.19.1
   '@ember/optional-features': 2.0.0
-  '@ember/test-helpers': 2.8.1
+  '@ember/test-helpers': 2.9.0
   '@ember/test-waiters': ^3.0.1
   '@embroider/test-setup': 2.0.2
   '@embroider/util': ^1.7.1
@@ -65,7 +65,7 @@ dependencies:
 devDependencies:
   '@babel/eslint-parser': 7.19.1_eslint@8.29.0
   '@ember/optional-features': 2.0.0
-  '@ember/test-helpers': 2.8.1_ember-source@4.9.3
+  '@ember/test-helpers': 2.9.0_ember-source@4.9.3
   '@embroider/test-setup': 2.0.2
   '@release-it-plugins/lerna-changelog': 5.0.0_release-it@15.5.1
   broccoli-asset-rev: 3.0.0
@@ -78,7 +78,7 @@ devDependencies:
   ember-export-application-global: 2.0.1
   ember-load-initializers: 2.1.2
   ember-maybe-import-regenerator: 1.0.0
-  ember-qunit: 5.1.5_zej7rarj4xfu2rswibwxtroj6m
+  ember-qunit: 5.1.5_mv2roxwqiqa4s4us4a6fjfd6ya
   ember-resolver: 8.0.3
   ember-source: 4.9.3_klhxxmjkcvtuhwro2kkspsfzna
   ember-source-channel-url: 3.0.0
@@ -1767,8 +1767,8 @@ packages:
       - supports-color
     dev: true
 
-  /@ember/test-helpers/2.8.1_ember-source@4.9.3:
-    resolution: {integrity: sha512-jbsYwWyAdhL/pdPu7Gb3SG1gvIXY70FWMtC/Us0Kmvk82Y+5YUQ1SOC0io75qmOGYQmH7eQrd/bquEVd+4XtdQ==}
+  /@ember/test-helpers/2.9.0_ember-source@4.9.3:
+    resolution: {integrity: sha512-poMnZk12dOt+yGtUvhW7IqUdb1iE2LqOyfsx+8BG3alxOU86A1m21SFiZV5fTwJ1ENCw2GvxpJGyidIItrKf3Q==}
     engines: {node: 10.* || 12.* || 14.* || 15.* || >= 16.*}
     peerDependencies:
       ember-source: '>=3.8.0'
@@ -1779,7 +1779,7 @@ packages:
       broccoli-debug: 0.6.5
       broccoli-funnel: 3.0.8
       ember-cli-babel: 7.26.11
-      ember-cli-htmlbars: 5.7.2
+      ember-cli-htmlbars: 6.1.1
       ember-destroyable-polyfill: 2.0.3
       ember-source: 4.9.3_klhxxmjkcvtuhwro2kkspsfzna
     transitivePeerDependencies:
@@ -5771,30 +5771,6 @@ packages:
   /ember-cli-get-component-path-option/1.0.0:
     resolution: {integrity: sha512-k47TDwcJ2zPideBCZE8sCiShSxQSpebY2BHcX2DdipMmBox5gsfyVrbKJWIHeSTTKyEUgmBIvQkqTOozEziCZA==}
 
-  /ember-cli-htmlbars/5.7.2:
-    resolution: {integrity: sha512-Uj6R+3TtBV5RZoJY14oZn/sNPnc+UgmC8nb5rI4P3fR/gYoyTFIZSXiIM7zl++IpMoIrocxOrgt+mhonKphgGg==}
-    engines: {node: 10.* || >= 12.*}
-    dependencies:
-      '@ember/edition-utils': 1.2.0
-      babel-plugin-htmlbars-inline-precompile: 5.3.1
-      broccoli-debug: 0.6.5
-      broccoli-persistent-filter: 3.1.3
-      broccoli-plugin: 4.0.7
-      common-tags: 1.8.2
-      ember-cli-babel-plugin-helpers: 1.1.1
-      ember-cli-version-checker: 5.1.2
-      fs-tree-diff: 2.0.1
-      hash-for-dep: 1.5.1
-      heimdalljs-logger: 0.1.10
-      json-stable-stringify: 1.0.2
-      semver: 7.3.8
-      silent-error: 1.1.1
-      strip-bom: 4.0.0
-      walk-sync: 2.2.0
-    transitivePeerDependencies:
-      - supports-color
-    dev: true
-
   /ember-cli-htmlbars/6.1.1:
     resolution: {integrity: sha512-DKf2rjzIVw9zWCuFsBGJScrgf5Mz7dSg08Cq+FWFYIxnpssINUbNUoB0NHWnUJK4QqCvaExOyOmjm0kO455CPg==}
     engines: {node: 12.* || 14.* || >= 16}
@@ -6175,14 +6151,14 @@ packages:
       - supports-color
     dev: true
 
-  /ember-qunit/5.1.5_zej7rarj4xfu2rswibwxtroj6m:
+  /ember-qunit/5.1.5_mv2roxwqiqa4s4us4a6fjfd6ya:
     resolution: {integrity: sha512-2cFA4oMygh43RtVcMaBrr086Tpdhgbn3fVZ2awLkzF/rnSN0D0PSRpd7hAD7OdBPerC/ZYRwzVyGXLoW/Zes4A==}
     engines: {node: 10.* || 12.* || >= 14.*}
     peerDependencies:
       '@ember/test-helpers': ^2.4.0
       qunit: ^2.13.0
     dependencies:
-      '@ember/test-helpers': 2.8.1_ember-source@4.9.3
+      '@ember/test-helpers': 2.9.0_ember-source@4.9.3
       broccoli-funnel: 3.0.8
       broccoli-merge-trees: 3.0.2
       common-tags: 1.8.2
@@ -12960,11 +12936,6 @@ packages:
   /strip-bom/3.0.0:
     resolution: {integrity: sha512-vavAMRXOgBVNF6nyEEmL3DBK19iRpDcoIwW+swQ+CbGiu7lju6t+JklA1MHweoWtadgt4ISVUsXLyDq34ddcwA==}
     engines: {node: '>=4'}
-    dev: true
-
-  /strip-bom/4.0.0:
-    resolution: {integrity: sha512-3xurFv5tEgii33Zi8Jtp55wEIILR9eh34FAW00PZf+JnSsTmV/ioewSgQl97JHvgjoRGwPShsWm+IdrxB35d0w==}
-    engines: {node: '>=8'}
     dev: true
 
   /strip-eof/1.0.0:
