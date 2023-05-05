@@ -1,3 +1,5 @@
+import { settled } from '@ember/test-helpers';
+
 function setMinimum(propertyName) {
   document.documentElement.style.setProperty(propertyName, '0.001s');
 }
@@ -20,7 +22,7 @@ export function setupPromiseModals(hooks) {
     this.modals = this.owner.lookup('service:modals');
   });
 
-  hooks.afterEach(function () {
+  hooks.afterEach(async function () {
     // be sure to close all modals after a test
     if (this.modals) {
       this.modals._destroyModals();
@@ -36,5 +38,8 @@ export function setupPromiseModals(hooks) {
     unsetMinimum('--epm-animation-modal-out-duration');
     unsetMinimum('--epm-animation-modal-in-delay');
     unsetMinimum('--epm-animation-modal-out-delay');
+
+    // wait for any registered test waiters to settle
+    await settled();
   });
 }
