@@ -44,8 +44,8 @@ module.exports = function (environment) {
   }
 
   if (environment === 'production') {
-    // Update root URL for GitHub pages
-    ENV.rootURL = '/ember-promise-modals/';
+    // Update root URL for GitHub pages (Only required if it's not served from our own domain)
+    // ENV.rootURL = '/ember-promise-modals/';
   }
 
   return ENV;
