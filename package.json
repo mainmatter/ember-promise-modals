@@ -81,7 +81,7 @@
     "webpack": "5.75.0"
   },
   "engines": {
-    "node": "12.* || >= 14.*"
+    "node": "12.* || >= 16.*"
   },
   "changelog": {
     "repo": "mainmatter/ember-promise-modals",
