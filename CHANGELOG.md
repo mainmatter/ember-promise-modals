@@ -2,6 +2,39 @@
 
 
 
+
+## v4.0.0 (2023-06-01)
+
+#### :boom: Breaking Change
+* [#856](https://github.com/mainmatter/ember-promise-modals/pull/856) setupPromiseModals should wait for test waiters to settle ([@marcin-wicha](https://github.com/marcin-wicha))
+
+#### :rocket: Enhancement
+* [#550](https://github.com/mainmatter/ember-promise-modals/pull/550) Modal template helper ([@pichfl](https://github.com/pichfl))
+
+#### :bug: Bug Fix
+* [#826](https://github.com/mainmatter/ember-promise-modals/pull/826) Ensure animations are triggered when `prefer-reduced-animation` is used ([@pichfl](https://github.com/pichfl))
+* [#682](https://github.com/mainmatter/ember-promise-modals/pull/682) Improve test helper ([@pichfl](https://github.com/pichfl))
+
+#### :house: Internal
+* [#819](https://github.com/mainmatter/ember-promise-modals/pull/819) Update ember-try configuration ([@pichfl](https://github.com/pichfl))
+* [#688](https://github.com/mainmatter/ember-promise-modals/pull/688) Prefer "happy path" code style for `_resolve()` ([@pichfl](https://github.com/pichfl))
+* [#687](https://github.com/mainmatter/ember-promise-modals/pull/687) Extract destruction of the modals effects into a method and apply them ([@pichfl](https://github.com/pichfl))
+* [#686](https://github.com/mainmatter/ember-promise-modals/pull/686) Closing the modal should inform the modals service ([@pichfl](https://github.com/pichfl))
+* [#766](https://github.com/mainmatter/ember-promise-modals/pull/766) Replace deprecated release-it-lerna-changelog ([@pichfl](https://github.com/pichfl))
+* [#685](https://github.com/mainmatter/ember-promise-modals/pull/685) Move attaching/detaching `animationend` event handler into methods and generalize related names ([@pichfl](https://github.com/pichfl))
+* [#763](https://github.com/mainmatter/ember-promise-modals/pull/763) Allow automatic installation of peer dependencies ([@pichfl](https://github.com/pichfl))
+* [#684](https://github.com/mainmatter/ember-promise-modals/pull/684) Move focusTrap setup/teardown to methods ([@pichfl](https://github.com/pichfl))
+* [#683](https://github.com/mainmatter/ember-promise-modals/pull/683) Replace retained element reference with a method ([@pichfl](https://github.com/pichfl))
+* [#598](https://github.com/mainmatter/ember-promise-modals/pull/598) Refactor handling of `focusTrap.onDeactivate` method ([@pichfl](https://github.com/pichfl))
+* [#681](https://github.com/mainmatter/ember-promise-modals/pull/681) remove dependabot configuration ([@nickschot](https://github.com/nickschot))
+
+#### Committers: 5
+- Florian Pichler ([@pichfl](https://github.com/pichfl))
+- Gabor Babicz ([@zeppelin](https://github.com/zeppelin))
+- Marcin Wicha ([@marcin-wicha](https://github.com/marcin-wicha))
+- Nick Schot ([@nickschot](https://github.com/nickschot))
+- Sebastian Helbig ([@sebastianhelbig](https://github.com/sebastianhelbig))
+
 ## v3.0.1 (2022-04-12)
 
 #### :bug: Bug Fix
