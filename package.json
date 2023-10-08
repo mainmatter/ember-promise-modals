@@ -45,7 +45,7 @@
     "@ember/optional-features": "2.0.0",
     "@ember/string": "^3.1.1",
     "@ember/test-helpers": "2.9.0",
-    "@embroider/test-setup": "2.0.2",
+    "@embroider/test-setup": "3.0.2",
     "@release-it-plugins/lerna-changelog": "5.0.0",
     "broccoli-asset-rev": "3.0.0",
     "ember-cli": "4.9.2",

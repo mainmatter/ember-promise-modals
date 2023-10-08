@@ -46,8 +46,8 @@ devDependencies:
     specifier: 2.9.0
     version: 2.9.0(ember-source@4.9.3)
   '@embroider/test-setup':
-    specifier: 2.0.2
-    version: 2.0.2
+    specifier: 3.0.2
+    version: 3.0.2
   '@release-it-plugins/lerna-changelog':
     specifier: 5.0.0
     version: 5.0.0(release-it@15.5.1)
@@ -1839,9 +1839,20 @@ packages:
       semver: 7.3.8
       typescript-memoize: 1.1.1
 
-  /@embroider/test-setup@2.0.2:
-    resolution: {integrity: sha512-0rapCTr7T94TprLW11q60Lddeuom+bkBI35zyCsAp7A7idlTUekH9k7BTx9rbnPFuQJkwILGuZ05t03IAyQ4Ig==}
+  /@embroider/test-setup@3.0.2:
+    resolution: {integrity: sha512-cq/xp06CAB8rAGnObeJux7qALnAX2MatMVLjWyGDr3ogS5lHTNXZVCv4ltTM3pJ8EsZWpPM32dtUZqSJFkGibQ==}
     engines: {node: 12.* || 14.* || >= 16}
+    peerDependencies:
+      '@embroider/compat': ^3.2.2
+      '@embroider/core': ^3.3.0
+      '@embroider/webpack': ^3.2.0
+    peerDependenciesMeta:
+      '@embroider/compat':
+        optional: true
+      '@embroider/core':
+        optional: true
+      '@embroider/webpack':
+        optional: true
     dependencies:
       lodash: 4.17.21
       resolve: 1.22.1
