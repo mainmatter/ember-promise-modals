@@ -330,4 +330,5 @@ See the [Contributing](CONTRIBUTING.md) guide for details.
 
 ## License
 
-This project is licensed under the [MIT License](LICENSE.md).
+ember-promise-modals is developed by and © Mainmatter GmbH and contributors. It
+is released under the [MIT License](LICENSE.md).
