@@ -47,8 +47,8 @@ devDependencies:
     specifier: 3.1.1
     version: 3.1.1
   '@ember/test-helpers':
-    specifier: 2.9.0
-    version: 2.9.0(ember-source@4.9.3)
+    specifier: 2.9.4
+    version: 2.9.4(ember-source@4.9.3)
   '@embroider/test-setup':
     specifier: 3.0.2
     version: 3.0.2
@@ -84,7 +84,7 @@ devDependencies:
     version: 1.0.0
   ember-qunit:
     specifier: 5.1.5
-    version: 5.1.5(@ember/test-helpers@2.9.0)(qunit@2.19.3)
+    version: 5.1.5(@ember/test-helpers@2.9.4)(qunit@2.19.3)
   ember-resolver:
     specifier: 8.0.3
     version: 8.0.3
@@ -1770,8 +1770,8 @@ packages:
       - supports-color
     dev: true
 
-  /@ember/test-helpers@2.9.0(ember-source@4.9.3):
-    resolution: {integrity: sha512-poMnZk12dOt+yGtUvhW7IqUdb1iE2LqOyfsx+8BG3alxOU86A1m21SFiZV5fTwJ1ENCw2GvxpJGyidIItrKf3Q==}
+  /@ember/test-helpers@2.9.4(ember-source@4.9.3):
+    resolution: {integrity: sha512-z+Qs1NYWyIVDmrY6WdmOS5mdG1lJ5CFfzh6dRhLfs9lq45deDaDrVNcaCYhnNeJZTvUBK2XR2SvPcZm0RloXdA==}
     engines: {node: 10.* || 12.* || 14.* || 15.* || >= 16.*}
     peerDependencies:
       ember-source: '>=3.8.0'
@@ -6153,14 +6153,14 @@ packages:
       - supports-color
     dev: true
 
-  /ember-qunit@5.1.5(@ember/test-helpers@2.9.0)(qunit@2.19.3):
+  /ember-qunit@5.1.5(@ember/test-helpers@2.9.4)(qunit@2.19.3):
     resolution: {integrity: sha512-2cFA4oMygh43RtVcMaBrr086Tpdhgbn3fVZ2awLkzF/rnSN0D0PSRpd7hAD7OdBPerC/ZYRwzVyGXLoW/Zes4A==}
     engines: {node: 10.* || 12.* || >= 14.*}
     peerDependencies:
       '@ember/test-helpers': ^2.4.0
       qunit: ^2.13.0
     dependencies:
-      '@ember/test-helpers': 2.9.0(ember-source@4.9.3)
+      '@ember/test-helpers': 2.9.4(ember-source@4.9.3)
       broccoli-funnel: 3.0.8
       broccoli-merge-trees: 3.0.2
       common-tags: 1.8.2
