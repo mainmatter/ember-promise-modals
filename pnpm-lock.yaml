@@ -86,8 +86,8 @@ devDependencies:
     specifier: 5.1.5
     version: 5.1.5(@ember/test-helpers@2.9.4)(qunit@2.19.4)
   ember-resolver:
-    specifier: 8.0.3
-    version: 8.0.3
+    specifier: 8.1.0
+    version: 8.1.0
   ember-source:
     specifier: 4.9.3
     version: 4.9.3(@glimmer/component@1.1.2)(webpack@5.76.3)
@@ -6176,8 +6176,8 @@ packages:
       - webpack-command
     dev: true
 
-  /ember-resolver@8.0.3:
-    resolution: {integrity: sha512-fA53fxfG821BRqNiB9mQDuzZpzSRcSAYZTYBlRQOHsJwoYdjyE7idz4YcytbSsa409G5J2kP6B+PiKOBh0odlw==}
+  /ember-resolver@8.1.0:
+    resolution: {integrity: sha512-MGD7X2ztZVswGqs1mLgzhZJRhG7XiF6Mg4DgC7xJFWRYQQUHyGJpGdNWY9nXyrYnRIsCrQoL1do41zpxbrB/cg==}
     engines: {node: '>= 10.*'}
     dependencies:
       babel-plugin-debug-macros: 0.3.4(@babel/core@7.20.5)
