@@ -21,6 +21,7 @@ module.exports = async function () {
         npm: {
           devDependencies: {
             'ember-source': '~3.8.0',
+            '@ember/test-helpers': '2.7.0',
             'ember-decorators-polyfill': '^1.1.5',
           },
         },
@@ -30,6 +31,7 @@ module.exports = async function () {
         npm: {
           devDependencies: {
             'ember-source': '~3.12.0',
+            '@ember/test-helpers': '2.7.0',
           },
         },
       },
