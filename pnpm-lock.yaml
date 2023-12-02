@@ -146,8 +146,8 @@ devDependencies:
     specifier: 15.11.0
     version: 15.11.0
   sinon:
-    specifier: 15.0.4
-    version: 15.0.4
+    specifier: 15.2.0
+    version: 15.2.0
   webpack:
     specifier: 5.76.3
     version: 5.76.3
@@ -13035,8 +13035,8 @@ packages:
     resolution: {integrity: sha512-C2WEK/Z3HoSFbYq8tI7ni3eOo/NneSPRoPpcM7WdLjFOArFuyXEjAoCdOC3DgMfRyziZQ1hCNR4mrNdWEvD0og==}
     dev: true
 
-  /sinon@15.0.4:
-    resolution: {integrity: sha512-uzmfN6zx3GQaria1kwgWGeKiXSSbShBbue6Dcj0SI8fiCNFbiUDqKl57WFlY5lyhxZVUKmXvzgG2pilRQCBwWg==}
+  /sinon@15.2.0:
+    resolution: {integrity: sha512-nPS85arNqwBXaIsFCkolHjGIkFo+Oxu9vbgmBJizLAhqe6P2o3Qmj3KCUoRkfhHtvgDhZdWD3risLHAUJ8npjw==}
     deprecated: 16.1.1
     dependencies:
       '@sinonjs/commons': 3.0.0
