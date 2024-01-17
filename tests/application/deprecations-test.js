@@ -2,7 +2,7 @@ import { visit, click, getDeprecations, waitUntil } from '@ember/test-helpers';
 import { setupApplicationTest } from 'ember-qunit';
 import { module, test } from 'qunit';
 
-import { getOwnConfig } from '@embroider/macros';
+import ENV from 'dummy/config/environment';
 
 import { setupPromiseModals } from 'ember-promise-modals/test-support';
 
@@ -10,7 +10,7 @@ module('Application | Deprecations', function (hooks) {
   setupApplicationTest(hooks);
   setupPromiseModals(hooks);
 
-  if (!getOwnConfig()?.skipEmbroiderDeprecationTest) {
+  if (!ENV.SKIP_EMBROIDER_DEPRECATION_TEST) {
     test("opening a modal by it's path triggers a deprecation", async function (assert) {
       await visit('/');
 

@@ -33,6 +33,7 @@ module.exports = function (environment) {
 
   if (environment === 'test') {
     // Testem prefers this...
+    ENV.SKIP_EMBROIDER_DEPRECATION_TEST = process.env.SKIP_EMBROIDER_DEPRECATION_TEST;
     ENV.locationType = 'none';
 
     // keep test console output quieter

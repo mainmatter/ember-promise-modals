@@ -46,7 +46,7 @@ export default Service.extend({
       typeof componentClass !== 'string',
       {
         id: 'ember-promise-modals.modals-from-string',
-        until: '4.0.0',
+        until: '5.0.0',
         for: 'ember-promise-modals',
         since: {
           enabled: '3.1.0',
