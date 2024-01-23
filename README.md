@@ -200,29 +200,7 @@ custom animations.
 
 ### CSS Variables
 
-⚠️ This functionality will be removed in 5.0.0, checkout the [DEPRECATIONS.md]('https://github.com/mainmatter/ember-promise-modals/blob/main/DEPRECATIONS.md#postcss-process) guide.
-
-The addons CSS is run through PostCSS by default, which will create static
-fallbacks for all custom properties using their defaults.
-
-If your application uses PostCSS by itself, you can set `excludeCSS` to `true`
-inside your `ember-cli-build.js`:
-
-```js
-let app = new EmberAddon(defaults, {
-  // Add options here
-  'ember-promise-modals': {
-    excludeCSS: true,
-  },
-});
-```
-
-Done that, you can use [postcss-import](https://github.com/postcss/postcss-import)
-to import the uncompiled addon styles in your projects `app/styles/app.css`:
-
-```css
-@import 'ember-promise-modals';
-```
+The addons CSS relies on CSS variables and won't work properly on browsers that don't support this feature.
 
 ## Accessibility
 
