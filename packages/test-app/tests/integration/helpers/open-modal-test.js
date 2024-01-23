@@ -5,7 +5,6 @@ import { module, test } from 'qunit';
 import Component from '@ember/component';
 
 import { hbs } from 'ember-cli-htmlbars';
-
 import { setupPromiseModals } from 'ember-promise-modals/test-support';
 
 module('Integration | Helper | open-modal', function (hooks) {

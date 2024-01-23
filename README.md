@@ -1,4 +1,4 @@
-<p align="center"><img src="./tests/dummy/public/ember-promise-modals-logo.svg" role="presentation" alt="" width="600" height="400" /></p>
+<p align="center"><img src="./packages/test-app/public/ember-promise-modals-logo.svg" role="presentation" alt="" width="600" height="400" /></p>
 
 # ember-promise-modals
 
@@ -193,9 +193,9 @@ The CSS animations which are applied by the custom CSS class _must_ end in
 Examples for custom animations and how to apply them can be found in the addon's
 dummy application.
 
-See [the application.js controller](./tests/dummy/app/controllers/application.js)
+See [the application.js controller](./packages/test-app/app/controllers/application.js)
 for how the modals are opened in your JavaScript actions and look at
-[app.css](./tests/dummy/app/styles/app.css) for the style definition of these
+[app.css](./packages/test-app/app/styles/app.css) for the style definition of these
 custom animations.
 
 ## Accessibility

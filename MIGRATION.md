@@ -110,7 +110,7 @@ Furthermore, some CSS variables will need to be overridden so that the new anima
 
 ### Using both animations
 
-If you need to switch between both animations it's easiest to replicate the setup shown in the dummy app. See [the application.js controller](./tests/dummy/app/controllers/application.js)
-for how the modals are openend in your JavaScript actions and look at
-[app.css](./tests/dummy/app/styles/app.css) for the style definition of these
+If you need to switch between both animations it's easiest to replicate the setup shown in the dummy app. See [the application.js controller](./packages/test-app/app/controllers/application.js)
+for how the modals are opened in your JavaScript actions and look at
+[app.css](./packages/test-app/app/styles/app.css) for the style definition of these
 custom animations.
