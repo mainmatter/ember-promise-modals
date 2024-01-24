@@ -99,7 +99,7 @@ module.exports = {
   overrides: [
     // node files
     {
-      files: ['./.eslintrc.js', './.prettierrc.js', './.template-lintrc.js', './config/**/*.js', './index.js'],
+      files: ['./.eslintrc.js', './.prettierrc.js', './.template-lintrc.js', './config/**/*.js', './addon-main.cjs'],
       parserOptions: {
         sourceType: 'script',
       },

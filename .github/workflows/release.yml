@@ -17,7 +17,12 @@ jobs:
           node-version: 16
           registry-url: 'https://registry.npmjs.org'
 
-      - run: npm publish
+      - name: prepack 
+        run: pnpm run prepack
+        working-directory: packages/ember-promise-modals
+
+      - name: publish to npm
+        run: pnpm run release
         working-directory: packages/ember-promise-modals
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
