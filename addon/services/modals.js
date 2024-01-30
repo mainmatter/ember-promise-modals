@@ -42,7 +42,7 @@ export default Service.extend({
    */
   open(componentClass, data, options) {
     deprecate(
-      `Ember Promise Modals: For extendend compatibility with Embroider and it's tree-shaking ability, you need to import and pass in the component class of the modal component you want to display instead of "${componentClass}".`,
+      `Ember Promise Modals: For extended compatibility with Embroider and its tree-shaking ability, you need to import and pass in the component class of the modal component you want to display instead of "${componentClass}".`,
       typeof componentClass !== 'string',
       {
         id: 'ember-promise-modals.modals-from-string',

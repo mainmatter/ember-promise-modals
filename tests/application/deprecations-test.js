@@ -11,7 +11,7 @@ module('Application | Deprecations', function (hooks) {
   setupPromiseModals(hooks);
 
   if (!ENV.SKIP_EMBROIDER_DEPRECATION_TEST) {
-    test("opening a modal by it's path triggers a deprecation", async function (assert) {
+    test('opening a modal by its path triggers a deprecation', async function (assert) {
       await visit('/');
 
       assert.dom('.epm-backdrop').doesNotExist();

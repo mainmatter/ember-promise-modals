@@ -13,7 +13,7 @@ import { defer } from 'rsvp';
 /**
  * @class Modal
  * @param {Service} service
- * @param {String} name
+ * @param {String} componentClass
  * @param {any} data
  * @param {ModalOptions} options
  * @method close - closes the modal
