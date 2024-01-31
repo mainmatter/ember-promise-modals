@@ -38,8 +38,8 @@ dependencies:
 
 devDependencies:
   '@babel/eslint-parser':
-    specifier: 7.23.3
-    version: 7.23.3(eslint@8.55.0)
+    specifier: 7.23.10
+    version: 7.23.10(eslint@8.55.0)
   '@ember/optional-features':
     specifier: 2.0.0
     version: 2.0.0
@@ -234,8 +234,8 @@ packages:
     transitivePeerDependencies:
       - supports-color
 
-  /@babel/eslint-parser@7.23.3(eslint@8.55.0):
-    resolution: {integrity: sha512-9bTuNlyx7oSstodm1cR1bECj4fkiknsDa1YniISkJemMY3DGhJNYBECbe6QD/q54mp2J8VO66jW3/7uP//iFCw==}
+  /@babel/eslint-parser@7.23.10(eslint@8.55.0):
+    resolution: {integrity: sha512-3wSYDPZVnhseRnxRJH6ZVTNknBz76AEnyC+AYYhasjP3Yy23qz0ERR7Fcd2SHmYuSFJ2kY9gaaDd3vyqU09eSw==}
     engines: {node: ^10.13.0 || ^12.13.0 || >=14.0.0}
     peerDependencies:
       '@babel/core': ^7.11.0
@@ -5584,7 +5584,7 @@ packages:
       fs-extra: 7.0.1
       resolve: 1.22.1
       rsvp: 4.8.5
-      semver: 6.3.0
+      semver: 6.3.1
       stagehand: 1.0.0
       walk-sync: 1.1.4
     transitivePeerDependencies:
@@ -6016,7 +6016,7 @@ packages:
       lodash: 4.17.21
       package-json: 6.5.0
       remote-git-tags: 3.0.0
-      semver: 7.3.8
+      semver: 7.5.1
     transitivePeerDependencies:
       - encoding
     dev: true
@@ -9730,7 +9730,7 @@ packages:
     dependencies:
       hosted-git-info: 6.1.1
       proc-log: 3.0.0
-      semver: 7.3.8
+      semver: 7.5.1
       validate-npm-package-name: 5.0.0
     dev: true
 
@@ -12902,7 +12902,7 @@ packages:
     engines: {node: '>= 12'}
     dependencies:
       resolve-package-path: 4.0.3
-      semver: 7.3.8
+      semver: 7.5.1
     dev: true
 
   /vary@1.1.2:
