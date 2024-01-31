@@ -28,7 +28,7 @@ To use EPM in your project, add the target for the modals to your `application.h
 <EpmModalContainer />
 ```
 
-Then you can to inject the `modals` service wherever you need and call its `open` method with a component class to render it as a modal.
+Then you can inject the `modals` service wherever you need and call its `open` method with a component class to render it as a modal.
 
 ```js
 import { inject as service } from '@ember/service';
@@ -190,15 +190,17 @@ The CSS animations which are applied by the custom CSS class _must_ end in
 
 #### Examples
 
-Examples for custom animations and how to apply them can be found in the addons
+Examples for custom animations and how to apply them can be found in the addon's
 dummy application.
 
 See [the application.js controller](./tests/dummy/app/controllers/application.js)
-for how the modals are openend in your JavaScript actions and look at
+for how the modals are opened in your JavaScript actions and look at
 [app.css](./tests/dummy/app/styles/app.css) for the style definition of these
 custom animations.
 
 ### CSS Variables
+
+⚠️ This functionality will be removed in 5.0.0, checkout the [DEPRECATIONS.md]('https://github.com/mainmatter/ember-promise-modals/blob/main/DEPRECATIONS.md#postcss-process) guide.
 
 The addons CSS is run through PostCSS by default, which will create static
 fallbacks for all custom properties using their defaults.
