@@ -32,7 +32,7 @@ if(!r||"new"===r.state)return(r=new s(e,[],o,null)).module.exports=t,r.state="fi
  *            Portions Copyright 2008-2011 Apple Inc. All rights reserved.
  * @license   Licensed under MIT license
  *            See https://raw.github.com/emberjs/ember.js/master/LICENSE
- * @version   4.12.3
+ * @version   4.12.4
  */
 var e,t;(function(){var r="undefined"!=typeof globalThis?globalThis:"undefined"!=typeof self?self:"undefined"!=typeof window?window:"undefined"!=typeof global?global:null
 if(null===r)throw new Error("unable to locate global object")
@@ -2875,7 +2875,7 @@ de.precompile=ce.precompile=t.precompile,de.compile=ce.compile=t.compile,Object.
 return n.Adapter=i,n.QUnitAdapter=a,Object.defineProperty(le,"Test",{configurable:!0,writable:!0,enumerable:!0,value:n}),Object.defineProperty(le,"setupForTesting",{configurable:!0,writable:!0,enumerable:!0,value:s}),"Test"===e?n:s}}})}he("HTMLBars"),he("Handlebars"),pe("Test"),pe("setupForTesting"),(0,j.runLoadHooks)("Ember")
 t.default=le})),e("ember/version",["exports"],(function(e){"use strict"
 Object.defineProperty(e,"__esModule",{value:!0}),e.default=void 0
-e.default="4.12.3"})),e("route-recognizer",["exports"],(function(e){"use strict"
+e.default="4.12.4"})),e("route-recognizer",["exports"],(function(e){"use strict"
 Object.defineProperty(e,"__esModule",{value:!0}),e.default=void 0
 var t=Object.create
 function r(){var e=t(null)
