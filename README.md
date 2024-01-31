@@ -28,17 +28,18 @@ To use EPM in your project, add the target for the modals to your `application.h
 <EpmModalContainer />
 ```
 
-Then you can to inject the `modals` service wherever you need and call its `open` method with a component name to render it as a modal.
+Then you can to inject the `modals` service wherever you need and call its `open` method with a component class to render it as a modal.
 
 ```js
 import { inject as service } from '@ember/service';
+import ConfirmationModal from 'my-app/components/confirmation-modal';
 
 export default class extends Component {
   @service modals;
 
   @action
   async handleOpenModal() {
-    let modal = this.modals.open('confirmation-modal');
+    let modal = this.modals.open(ConfirmationModal);
 
     // the instance acts as a promise that resolves with anything passed to the @close function
     modal.then(results => {
@@ -60,28 +61,12 @@ export default class extends Component {
 </button>
 ```
 
-### Embroider Optimized Apps
-
-If your application uses [Embroider](https://github.com/embroider-build/embroider), you need to pass the component class to the `open` method instead of just the modals name. This will become the default behavior in the future.
-
-```js
-import ConfirmationModal from '../components/confirmation-modal';
-
-export default class extends Component {
-  //...
-  @action
-  handleOpenModal() {
-    this.modals.open(ConfirmationModal);
-  }
-}
-```
-
 ### Passing data to the rendered component
 
 You can pass custom data into your rendered template like so:
 
 ```js
-this.modals.open('file-preview', {
+this.modals.open(FilePreviewModal, {
   fileUrl: this.fileUrl,
 });
 ```
@@ -116,12 +101,12 @@ this.args.close(results); // or this.close() in classic components
 This addon comes with a `{{open-modal}}` template helper which can be used to trigger modals from any templates. It accepts the similar arguments as the `open` method. It can be used to open a modal in a route, closing it automatically when navigating elsewhere.
 
 ```hbs
-{{open-modal 'confirmation-modal' (hash fileUrl=this.fileUrl) close=(fn this.save results)}}
+{{open-modal this.ConfirmationModalComponent (hash fileUrl=this.fileUrl) close=(fn this.save results)}}
 ```
 
 Positional arguments mimick the `open()` method on the service:
 
-- `name`: The name of the modal component to render
+- `componentClass`: An imported component class of the modal to render
 - `data`: Pass additional context to the modal,
 - `options`: Pass additional options to the modal
 
@@ -148,7 +133,7 @@ a custom `className` can be handed to the `.open()` method.
 
 ```js
 this.modals.open(
-  'file-preview',
+  FilePreviwModal,
   {
     fileUrl: this.fileUrl,
   },
@@ -270,7 +255,7 @@ Example for local Focus Trap option, when opening a specific modal:
 
 ```js
 this.modals.open(
-  'file-preview',
+  FilePreviewModal,
   { fileUrl: this.fileUrl },
   {
     focusTrapOptions: {
@@ -295,7 +280,7 @@ Or when opening a modal:
 
 ```js
 this.modals.open(
-  'file-preview',
+  FilePreviewModal,
   { fileUrl: this.fileUrl },
   {
     focusTrapOptions: null,
