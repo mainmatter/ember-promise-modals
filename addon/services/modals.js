@@ -51,7 +51,7 @@ export default Service.extend({
         since: {
           enabled: '3.1.0',
         },
-        url: 'https://github.com/mainmatter/ember-promise-modals/blob/main/DEPRECATIONS.md#ember-promise-modals.modals-from-string',
+        url: 'https://github.com/mainmatter/ember-promise-modals/blob/main/DEPRECATIONS.md#ember-promise-modalsmodals-from-string',
       },
     );
 
