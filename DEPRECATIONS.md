@@ -88,4 +88,4 @@ return maybeEmbroider(app, {
 
 The v2 addon will no longer support Ember versions lower than 3.28.
 
-Additionally, it will have dependencies such as `ember-cli-babel@8.2.0` that require node 16, so node 12 will be removed from the supported engines.
+Additionally, it will have dependencies such as `ember-cli-babel@8.2.0` that require node 16, so node 12 and node 14 will be removed from the supported engines.
