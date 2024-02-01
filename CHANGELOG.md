@@ -3,6 +3,25 @@
 
 
 
+
+## v4.1.0 (2024-02-01)
+
+#### :rocket: Enhancement
+* [#894](https://github.com/mainmatter/ember-promise-modals/pull/894) Deprecate opening a modal from string ([@BlueCutOfficial](https://github.com/BlueCutOfficial))
+
+#### :memo: Documentation
+* [#908](https://github.com/mainmatter/ember-promise-modals/pull/908) docs(DEPRECATIONS)/ Adjust the line about deprecated node ([@BlueCutOfficial](https://github.com/BlueCutOfficial))
+* [#897](https://github.com/mainmatter/ember-promise-modals/pull/897) Communicate about all the major changes planned for the v2 addon ([@BlueCutOfficial](https://github.com/BlueCutOfficial))
+
+#### :house: Internal
+* [#907](https://github.com/mainmatter/ember-promise-modals/pull/907) Internal fix/ re-add node 14 to the list of supported engines ([@BlueCutOfficial](https://github.com/BlueCutOfficial))
+* [#858](https://github.com/mainmatter/ember-promise-modals/pull/858) Fix CI tests for beta/canary channels ([@zeppelin](https://github.com/zeppelin))
+
+#### Committers: 3
+- Gabor Babicz ([@zeppelin](https://github.com/zeppelin))
+- Marco Otte-Witte ([@marcoow](https://github.com/marcoow))
+- Marine Dunstetter ([@BlueCutOfficial](https://github.com/BlueCutOfficial))
+
 ## v4.0.0 (2023-06-01)
 
 #### :boom: Breaking Change
