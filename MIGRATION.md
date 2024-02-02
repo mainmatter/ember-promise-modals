@@ -1,8 +1,44 @@
 # Migration
 
-## From 0.x.x to 1.x.x
+## From v4.x.x to v5.x.x (PostCSS process)
 
-Version 1.0.0 replaced the ember-animated powered animations with CSS based animations. In addition to that the default animation was also changed. This guide will show you how to get the animations of the old version.
+Until version 4.x.x, ember-promise-modals ran through PostCSS by default, to create static fallbacks for all custom properties using their defaults. This functionality has been removed from 5.x.x because it doesn't fit well with Embroider ecosystem: [v2 addons are static](https://github.com/embroider-build/embroider/blob/HEAD/docs/spec.md). When installed in your app, they don't do anything at build-time. Also, most browsers have been supporting CSS variables for several years.
+
+However, if you still need the static fallbacks `postcss-preset-env` used to generate, you can re-implement the functionality on the app side with a [Webpack config](https://webpack.js.org/loaders/postcss-loader/). For instance:
+
+```js
+let app = new EmberApp(defaults, {});
+
+return maybeEmbroider(app, {
+  packagerOptions: {
+    webpackConfig: {
+      module: {
+        rules: [
+          {
+            test: /\.css$/i,
+            use: [
+              {
+                loader: 'postcss-loader',
+                options: {
+                  postcssOptions: {
+                    plugins: [['postcss-preset-env', { stage: 3 }]],
+                  },
+                },
+              },
+            ],
+          },
+        ],
+      },
+    },
+  },
+});
+```
+
+Additionally, until version 4.x.x, ember-promise-modal provided the option `excludeCSS` so you can import the uncompiled addon styles in your project's `app/styles/app.css` and run your own PostCSS using `postcss-import`. In any case, ember-promise-modal CSS is expected to be included in your app in one way or the other. For this reason, there's no equivalent to `excludeCSS` in the v2 addon: components import statically the CSS they require, which means no `@import` statement in your `app/styles/app.css` is necessary, and you are still able to process the style as explained above.
+
+## From 0.x.x to 1.x.x (animations)
+
+Version 1.0.0 replaced the ember-animated powered animations with CSS-based animations. In addition to that the default animation was also changed. This guide will show you how to get the animations of the old version.
 
 ### From top/bottom animations
 

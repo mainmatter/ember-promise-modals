@@ -198,10 +198,6 @@ for how the modals are opened in your JavaScript actions and look at
 [app.css](./tests/dummy/app/styles/app.css) for the style definition of these
 custom animations.
 
-### CSS Variables
-
-The addons CSS relies on CSS variables and won't work properly on browsers that don't support this feature.
-
 ## Accessibility
 
 User can press the <kbd>Esc</kbd> key to close the modal.
@@ -287,7 +283,10 @@ module('Application | ...', function (hooks) {
 
 ## Migration guide
 
-See the [Migration](MIGRATION.md) guide for details.
+See the [Migration](MIGRATION.md) guide for details:
+
+- From 0.x.x to 1.x.x about the replacement of ember-animated powered animations with CSS-based animations.
+- From v4.x.x to v5.x.x about the removal of the PostCSS process.
 
 ## Contributing
 
