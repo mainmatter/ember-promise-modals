@@ -97,11 +97,7 @@ module.exports = async function () {
         },
       },
       embroiderSafe(),
-      embroiderOptimized({
-        env: {
-          SKIP_EMBROIDER_DEPRECATION_TEST: true,
-        },
-      }),
+      embroiderOptimized(),
     ],
   };
 };
