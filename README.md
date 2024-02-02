@@ -198,32 +198,6 @@ for how the modals are opened in your JavaScript actions and look at
 [app.css](./tests/dummy/app/styles/app.css) for the style definition of these
 custom animations.
 
-### CSS Variables
-
-⚠️ This functionality will be removed in 5.0.0, checkout the [DEPRECATIONS.md]('https://github.com/mainmatter/ember-promise-modals/blob/main/DEPRECATIONS.md#postcss-process) guide.
-
-The addons CSS is run through PostCSS by default, which will create static
-fallbacks for all custom properties using their defaults.
-
-If your application uses PostCSS by itself, you can set `excludeCSS` to `true`
-inside your `ember-cli-build.js`:
-
-```js
-let app = new EmberAddon(defaults, {
-  // Add options here
-  'ember-promise-modals': {
-    excludeCSS: true,
-  },
-});
-```
-
-Done that, you can use [postcss-import](https://github.com/postcss/postcss-import)
-to import the uncompiled addon styles in your projects `app/styles/app.css`:
-
-```css
-@import 'ember-promise-modals';
-```
-
 ## Accessibility
 
 User can press the <kbd>Esc</kbd> key to close the modal.
@@ -309,7 +283,10 @@ module('Application | ...', function (hooks) {
 
 ## Migration guide
 
-See the [Migration](MIGRATION.md) guide for details.
+See the [Migration](MIGRATION.md) guide for details:
+
+- From 0.x.x to 1.x.x about the replacement of ember-animated powered animations with CSS-based animations.
+- From v4.x.x to v5.x.x about the removal of the PostCSS process.
 
 ## Contributing
 

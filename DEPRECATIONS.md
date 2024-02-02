@@ -36,54 +36,6 @@ export class ApplicationController extends Controller {
 
 -- [Replacing Component Helper.md](https://github.com/embroider-build/embroider/blob/main/docs/replacing-component-helper.md#when-youre-invoking-a-component-youve-been-given)
 
-## PostCSS process
-
-Currently, the addon's CSS is run through PostCSS by default, which will create static
-fallbacks for all custom properties using their defaults. It also provides the option `excludeCSS` so you can import the uncompiled addon styles in your project's `app/styles/app.css` and run your own PostCSS using `postcss-import`:
-
-```js
-// before
-let app = new EmberApp(defaults, {
-  'ember-promise-modals': {
-    excludeCSS: true,
-  },
-});
-
-return maybeEmbroider(app);
-```
-
-This functionality no longer stands in Embroider world because [v2 addons are static](https://github.com/embroider-build/embroider/blob/HEAD/docs/spec.md). When installed in your app, they don't do anything at build-time.
-
-As most browsers have been supporting CSS variables for several years, the v2 addon will no longer process the CSS and the components will import the non-processed styles. However, if you still need the static fallbacks `postcss-preset-env` used to generate, you can re-implement the functionality on the app side with a [Webpack config](https://webpack.js.org/loaders/postcss-loader/). For instance:
-
-```js
-let app = new EmberApp(defaults, {});
-
-return maybeEmbroider(app, {
-  packagerOptions: {
-    webpackConfig: {
-      module: {
-        rules: [
-          {
-            test: /\.css$/i,
-            use: [
-              {
-                loader: 'postcss-loader',
-                options: {
-                  postcssOptions: {
-                    plugins: [['postcss-preset-env', { stage: 3 }]],
-                  },
-                },
-              },
-            ],
-          },
-        ],
-      },
-    },
-  },
-});
-```
-
 ## Ember < 3.28 & node < 16 support
 
 The v2 addon will no longer support Ember versions lower than 3.28.
