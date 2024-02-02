@@ -78,7 +78,7 @@
     "webpack": "5.90.0"
   },
   "engines": {
-    "node": "12.* || 14.* || >= 16.*"
+    "node": ">= 16.*"
   },
   "changelog": {
     "repo": "mainmatter/ember-promise-modals",

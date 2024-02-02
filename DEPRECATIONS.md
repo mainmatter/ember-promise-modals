@@ -36,8 +36,6 @@ export class ApplicationController extends Controller {
 
 -- [Replacing Component Helper.md](https://github.com/embroider-build/embroider/blob/main/docs/replacing-component-helper.md#when-youre-invoking-a-component-youve-been-given)
 
-## Ember < 3.28 & node < 16 support
+## Ember < 3.28
 
 The v2 addon will no longer support Ember versions lower than 3.28.
-
-Additionally, it will have dependencies such as `ember-cli-babel@8.2.0` that require node 16, so node 12 and node 14 will be removed from the supported engines.
