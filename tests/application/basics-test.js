@@ -2,7 +2,7 @@ import { visit, click, triggerKeyEvent, waitUntil } from '@ember/test-helpers';
 import { setupApplicationTest } from 'ember-qunit';
 import { module, test } from 'qunit';
 
-import sinon from 'sinon';
+import Modal1 from 'dummy/components/modal1';
 
 import { setupPromiseModals } from 'ember-promise-modals/test-support';
 
@@ -71,6 +71,45 @@ module('Application | basics', function (hooks) {
     assert.dom('body', document).hasStyle({ overflow: 'visible' });
   });
 
+  test('opening a modal calls onAnimationModal*End once the animation ends', async function (assert) {
+    await visit('/');
+
+    assert.dom('.epm-backdrop').doesNotExist();
+    assert.dom('.epm-modal').doesNotExist();
+
+    const applicationController = this.owner.lookup('controller:application');
+    const modalsService = applicationController.modals;
+    const showModal = applicationController.actions.showModal;
+
+    applicationController.actions.showModal = () => {
+      assert.step('open');
+
+      modalsService.open(
+        Modal1,
+        {},
+        {
+          onAnimationModalInEnd: () => {
+            assert.step('onAnimationModalInEnd');
+          },
+          onAnimationModalOutEnd: () => {
+            assert.step('onAnimationModalOutEnd');
+          },
+        },
+      );
+    };
+
+    await click('[data-test-show-modal]');
+    await waitUntil(() => !document.body.classList.contains('epm-animating'));
+    await click('.epm-backdrop');
+
+    assert.dom('.epm-backdrop').doesNotExist();
+    assert.dom('.epm-modal').doesNotExist();
+
+    assert.verifySteps(['open', 'onAnimationModalInEnd', 'onAnimationModalOutEnd']);
+
+    applicationController.actions.showModal = showModal;
+  });
+
   test('pressing the Escape keyboard button closes the modal', async function (assert) {
     await visit('/');
 
@@ -99,30 +138,5 @@ module('Application | basics', function (hooks) {
     assert.deepEqual(applicationController.get('result'), {
       foo: 'bar',
     });
-  });
-
-  test('closing a modal will trigger the animation start on the `modals` service', async function (assert) {
-    await visit('/');
-
-    let modalsService = this.owner.lookup('service:modals');
-    let spy = sinon.spy(modalsService, '_onModalAnimationStart');
-
-    assert.dom('.epm-modal').doesNotExist();
-
-    await click('[data-test-show-modal]');
-
-    assert.dom('.epm-modal').exists();
-
-    await waitUntil(() => {
-      let { opacity } = window.getComputedStyle(document.querySelector('.epm-backdrop'));
-      return opacity === '1';
-    });
-
-    assert.strictEqual(spy.callCount, 1, '_onModalAnimationStart is called when opening a modal');
-
-    await triggerKeyEvent(document, 'keydown', 'Escape');
-
-    assert.dom('.epm-modal').doesNotExist();
-    assert.strictEqual(spy.callCount, 2, '_onModalAnimationStart is called again when closing it');
   });
 });
