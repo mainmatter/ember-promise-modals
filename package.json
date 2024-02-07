@@ -9,6 +9,7 @@
     "packages/*"
   ],
   "scripts": {
+    "build:test-app": "pnpm --filter test-app build",
     "lint": "npm-run-all --aggregate-output --continue-on-error --parallel \"lint:!(fix)\"",
     "lint:md": "prettier --check '**/*.md'",
     "lint:md:fix": "prettier --write '**/*.md'",

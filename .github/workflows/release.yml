@@ -18,5 +18,6 @@ jobs:
           registry-url: 'https://registry.npmjs.org'
 
       - run: npm publish
+        working-directory: packages/ember-promise-modals
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
