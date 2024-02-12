@@ -20,8 +20,6 @@ module.exports = {
     browser: true,
   },
   rules: {
-    'require-yield': 'off',
-
     // Possible Errors
     'no-async-promise-executor': 'error',
     'no-template-curly-in-string': 'error',
@@ -81,8 +79,6 @@ module.exports = {
         newlinesBetween: 'always',
         groups: [
           '/^(assert|async_hooks|buffer|child_process|cluster|console|constants|crypto|dgram|dns|domain|events|fs|http|http2|https|inspector|module|net|os|path|perf_hooks|process|punycode|querystring|readline|repl|stream|string_decoder|timers|tls|trace_events|tty|url|util|v8|vm|zli)/',
-          // Testing modules
-          ['/^qunit/', '/^ember-qunit/', '/^@ember/test-helpers/', '/^ember-exam/'],
           // Ember.js modules
           ['/^ember$/', '/^@ember/', '/^ember-data/'],
           ['module'],
@@ -99,23 +95,11 @@ module.exports = {
     'ember/no-classic-classes': 'off',
     'ember/no-classic-components': 'off',
     'ember/no-component-lifecycle-hooks': 'off',
-    'ember/require-tagless-components': 'off',
   },
   overrides: [
     // node files
     {
-      files: [
-        './.eslintrc.js',
-        './.prettierrc.js',
-        './.release-it.js',
-        './.template-lintrc.js',
-        './blueprints/*/index.js',
-        './config/**/*.js',
-        './ember-cli-build.js',
-        './index.js',
-        './testem.js',
-        './tests/dummy/config/**/*.js',
-      ],
+      files: ['./.eslintrc.js', './.prettierrc.js', './.template-lintrc.js', './config/**/*.js', './index.js'],
       parserOptions: {
         sourceType: 'script',
       },
@@ -124,11 +108,6 @@ module.exports = {
         node: true,
       },
       extends: ['plugin:n/recommended'],
-    },
-    {
-      // test files
-      files: ['tests/**/*-test.{js,ts}'],
-      extends: ['plugin:qunit/recommended'],
     },
   ],
 };

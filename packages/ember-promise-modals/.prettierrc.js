@@ -7,7 +7,7 @@ module.exports = {
   trailingComma: 'all',
   overrides: [
     {
-      files: '**/*.{yml,yaml}',
+      files: '**/*.{hbs}',
       options: {
         singleQuote: false,
       },

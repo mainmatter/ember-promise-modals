@@ -2,9 +2,8 @@ import { visit, click, triggerKeyEvent, waitUntil } from '@ember/test-helpers';
 import { setupApplicationTest } from 'ember-qunit';
 import { module, test } from 'qunit';
 
-import sinon from 'sinon';
-
 import { setupPromiseModals } from 'ember-promise-modals/test-support';
+import sinon from 'sinon';
 
 module('Application | basics', function (hooks) {
   setupApplicationTest(hooks);

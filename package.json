@@ -1,84 +1,27 @@
 {
-  "name": "ember-promise-modals",
   "version": "4.1.0",
+  "private": true,
   "description": "The better way to handle modals in your Ember.js apps.",
-  "keywords": [
-    "ember-addon"
-  ],
   "repository": "https://github.com/mainmatter/ember-promise-modals",
   "license": "MIT",
   "author": "Mainmatter GmbH",
-  "directories": {
-    "doc": "doc",
-    "test": "tests"
-  },
+  "workspaces": [
+    "packages/*"
+  ],
   "scripts": {
-    "build": "ember build --env=production",
+    "build:test-app": "pnpm --filter test-app build",
     "lint": "npm-run-all --aggregate-output --continue-on-error --parallel \"lint:!(fix)\"",
-    "lint:fix": "npm-run-all --aggregate-output --continue-on-error --parallel \"lint:*:fix\"",
-    "lint:hbs": "ember-template-lint .",
-    "lint:hbs:fix": "ember-template-lint . --fix",
-    "lint:js": "eslint . --cache",
-    "lint:js:fix": "eslint . --fix",
     "lint:md": "prettier --check '**/*.md'",
     "lint:md:fix": "prettier --write '**/*.md'",
-    "release": "release-it",
-    "start": "ember serve",
-    "test": "ember test",
-    "test:all": "npm-run-all lint test:*",
-    "test:ember-compatibility": "ember try:each"
-  },
-  "dependencies": {
-    "@ember/test-waiters": "^3.0.2",
-    "@embroider/util": "^1.7.1",
-    "ember-auto-import": "^2.4.2",
-    "ember-cli-babel": "^7.26.11",
-    "ember-cli-htmlbars": "^6.0.1",
-    "focus-trap": "^6.9.3"
+    "lint:addon": "pnpm --filter ember-promise-modals lint",
+    "lint:test-app": "pnpm --filter test-app lint",
+    "release": "release-it"
   },
   "devDependencies": {
-    "@babel/eslint-parser": "7.23.10",
-    "@ember/optional-features": "2.0.0",
-    "@ember/string": "3.1.1",
-    "@ember/test-helpers": "3.2.1",
-    "@embroider/macros": "1.13.5",
-    "@embroider/test-setup": "3.0.3",
     "@release-it-plugins/lerna-changelog": "5.0.0",
-    "broccoli-asset-rev": "3.0.0",
-    "ember-cli": "4.12.2",
-    "ember-cli-dependency-checker": "3.3.2",
-    "ember-cli-inject-live-reload": "2.1.0",
-    "ember-cli-sri": "2.1.1",
-    "ember-cli-terser": "4.0.2",
-    "ember-disable-prototype-extensions": "1.1.3",
-    "ember-load-initializers": "2.1.2",
-    "ember-maybe-import-regenerator": "1.0.0",
-    "ember-qunit": "8.0.2",
-    "ember-resolver": "8.1.0",
-    "ember-source": "4.12.4",
-    "ember-source-channel-url": "3.0.0",
-    "ember-template-lint": "5.13.0",
-    "ember-try": "2.0.0",
-    "eslint": "8.56.0",
-    "eslint-config-prettier": "8.10.0",
-    "eslint-plugin-ember": "11.12.0",
-    "eslint-plugin-import-helpers": "1.3.1",
-    "eslint-plugin-n": "16.6.2",
-    "eslint-plugin-prettier": "4.2.1",
-    "eslint-plugin-promise": "6.1.1",
-    "eslint-plugin-qunit": "7.3.4",
-    "loader.js": "4.7.0",
     "npm-run-all": "4.1.5",
     "prettier": "2.8.8",
-    "qunit": "2.20.0",
-    "qunit-console-grouper": "0.3.0",
-    "qunit-dom": "2.0.0",
-    "release-it": "15.11.0",
-    "sinon": "15.2.0",
-    "webpack": "5.90.1"
-  },
-  "engines": {
-    "node": ">= 16.*"
+    "release-it": "15.11.0"
   },
   "changelog": {
     "repo": "mainmatter/ember-promise-modals",
@@ -89,12 +32,6 @@
       "documentation": ":memo: Documentation",
       "internal": ":house: Internal"
     }
-  },
-  "ember": {
-    "edition": "octane"
-  },
-  "ember-addon": {
-    "configPath": "tests/dummy/config"
   },
   "pnpm": {
     "peerDependencyRules": {
