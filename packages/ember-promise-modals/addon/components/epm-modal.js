@@ -6,11 +6,7 @@ import { inject as service } from '@ember/service';
 
 import { createFocusTrap } from 'focus-trap';
 
-import layout from '../templates/components/epm-modal';
-
 export default Component.extend({
-  layout,
-
   tagName: '',
   outAnimationClass: 'epm-out',
   animatingClass: '',
