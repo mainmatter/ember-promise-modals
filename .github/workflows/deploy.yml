@@ -27,6 +27,9 @@ jobs:
           node-version: 16.x
           cache: pnpm
 
+      - name: Build addon
+        run: pnpm run build:addon
+
       - name: Install and Build 🔧
         run: |
           pnpm install
