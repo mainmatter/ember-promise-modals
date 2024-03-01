@@ -27,13 +27,14 @@ jobs:
           node-version: 16.x
           cache: pnpm
 
+      - name: Install Dependencies
+        run: pnpm install
+
       - name: Build addon
         run: pnpm run build:addon
 
-      - name: Install and Build 🔧
-        run: |
-          pnpm install
-          pnpm build:test-app
+      - name: Build app 🔧
+        run: pnpm build:test-app
 
       - name: Deploy 🚀
         uses: JamesIves/github-pages-deploy-action@v4.5.0
