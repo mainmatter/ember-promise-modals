@@ -50,7 +50,7 @@
     "@embroider/addon-shim": "^1.8.7",
     "@embroider/util": "^1.7.1",
     "decorator-transforms": "^1.0.1",
-    "focus-trap": "^6.9.3"
+    "focus-trap": "^7.0.0"
   },
   "devDependencies": {
     "@babel/core": "^7.23.7",
