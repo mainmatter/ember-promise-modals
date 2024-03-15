@@ -31,8 +31,7 @@
     "lint:hbs": "ember-template-lint .",
     "lint:hbs:fix": "ember-template-lint . --fix",
     "lint:js": "eslint . --cache",
-    "lint:js:fix": "eslint . --fix",
-    "release": "npm publish"
+    "lint:js:fix": "eslint . --fix"
   },
   "ember-addon": {
     "main": "addon-main.cjs",
