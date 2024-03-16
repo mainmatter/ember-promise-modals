@@ -1,9 +1,9 @@
-/*! For license information please see chunk.524.6a394deddffee82b3ad5.js.LICENSE.txt */
+/*! For license information please see chunk.524.55f8842cf57a4856693d.js.LICENSE.txt */
 var __ember_auto_import__;(()=>{var e={681:(e,t,n)=>{"use strict"
 n.r(t),n.d(t,{default:()=>s})
 var o=n(663),r=n.n(o),i=n(735),a=(0,n(465).createTemplateFactory)({id:"GmS2yzEb",block:'[[[42,[28,[37,1],[[28,[37,1],[[30,0,["modals","_stack"]]],null]],null],null,[[[1,"  "],[10,0],[15,0,[29,["epm-backdrop ",[52,[30,1,["isClosing"]],"epm-out"]]]],[14,"tabindex","-1"],[14,"role","presentation"],[14,"aria-hidden","true"],[15,"data-test-epm-backdrop",[29,[[30,2]]]],[12],[13],[1,"\\n  "],[10,0],[14,0,"epm-modal-container"],[12],[1,"\\n    "],[8,[39,3],[[16,"data-test-epm-modal",[29,[[30,2]]]]],[["@modal"],[[30,1]]],null],[1,"\\n  "],[13],[1,"\\n"]],[1,2]],null]],["modal","index"],false,["each","-track-array","if","epm-modal"]]',moduleName:"/home/runner/work/ember-promise-modals/ember-promise-modals/packages/ember-promise-modals/dist/components/epm-modal-container.js",isStrictMode:!1}),s=(0,o.setComponentTemplate)(a,r().extend({tagName:"",modals:(0,i.inject)()}))},1:(e,t,n)=>{"use strict"
 n.r(t),n.d(t,{default:()=>L})
-var o=n(663),r=n.n(o),i=n(471),a=n(372)
+var o=n(663),r=n.n(o),i=n(471),a=n(991)
 const s=require("@ember/object/internals")
 var l=n(735),c=["input","select","textarea","a[href]","button","[tabindex]:not(slot)","audio[controls]","video[controls]",'[contenteditable]:not([contenteditable="false"])',"details>summary:first-of-type","details"],u=c.join(","),d="undefined"==typeof Element,p=d?function(){}:Element.prototype.matches||Element.prototype.msMatchesSelector||Element.prototype.webkitMatchesSelector,m=!d&&Element.prototype.getRootNode?function(e){return e.getRootNode()}:function(e){return e.ownerDocument},f=function(e,t,n){var o=Array.prototype.slice.apply(e.querySelectorAll(u))
 return t&&p.call(e,u)&&o.unshift(e),o.filter(n)},b=function e(t,n,o){for(var r=[],i=Array.from(t);i.length;){var a=i.shift()
@@ -101,18 +101,18 @@ let r=await this.modal
 this.modal=null,o&&o(r)}hideModal(){this.modal?.close()}willDestroy(){this.hideModal(),super.willDestroy(...arguments)}}r=c,(0,s.g)(r.prototype,"modals",[a.inject])},546:(e,t,n)=>{"use strict"
 n.r(t),n.d(t,{default:()=>m})
 const o=require("@ember/array")
-var r=n(471),i=n(372),a=n(735),s=n.n(a)
+var r=n(471),i=n(991),a=n(735),s=n.n(a)
 const l=require("@ember/test-waiters"),c=require("rsvp")
 var u,d=n(897)
 class p{constructor(e,t,n,o={}){this._service=e,this._componentClass=t,this._data=n,this._options={className:"",onAnimationModalOutEnd:void 0,...o},this._result=void 0,this._deferred=(0,c.defer)(),this._deferredOutAnimation=void 0,this._componentInstance=void 0}get result(){return this._result}get isClosing(){return Boolean(this._deferredOutAnimation)}close(e){this._componentInstance&&this._componentInstance.closeModal(e)}then(e,t){return this._deferred.promise.then(e,t)}_destroy(){this._componentInstance&&this._componentInstance.destroyModal()}_resolve(e){this._deferredOutAnimation||((0,r.set)(this,"_deferredOutAnimation",(0,c.defer)()),this._options.onAnimationModalOutEnd&&this._deferredOutAnimation.promise.then((()=>this._options.onAnimationModalOutEnd())).catch((()=>{})),this._result=e,this._deferred.resolve(e),(0,l.waitForPromise)(this._deferredOutAnimation.promise))}_remove(){this._service._stack.removeObject(this),0===this._service._stack.length&&this._service._onLastModalRemoved(),this._componentInstance=void 0,this._deferredOutAnimation&&this._deferredOutAnimation.resolve()}}u=p,(0,d.n)(u.prototype,"isClosing",[(0,r.computed)("_deferredOutAnimation")])
 var m=s().extend({count:(0,r.computed)("_stack.@each.isClosing",(function(){return this._stack.filter((e=>!e.isClosing)).length})),top:(0,i.alias)("_stack.lastObject"),focusTrapOptions:void 0,init(){this._super(...arguments),this._stack=(0,o.A)([]),null!==this.focusTrapOptions&&(this.focusTrapOptions={...this.focusTrapOptions??{},clickOutsideDeactivates:this.focusTrapOptions?.clickOutsideDeactivates??!0})},willDestroy(){this._onLastModalRemoved(),this._onModalAnimationEnd(),this._destroyModals(),this._super(...arguments)},open(e,t,n){let o=new p(this,e,t,n)
 return this._stack.pushObject(o),1===this._stack.length&&this._onFirstModalAdded(),o},_destroyModals(){this._stack.forEach((e=>{e._destroy()}))},_onFirstModalAdded(){document.body.classList.add("epm-scrolling-disabled")},_onLastModalRemoved(){document.body.classList.remove("epm-scrolling-disabled")},_onModalAnimationStart(){document.body.classList.add("epm-animating")},_onModalAnimationEnd(){document.body.classList.remove("epm-animating")}})},663:e=>{"use strict"
 e.exports=require("@ember/component")},471:e=>{"use strict"
-e.exports=require("@ember/object")},372:e=>{"use strict"
+e.exports=require("@ember/object")},991:e=>{"use strict"
 e.exports=require("@ember/object/computed")},735:e=>{"use strict"
 e.exports=require("@ember/service")},465:e=>{"use strict"
-e.exports=require("@ember/template-factory")},991:(e,t,n)=>{e.exports=function(){var e=_eai_d,t=_eai_r
-function o(e){return e&&e.__esModule?e:Object.assign({default:e},e)}window.emberAutoImportDynamic=function(e){return 1===arguments.length?t("_eai_dyn_"+e):t("_eai_dynt_"+e)(Array.prototype.slice.call(arguments,1))},window.emberAutoImportSync=function(e){return t("_eai_sync_"+e)(Array.prototype.slice.call(arguments,1))},e("ember-promise-modals/components/epm-modal",["@ember/component","@ember/object","@ember/object/computed","@ember/service","@ember/template-factory"],(function(){return o(n(1))})),e("ember-promise-modals/components/epm-modal-container",["@ember/component","@ember/service","@ember/template-factory"],(function(){return o(n(681))})),e("ember-promise-modals/helpers/open-modal",["@ember/service"],(function(){return o(n(692))})),e("ember-promise-modals/services/modals",["@ember/object","@ember/object/computed","@ember/service"],(function(){return o(n(546))}))}()},618:function(e,t){window._eai_r=require,window._eai_d=define},897:(e,t,n)=>{"use strict"
+e.exports=require("@ember/template-factory")},504:(e,t,n)=>{e.exports=function(){var e=_eai_d,t=_eai_r
+function o(e){return e&&e.__esModule?e:Object.assign({default:e},e)}window.emberAutoImportDynamic=function(e){return 1===arguments.length?t("_eai_dyn_"+e):t("_eai_dynt_"+e)(Array.prototype.slice.call(arguments,1))},window.emberAutoImportSync=function(e){return t("_eai_sync_"+e)(Array.prototype.slice.call(arguments,1))},e("ember-promise-modals/components/epm-modal",["@ember/component","@ember/object","@ember/object/computed","@ember/service","@ember/template-factory"],(function(){return o(n(1))})),e("ember-promise-modals/components/epm-modal-container",["@ember/component","@ember/service","@ember/template-factory"],(function(){return o(n(681))})),e("ember-promise-modals/helpers/open-modal",["@ember/service"],(function(){return o(n(692))})),e("ember-promise-modals/services/modals",["@ember/object","@ember/object/computed","@ember/service"],(function(){return o(n(546))}))}()},197:function(e,t){window._eai_r=require,window._eai_d=define},897:(e,t,n)=>{"use strict"
 n.d(t,{g:()=>a,i:()=>c,n:()=>l})
 var o=Object.defineProperty;((e,t)=>{for(var n in t)o(e,n,{get:t[n],enumerable:!0})})({},{c:()=>u,f:()=>i,g:()=>a,i:()=>c,m:()=>s,n:()=>l,p:()=>d})
 var r=new WeakMap
@@ -134,6 +134,6 @@ function n(o){var r=t[o]
 if(void 0!==r)return r.exports
 var i=t[o]={exports:{}}
 return e[o].call(i.exports,i,i.exports,n),i.exports}n.n=e=>{var t=e&&e.__esModule?()=>e.default:()=>e
-return n.d(t,{a:t}),t},n.d=(e,t)=>{for(var o in t)n.o(t,o)&&!n.o(e,o)&&Object.defineProperty(e,o,{enumerable:!0,get:t[o]})},n.o=(e,t)=>Object.prototype.hasOwnProperty.call(e,t),n.r=e=>{"undefined"!=typeof Symbol&&Symbol.toStringTag&&Object.defineProperty(e,Symbol.toStringTag,{value:"Module"}),Object.defineProperty(e,"__esModule",{value:!0})},n(618)
-var o=n(991)
+return n.d(t,{a:t}),t},n.d=(e,t)=>{for(var o in t)n.o(t,o)&&!n.o(e,o)&&Object.defineProperty(e,o,{enumerable:!0,get:t[o]})},n.o=(e,t)=>Object.prototype.hasOwnProperty.call(e,t),n.r=e=>{"undefined"!=typeof Symbol&&Symbol.toStringTag&&Object.defineProperty(e,Symbol.toStringTag,{value:"Module"}),Object.defineProperty(e,"__esModule",{value:!0})},n(197)
+var o=n(504)
 __ember_auto_import__=o})()
