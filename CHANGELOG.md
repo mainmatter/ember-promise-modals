@@ -1,5 +1,56 @@
 # Changelog
 
+## Release (2024-04-05)
+
+ember-promise-modals 5.0.0 (major)
+
+#### :boom: Breaking Change
+* `ember-promise-modals`, `test-app`
+  * [#920](https://github.com/mainmatter/ember-promise-modals/pull/920) Convert the addon to v2 ([@BlueCutOfficial](https://github.com/BlueCutOfficial))
+* Other
+  * [#913](https://github.com/mainmatter/ember-promise-modals/pull/913) Remove support for deprecated `modal-from-string` ([@BlueCutOfficial](https://github.com/BlueCutOfficial))
+  * [#910](https://github.com/mainmatter/ember-promise-modals/pull/910) Drop Ember < 3.28 and node < 16 ([@BlueCutOfficial](https://github.com/BlueCutOfficial))
+  * [#909](https://github.com/mainmatter/ember-promise-modals/pull/909) Remove the PostCSS process ([@BlueCutOfficial](https://github.com/BlueCutOfficial))
+
+#### :house: Internal
+* `ember-promise-modals`
+  * [#946](https://github.com/mainmatter/ember-promise-modals/pull/946) Update dependency rollup to v4.13.2 ([@renovate[bot]](https://github.com/apps/renovate))
+  * [#944](https://github.com/mainmatter/ember-promise-modals/pull/944) Update dependency @babel/core to v7.24.4 ([@renovate[bot]](https://github.com/apps/renovate))
+  * [#939](https://github.com/mainmatter/ember-promise-modals/pull/939) Update babel monorepo (patch) ([@renovate[bot]](https://github.com/apps/renovate))
+  * [#938](https://github.com/mainmatter/ember-promise-modals/pull/938) Update dependency rollup to v4.13.1 ([@renovate[bot]](https://github.com/apps/renovate))
+  * [#930](https://github.com/mainmatter/ember-promise-modals/pull/930) Update babel monorepo to v7.24.0 (minor) ([@renovate[bot]](https://github.com/apps/renovate))
+  * [#922](https://github.com/mainmatter/ember-promise-modals/pull/922) Update babel monorepo to v7.23.9 (patch) ([@renovate[bot]](https://github.com/apps/renovate))
+  * [#919](https://github.com/mainmatter/ember-promise-modals/pull/919) Use co-location in the addon package ([@BlueCutOfficial](https://github.com/BlueCutOfficial))
+  * [#918](https://github.com/mainmatter/ember-promise-modals/pull/918) Realign internal components names to use the default convention ([@BlueCutOfficial](https://github.com/BlueCutOfficial))
+* `test-app`
+  * [#943](https://github.com/mainmatter/ember-promise-modals/pull/943) Remove version numbers on private packages ([@BlueCutOfficial](https://github.com/BlueCutOfficial))
+  * [#936](https://github.com/mainmatter/ember-promise-modals/pull/936) Update dependency ember-cli-htmlbars to v6.3.0 ([@renovate[bot]](https://github.com/apps/renovate))
+  * [#935](https://github.com/mainmatter/ember-promise-modals/pull/935) Update dependency @embroider/macros to v1.15.0 ([@renovate[bot]](https://github.com/apps/renovate))
+  * [#931](https://github.com/mainmatter/ember-promise-modals/pull/931) Update dependency @ember/optional-features to v2.1.0 ([@renovate[bot]](https://github.com/apps/renovate))
+  * [#928](https://github.com/mainmatter/ember-promise-modals/pull/928) Update dependency webpack to v5.90.3 ([@renovate[bot]](https://github.com/apps/renovate))
+  * [#926](https://github.com/mainmatter/ember-promise-modals/pull/926) Update dependency qunit to v2.20.1 ([@renovate[bot]](https://github.com/apps/renovate))
+* Other
+  * [#945](https://github.com/mainmatter/ember-promise-modals/pull/945) Update dependency pnpm to v8.15.6 ([@renovate[bot]](https://github.com/apps/renovate))
+  * [#942](https://github.com/mainmatter/ember-promise-modals/pull/942) Update dependency release-plan to v0.9.0 ([@renovate[bot]](https://github.com/apps/renovate))
+  * [#940](https://github.com/mainmatter/ember-promise-modals/pull/940) Update dependency pnpm to v8.15.5 ([@renovate[bot]](https://github.com/apps/renovate))
+  * [#934](https://github.com/mainmatter/ember-promise-modals/pull/934) Pin dependency release-plan to 0.8.0 ([@renovate[bot]](https://github.com/apps/renovate))
+  * [#923](https://github.com/mainmatter/ember-promise-modals/pull/923) Update dependency pnpm to v8.15.4 ([@renovate[bot]](https://github.com/apps/renovate))
+  * [#925](https://github.com/mainmatter/ember-promise-modals/pull/925) ci (fix): in the deploy workflow, move the install before the addon build ([@BlueCutOfficial](https://github.com/BlueCutOfficial))
+  * [#924](https://github.com/mainmatter/ember-promise-modals/pull/924) CI (fix): Build the addon before building and deploying the test app ([@BlueCutOfficial](https://github.com/BlueCutOfficial))
+  * [#917](https://github.com/mainmatter/ember-promise-modals/pull/917) Fix the deployment workflow of the test-app ([@BlueCutOfficial](https://github.com/BlueCutOfficial))
+  * [#915](https://github.com/mainmatter/ember-promise-modals/pull/915) Replace eslint-plugin-node with latest eslint-plugin-n ([@BlueCutOfficial](https://github.com/BlueCutOfficial))
+  * [#912](https://github.com/mainmatter/ember-promise-modals/pull/912) Update dependency webpack to v5.90.1 ([@renovate[bot]](https://github.com/apps/renovate))
+  * [#911](https://github.com/mainmatter/ember-promise-modals/pull/911) Update dependency @embroider/macros to v1.13.5 ([@renovate[bot]](https://github.com/apps/renovate))
+* `ember-promise-modals`, `test-app`
+  * [#941](https://github.com/mainmatter/ember-promise-modals/pull/941) Update babel monorepo to v7.24.1 (minor) ([@renovate[bot]](https://github.com/apps/renovate))
+  * [#937](https://github.com/mainmatter/ember-promise-modals/pull/937) Update dependency eslint to v8.57.0 ([@renovate[bot]](https://github.com/apps/renovate))
+  * [#927](https://github.com/mainmatter/ember-promise-modals/pull/927) Prepare the release process ([@BlueCutOfficial](https://github.com/BlueCutOfficial))
+  * [#921](https://github.com/mainmatter/ember-promise-modals/pull/921) Pin dependencies ([@renovate[bot]](https://github.com/apps/renovate))
+  * [#916](https://github.com/mainmatter/ember-promise-modals/pull/916) Create a monorepo to separate v1 addon from test-app ([@BlueCutOfficial](https://github.com/BlueCutOfficial))
+
+#### Committers: 1
+- Marine Dunstetter ([@BlueCutOfficial](https://github.com/BlueCutOfficial))
+
 
 
 
