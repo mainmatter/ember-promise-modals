@@ -1,5 +1,4 @@
 {
-  "version": "4.1.0",
   "private": true,
   "description": "The better way to handle modals in your Ember.js apps.",
   "repository": "https://github.com/mainmatter/ember-promise-modals",
