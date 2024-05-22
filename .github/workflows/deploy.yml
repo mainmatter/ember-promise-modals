@@ -7,7 +7,7 @@ on:
       - main
 
 env:
-  PNPM_VERSION: 8.15.6
+  PNPM_VERSION: 8.15.8
 
 jobs:
   build-and-deploy:
