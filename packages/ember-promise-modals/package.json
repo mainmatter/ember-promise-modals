@@ -56,7 +56,7 @@
     "@babel/eslint-parser": "7.24.5",
     "@babel/plugin-proposal-decorators": "7.24.1",
     "@babel/plugin-transform-class-properties": "7.24.1",
-    "@embroider/addon-dev": "4.2.1",
+    "@embroider/addon-dev": "4.3.1",
     "@rollup/plugin-babel": "6.0.4",
     "ember-template-lint": "5.13.0",
     "eslint": "8.57.0",
