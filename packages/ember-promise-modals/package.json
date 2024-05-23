@@ -58,7 +58,7 @@
     "@babel/plugin-transform-class-properties": "7.24.1",
     "@embroider/addon-dev": "4.3.1",
     "@rollup/plugin-babel": "6.0.4",
-    "ember-template-lint": "5.13.0",
+    "ember-template-lint": "6.0.0",
     "eslint": "8.57.0",
     "eslint-config-prettier": "8.10.0",
     "eslint-plugin-ember": "11.12.0",
