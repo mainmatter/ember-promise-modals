@@ -1,2 +1,32 @@
 Warning: unknown package "test-app"
 Warning: unknown package "test-app"
+# Unlabeled Changes
+
+* `test-app`
+  * [#971](https://github.com/mainmatter/ember-promise-modals/pull/971) Update dependency qunit to v2.21.0 ([@renovate[bot]](https://github.com/apps/renovate))
+  * [#968](https://github.com/mainmatter/ember-promise-modals/pull/968) Update dependency ember-auto-import to v2.7.3 ([@renovate[bot]](https://github.com/apps/renovate))
+  * [#967](https://github.com/mainmatter/ember-promise-modals/pull/967) Update dependency @embroider/macros to v1.16.2 ([@renovate[bot]](https://github.com/apps/renovate))
+  * [#952](https://github.com/mainmatter/ember-promise-modals/pull/952) Update dependency ember-cli to v4.12.3 ([@renovate[bot]](https://github.com/apps/renovate))
+  * [#951](https://github.com/mainmatter/ember-promise-modals/pull/951) Update dependency @embroider/macros to v1.15.1 ([@renovate[bot]](https://github.com/apps/renovate))
+  * [#914](https://github.com/mainmatter/ember-promise-modals/pull/914) Update dependency ember-try to v3 ([@renovate[bot]](https://github.com/apps/renovate))
+* `ember-promise-modals`, `test-app`
+  * [#970](https://github.com/mainmatter/ember-promise-modals/pull/970) Update dependency eslint-plugin-promise to v6.2.0 ([@renovate[bot]](https://github.com/apps/renovate))
+  * [#969](https://github.com/mainmatter/ember-promise-modals/pull/969) Update dependency eslint-plugin-n to v17.8.1 ([@renovate[bot]](https://github.com/apps/renovate))
+  * [#966](https://github.com/mainmatter/ember-promise-modals/pull/966) Update babel monorepo to v7.24.7 (patch) ([@renovate[bot]](https://github.com/apps/renovate))
+  * [#964](https://github.com/mainmatter/ember-promise-modals/pull/964) Update dependency eslint-plugin-n to v17 ([@renovate[bot]](https://github.com/apps/renovate))
+  * [#963](https://github.com/mainmatter/ember-promise-modals/pull/963) Update dependency eslint-plugin-ember to v12 ([@renovate[bot]](https://github.com/apps/renovate))
+  * [#962](https://github.com/mainmatter/ember-promise-modals/pull/962) Update dependency eslint-config-prettier to v9 ([@renovate[bot]](https://github.com/apps/renovate))
+  * [#960](https://github.com/mainmatter/ember-promise-modals/pull/960) Update dependency ember-template-lint to v6 ([@renovate[bot]](https://github.com/apps/renovate))
+  * [#957](https://github.com/mainmatter/ember-promise-modals/pull/957) Update embroider monorepo (minor) ([@renovate[bot]](https://github.com/apps/renovate))
+  * [#948](https://github.com/mainmatter/ember-promise-modals/pull/948) Update dependency webpack to v5.91.0 ([@renovate[bot]](https://github.com/apps/renovate))
+  * [#950](https://github.com/mainmatter/ember-promise-modals/pull/950) Update babel monorepo to v7.24.5 (patch) ([@renovate[bot]](https://github.com/apps/renovate))
+* `ember-promise-modals`
+  * [#956](https://github.com/mainmatter/ember-promise-modals/pull/956) Update dependency rollup to v4.18.0 ([@renovate[bot]](https://github.com/apps/renovate))
+  * [#954](https://github.com/mainmatter/ember-promise-modals/pull/954) Update dependency rollup to v4.14.3 ([@renovate[bot]](https://github.com/apps/renovate))
+* Other
+  * [#955](https://github.com/mainmatter/ember-promise-modals/pull/955) Update JamesIves/github-pages-deploy-action action to v4.6.1 ([@renovate[bot]](https://github.com/apps/renovate))
+  * [#953](https://github.com/mainmatter/ember-promise-modals/pull/953) Update dependency pnpm to v8.15.8 ([@renovate[bot]](https://github.com/apps/renovate))
+  * [#887](https://github.com/mainmatter/ember-promise-modals/pull/887) Update actions/setup-node action to v4 ([@renovate[bot]](https://github.com/apps/renovate))
+  * [#886](https://github.com/mainmatter/ember-promise-modals/pull/886) Update actions/checkout action to v4 ([@renovate[bot]](https://github.com/apps/renovate))
+
+*Cannot plan release until the above changes are labeled*.
