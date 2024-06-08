@@ -30,7 +30,7 @@
     "@embroider/macros": "1.16.2",
     "@embroider/test-setup": "3.0.3",
     "broccoli-asset-rev": "3.0.0",
-    "ember-auto-import": "2.7.2",
+    "ember-auto-import": "2.7.3",
     "ember-cli": "4.12.3",
     "ember-cli-babel": "8.2.0",
     "ember-cli-dependency-checker": "3.3.2",
