@@ -48,7 +48,7 @@
     "@ember/test-waiters": "^3.0.2",
     "@embroider/addon-shim": "^1.8.7",
     "@embroider/util": "^1.7.1",
-    "decorator-transforms": "^1.0.1",
+    "decorator-transforms": "^2.0.0",
     "focus-trap": "^6.9.3"
   },
   "devDependencies": {
