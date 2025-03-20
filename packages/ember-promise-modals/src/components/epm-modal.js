@@ -1,62 +1,47 @@
-import Component from '@ember/component';
-import { set } from '@ember/object';
-import { readOnly } from '@ember/object/computed';
-import { guidFor } from '@ember/object/internals';
+import { action } from '@ember/object';
 import { inject as service } from '@ember/service';
 
+import Component from '@glimmer/component';
+import { tracked } from '@glimmer/tracking';
+import { modifier } from 'ember-modifier';
 import { createFocusTrap } from 'focus-trap';
 
-export default Component.extend({
-  tagName: '',
-  outAnimationClass: 'epm-out',
-  animatingClass: '',
+let initialiseModal = modifier(element => {
+  this._addFocusTrap(element);
+  this._addAnimationListeners(element);
+  this.modals._onModalAnimationStart(element);
+  return () => this.destroyModal();
+});
 
-  modals: service(),
+export default class EpmModalComponent extends Component {
+  outAnimationClass = 'epm-out';
+  @tracked animatingClass = '';
 
-  optionsClassName: readOnly('modal._options.className'),
+  @service modals;
 
-  modalElementId: null,
-  focusTrapOptions: null,
-  _animationEnd: null,
+  initialiseModal = initialiseModal;
 
-  init() {
-    this._super(...arguments);
+  get optionsClassName() {
+    return this.args.modal._options.className;
+  }
 
-    set(this, 'modalElementId', guidFor(this));
+  @tracked focusTrapOptions = null;
+  _animationEnd = null;
 
-    this.modal._componentInstance = this;
+  constructor() {
+    super(...arguments);
+
+    this.args.modal._componentInstance = this;
 
     let { focusTrapOptions: globalFocusTrapOptions } = this.modals;
-    let { focusTrapOptions: localFocusTrapOptions } = this.modal._options;
+    let { focusTrapOptions: localFocusTrapOptions } = this.args.modal._options;
 
     if (localFocusTrapOptions !== null) {
       this.focusTrapOptions = localFocusTrapOptions || globalFocusTrapOptions;
     }
-  },
+  }
 
-  didInsertElement() {
-    this._super(...arguments);
-
-    this._addFocusTrap();
-    this._addAnimationListeners();
-
-    // animating in starts when the element is added to the DOM. Inform the service about it.
-    this.modals._onModalAnimationStart();
-  },
-
-  willDestroyElement() {
-    this.destroyModal();
-
-    this._super(...arguments);
-  },
-
-  _getElement() {
-    return document.getElementById(this.modalElementId);
-  },
-
-  _addFocusTrap() {
-    let element = this._getElement();
-
+  _addFocusTrap(element) {
     if (!this.focusTrapOptions) {
       return;
     }
@@ -77,7 +62,7 @@ export default Component.extend({
 
     this.focusTrap = createFocusTrap(element, options);
     this.focusTrap.activate();
-  },
+  }
 
   _removeFocusTrap(onDeactivate = this.focusTrapOptions?.onDeactivate) {
     if (!this.focusTrap) {
@@ -85,9 +70,9 @@ export default Component.extend({
     }
 
     this.focusTrap.deactivate({ onDeactivate });
-  },
+  }
 
-  _addAnimationListeners() {
+  _addAnimationListeners(element) {
     this._animationEnd = ({ target, animationName }) => {
       // ignore animations bubbling up
       if (target !== this._getElement()) {
@@ -99,39 +84,37 @@ export default Component.extend({
 
       let isOutAnimation = animationName.substring(animationName.length - 4) === '-out';
       if (isOutAnimation) {
-        this.modal._remove();
+        this.args.modal._remove();
       }
     };
 
-    let element = this._getElement();
     if (element) {
       element.addEventListener('animationend', this._animationEnd);
     }
-  },
+  }
 
-  _removeAnimationListeners() {
+  _removeAnimationListeners(element) {
     if (!this._animationEnd) {
       return;
     }
 
-    let element = this._getElement();
     if (element) {
       element.removeEventListener('animationend', this._animationEnd);
     }
 
     this._animationEnd = null;
-  },
+  }
 
-  destroyModal() {
+  destroyModal(element) {
     // Remove the focus trap without triggering the optional onDeactivate() hook
     this._removeFocusTrap(null);
 
     // Remove the animation listeners
-    this._removeAnimationListeners();
+    this._removeAnimationListeners(element);
 
     // make sure that we remove the modal, also resolving the test waiter
-    this.modal._remove();
-  },
+    this.args.modal._remove();
+  }
 
   closeModal(result) {
     if (this.animatingClass !== '') {
@@ -141,17 +124,16 @@ export default Component.extend({
     this.modals._onModalAnimationStart();
 
     // This triggers the out animation, which in turn will remove the modal after it completes
-    set(this, 'animatingClass', this.outAnimationClass);
+    this.animatingClass = this.outAnimationClass;
 
-    this.modal._resolve(result);
-  },
+    this.args.modal._resolve(result);
+  }
 
-  actions: {
-    close(result) {
-      this.closeModal(result);
+  @action
+  close(result) {
+    this.closeModal(result);
 
-      // Remove the focus trap, triggering the onDeactivate() hook
-      this._removeFocusTrap();
-    },
-  },
-});
+    // Remove the focus trap, triggering the onDeactivate() hook
+    this._removeFocusTrap();
+  }
+}

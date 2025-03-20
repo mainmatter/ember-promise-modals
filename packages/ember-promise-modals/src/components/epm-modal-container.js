@@ -1,10 +1,8 @@
-import Component from '@ember/component';
+import Component from '@ember/glimmer';
 import { inject as service } from '@ember/service';
 
 import './epm-modal-container.css';
 
-export default Component.extend({
-  tagName: '',
-
-  modals: service(),
-});
+export default class EpmModalContainerComponent extends Component {
+  @service modals;
+}

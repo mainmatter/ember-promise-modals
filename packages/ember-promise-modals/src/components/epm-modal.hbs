@@ -1,6 +1,5 @@
-{{!-- template-lint-disable no-action --}}
-<div id={{this.modalElementId}} class="epm-modal {{this.optionsClassName}} {{this.animatingClass}}">
-  {{#let (component (ensure-safe-component @modal._componentClass) data=@modal._data close=(action "close")) as |ModalComponent|}}
+<div {{this.initaliseModal}} class="epm-modal {{this.optionsClassName}} {{this.animatingClass}}">
+  {{#let (component (ensure-safe-component @modal._componentClass) data=@modal._data close=this.close) as |ModalComponent|}}
     <ModalComponent />
   {{/let}}
 </div>
