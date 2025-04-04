@@ -1,2 +1,3 @@
 packages:
-  - 'packages/*'
+  - 'packages/ember-promise-modals'
+  - 'packages/test-app'
