@@ -1,5 +1,6 @@
-import Component from '@ember/glimmer';
 import { inject as service } from '@ember/service';
+
+import Component from '@glimmer/component';
 
 import './epm-modal-container.css';
 
