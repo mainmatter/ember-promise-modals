@@ -1,4 +1,4 @@
-<div {{this.initaliseModal}} class="epm-modal {{this.optionsClassName}} {{this.animatingClass}}">
+<div {{this.initialiseModal}} class="epm-modal {{this.optionsClassName}} {{this.animatingClass}}">
   {{#let (component (ensure-safe-component @modal._componentClass) data=@modal._data close=this.close) as |ModalComponent|}}
     <ModalComponent />
   {{/let}}

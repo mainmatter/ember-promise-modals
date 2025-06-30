@@ -6,12 +6,7 @@ import { tracked } from '@glimmer/tracking';
 import { modifier } from 'ember-modifier';
 import { createFocusTrap } from 'focus-trap';
 
-let initialiseModal = modifier(element => {
-  this._addFocusTrap(element);
-  this._addAnimationListeners(element);
-  this.modals._onModalAnimationStart(element);
-  return () => this.destroyModal();
-});
+
 
 export default class EpmModalComponent extends Component {
   outAnimationClass = 'epm-out';
@@ -19,7 +14,12 @@ export default class EpmModalComponent extends Component {
 
   @service modals;
 
-  initialiseModal = initialiseModal;
+  initialiseModal = modifier(element => {
+    this._addFocusTrap(element);
+    this._addAnimationListeners(element);
+    this.modals._onModalAnimationStart(element);
+    return () => this.destroyModal();
+  });
 
   get optionsClassName() {
     return this.args.modal._options.className;
@@ -75,7 +75,7 @@ export default class EpmModalComponent extends Component {
   _addAnimationListeners(element) {
     this._animationEnd = ({ target, animationName }) => {
       // ignore animations bubbling up
-      if (target !== this._getElement()) {
+      if (target !== element) {
         return;
       }
 
