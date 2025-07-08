@@ -68,6 +68,11 @@
     "sinon": "15.2.0",
     "webpack": "5.91.0"
   },
+  "dependenciesMeta": {
+    "ember-promise-modals": {
+      "injected": true
+    }
+  },
   "engines": {
     "node": ">= 16.*"
   },

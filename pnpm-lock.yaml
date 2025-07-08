@@ -112,7 +112,7 @@ importers:
         specifier: 3.1.1
         version: 3.1.1
       '@ember/test-helpers':
-        specifier: 3.2.1
+        specifier: ^3.2.1
         version: 3.2.1(ember-source@4.12.4(@babel/core@7.24.7)(@glimmer/component@2.0.0)(webpack@5.91.0))(webpack@5.91.0)
       '@embroider/compat':
         specifier: ^3.4.3
@@ -167,7 +167,7 @@ importers:
         version: 1.0.0
       ember-promise-modals:
         specifier: workspace:*
-        version: link:../ember-promise-modals
+        version: file:packages/ember-promise-modals(@babel/core@7.24.7)(@ember/test-helpers@3.2.1(ember-source@4.12.4(@babel/core@7.24.7)(@glimmer/component@2.0.0)(webpack@5.91.0))(webpack@5.91.0))(ember-source@4.12.4(@babel/core@7.24.7)(@glimmer/component@2.0.0)(webpack@5.91.0))
       ember-qunit:
         specifier: 8.0.2
         version: 8.0.2(@ember/test-helpers@3.2.1(ember-source@4.12.4(@babel/core@7.24.7)(@glimmer/component@2.0.0)(webpack@5.91.0))(webpack@5.91.0))(ember-source@4.12.4(@babel/core@7.24.7)(@glimmer/component@2.0.0)(webpack@5.91.0))(qunit@2.21.0)
@@ -234,6 +234,9 @@ importers:
       webpack:
         specifier: 5.91.0
         version: 5.91.0
+    dependenciesMeta:
+      ember-promise-modals:
+        injected: true
 
 packages:
 
@@ -3296,6 +3299,12 @@ packages:
   ember-maybe-import-regenerator@1.0.0:
     resolution: {integrity: sha512-wtjgjEV0Hk4fgiAwFjOfPrGWfmFrbRW3zgNZO4oA3H5FlbMssMvWuR8blQ3QSWYHODVK9r+ThsRAs8lG4kbxqA==}
     engines: {node: '>= 12.*'}
+
+  ember-promise-modals@file:packages/ember-promise-modals:
+    resolution: {directory: packages/ember-promise-modals, type: directory}
+    engines: {node: '>= 16.*'}
+    peerDependencies:
+      '@ember/test-helpers': ^3.0.0
 
   ember-qunit@8.0.2:
     resolution: {integrity: sha512-Rf60jeUTWNsF3Imf/FLujW/B/DFmKVXKmXO1lirTXjpertKfwRhp/3MnN8a/U/WyodTIsERkInGT1IqTtphCdQ==}
@@ -11246,6 +11255,19 @@ snapshots:
       ember-cli-babel: 7.26.11
       regenerator-runtime: 0.13.11
     transitivePeerDependencies:
+      - supports-color
+
+  ember-promise-modals@file:packages/ember-promise-modals(@babel/core@7.24.7)(@ember/test-helpers@3.2.1(ember-source@4.12.4(@babel/core@7.24.7)(@glimmer/component@2.0.0)(webpack@5.91.0))(webpack@5.91.0))(ember-source@4.12.4(@babel/core@7.24.7)(@glimmer/component@2.0.0)(webpack@5.91.0)):
+    dependencies:
+      '@ember/test-helpers': 3.2.1(ember-source@4.12.4(@babel/core@7.24.7)(@glimmer/component@2.0.0)(webpack@5.91.0))(webpack@5.91.0)
+      '@ember/test-waiters': 3.0.2
+      '@embroider/addon-shim': 1.10.0
+      '@embroider/util': 1.7.1(ember-source@4.12.4(@babel/core@7.24.7)(@glimmer/component@2.0.0)(webpack@5.91.0))
+      decorator-transforms: 1.1.0(@babel/core@7.24.7)
+      focus-trap: 6.9.3
+    transitivePeerDependencies:
+      - '@babel/core'
+      - ember-source
       - supports-color
 
   ember-qunit@8.0.2(@ember/test-helpers@3.2.1(ember-source@4.12.4(@babel/core@7.24.7)(@glimmer/component@2.0.0)(webpack@5.91.0))(webpack@5.91.0))(ember-source@4.12.4(@babel/core@7.24.7)(@glimmer/component@2.0.0)(webpack@5.91.0))(qunit@2.21.0):
