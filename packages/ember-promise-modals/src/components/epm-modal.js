@@ -9,6 +9,7 @@ import { createFocusTrap } from 'focus-trap';
 export default class EpmModal extends Component {
   @service modals;
 
+  element = null;
   outAnimationClass = 'epm-out';
   _animationEnd = null;
 
@@ -25,7 +26,7 @@ export default class EpmModal extends Component {
     return localFocusTrapOptions || globalFocusTrapOptions;
   }
 
-  setup = modifier((element) => {
+  setup = modifier(element => {
     this.element = element;
     this._addFocusTrap();
     this._addAnimationListeners();
@@ -45,14 +46,13 @@ export default class EpmModal extends Component {
   }
 
   _addFocusTrap() {
-    let element = this._getElement();
     if (!this.focusTrapOptions) {
       return;
     }
 
     let options = {
       ...this.focusTrapOptions,
-      fallbackFocus: element,
+      fallbackFocus: this.element,
       onDeactivate: (...args) => {
         this.focusTrapOptions.onDeactivate?.(...args);
 
@@ -64,7 +64,7 @@ export default class EpmModal extends Component {
       },
     };
 
-    this.focusTrap = createFocusTrap(element, options);
+    this.focusTrap = createFocusTrap(this.element, options);
     this.focusTrap.activate();
   }
 
@@ -79,7 +79,7 @@ export default class EpmModal extends Component {
   _addAnimationListeners() {
     this._animationEnd = ({ target, animationName }) => {
       // ignore animations bubbling up
-      if (target !== this._getElement()) {
+      if (target !== this.element) {
         return;
       }
 
@@ -92,9 +92,8 @@ export default class EpmModal extends Component {
       }
     };
 
-    let element = this._getElement();
-    if (element) {
-      element.addEventListener('animationend', this._animationEnd);
+    if (this.element) {
+      this.element.addEventListener('animationend', this._animationEnd);
     }
   }
 
@@ -103,9 +102,8 @@ export default class EpmModal extends Component {
       return;
     }
 
-    let element = this._getElement();
-    if (element) {
-      element.removeEventListener('animationend', this._animationEnd);
+    if (this.element) {
+      this.element.removeEventListener('animationend', this._animationEnd);
     }
 
     this._animationEnd = null;
