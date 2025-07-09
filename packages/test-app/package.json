@@ -29,6 +29,7 @@
     "@ember/test-helpers": "3.2.1",
     "@embroider/macros": "1.16.2",
     "@embroider/test-setup": "3.0.3",
+    "@glimmer/component": "1.1.2",
     "broccoli-asset-rev": "3.0.0",
     "ember-auto-import": "2.7.3",
     "ember-cli": "4.12.3",
