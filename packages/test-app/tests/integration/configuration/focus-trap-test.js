@@ -3,11 +3,11 @@ import focus from '@ember/test-helpers/dom/focus';
 import { setupRenderingTest } from 'ember-qunit';
 import { module, test } from 'qunit';
 
-import Component from '@ember/component';
-
 import ModalsService from 'ember-promise-modals/services/modals';
 import { setupPromiseModals } from 'ember-promise-modals/test-support';
 import hbs from 'htmlbars-inline-precompile';
+
+import { mockModalComponent } from '../../helpers/mocks';
 
 module('Configuration | focus trap', function (hooks) {
   setupRenderingTest(hooks);
@@ -20,7 +20,15 @@ module('Configuration | focus trap', function (hooks) {
     `);
 
     let modals = context.owner.lookup('service:modals');
-    modals.open('foo', undefined, modalOptions);
+    modals.open(
+      mockModalComponent(hbs`
+      <button type="button" data-test-inside-button {{on "click" @close}}>
+        🎉
+      </button>
+    `),
+      undefined,
+      modalOptions,
+    );
 
     await settled();
   };
@@ -31,20 +39,6 @@ module('Configuration | focus trap', function (hooks) {
     owner.unregister('service:modals');
     owner.register('service:modals', obj);
   };
-
-  hooks.beforeEach(function () {
-    this.owner.register(
-      'component:foo',
-      Component.extend({
-        tagName: '',
-        layout: hbs`
-          <button type="button" data-test-inside-button onclick={{action this.close}}>
-            🎉
-          </button>
-        `,
-      }),
-    );
-  });
 
   test('focus trap is enabled', async function (assert) {
     await renderAndOpenModal(this);

@@ -2,23 +2,17 @@ import { render, settled } from '@ember/test-helpers';
 import { setupRenderingTest } from 'ember-qunit';
 import { module, test } from 'qunit';
 
-import Component from '@ember/component';
-
 import { setupPromiseModals } from 'ember-promise-modals/test-support';
 import hbs from 'htmlbars-inline-precompile';
+
+import { mockModalComponent } from '../../helpers/mocks';
 
 module('Component | ModalContainer', function (hooks) {
   setupRenderingTest(hooks);
   setupPromiseModals(hooks);
 
   test('renders the modals for the `modals` service', async function (assert) {
-    this.owner.register(
-      'component:foo',
-      Component.extend({
-        tagName: '',
-        layout: hbs`<button type="button">foo</button> {{@data.bar}}`,
-      }),
-    );
+    const modalComponent = mockModalComponent(hbs`<button type="button">foo</button> {{@data.bar}}`);
 
     await render(hbs`<EpmModalContainer />`);
 
@@ -27,7 +21,7 @@ module('Component | ModalContainer', function (hooks) {
     assert.dom(this.element).hasText('');
 
     let modals = this.owner.lookup('service:modals');
-    let modal = modals.open('foo', { bar: 'baz' });
+    let modal = modals.open(modalComponent, { bar: 'baz' });
 
     await settled();
 
