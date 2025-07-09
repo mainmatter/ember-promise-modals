@@ -26,6 +26,9 @@ importers:
       '@embroider/addon-shim':
         specifier: ^1.8.7
         version: 1.10.0
+      '@embroider/util':
+        specifier: ^1.13.3
+        version: 1.13.3(ember-source@4.12.4(@babel/core@7.24.7)(@glimmer/component@1.1.2(@babel/core@7.24.7))(webpack@5.91.0))
       decorator-transforms:
         specifier: ^1.0.1
         version: 1.2.1(@babel/core@7.24.7)
@@ -941,6 +944,19 @@ packages:
       '@embroider/core':
         optional: true
       '@embroider/webpack':
+        optional: true
+
+  '@embroider/util@1.13.3':
+    resolution: {integrity: sha512-fb9S137zZqSI1IeWpGKVJ+WZHsRiIrD9D2A4aVwVH0dZeBKDg6lMaMN2MiXJ/ldUAG3DUFxnClnpiG5m2g3JFA==}
+    engines: {node: 12.* || 14.* || >= 16}
+    peerDependencies:
+      '@glint/environment-ember-loose': ^1.0.0
+      '@glint/template': ^1.0.0
+      ember-source: '*'
+    peerDependenciesMeta:
+      '@glint/environment-ember-loose':
+        optional: true
+      '@glint/template':
         optional: true
 
   '@eslint-community/eslint-utils@4.7.0':
@@ -7535,6 +7551,15 @@ snapshots:
       resolve: 1.22.10
     optionalDependencies:
       '@embroider/core': 3.5.7
+
+  '@embroider/util@1.13.3(ember-source@4.12.4(@babel/core@7.24.7)(@glimmer/component@1.1.2(@babel/core@7.24.7))(webpack@5.91.0))':
+    dependencies:
+      '@embroider/macros': 1.16.2
+      broccoli-funnel: 3.0.8
+      ember-cli-babel: 7.26.11
+      ember-source: 4.12.4(@babel/core@7.24.7)(@glimmer/component@1.1.2(@babel/core@7.24.7))(webpack@5.91.0)
+    transitivePeerDependencies:
+      - supports-color
 
   '@eslint-community/eslint-utils@4.7.0(eslint@8.57.0)':
     dependencies:
