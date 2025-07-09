@@ -48,7 +48,9 @@
     "@ember/test-waiters": "^3.0.2",
     "@embroider/addon-shim": "^1.8.7",
     "@embroider/util": "^1.13.3",
+    "@glimmer/tracking": "^1.1.2",
     "decorator-transforms": "^1.0.1",
+    "ember-modifier": "4.2.0",
     "focus-trap": "^6.9.3"
   },
   "devDependencies": {
@@ -59,9 +61,7 @@
     "@ember/test-helpers": "^5.2.2",
     "@embroider/addon-dev": "4.3.1",
     "@glimmer/component": "1.1.2",
-    "@glimmer/tracking": "^1.1.2",
     "@rollup/plugin-babel": "6.0.4",
-    "ember-modifier": "4.2.0",
     "ember-template-lint": "6.0.0",
     "eslint": "8.57.0",
     "eslint-config-prettier": "9.1.0",

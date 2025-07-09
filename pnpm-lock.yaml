@@ -29,9 +29,15 @@ importers:
       '@embroider/util':
         specifier: ^1.13.3
         version: 1.13.3(ember-source@4.12.4(@babel/core@7.24.7)(@glimmer/component@1.1.2(@babel/core@7.24.7))(webpack@5.91.0))
+      '@glimmer/tracking':
+        specifier: ^1.1.2
+        version: 1.1.2
       decorator-transforms:
         specifier: ^1.0.1
         version: 1.2.1(@babel/core@7.24.7)
+      ember-modifier:
+        specifier: 4.2.0
+        version: 4.2.0(@babel/core@7.24.7)(ember-source@4.12.4(@babel/core@7.24.7)(@glimmer/component@1.1.2(@babel/core@7.24.7))(webpack@5.91.0))
       focus-trap:
         specifier: ^6.9.3
         version: 6.9.4
@@ -57,15 +63,9 @@ importers:
       '@glimmer/component':
         specifier: 1.1.2
         version: 1.1.2(@babel/core@7.24.7)
-      '@glimmer/tracking':
-        specifier: ^1.1.2
-        version: 1.1.2
       '@rollup/plugin-babel':
         specifier: 6.0.4
         version: 6.0.4(@babel/core@7.24.7)(rollup@4.18.0)
-      ember-modifier:
-        specifier: 4.2.0
-        version: 4.2.0(@babel/core@7.24.7)(ember-source@4.12.4(@babel/core@7.24.7)(@glimmer/component@1.1.2(@babel/core@7.24.7))(webpack@5.91.0))
       ember-template-lint:
         specifier: 6.0.0
         version: 6.0.0
