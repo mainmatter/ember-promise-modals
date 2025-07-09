@@ -1,4 +1,3 @@
-{{!-- template-lint-disable no-action --}}
 <header>
   <h1>
     <a href="https://github.com/mainmatter/ember-promise-modals">
@@ -15,7 +14,7 @@
 
   <div class="box box-blue">
     <p>
-      <button type="button" data-test-show-modal {{action "showModal"}}>A simple modal with a button to close it </button>
+      <button type="button" data-test-show-modal {{on "click" this.showModal}}>A simple modal with a button to close it </button>
     </p>
   </div>
 
@@ -24,10 +23,10 @@
   <div class="box box-green">
     <p>
 
-      <button type="button" data-test-show-modal {{action "showModalFromBottom"}}>From and to the bottom of the window</button>
+      <button type="button" data-test-show-modal {{on "click" this.showModalFromBottom}}>From and to the bottom of the window</button>
     </p>
     <p>
-      <button type="button" data-test-show-modal {{action "showModalFromTop"}}>From and to the top of the window</button>
+      <button type="button" data-test-show-modal {{on "click" this.showModalFromTop}}>From and to the top of the window</button>
     </p>
   </div>
 

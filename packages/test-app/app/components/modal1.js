@@ -1,17 +1,15 @@
-import Component from '@ember/component';
+import { action } from '@ember/object';
 import { inject as service } from '@ember/service';
 
-import layout from '../templates/components/modal1';
+import Component from '@glimmer/component';
+
 import Modal2 from './modal2';
 
-export default Component.extend({
-  layout,
-  tagName: '',
-  modals: service(),
+export default class Modal1 extends Component {
+  @service modals;
 
-  actions: {
-    showModal2() {
-      this.modals.open(Modal2);
-    },
-  },
-});
+  @action
+  showModal2() {
+    this.modals.open(Modal2);
+  }
+}

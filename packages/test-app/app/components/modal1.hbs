@@ -1,7 +1,7 @@
 {{!-- template-lint-disable no-action --}}
 <div class="modal modal1" data-test-modal-wrap>
   <header>
-    <button type="button" data-test-close {{action @close (hash foo="bar")}}>Close</button>
+    <button type="button" data-test-close {{on "click" (fn @close (hash foo="bar"))}}>Close</button>
   </header>
 
   <h2>Modal 1</h2>
@@ -11,7 +11,7 @@
   </p>
 
   <p>
-    <button type="button" data-test-show-modal-2 {{action "showModal2"}}>Open another modal</button>
+    <button type="button" data-test-show-modal-2 {{on "click" this.showModal2}}>Open another modal</button>
   </p>
 
   <p>
@@ -23,6 +23,6 @@
   </p>
 
   <p>
-    <button type="button" data-test-submit {{action @close @data}}>Close with return data</button>
+    <button type="button" data-test-submit {{on "click" (fn @close @data)}}>Close with return data</button>
   </p>
 </div>
