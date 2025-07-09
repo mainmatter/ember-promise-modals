@@ -23,7 +23,11 @@ export default class EpmModal extends Component {
     let { focusTrapOptions: globalFocusTrapOptions } = this.modals;
     let { focusTrapOptions: localFocusTrapOptions } = this.args.modal._options;
 
-    return localFocusTrapOptions || globalFocusTrapOptions;
+    if (localFocusTrapOptions !== undefined) {
+      return localFocusTrapOptions;
+    }
+
+    return globalFocusTrapOptions;
   }
 
   setup = modifier(element => {
