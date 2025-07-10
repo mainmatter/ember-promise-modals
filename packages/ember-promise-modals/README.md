@@ -11,8 +11,7 @@ The better way to handle modals in your Ember.js apps.
 ## Compatibility
 
 - Ember.js v3.28 or above
-- Ember CLI v3.28 or above
-- Node.js v16 or above
+- Embroider or ember-auto-import v2
 
 ## Installation
 

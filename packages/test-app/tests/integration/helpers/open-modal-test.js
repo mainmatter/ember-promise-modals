@@ -2,26 +2,22 @@ import { render, click, settled } from '@ember/test-helpers';
 import { setupRenderingTest } from 'ember-qunit';
 import { module, test } from 'qunit';
 
-import Component from '@ember/component';
-
 import { hbs } from 'ember-cli-htmlbars';
 import { setupPromiseModals } from 'ember-promise-modals/test-support';
+
+import { mockModalComponent } from '../../helpers/mocks';
 
 module('Integration | Helper | open-modal', function (hooks) {
   setupRenderingTest(hooks);
   setupPromiseModals(hooks);
 
   hooks.beforeEach(function () {
-    this.modal = Component.extend({
-      tagName: '',
-      layout: hbs`
-        <div data-test-wrap>
-          {{!-- template-lint-disable no-action --}}
-          <button type="button" data-test-close {{action @close}}>Close</button>
-          <button type="button" data-test-submit {{action @close @data}}>Submit</button>
-        </div>
-      `,
-    });
+    this.modal = mockModalComponent(hbs`
+      <div data-test-wrap>
+        <button type="button" data-test-close {{on "click" (fn @close undefined)}}>Close</button>
+        <button type="button" data-test-submit {{on "click" (fn @close @data)}}>Submit</button>
+      </div>
+    `);
   });
 
   test('it renders the passed component in a modal', async function (assert) {

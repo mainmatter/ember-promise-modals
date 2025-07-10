@@ -22,7 +22,11 @@ This project uses the [pnpm](https://pnpm.io) package manager to manage its depe
 
 ## Running the dummy application
 
-- `ember serve`
+- `pnpm --filter=test-app start`
 - Visit the dummy application at [http://localhost:4200](http://localhost:4200).
+
+## Watcher for compiling the addon while developing
+
+- `pnpm --filter=ember-promise-modals start`
 
 For more information on using ember-cli, visit [https://ember-cli.com/](https://ember-cli.com/).
