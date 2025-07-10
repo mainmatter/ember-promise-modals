@@ -55,7 +55,7 @@ importers:
         specifier: 7.24.7
         version: 7.24.7(@babel/core@7.24.7)
       '@ember/test-helpers':
-        specifier: ^5.2.2
+        specifier: 5.2.2
         version: 5.2.2(@babel/core@7.24.7)
       '@embroider/addon-dev':
         specifier: 4.3.1
