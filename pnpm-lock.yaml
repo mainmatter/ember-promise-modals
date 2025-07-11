@@ -33,8 +33,8 @@ importers:
         specifier: ^1.1.2
         version: 1.1.2
       decorator-transforms:
-        specifier: ^1.0.1
-        version: 1.2.1(@babel/core@7.28.0)
+        specifier: ^2.0.0
+        version: 2.3.0(@babel/core@7.28.0)
       ember-modifier:
         specifier: 4.2.2
         version: 4.2.2(@babel/core@7.28.0)
@@ -2658,9 +2658,6 @@ packages:
   decompress-response@3.3.0:
     resolution: {integrity: sha512-BzRPQuY1ip+qDonAOz42gRm/pg9F768C+npV/4JOsxRC2sq+Rlk+Q4ZCAsOhnIaMrgarILY+RMUIvMmmX1qAEA==}
     engines: {node: '>=4'}
-
-  decorator-transforms@1.2.1:
-    resolution: {integrity: sha512-UUtmyfdlHvYoX3VSG1w5rbvBQ2r5TX1JsE4hmKU9snleFymadA3VACjl6SRfi9YgBCSjBbfQvR1bs9PRW9yBKw==}
 
   decorator-transforms@2.3.0:
     resolution: {integrity: sha512-jo8c1ss9yFPudHuYYcrJ9jpkDZIoi+lOGvt+Uyp9B+dz32i50icRMx9Bfa8hEt7TnX1FyKWKkjV+cUdT/ep2kA==}
@@ -9583,13 +9580,6 @@ snapshots:
   decompress-response@3.3.0:
     dependencies:
       mimic-response: 1.0.1
-
-  decorator-transforms@1.2.1(@babel/core@7.28.0):
-    dependencies:
-      '@babel/plugin-syntax-decorators': 7.27.1(@babel/core@7.28.0)
-      babel-import-util: 2.1.1
-    transitivePeerDependencies:
-      - '@babel/core'
 
   decorator-transforms@2.3.0(@babel/core@7.28.0):
     dependencies:
