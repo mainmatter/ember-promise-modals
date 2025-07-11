@@ -50,7 +50,7 @@
     "@embroider/util": "^1.13.3",
     "@glimmer/tracking": "^1.1.2",
     "decorator-transforms": "^1.0.1",
-    "ember-modifier": "4.2.0",
+    "ember-modifier": "4.2.2",
     "focus-trap": "^7.0.0"
   },
   "devDependencies": {

@@ -36,8 +36,8 @@ importers:
         specifier: ^1.0.1
         version: 1.2.1(@babel/core@7.24.9)
       ember-modifier:
-        specifier: 4.2.0
-        version: 4.2.0(@babel/core@7.24.9)(ember-source@4.12.4(@babel/core@7.24.9)(@glimmer/component@1.1.2(@babel/core@7.24.9))(webpack@5.94.0))
+        specifier: 4.2.2
+        version: 4.2.2(@babel/core@7.24.9)
       focus-trap:
         specifier: ^7.0.0
         version: 7.6.5
@@ -2908,13 +2908,8 @@ packages:
     resolution: {integrity: sha512-wtjgjEV0Hk4fgiAwFjOfPrGWfmFrbRW3zgNZO4oA3H5FlbMssMvWuR8blQ3QSWYHODVK9r+ThsRAs8lG4kbxqA==}
     engines: {node: '>= 12.*'}
 
-  ember-modifier@4.2.0:
-    resolution: {integrity: sha512-BJ48eTEGxD8J7+lofwVmee7xDgNDgpr5dd6+MSu4gk+I6xb35099RMNorXY5hjjwMJEyi/IRR6Yn3M7iJMz8Zw==}
-    peerDependencies:
-      ember-source: ^3.24 || >=4.0
-    peerDependenciesMeta:
-      ember-source:
-        optional: true
+  ember-modifier@4.2.2:
+    resolution: {integrity: sha512-pPYBAGyczX0hedGWQFQOEiL9s45KS9efKxJxUQkMLjQyh+1Uef1mcmAGsdw2KmvNupITkE/nXxmVO1kZ9tt3ag==}
 
   ember-qunit@8.0.2:
     resolution: {integrity: sha512-Rf60jeUTWNsF3Imf/FLujW/B/DFmKVXKmXO1lirTXjpertKfwRhp/3MnN8a/U/WyodTIsERkInGT1IqTtphCdQ==}
@@ -10141,14 +10136,12 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  ember-modifier@4.2.0(@babel/core@7.24.9)(ember-source@4.12.4(@babel/core@7.24.9)(@glimmer/component@1.1.2(@babel/core@7.24.9))(webpack@5.94.0)):
+  ember-modifier@4.2.2(@babel/core@7.24.9):
     dependencies:
       '@embroider/addon-shim': 1.10.0
       decorator-transforms: 2.3.0(@babel/core@7.24.9)
       ember-cli-normalize-entity-name: 1.0.0
       ember-cli-string-utils: 1.1.0
-    optionalDependencies:
-      ember-source: 4.12.4(@babel/core@7.24.9)(@glimmer/component@1.1.2(@babel/core@7.24.9))(webpack@5.94.0)
     transitivePeerDependencies:
       - '@babel/core'
       - supports-color
