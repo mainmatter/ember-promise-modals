@@ -124,8 +124,8 @@ importers:
         specifier: 3.3.1
         version: 3.3.1(@babel/core@7.28.0)(ember-source@4.12.4(@babel/core@7.28.0)(@glimmer/component@1.1.2(@babel/core@7.28.0))(webpack@5.94.0))(webpack@5.94.0)
       '@embroider/macros':
-        specifier: 1.16.13
-        version: 1.16.13
+        specifier: 1.18.0
+        version: 1.18.0
       '@embroider/test-setup':
         specifier: 3.0.3
         version: 3.0.3(@embroider/core@3.5.7)
@@ -7415,7 +7415,7 @@ snapshots:
   '@ember/test-helpers@3.3.1(@babel/core@7.28.0)(ember-source@4.12.4(@babel/core@7.28.0)(@glimmer/component@1.1.2(@babel/core@7.28.0))(webpack@5.94.0))(webpack@5.94.0)':
     dependencies:
       '@ember/test-waiters': 3.1.0
-      '@embroider/macros': 1.16.13
+      '@embroider/macros': 1.18.0
       '@simple-dom/interface': 1.4.0
       broccoli-debug: 0.6.5
       broccoli-funnel: 3.0.8
@@ -9725,7 +9725,7 @@ snapshots:
       '@babel/plugin-proposal-private-methods': 7.18.6(@babel/core@7.28.0)
       '@babel/plugin-transform-class-static-block': 7.27.1(@babel/core@7.28.0)
       '@babel/preset-env': 7.28.0(@babel/core@7.28.0)
-      '@embroider/macros': 1.16.13
+      '@embroider/macros': 1.18.0
       '@embroider/shared-internals': 2.9.1
       babel-loader: 8.4.1(@babel/core@7.28.0)(webpack@5.94.0)
       babel-plugin-ember-modules-api-polyfill: 3.5.0
@@ -10174,7 +10174,7 @@ snapshots:
     dependencies:
       '@ember/test-helpers': 3.3.1(@babel/core@7.28.0)(ember-source@4.12.4(@babel/core@7.28.0)(@glimmer/component@1.1.2(@babel/core@7.28.0))(webpack@5.94.0))(webpack@5.94.0)
       '@embroider/addon-shim': 1.10.0
-      '@embroider/macros': 1.16.13
+      '@embroider/macros': 1.18.0
       ember-cli-test-loader: 3.1.0
       ember-source: 4.12.4(@babel/core@7.28.0)(@glimmer/component@1.1.2(@babel/core@7.28.0))(webpack@5.94.0)
       qunit: 2.21.1
