@@ -1,10 +1,8 @@
-import { render, click, settled } from '@ember/test-helpers';
-import { setupRenderingTest } from 'ember-qunit';
-import { module, test } from 'qunit';
-
+import { click, render, settled } from '@ember/test-helpers';
 import { hbs } from 'ember-cli-htmlbars';
 import { setupPromiseModals } from 'ember-promise-modals/test-support';
-
+import { setupRenderingTest } from 'ember-qunit';
+import { module, test } from 'qunit';
 import { mockModalComponent } from '../../helpers/mocks';
 
 module('Integration | Helper | open-modal', function (hooks) {

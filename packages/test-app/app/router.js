@@ -1,5 +1,4 @@
 import EmberRouter from '@ember/routing/router';
-
 import config from './config/environment';
 
 /* eslint-disable ember/no-classic-classes */

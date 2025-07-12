@@ -18,8 +18,8 @@ import prettier from 'eslint-config-prettier';
 import ember from 'eslint-plugin-ember/recommended';
 import importPlugin from 'eslint-plugin-import';
 import n from 'eslint-plugin-n';
-import globals from 'globals';
 import promisePlugin from 'eslint-plugin-promise';
+import globals from 'globals';
 
 const esmParserOptions = {
   ecmaFeatures: { modules: true },

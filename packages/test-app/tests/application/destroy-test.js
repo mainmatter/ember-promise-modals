@@ -1,10 +1,8 @@
-import { visit, click, settled, isSettled } from '@ember/test-helpers';
+import { click, isSettled, settled, visit } from '@ember/test-helpers';
+import { waitForPromise } from '@ember/test-waiters';
+import { setupPromiseModals } from 'ember-promise-modals/test-support';
 import { setupApplicationTest } from 'ember-qunit';
 import { module, test } from 'qunit';
-
-import { waitForPromise } from '@ember/test-waiters';
-
-import { setupPromiseModals } from 'ember-promise-modals/test-support';
 
 module('Application | destroy', function (hooks) {
   setupApplicationTest(hooks);

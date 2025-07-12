@@ -1,7 +1,6 @@
 // eslint-disable-next-line ember/no-computed-properties-in-native-classes
 import { computed, set } from '@ember/object';
 import { waitForPromise } from '@ember/test-waiters';
-
 import { defer } from 'rsvp';
 
 /**

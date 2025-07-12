@@ -1,9 +1,7 @@
-import { set } from '@ember/object';
 import { A } from '@ember/array';
-import { computed } from '@ember/object';
+import { computed, set } from '@ember/object';
 import { alias } from '@ember/object/computed';
 import Service from '@ember/service';
-
 import Modal from '../modal.js';
 
 /* eslint-disable ember/no-classic-classes */
