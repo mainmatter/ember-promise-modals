@@ -1,10 +1,8 @@
 import { render, settled } from '@ember/test-helpers';
-import { setupRenderingTest } from 'ember-qunit';
-import { module, test } from 'qunit';
-
 import { setupPromiseModals } from 'ember-promise-modals/test-support';
+import { setupRenderingTest } from 'ember-qunit';
 import hbs from 'htmlbars-inline-precompile';
-
+import { module, test } from 'qunit';
 import { mockModalComponent } from '../../helpers/mocks';
 
 module('Component | ModalContainer', function (hooks) {

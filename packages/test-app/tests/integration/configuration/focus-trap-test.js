@@ -1,12 +1,10 @@
 import { click, render, settled, triggerKeyEvent } from '@ember/test-helpers';
 import focus from '@ember/test-helpers/dom/focus';
-import { setupRenderingTest } from 'ember-qunit';
-import { module, test } from 'qunit';
-
 import ModalsService from 'ember-promise-modals/services/modals';
 import { setupPromiseModals } from 'ember-promise-modals/test-support';
+import { setupRenderingTest } from 'ember-qunit';
 import hbs from 'htmlbars-inline-precompile';
-
+import { module, test } from 'qunit';
 import { mockModalComponent } from '../../helpers/mocks';
 
 module('Configuration | focus trap', function (hooks) {

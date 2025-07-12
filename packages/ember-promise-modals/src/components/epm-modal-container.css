@@ -9,24 +9,28 @@
     --epm-animation-backdrop-out-delay: 0s;
     --epm-animation-modal-in-delay: 0s;
     --epm-animation-modal-out-delay: 0s;
-    --epm-animation-backdrop-in: var(--epm-animation-backdrop-in-duration) ease var(--epm-animation-backdrop-in-delay) forwards epm-backdrop-in;
-    --epm-animation-backdrop-out: var(--epm-animation-backdrop-out-duration) ease var(--epm-animation-backdrop-out-delay) forwards epm-backdrop-out;
-    --epm-animation-modal-in: var(--epm-animation-modal-in-duration) ease-out var(--epm-animation-modal-in-delay) forwards epm-modal-in;
-    --epm-animation-modal-out: var(--epm-animation-modal-out-duration) ease-out var(--epm-animation-modal-out-delay) forwards epm-modal-out;
-    --epm-backdrop-background: #2d3748CD;
+    --epm-animation-backdrop-in: var(--epm-animation-backdrop-in-duration) ease var(--epm-animation-backdrop-in-delay)
+      forwards epm-backdrop-in;
+    --epm-animation-backdrop-out: var(--epm-animation-backdrop-out-duration) ease
+      var(--epm-animation-backdrop-out-delay) forwards epm-backdrop-out;
+    --epm-animation-modal-in: var(--epm-animation-modal-in-duration) ease-out var(--epm-animation-modal-in-delay)
+      forwards epm-modal-in;
+    --epm-animation-modal-out: var(--epm-animation-modal-out-duration) ease-out var(--epm-animation-modal-out-delay)
+      forwards epm-modal-out;
+    --epm-backdrop-background: #2d3748cd;
   }
 }
 
 @media (prefers-reduced-motion: reduce) {
   :root {
-  --epm-animation-backdrop-in-duration: 0.001s;
-  --epm-animation-backdrop-out-duration: 0.001s;
-  --epm-animation-modal-in-duration: 0.001s;
-  --epm-animation-modal-out-duration: 0.001s;
-  --epm-animation-backdrop-in-delay: 0.001s;
-  --epm-animation-backdrop-out-delay: 0.001s;
-  --epm-animation-modal-in-delay: 0.001s;
-  --epm-animation-modal-out-delay: 0.001s;
+    --epm-animation-backdrop-in-duration: 0.001s;
+    --epm-animation-backdrop-out-duration: 0.001s;
+    --epm-animation-modal-in-duration: 0.001s;
+    --epm-animation-modal-out-duration: 0.001s;
+    --epm-animation-backdrop-in-delay: 0.001s;
+    --epm-animation-backdrop-out-delay: 0.001s;
+    --epm-animation-modal-in-delay: 0.001s;
+    --epm-animation-modal-out-delay: 0.001s;
   }
 }
 

@@ -1,7 +1,6 @@
 // eslint-disable-next-line ember/no-computed-properties-in-native-classes
 import { computed, set } from '@ember/object';
 import { waitForPromise } from '@ember/test-waiters';
-
 import { defer } from 'rsvp';
 
 /**
@@ -31,7 +30,7 @@ export default class Modal {
     };
     this._result = undefined;
     this._deferred = defer();
-    this._deferredOutAnimation = undefined;
+    set(this, '_deferredOutAnimation', undefined);
     this._componentInstance = undefined;
   }
 

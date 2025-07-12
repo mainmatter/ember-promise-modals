@@ -1,8 +1,7 @@
-import { visit, click, waitUntil } from '@ember/test-helpers';
+import { click, visit, waitUntil } from '@ember/test-helpers';
+import { setupPromiseModals } from 'ember-promise-modals/test-support';
 import { setupApplicationTest } from 'ember-qunit';
 import { module, test } from 'qunit';
-
-import { setupPromiseModals } from 'ember-promise-modals/test-support';
 
 module('Application | overlapping modals', function (hooks) {
   setupApplicationTest(hooks);

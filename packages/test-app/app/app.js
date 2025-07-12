@@ -1,10 +1,9 @@
 import Application from '@ember/application';
-
 import loadInitializers from 'ember-load-initializers';
-
 import config from './config/environment';
 import Resolver from './resolver';
 
+/* eslint-disable ember/no-classic-classes */
 const App = Application.extend({
   modulePrefix: config.modulePrefix,
   podModulePrefix: config.podModulePrefix,

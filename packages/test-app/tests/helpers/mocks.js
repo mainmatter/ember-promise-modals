@@ -1,5 +1,4 @@
 import { setComponentTemplate } from '@ember/component';
-
 import Component from '@glimmer/component';
 import { hbs } from 'ember-cli-htmlbars';
 
