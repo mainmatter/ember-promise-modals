@@ -26,7 +26,8 @@ return this._stack.pushObject(r),1===this._stack.length&&this._onFirstModalAdded
 o.r(t),o.d(t,{default:()=>d})
 var r,i=o(735),n=o(855),s=o.n(n),a=o(979),l=o(663),m=(0,o(465).createTemplateFactory)({id:"GmS2yzEb",block:'[[[42,[28,[37,1],[[28,[37,1],[[30,0,["modals","_stack"]]],null]],null],null,[[[1,"  "],[10,0],[15,0,[29,["epm-backdrop ",[52,[30,1,["isClosing"]],"epm-out"]]]],[14,"tabindex","-1"],[14,"role","presentation"],[14,"aria-hidden","true"],[15,"data-test-epm-backdrop",[29,[[30,2]]]],[12],[13],[1,"\\n  "],[10,0],[14,0,"epm-modal-container"],[12],[1,"\\n    "],[8,[39,3],[[16,"data-test-epm-modal",[29,[[30,2]]]]],[["@modal"],[[30,1]]],null],[1,"\\n  "],[13],[1,"\\n"]],[1,2]],null]],["modal","index"],false,["each","-track-array","if","epm-modal"]]',moduleName:"/home/runner/work/ember-promise-modals/ember-promise-modals/packages/ember-promise-modals/dist/components/epm-modal-container.js",isStrictMode:!1}),c=new WeakMap
 class d extends(s()){constructor(...e){var t,o
-super(...e),t=c,o=void(0,a.i)(this,"modals"),function(e,t){if(t.has(e))throw new TypeError("Cannot initialize the same private elements twice on an object")}(this,t),t.set(this,o)}}r=d,(0,a.g)(r.prototype,"modals",[i.inject]),(0,l.setComponentTemplate)(m,d)},83:(e,t,o)=>{"use strict"
+super(...e),t=c,o=void(0,a.i)(this,"modals"),function(e,t){if(t.has(e))throw new TypeError("Cannot initialize the same private elements twice on an object")}(this,t),t.set(this,o)}}r=d,(0,a.g)(r.prototype,"modals",[i.inject]),(0,l.setComponentTemplate)(m,d)},66:(e,t,o)=>{e.exports=function(){var e=_eai_d,t=_eai_r
+function r(e){return e&&e.__esModule?e:Object.assign({default:e},e)}window.emberAutoImportDynamic=function(e){return 1===arguments.length?t("_eai_dyn_"+e):t("_eai_dynt_"+e)(Array.prototype.slice.call(arguments,1))},window.emberAutoImportSync=function(e){return t("_eai_sync_"+e)(Array.prototype.slice.call(arguments,1))},e("ember-promise-modals/components/epm-modal",["@ember/object","@ember/service","@glimmer/component","@ember/application","@ember/modifier","@ember/destroyable","@ember/component","@ember/template-factory"],function(){return r(o(83))}),e("ember-promise-modals/components/epm-modal-container",["@ember/service","@glimmer/component","@ember/component","@ember/template-factory"],function(){return r(o(63))}),e("ember-promise-modals/helpers/open-modal",["@ember/service"],function(){return r(o(114))}),e("ember-promise-modals/services/modals",["@ember/object","@ember/service"],function(){return r(o(21))})}()},83:(e,t,o)=>{"use strict"
 o.r(t),o.d(t,{default:()=>b})
 var r=o(471),i=o(735),n=o(855),s=o.n(n)
 const a=require("@glimmer/tracking")
@@ -53,16 +54,15 @@ throw new TypeError("@@toPrimitive must return a primitive value.")}return Strin
 return"symbol"==typeof t?t:t+""}(t))in e?Object.defineProperty(e,t,{value:null,enumerable:!0,configurable:!0,writable:!0}):e[t]=null}(this,"modal")}compute([e,t,o],{close:r}){this.showModal(e,t,o,r)}async showModal(e,t,o,r){this.modal=this.modals.open(e,t,o)
 let i=await this.modal
 this.modal=null,r&&r(i)}hideModal(){this.modal?.close()}willDestroy(){this.hideModal(),super.willDestroy(...arguments)}}i=m,(0,a.g)(i.prototype,"modals",[s.inject])},130:e=>{"use strict"
-e.exports=require("@ember/destroyable")},258:(e,t,o)=>{e.exports=function(){var e=_eai_d,t=_eai_r
-function r(e){return e&&e.__esModule?e:Object.assign({default:e},e)}window.emberAutoImportDynamic=function(e){return 1===arguments.length?t("_eai_dyn_"+e):t("_eai_dynt_"+e)(Array.prototype.slice.call(arguments,1))},window.emberAutoImportSync=function(e){return t("_eai_sync_"+e)(Array.prototype.slice.call(arguments,1))},e("ember-promise-modals/components/epm-modal",["@ember/object","@ember/service","@glimmer/component","@ember/application","@ember/modifier","@ember/destroyable","@ember/component","@ember/template-factory"],function(){return r(o(83))}),e("ember-promise-modals/components/epm-modal-container",["@ember/service","@glimmer/component","@ember/component","@ember/template-factory"],function(){return r(o(63))}),e("ember-promise-modals/helpers/open-modal",["@ember/service"],function(){return r(o(114))}),e("ember-promise-modals/services/modals",["@ember/object","@ember/service"],function(){return r(o(21))})}()},271:function(e,t){window._eai_r=require,window._eai_d=define},294:e=>{"use strict"
+e.exports=require("@ember/destroyable")},294:e=>{"use strict"
 e.exports=require("@ember/application")},377:e=>{"use strict"
 e.exports=require("@ember/modifier")},465:e=>{"use strict"
 e.exports=require("@ember/template-factory")},471:e=>{"use strict"
-e.exports=require("@ember/object")},663:e=>{"use strict"
-e.exports=require("@ember/component")},735:e=>{"use strict"
-e.exports=require("@ember/service")},772:(e,t,o)=>{var r,i
+e.exports=require("@ember/object")},540:(e,t,o)=>{var r,i
 e.exports=(r=_eai_d,i=_eai_r,window.emberAutoImportDynamic=function(e){return 1===arguments.length?i("_eai_dyn_"+e):i("_eai_dynt_"+e)(Array.prototype.slice.call(arguments,1))},window.emberAutoImportSync=function(e){return i("_eai_sync_"+e)(Array.prototype.slice.call(arguments,1))},r("dom-element-descriptors",[],function(){return(e=o(14))&&e.__esModule?e:Object.assign({default:e},e)
-var e}),void o(258))},855:e=>{"use strict"
+var e}),void o(66))},591:function(e,t){window._eai_r=require,window._eai_d=define},663:e=>{"use strict"
+e.exports=require("@ember/component")},735:e=>{"use strict"
+e.exports=require("@ember/service")},855:e=>{"use strict"
 e.exports=require("@glimmer/component")}},o={}
 function r(e){var i=o[e]
 if(void 0!==i)return i.exports
@@ -80,6 +80,6 @@ var t=(t,o)=>{var i,n,[s,a,l]=o,m=0
 if(s.some(t=>0!==e[t])){for(i in a)r.o(a,i)&&(r.m[i]=a[i])
 if(l)var c=l(r)}for(t&&t(o);m<s.length;m++)n=s[m],r.o(e,n)&&e[n]&&e[n][0](),e[n]=0
 return r.O(c)},o=globalThis.webpackChunk_ember_auto_import_=globalThis.webpackChunk_ember_auto_import_||[]
-o.forEach(t.bind(null,0)),o.push=t.bind(null,o.push.bind(o))})(),r.O(void 0,[249],()=>r(271))
-var i=r.O(void 0,[249],()=>r(772))
+o.forEach(t.bind(null,0)),o.push=t.bind(null,o.push.bind(o))})(),r.O(void 0,[249],()=>r(591))
+var i=r.O(void 0,[249],()=>r(540))
 i=r.O(i),__ember_auto_import__=i})()
