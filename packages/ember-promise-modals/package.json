@@ -78,7 +78,7 @@
     "webpack": "5.100.1"
   },
   "peerDependencies": {
-    "@ember/test-helpers": "^3.0.0"
+    "@ember/test-helpers": "^3.0.0 || ^5.0.0"
   },
   "engines": {
     "node": ">= 18.*"
