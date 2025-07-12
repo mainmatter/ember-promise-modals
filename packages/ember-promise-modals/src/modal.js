@@ -31,7 +31,7 @@ export default class Modal {
     };
     this._result = undefined;
     this._deferred = defer();
-    this._deferredOutAnimation = undefined;
+    set(this, '_deferredOutAnimation', undefined);
     this._componentInstance = undefined;
   }
 

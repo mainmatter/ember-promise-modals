@@ -1,10 +1,12 @@
+import { set } from '@ember/object';
 import { A } from '@ember/array';
 import { computed } from '@ember/object';
 import { alias } from '@ember/object/computed';
 import Service from '@ember/service';
 
-import Modal from '../modal';
+import Modal from '../modal.js';
 
+/* eslint-disable ember/no-classic-classes */
 export default Service.extend({
   count: computed('_stack.@each.isClosing', function () {
     return this._stack.filter(modal => !modal.isClosing).length;
@@ -15,7 +17,7 @@ export default Service.extend({
 
   init() {
     this._super(...arguments);
-    this._stack = A([]);
+    set(this, '_stack', A([]));
 
     if (this.focusTrapOptions !== null) {
       this.focusTrapOptions = {
