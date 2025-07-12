@@ -75,7 +75,7 @@
     "prettier": "2.8.8",
     "rollup": "4.45.0",
     "rollup-plugin-copy": "3.5.0",
-    "webpack": "5.94.0"
+    "webpack": "5.100.1"
   },
   "peerDependencies": {
     "@ember/test-helpers": "^3.0.0"
