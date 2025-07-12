@@ -1,12 +1,12 @@
 var __ember_auto_import__;(()=>{var e,t={790:(e,t,o)=>{"use strict"
 o.r(t),o.d(t,{default:()=>d})
-var r,i=o(735),n=o(855),s=o.n(n),a=o(357),l=o(663),m=(0,o(465).createTemplateFactory)({id:"GmS2yzEb",block:'[[[42,[28,[37,1],[[28,[37,1],[[30,0,["modals","_stack"]]],null]],null],null,[[[1,"  "],[10,0],[15,0,[29,["epm-backdrop ",[52,[30,1,["isClosing"]],"epm-out"]]]],[14,"tabindex","-1"],[14,"role","presentation"],[14,"aria-hidden","true"],[15,"data-test-epm-backdrop",[29,[[30,2]]]],[12],[13],[1,"\\n  "],[10,0],[14,0,"epm-modal-container"],[12],[1,"\\n    "],[8,[39,3],[[16,"data-test-epm-modal",[29,[[30,2]]]]],[["@modal"],[[30,1]]],null],[1,"\\n  "],[13],[1,"\\n"]],[1,2]],null]],["modal","index"],false,["each","-track-array","if","epm-modal"]]',moduleName:"/home/runner/work/ember-promise-modals/ember-promise-modals/packages/ember-promise-modals/dist/components/epm-modal-container.js",isStrictMode:!1}),c=new WeakMap
+var r,i=o(735),n=o(855),s=o.n(n),a=o(236),l=o(663),m=(0,o(465).createTemplateFactory)({id:"GmS2yzEb",block:'[[[42,[28,[37,1],[[28,[37,1],[[30,0,["modals","_stack"]]],null]],null],null,[[[1,"  "],[10,0],[15,0,[29,["epm-backdrop ",[52,[30,1,["isClosing"]],"epm-out"]]]],[14,"tabindex","-1"],[14,"role","presentation"],[14,"aria-hidden","true"],[15,"data-test-epm-backdrop",[29,[[30,2]]]],[12],[13],[1,"\\n  "],[10,0],[14,0,"epm-modal-container"],[12],[1,"\\n    "],[8,[39,3],[[16,"data-test-epm-modal",[29,[[30,2]]]]],[["@modal"],[[30,1]]],null],[1,"\\n  "],[13],[1,"\\n"]],[1,2]],null]],["modal","index"],false,["each","-track-array","if","epm-modal"]]',moduleName:"/home/runner/work/ember-promise-modals/ember-promise-modals/packages/ember-promise-modals/dist/components/epm-modal-container.js",isStrictMode:!1}),c=new WeakMap
 class d extends(s()){constructor(...e){var t,o
 super(...e),t=c,o=void(0,a.i)(this,"modals"),function(e,t){if(t.has(e))throw new TypeError("Cannot initialize the same private elements twice on an object")}(this,t),t.set(this,o)}}r=d,(0,a.g)(r.prototype,"modals",[i.inject]),(0,l.setComponentTemplate)(m,d)},215:(e,t,o)=>{"use strict"
 o.r(t),o.d(t,{default:()=>b})
 var r=o(471),i=o(735),n=o(855),s=o.n(n)
 const a=require("@glimmer/tracking")
-var l,m=o(999),c=o(177),d=o(357),u=o(663)
+var l,m=o(999),c=o(177),d=o(236),u=o(663)
 function p(e,t,o){return(t=function(e){var t=function(e){if("object"!=typeof e||!e)return e
 var t=e[Symbol.toPrimitive]
 if(void 0!==t){var o=t.call(e,"string")
@@ -19,7 +19,7 @@ let e={...this.focusTrapOptions,fallbackFocus:this.element,onDeactivate:(...e)=>
 this.focusTrap=(0,c.K)(this.element,e),this.focusTrap.activate()}_removeFocusTrap(e=this.focusTrapOptions?.onDeactivate){this.focusTrap&&this.focusTrap.deactivate({onDeactivate:e})}_addAnimationListeners(){this._animationEnd=({target:e,animationName:t})=>{e===this.element&&(this.modals._onModalAnimationEnd(),"-out"===t.substring(t.length-4)&&this.args.modal._remove())},this.element&&this.element.addEventListener("animationend",this._animationEnd)}_removeAnimationListeners(){this._animationEnd&&(this.element&&this.element.removeEventListener("animationend",this._animationEnd),this._animationEnd=null)}destroyModal(){this._removeFocusTrap(null),this._removeAnimationListeners(),this.args.modal._remove()}closeModal(e){""===this.animatingClass&&(this.modals._onModalAnimationStart(),this.animatingClass=this.outAnimationClass,this.args.modal._resolve(e))}close(e){this.closeModal(e),this._removeFocusTrap()}}l=b,(0,d.g)(l.prototype,"modals",[i.inject]),(0,d.g)(l.prototype,"animatingClass",[a.tracked],function(){return""}),(0,d.n)(l.prototype,"close",[r.action]),(0,u.setComponentTemplate)(_,b)},636:(e,t,o)=>{"use strict"
 o.r(t),o.d(t,{default:()=>m})
 const r=require("@ember/component/helper")
-var i,n=o.n(r),s=o(735),a=o(357),l=new WeakMap
+var i,n=o.n(r),s=o(735),a=o(236),l=new WeakMap
 class m extends(n()){constructor(...e){var t,o
 super(...e),t=l,o=void(0,a.i)(this,"modals"),function(e,t){if(t.has(e))throw new TypeError("Cannot initialize the same private elements twice on an object")}(this,t),t.set(this,o),function(e,t){(t=function(e){var t=function(e){if("object"!=typeof e||!e)return e
 var t=e[Symbol.toPrimitive]
@@ -35,7 +35,7 @@ var i=o(471)
 const n=require("@ember/object/computed")
 var s=o(735),a=o.n(s)
 const l=require("@ember/test-waiters"),m=require("rsvp")
-var c,d=o(357)
+var c,d=o(236)
 class u{constructor(e,t,o,r={}){this._service=e,this._componentClass=t,this._data=o,this._options={className:"",onAnimationModalOutEnd:void 0,...r},this._result=void 0,this._deferred=(0,m.defer)(),this._deferredOutAnimation=void 0,this._componentInstance=void 0}get result(){return this._result}get isClosing(){return Boolean(this._deferredOutAnimation)}close(e){this._componentInstance&&this._componentInstance.closeModal(e)}then(e,t){return this._deferred.promise.then(e,t)}_destroy(){this._componentInstance&&this._componentInstance.destroyModal()}_resolve(e){this._deferredOutAnimation||((0,i.set)(this,"_deferredOutAnimation",(0,m.defer)()),this._options.onAnimationModalOutEnd&&this._deferredOutAnimation.promise.then(()=>this._options.onAnimationModalOutEnd()).catch(()=>{}),this._result=e,this._deferred.resolve(e),(0,l.waitForPromise)(this._deferredOutAnimation.promise))}_remove(){this._service._stack.removeObject(this),0===this._service._stack.length&&this._service._onLastModalRemoved(),this._componentInstance=void 0,this._deferredOutAnimation&&this._deferredOutAnimation.resolve()}}c=u,(0,d.n)(c.prototype,"isClosing",[(0,i.computed)("_deferredOutAnimation")])
 var p=a().extend({count:(0,i.computed)("_stack.@each.isClosing",function(){return this._stack.filter(e=>!e.isClosing).length}),top:(0,n.alias)("_stack.lastObject"),focusTrapOptions:void 0,init(){this._super(...arguments),this._stack=(0,r.A)([]),null!==this.focusTrapOptions&&(this.focusTrapOptions={...this.focusTrapOptions??{},clickOutsideDeactivates:this.focusTrapOptions?.clickOutsideDeactivates??!0})},willDestroy(){this._onLastModalRemoved(),this._onModalAnimationEnd(),this._destroyModals(),this._super(...arguments)},open(e,t,o){let r=new u(this,e,t,o)
 return this._stack.pushObject(r),1===this._stack.length&&this._onFirstModalAdded(),r},_destroyModals(){this._stack.forEach(e=>{e._destroy()})},_onFirstModalAdded(){document.body.classList.add("epm-scrolling-disabled")},_onLastModalRemoved(){document.body.classList.remove("epm-scrolling-disabled")},_onModalAnimationStart(){document.body.classList.add("epm-animating")},_onModalAnimationEnd(){document.body.classList.remove("epm-animating")}})},294:e=>{"use strict"
@@ -46,10 +46,10 @@ e.exports=require("@ember/modifier")},471:e=>{"use strict"
 e.exports=require("@ember/object")},735:e=>{"use strict"
 e.exports=require("@ember/service")},465:e=>{"use strict"
 e.exports=require("@ember/template-factory")},855:e=>{"use strict"
-e.exports=require("@glimmer/component")},283:(e,t,o)=>{e.exports=function(){var e=_eai_d,t=_eai_r
-function r(e){return e&&e.__esModule?e:Object.assign({default:e},e)}window.emberAutoImportDynamic=function(e){return 1===arguments.length?t("_eai_dyn_"+e):t("_eai_dynt_"+e)(Array.prototype.slice.call(arguments,1))},window.emberAutoImportSync=function(e){return t("_eai_sync_"+e)(Array.prototype.slice.call(arguments,1))},e("ember-promise-modals/components/epm-modal",["@ember/object","@ember/service","@glimmer/component","@ember/application","@ember/modifier","@ember/destroyable","@ember/component","@ember/template-factory"],function(){return r(o(215))}),e("ember-promise-modals/components/epm-modal-container",["@ember/service","@glimmer/component","@ember/component","@ember/template-factory"],function(){return r(o(790))}),e("ember-promise-modals/helpers/open-modal",["@ember/service"],function(){return r(o(636))}),e("ember-promise-modals/services/modals",["@ember/object","@ember/service"],function(){return r(o(846))})}()},518:function(e,t){window._eai_r=require,window._eai_d=define},953:(e,t,o)=>{var r,i
+e.exports=require("@glimmer/component")},543:(e,t,o)=>{e.exports=function(){var e=_eai_d,t=_eai_r
+function r(e){return e&&e.__esModule?e:Object.assign({default:e},e)}window.emberAutoImportDynamic=function(e){return 1===arguments.length?t("_eai_dyn_"+e):t("_eai_dynt_"+e)(Array.prototype.slice.call(arguments,1))},window.emberAutoImportSync=function(e){return t("_eai_sync_"+e)(Array.prototype.slice.call(arguments,1))},e("ember-promise-modals/components/epm-modal",["@ember/object","@ember/service","@glimmer/component","@ember/application","@ember/modifier","@ember/destroyable","@ember/component","@ember/template-factory"],function(){return r(o(215))}),e("ember-promise-modals/components/epm-modal-container",["@ember/service","@glimmer/component","@ember/component","@ember/template-factory"],function(){return r(o(790))}),e("ember-promise-modals/helpers/open-modal",["@ember/service"],function(){return r(o(636))}),e("ember-promise-modals/services/modals",["@ember/object","@ember/service"],function(){return r(o(846))})}()},882:function(e,t){window._eai_r=require,window._eai_d=define},285:(e,t,o)=>{var r,i
 e.exports=(r=_eai_d,i=_eai_r,window.emberAutoImportDynamic=function(e){return 1===arguments.length?i("_eai_dyn_"+e):i("_eai_dynt_"+e)(Array.prototype.slice.call(arguments,1))},window.emberAutoImportSync=function(e){return i("_eai_sync_"+e)(Array.prototype.slice.call(arguments,1))},r("dom-element-descriptors",[],function(){return(e=o(709))&&e.__esModule?e:Object.assign({default:e},e)
-var e}),void o(283))},709:(e,t,o)=>{"use strict"
+var e}),void o(543))},709:(e,t,o)=>{"use strict"
 o.r(t),o.d(t,{IS_DESCRIPTOR:()=>r,createDescriptor:()=>d,isDescriptor:()=>i,lookupDescriptorData:()=>a,registerDescriptorData:()=>s,resolveDOMElement:()=>l,resolveDOMElements:()=>m,resolveDescription:()=>c})
 const r="__dom_element_descriptor_is_descriptor__"
 function i(e){return Boolean("object"==typeof e&&e&&r in e)}function n(){const e=window
@@ -80,6 +80,6 @@ var t=(t,o)=>{var i,n,[s,a,l]=o,m=0
 if(s.some(t=>0!==e[t])){for(i in a)r.o(a,i)&&(r.m[i]=a[i])
 if(l)var c=l(r)}for(t&&t(o);m<s.length;m++)n=s[m],r.o(e,n)&&e[n]&&e[n][0](),e[n]=0
 return r.O(c)},o=globalThis.webpackChunk_ember_auto_import_=globalThis.webpackChunk_ember_auto_import_||[]
-o.forEach(t.bind(null,0)),o.push=t.bind(null,o.push.bind(o))})(),r.O(void 0,[303],()=>r(518))
-var i=r.O(void 0,[303],()=>r(953))
+o.forEach(t.bind(null,0)),o.push=t.bind(null,o.push.bind(o))})(),r.O(void 0,[281],()=>r(882))
+var i=r.O(void 0,[281],()=>r(285))
 i=r.O(i),__ember_auto_import__=i})()
