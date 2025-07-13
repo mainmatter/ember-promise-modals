@@ -76,8 +76,8 @@ importers:
         specifier: 9.1.0
         version: 9.1.0(eslint@8.57.1)
       eslint-plugin-ember:
-        specifier: 12.5.0
-        version: 12.5.0(@babel/core@7.28.0)(eslint@8.57.1)
+        specifier: 12.6.0
+        version: 12.6.0(@babel/core@7.28.0)(eslint@8.57.1)
       eslint-plugin-import-helpers:
         specifier: 1.3.1
         version: 1.3.1(eslint@8.57.1)
@@ -196,8 +196,8 @@ importers:
         specifier: 9.1.0
         version: 9.1.0(eslint@8.57.1)
       eslint-plugin-ember:
-        specifier: 12.5.0
-        version: 12.5.0(@babel/core@7.28.0)(eslint@8.57.1)
+        specifier: 12.6.0
+        version: 12.6.0(@babel/core@7.28.0)(eslint@8.57.1)
       eslint-plugin-import-helpers:
         specifier: 1.3.1
         version: 1.3.1(eslint@8.57.1)
@@ -3098,8 +3098,8 @@ packages:
   eslint-formatter-kakoune@1.0.0:
     resolution: {integrity: sha512-Uk/TVLt6Nf6Xoz7C1iYuZjOSdJxe5aaauGRke8JhKeJwD66Y61/pY2FjtLP04Ooq9PwV34bzrkKkU2UZ5FtDRA==}
 
-  eslint-plugin-ember@12.5.0:
-    resolution: {integrity: sha512-DBUzsaKWDVXsujAZPpRir0O7owdlCoVzZmtaJm7g7iQeSrNtcRWI7AItsTqKSsws1XeAySH0sPsQItMdDCb9Fg==}
+  eslint-plugin-ember@12.6.0:
+    resolution: {integrity: sha512-axb6l5iUwW08mjSWDY+/aVUG4PS7kJTM+gXOSP1ev9aVy5bphaVJ3yFCSd81BPvqiD8IkCa+K9R6pwhsfLtnfA==}
     engines: {node: 18.* || 20.* || >= 21}
     peerDependencies:
       '@typescript-eslint/parser': '*'
@@ -10577,7 +10577,7 @@ snapshots:
 
   eslint-formatter-kakoune@1.0.0: {}
 
-  eslint-plugin-ember@12.5.0(@babel/core@7.28.0)(eslint@8.57.1):
+  eslint-plugin-ember@12.6.0(@babel/core@7.28.0)(eslint@8.57.1):
     dependencies:
       '@ember-data/rfc395-data': 0.0.4
       css-tree: 3.1.0
