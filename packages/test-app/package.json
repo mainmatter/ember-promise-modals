@@ -45,7 +45,7 @@
     "ember-promise-modals": "workspace:*",
     "ember-qunit": "8.1.1",
     "ember-resolver": "13.1.1",
-    "ember-source": "4.12.4",
+    "ember-source": "6.5.0",
     "ember-source-channel-url": "3.0.0",
     "ember-template-lint": "7.9.1",
     "ember-try": "3.0.0",
