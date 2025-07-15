@@ -62,7 +62,7 @@
     "prettier": "3.6.2",
     "qunit": "2.24.1",
     "qunit-console-grouper": "0.3.0",
-    "qunit-dom": "2.0.0",
+    "qunit-dom": "3.4.0",
     "sinon": "15.2.0",
     "webpack": "5.100.1"
   },
