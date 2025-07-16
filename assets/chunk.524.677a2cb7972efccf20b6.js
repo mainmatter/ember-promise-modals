@@ -26,7 +26,8 @@ return"symbol"==typeof t?t:t+""}(t))in e?Object.defineProperty(e,t,{value:o,enum
 class b extends(n()){get optionsClassName(){return this.args.modal._options.className}get focusTrapOptions(){let{focusTrapOptions:e}=this.modals,{focusTrapOptions:t}=this.args.modal._options
 return void 0!==t?t:e}constructor(){super(...arguments),h(this,v,void(0,c.i)(this,"modals")),p(this,"element",null),p(this,"outAnimationClass","epm-out"),p(this,"_animationEnd",null),h(this,f,void(0,c.i)(this,"animatingClass")),p(this,"setup",(0,m.W)(e=>(this.element=e,this._addFocusTrap(),this._addAnimationListeners(),this.modals._onModalAnimationStart(),()=>{this.destroyModal()}))),this.args.modal._componentInstance=this}_addFocusTrap(){if(!this.focusTrapOptions)return
 let e={...this.focusTrapOptions,fallbackFocus:this.element,onDeactivate:(...e)=>{this.focusTrapOptions.onDeactivate?.(...e),this.isDestroyed||this.isDestroying||this.closeModal()}}
-this.focusTrap=(0,d.K)(this.element,e),this.focusTrap.activate()}_removeFocusTrap(e=this.focusTrapOptions?.onDeactivate){this.focusTrap&&this.focusTrap.deactivate({onDeactivate:e})}_addAnimationListeners(){this._animationEnd=({target:e,animationName:t})=>{e===this.element&&(this.modals._onModalAnimationEnd(),"-out"===t.substring(t.length-4)&&this.args.modal._remove())},this.element&&this.element.addEventListener("animationend",this._animationEnd)}_removeAnimationListeners(){this._animationEnd&&(this.element&&this.element.removeEventListener("animationend",this._animationEnd),this._animationEnd=null)}destroyModal(){this._removeFocusTrap(null),this._removeAnimationListeners(),this.args.modal._remove()}closeModal(e){""===this.animatingClass&&(this.modals._onModalAnimationStart(),this.animatingClass=this.outAnimationClass,this.args.modal._resolve(e))}close(e){this.closeModal(e),this._removeFocusTrap()}}l=b,(0,c.g)(l.prototype,"modals",[r.inject]),(0,c.g)(l.prototype,"animatingClass",[a.tracked],function(){return""}),(0,c.n)(l.prototype,"close",[i.action]),(0,u.setComponentTemplate)(_,b)},114:(e,t,o)=>{"use strict"
+this.focusTrap=(0,d.K)(this.element,e),this.focusTrap.activate()}_removeFocusTrap(e=this.focusTrapOptions?.onDeactivate){this.focusTrap&&this.focusTrap.deactivate({onDeactivate:e})}_addAnimationListeners(){this._animationEnd=({target:e,animationName:t})=>{e===this.element&&(this.modals._onModalAnimationEnd(),"-out"===t.substring(t.length-4)&&this.args.modal._remove())},this.element&&this.element.addEventListener("animationend",this._animationEnd)}_removeAnimationListeners(){this._animationEnd&&(this.element&&this.element.removeEventListener("animationend",this._animationEnd),this._animationEnd=null)}destroyModal(){this._removeFocusTrap(null),this._removeAnimationListeners(),this.args.modal._remove()}closeModal(e){""===this.animatingClass&&(this.modals._onModalAnimationStart(),this.animatingClass=this.outAnimationClass,this.args.modal._resolve(e))}close(e){this.closeModal(e),this._removeFocusTrap()}}l=b,(0,c.g)(l.prototype,"modals",[r.inject]),(0,c.g)(l.prototype,"animatingClass",[a.tracked],function(){return""}),(0,c.n)(l.prototype,"close",[i.action]),(0,u.setComponentTemplate)(_,b)},91:(e,t,o)=>{e.exports=function(){var e=_eai_d,t=_eai_r
+function i(e){return e&&e.__esModule?e:Object.assign({default:e},e)}window.emberAutoImportDynamic=function(e){return 1===arguments.length?t("_eai_dyn_"+e):t("_eai_dynt_"+e)(Array.prototype.slice.call(arguments,1))},window.emberAutoImportSync=function(e){return t("_eai_sync_"+e)(Array.prototype.slice.call(arguments,1))},e("ember-promise-modals/components/epm-modal",["@ember/object","@ember/service","@glimmer/component","@ember/application","@ember/modifier","@ember/destroyable","@ember/component","@ember/template-factory"],function(){return i(o(83))}),e("ember-promise-modals/components/epm-modal-container",["@ember/service","@glimmer/component","@ember/component","@ember/template-factory"],function(){return i(o(63))}),e("ember-promise-modals/helpers/open-modal",["@ember/service"],function(){return i(o(114))}),e("ember-promise-modals/services/modals",["@ember/object","@ember/service"],function(){return i(o(21))}),e("ember-resolver",[],function(){return i(o(337))})}()},114:(e,t,o)=>{"use strict"
 o.r(t),o.d(t,{default:()=>m})
 const i=require("@ember/component/helper")
 var r,s=o.n(i),n=o(735),a=o(979),l=new WeakMap
@@ -42,12 +43,11 @@ this.modal=null,i&&i(r)}hideModal(){this.modal?.close()}willDestroy(){this.hideM
 e.exports=require("@ember/destroyable")},294:e=>{"use strict"
 e.exports=require("@ember/application")},377:e=>{"use strict"
 e.exports=require("@ember/modifier")},465:e=>{"use strict"
-e.exports=require("@ember/template-factory")},470:function(e,t){window._eai_r=require,window._eai_d=define},471:e=>{"use strict"
+e.exports=require("@ember/template-factory")},471:e=>{"use strict"
 e.exports=require("@ember/object")},663:e=>{"use strict"
-e.exports=require("@ember/component")},735:e=>{"use strict"
+e.exports=require("@ember/component")},726:function(e,t){window._eai_r=require,window._eai_d=define},735:e=>{"use strict"
 e.exports=require("@ember/service")},855:e=>{"use strict"
-e.exports=require("@glimmer/component")},899:(e,t,o)=>{e.exports=function(){var e=_eai_d,t=_eai_r
-function i(e){return e&&e.__esModule?e:Object.assign({default:e},e)}window.emberAutoImportDynamic=function(e){return 1===arguments.length?t("_eai_dyn_"+e):t("_eai_dynt_"+e)(Array.prototype.slice.call(arguments,1))},window.emberAutoImportSync=function(e){return t("_eai_sync_"+e)(Array.prototype.slice.call(arguments,1))},e("ember-promise-modals/components/epm-modal",["@ember/object","@ember/service","@glimmer/component","@ember/application","@ember/modifier","@ember/destroyable","@ember/component","@ember/template-factory"],function(){return i(o(83))}),e("ember-promise-modals/components/epm-modal-container",["@ember/service","@glimmer/component","@ember/component","@ember/template-factory"],function(){return i(o(63))}),e("ember-promise-modals/helpers/open-modal",["@ember/service"],function(){return i(o(114))}),e("ember-promise-modals/services/modals",["@ember/object","@ember/service"],function(){return i(o(21))}),e("ember-resolver",[],function(){return i(o(337))})}()}},o={}
+e.exports=require("@glimmer/component")}},o={}
 function i(e){var r=o[e]
 if(void 0!==r)return r.exports
 var s=o[e]={exports:{}}
@@ -64,6 +64,6 @@ var t=(t,o)=>{var r,s,[n,a,l]=o,m=0
 if(n.some(t=>0!==e[t])){for(r in a)i.o(a,r)&&(i.m[r]=a[r])
 if(l)var d=l(i)}for(t&&t(o);m<n.length;m++)s=n[m],i.o(e,s)&&e[s]&&e[s][0](),e[s]=0
 return i.O(d)},o=globalThis.webpackChunk_ember_auto_import_=globalThis.webpackChunk_ember_auto_import_||[]
-o.forEach(t.bind(null,0)),o.push=t.bind(null,o.push.bind(o))})(),i.O(void 0,[633],()=>i(470))
-var r=i.O(void 0,[633],()=>i(899))
+o.forEach(t.bind(null,0)),o.push=t.bind(null,o.push.bind(o))})(),i.O(void 0,[633],()=>i(726))
+var r=i.O(void 0,[633],()=>i(91))
 r=i.O(r),__ember_auto_import__=r})()
