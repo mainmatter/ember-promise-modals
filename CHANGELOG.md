@@ -1,5 +1,16 @@
 # Changelog
 
+## Release (2025-07-16)
+
+* ember-promise-modals 5.0.1 (patch)
+
+#### :bug: Bug Fix
+* `ember-promise-modals`
+  * [#982](https://github.com/mainmatter/ember-promise-modals/pull/982) Update to Glimmer components to support Ember 6 ([@pichfl](https://github.com/pichfl))
+
+#### Committers: 1
+- Florian Pichler ([@pichfl](https://github.com/pichfl))
+
 ## Release (2024-04-05)
 
 ember-promise-modals 5.0.0 (major)
