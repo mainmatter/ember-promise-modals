@@ -35,19 +35,19 @@ if("object"!=typeof o)return o
 throw new TypeError("@@toPrimitive must return a primitive value.")}return String(e)}(e)
 return"symbol"==typeof t?t:t+""}(t))in e?Object.defineProperty(e,t,{value:null,enumerable:!0,configurable:!0,writable:!0}):e[t]=null}(this,"modal")}compute([e,t,o],{close:i}){this.showModal(e,t,o,i)}async showModal(e,t,o,i){this.modal=this.modals.open(e,t,o)
 let r=await this.modal
-this.modal=null,i&&i(r)}hideModal(){this.modal?.close()}willDestroy(){this.hideModal(),super.willDestroy(...arguments)}}r=m,(0,a.g)(r.prototype,"modals",[n.inject])},212:function(e,t){window._eai_r=require,window._eai_d=define},234:(e,t,o)=>{"use strict"
+this.modal=null,i&&i(r)}hideModal(){this.modal?.close()}willDestroy(){this.hideModal(),super.willDestroy(...arguments)}}r=m,(0,a.g)(r.prototype,"modals",[n.inject])},234:(e,t,o)=>{"use strict"
 o.r(t),o.d(t,{default:()=>c})
 var i,r=o(735),s=o(855),n=o.n(s),a=o(809),l=o(663),m=(0,o(465).createTemplateFactory)({id:"QdHRsrV1",block:'[[[42,[28,[37,1],[[28,[37,1],[[30,0,["modals","_stack"]]],null]],null],null,[[[1,"  "],[10,0],[15,0,[29,["epm-backdrop ",[52,[30,1,["isClosing"]],"epm-out"]]]],[14,"tabindex","-1"],[14,"role","presentation"],[14,"aria-hidden","true"],[15,"data-test-epm-backdrop",[29,[[30,2]]]],[12],[13],[1,"\\n  "],[10,0],[14,0,"epm-modal-container"],[12],[1,"\\n    "],[8,[39,4],[[16,"data-test-epm-modal",[29,[[30,2]]]]],[["@modal"],[[30,1]]],null],[1,"\\n  "],[13],[1,"\\n"]],[1,2]],null]],["modal","index"],["each","-track-array","div","if","epm-modal"]]',moduleName:"/home/runner/work/ember-promise-modals/ember-promise-modals/packages/ember-promise-modals/dist/components/epm-modal-container.js",isStrictMode:!1}),d=new WeakMap
 class c extends(n()){constructor(...e){var t,o
-super(...e),t=d,o=void(0,a.i)(this,"modals"),function(e,t){if(t.has(e))throw new TypeError("Cannot initialize the same private elements twice on an object")}(this,t),t.set(this,o)}}i=c,(0,a.g)(i.prototype,"modals",[r.inject]),(0,l.setComponentTemplate)(m,c)},289:(e,t,o)=>{e.exports=function(){var e=_eai_d,t=_eai_r
-function i(e){return e&&e.__esModule?e:Object.assign({default:e},e)}window.emberAutoImportDynamic=function(e){return 1===arguments.length?t("_eai_dyn_"+e):t("_eai_dynt_"+e)(Array.prototype.slice.call(arguments,1))},window.emberAutoImportSync=function(e){return t("_eai_sync_"+e)(Array.prototype.slice.call(arguments,1))},e("ember-promise-modals/components/epm-modal",["@ember/object","@ember/service","@glimmer/component","@ember/application","@ember/modifier","@ember/destroyable","@ember/component","@ember/template-factory"],function(){return i(o(53))}),e("ember-promise-modals/components/epm-modal-container",["@ember/service","@glimmer/component","@ember/component","@ember/template-factory"],function(){return i(o(234))}),e("ember-promise-modals/helpers/open-modal",["@ember/service"],function(){return i(o(190))}),e("ember-promise-modals/services/modals",["@ember/object","@ember/service"],function(){return i(o(68))}),e("ember-resolver",[],function(){return i(o(732))})}()},294:e=>{"use strict"
-e.exports=require("@ember/application")},377:e=>{"use strict"
+super(...e),t=d,o=void(0,a.i)(this,"modals"),function(e,t){if(t.has(e))throw new TypeError("Cannot initialize the same private elements twice on an object")}(this,t),t.set(this,o)}}i=c,(0,a.g)(i.prototype,"modals",[r.inject]),(0,l.setComponentTemplate)(m,c)},294:e=>{"use strict"
+e.exports=require("@ember/application")},339:function(e,t){window._eai_r=require,window._eai_d=define},377:e=>{"use strict"
 e.exports=require("@ember/modifier")},465:e=>{"use strict"
 e.exports=require("@ember/template-factory")},471:e=>{"use strict"
 e.exports=require("@ember/object")},663:e=>{"use strict"
 e.exports=require("@ember/component")},735:e=>{"use strict"
 e.exports=require("@ember/service")},855:e=>{"use strict"
-e.exports=require("@glimmer/component")}},o={}
+e.exports=require("@glimmer/component")},894:(e,t,o)=>{e.exports=function(){var e=_eai_d,t=_eai_r
+function i(e){return e&&e.__esModule?e:Object.assign({default:e},e)}window.emberAutoImportDynamic=function(e){return 1===arguments.length?t("_eai_dyn_"+e):t("_eai_dynt_"+e)(Array.prototype.slice.call(arguments,1))},window.emberAutoImportSync=function(e){return t("_eai_sync_"+e)(Array.prototype.slice.call(arguments,1))},e("ember-promise-modals/components/epm-modal",["@ember/object","@ember/service","@glimmer/component","@ember/application","@ember/modifier","@ember/destroyable","@ember/component","@ember/template-factory"],function(){return i(o(53))}),e("ember-promise-modals/components/epm-modal-container",["@ember/service","@glimmer/component","@ember/component","@ember/template-factory"],function(){return i(o(234))}),e("ember-promise-modals/helpers/open-modal",["@ember/service"],function(){return i(o(190))}),e("ember-promise-modals/services/modals",["@ember/object","@ember/service"],function(){return i(o(68))}),e("ember-resolver",[],function(){return i(o(732))})}()}},o={}
 function i(e){var r=o[e]
 if(void 0!==r)return r.exports
 var s=o[e]={exports:{}}
@@ -64,6 +64,6 @@ var t=(t,o)=>{var r,s,[n,a,l]=o,m=0
 if(n.some(t=>0!==e[t])){for(r in a)i.o(a,r)&&(i.m[r]=a[r])
 if(l)var d=l(i)}for(t&&t(o);m<n.length;m++)s=n[m],i.o(e,s)&&e[s]&&e[s][0](),e[s]=0
 return i.O(d)},o=globalThis.webpackChunk_ember_auto_import_=globalThis.webpackChunk_ember_auto_import_||[]
-o.forEach(t.bind(null,0)),o.push=t.bind(null,o.push.bind(o))})(),i.O(void 0,[619],()=>i(212))
-var r=i.O(void 0,[619],()=>i(289))
+o.forEach(t.bind(null,0)),o.push=t.bind(null,o.push.bind(o))})(),i.O(void 0,[619],()=>i(339))
+var r=i.O(void 0,[619],()=>i(894))
 r=i.O(r),__ember_auto_import__=r})()
