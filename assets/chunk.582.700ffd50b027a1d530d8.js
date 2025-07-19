@@ -1,5 +1,4 @@
-var __ember_auto_import__;(()=>{var e,t={39:(e,t,o)=>{e.exports=function(){var e=_eai_d,t=_eai_r
-function i(e){return e&&e.__esModule?e:Object.assign({default:e},e)}window.emberAutoImportDynamic=function(e){return 1===arguments.length?t("_eai_dyn_"+e):t("_eai_dynt_"+e)(Array.prototype.slice.call(arguments,1))},window.emberAutoImportSync=function(e){return t("_eai_sync_"+e)(Array.prototype.slice.call(arguments,1))},e("ember-promise-modals/components/epm-modal",EAI_DISCOVERED_EXTERNALS("ember-promise-modals/components/epm-modal"),function(){return i(o(53))}),e("ember-promise-modals/components/epm-modal-container",EAI_DISCOVERED_EXTERNALS("ember-promise-modals/components/epm-modal-container"),function(){return i(o(234))}),e("ember-promise-modals/helpers/open-modal",EAI_DISCOVERED_EXTERNALS("ember-promise-modals/helpers/open-modal"),function(){return i(o(190))}),e("ember-promise-modals/services/modals",EAI_DISCOVERED_EXTERNALS("ember-promise-modals/services/modals"),function(){return i(o(68))}),e("ember-resolver",EAI_DISCOVERED_EXTERNALS("ember-resolver"),function(){return i(o(732))})}()},53:(e,t,o)=>{"use strict"
+var __ember_auto_import__;(()=>{var e,t={53:(e,t,o)=>{"use strict"
 o.r(t),o.d(t,{default:()=>b})
 var i=o(471),s=o(735),r=o(855),n=o.n(r)
 const a=require("@glimmer/tracking")
@@ -41,15 +40,16 @@ o.r(t),o.d(t,{default:()=>c})
 var i,s=o(735),r=o(855),n=o.n(r),a=o(809),l=o(663),m=(0,o(465).createTemplateFactory)({id:"QdHRsrV1",block:'[[[42,[28,[37,1],[[28,[37,1],[[30,0,["modals","_stack"]]],null]],null],null,[[[1,"  "],[10,0],[15,0,[29,["epm-backdrop ",[52,[30,1,["isClosing"]],"epm-out"]]]],[14,"tabindex","-1"],[14,"role","presentation"],[14,"aria-hidden","true"],[15,"data-test-epm-backdrop",[29,[[30,2]]]],[12],[13],[1,"\\n  "],[10,0],[14,0,"epm-modal-container"],[12],[1,"\\n    "],[8,[39,4],[[16,"data-test-epm-modal",[29,[[30,2]]]]],[["@modal"],[[30,1]]],null],[1,"\\n  "],[13],[1,"\\n"]],[1,2]],null]],["modal","index"],["each","-track-array","div","if","epm-modal"]]',moduleName:"/home/runner/work/ember-promise-modals/ember-promise-modals/packages/ember-promise-modals/dist/components/epm-modal-container.js",isStrictMode:!1}),d=new WeakMap
 class c extends(n()){constructor(...e){var t,o
 super(...e),t=d,o=void(0,a.i)(this,"modals"),function(e,t){if(t.has(e))throw new TypeError("Cannot initialize the same private elements twice on an object")}(this,t),t.set(this,o)}}i=c,(0,a.g)(i.prototype,"modals",[s.inject]),(0,l.setComponentTemplate)(m,c)},294:e=>{"use strict"
-e.exports=require("@ember/application")},377:e=>{"use strict"
-e.exports=require("@ember/modifier")},429:(e,t,o)=>{e.exports=function(){_eai_d
+e.exports=require("@ember/application")},301:(e,t,o)=>{e.exports=function(){_eai_d
 var e=_eai_r
-window.emberAutoImportDynamic=function(t){return 1===arguments.length?e("_eai_dyn_"+t):e("_eai_dynt_"+t)(Array.prototype.slice.call(arguments,1))},window.emberAutoImportSync=function(t){return e("_eai_sync_"+t)(Array.prototype.slice.call(arguments,1))},o(39)}()},465:e=>{"use strict"
+window.emberAutoImportDynamic=function(t){return 1===arguments.length?e("_eai_dyn_"+t):e("_eai_dynt_"+t)(Array.prototype.slice.call(arguments,1))},window.emberAutoImportSync=function(t){return e("_eai_sync_"+t)(Array.prototype.slice.call(arguments,1))},o(943)}()},377:e=>{"use strict"
+e.exports=require("@ember/modifier")},465:e=>{"use strict"
 e.exports=require("@ember/template-factory")},471:e=>{"use strict"
-e.exports=require("@ember/object")},663:e=>{"use strict"
-e.exports=require("@ember/component")},698:function(e,t){window._eai_r=require,window._eai_d=define},735:e=>{"use strict"
+e.exports=require("@ember/object")},586:function(e,t){window._eai_r=require,window._eai_d=define},663:e=>{"use strict"
+e.exports=require("@ember/component")},735:e=>{"use strict"
 e.exports=require("@ember/service")},855:e=>{"use strict"
-e.exports=require("@glimmer/component")}},o={}
+e.exports=require("@glimmer/component")},943:(e,t,o)=>{e.exports=function(){var e=_eai_d,t=_eai_r
+function i(e){return e&&e.__esModule?e:Object.assign({default:e},e)}window.emberAutoImportDynamic=function(e){return 1===arguments.length?t("_eai_dyn_"+e):t("_eai_dynt_"+e)(Array.prototype.slice.call(arguments,1))},window.emberAutoImportSync=function(e){return t("_eai_sync_"+e)(Array.prototype.slice.call(arguments,1))},e("ember-promise-modals/components/epm-modal",EAI_DISCOVERED_EXTERNALS("ember-promise-modals/components/epm-modal"),function(){return i(o(53))}),e("ember-promise-modals/components/epm-modal-container",EAI_DISCOVERED_EXTERNALS("ember-promise-modals/components/epm-modal-container"),function(){return i(o(234))}),e("ember-promise-modals/helpers/open-modal",EAI_DISCOVERED_EXTERNALS("ember-promise-modals/helpers/open-modal"),function(){return i(o(190))}),e("ember-promise-modals/services/modals",EAI_DISCOVERED_EXTERNALS("ember-promise-modals/services/modals"),function(){return i(o(68))}),e("ember-resolver",EAI_DISCOVERED_EXTERNALS("ember-resolver"),function(){return i(o(732))})}()}},o={}
 function i(e){var s=o[e]
 if(void 0!==s)return s.exports
 var r=o[e]={exports:{}}
@@ -66,6 +66,6 @@ var t=(t,o)=>{var s,r,[n,a,l]=o,m=0
 if(n.some(t=>0!==e[t])){for(s in a)i.o(a,s)&&(i.m[s]=a[s])
 if(l)var d=l(i)}for(t&&t(o);m<n.length;m++)r=n[m],i.o(e,r)&&e[r]&&e[r][0](),e[r]=0
 return i.O(d)},o=globalThis.webpackChunk_ember_auto_import_=globalThis.webpackChunk_ember_auto_import_||[]
-o.forEach(t.bind(null,0)),o.push=t.bind(null,o.push.bind(o))})(),i.O(void 0,[619],()=>i(698))
-var s=i.O(void 0,[619],()=>i(429))
+o.forEach(t.bind(null,0)),o.push=t.bind(null,o.push.bind(o))})(),i.O(void 0,[619],()=>i(586))
+var s=i.O(void 0,[619],()=>i(301))
 s=i.O(s),__ember_auto_import__=s})()
