@@ -1,7 +1,6 @@
-// eslint-disable-next-line ember/no-computed-properties-in-native-classes
-import { computed, set } from '@ember/object';
 import { waitForPromise } from '@ember/test-waiters';
 
+import { tracked } from '@glimmer/tracking';
 import { defer } from 'rsvp';
 
 /**
@@ -20,6 +19,8 @@ import { defer } from 'rsvp';
  * @method then - resolves when the modal is closed
  */
 export default class Modal {
+  @tracked _deferredOutAnimation = undefined;
+
   constructor(service, componentClass, data, options = {}) {
     this._service = service;
     this._componentClass = componentClass;
@@ -31,7 +32,6 @@ export default class Modal {
     };
     this._result = undefined;
     this._deferred = defer();
-    this._deferredOutAnimation = undefined;
     this._componentInstance = undefined;
   }
 
@@ -39,7 +39,6 @@ export default class Modal {
     return this._result;
   }
 
-  @computed('_deferredOutAnimation')
   get isClosing() {
     return Boolean(this._deferredOutAnimation);
   }
@@ -67,7 +66,7 @@ export default class Modal {
       return;
     }
 
-    set(this, '_deferredOutAnimation', defer());
+    this._deferredOutAnimation = defer();
     if (this._options.onAnimationModalOutEnd) {
       this._deferredOutAnimation.promise.then(() => this._options.onAnimationModalOutEnd()).catch(() => {});
     }
@@ -79,7 +78,10 @@ export default class Modal {
   }
 
   _remove() {
-    this._service._stack.removeObject(this);
+    const index = this._service._stack.indexOf(this);
+    if (index !== -1) {
+      this._service._stack.splice(index, 1);
+    }
 
     if (this._service._stack.length === 0) {
       this._service._onLastModalRemoved();

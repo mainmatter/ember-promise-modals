@@ -1,21 +1,24 @@
-import { A } from '@ember/array';
-import { computed } from '@ember/object';
-import { alias } from '@ember/object/computed';
 import Service from '@ember/service';
+
+import { TrackedArray } from 'tracked-built-ins';
 
 import Modal from '../modal';
 
-export default Service.extend({
-  count: computed('_stack.@each.isClosing', function () {
+export default class ModalsService extends Service {
+  _stack = new TrackedArray([]);
+
+  focusTrapOptions = undefined;
+
+  get count() {
     return this._stack.filter(modal => !modal.isClosing).length;
-  }),
-  top: alias('_stack.lastObject'),
+  }
 
-  focusTrapOptions: undefined,
+  get top() {
+    return this._stack.at(-1);
+  }
 
-  init() {
-    this._super(...arguments);
-    this._stack = A([]);
+  constructor() {
+    super(...arguments);
 
     if (this.focusTrapOptions !== null) {
       this.focusTrapOptions = {
@@ -23,15 +26,15 @@ export default Service.extend({
         clickOutsideDeactivates: this.focusTrapOptions?.clickOutsideDeactivates ?? true,
       };
     }
-  },
+  }
 
   willDestroy() {
     this._onLastModalRemoved();
     this._onModalAnimationEnd();
     this._destroyModals();
 
-    this._super(...arguments);
-  },
+    super.willDestroy(...arguments);
+  }
 
   /**
    * @param {*} componentClass component class
@@ -42,34 +45,34 @@ export default Service.extend({
   open(componentClass, data, options) {
     let modal = new Modal(this, componentClass, data, options);
 
-    this._stack.pushObject(modal);
+    this._stack.push(modal);
 
     if (this._stack.length === 1) {
       this._onFirstModalAdded();
     }
 
     return modal;
-  },
+  }
 
   _destroyModals() {
-    this._stack.forEach(modal => {
+    for (let modal of this._stack) {
       modal._destroy();
-    });
-  },
+    }
+  }
 
   _onFirstModalAdded() {
     document.body.classList.add('epm-scrolling-disabled');
-  },
+  }
 
   _onLastModalRemoved() {
     document.body.classList.remove('epm-scrolling-disabled');
-  },
+  }
 
   _onModalAnimationStart() {
     document.body.classList.add('epm-animating');
-  },
+  }
 
   _onModalAnimationEnd() {
     document.body.classList.remove('epm-animating');
-  },
-});
+  }
+}

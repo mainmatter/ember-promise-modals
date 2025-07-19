@@ -52,9 +52,9 @@ module('Configuration | focus trap', function (hooks) {
   test('focus trap is disabled', async function (assert) {
     reregisterModalsService(
       this.owner,
-      ModalsService.extend({
-        focusTrapOptions: null,
-      }),
+      class extends ModalsService {
+        focusTrapOptions = null;
+      },
     );
 
     await renderAndOpenModal(this);
@@ -68,14 +68,13 @@ module('Configuration | focus trap', function (hooks) {
   test('global focus trap options', async function (assert) {
     reregisterModalsService(
       this.owner,
-      ModalsService.extend({
-        // eslint-disable-next-line ember/avoid-leaking-state-in-ember-objects
-        focusTrapOptions: {
+      class extends ModalsService {
+        focusTrapOptions = {
           onActivate() {
             assert.step('onActivate was called');
           },
-        },
-      }),
+        };
+      },
     );
 
     await renderAndOpenModal(this);
@@ -100,9 +99,8 @@ module('Configuration | focus trap', function (hooks) {
 
     reregisterModalsService(
       this.owner,
-      ModalsService.extend({
-        // eslint-disable-next-line ember/avoid-leaking-state-in-ember-objects
-        focusTrapOptions: {
+      class extends ModalsService {
+        focusTrapOptions = {
           onActivate() {
             assert.step('global onActivate was called');
           },
@@ -110,8 +108,8 @@ module('Configuration | focus trap', function (hooks) {
           onDeactivate() {
             assert.notOk(true, 'global onDeactivate should have been overriden');
           },
-        },
-      }),
+        };
+      },
     );
 
     await renderAndOpenModal(this, {
@@ -132,14 +130,13 @@ module('Configuration | focus trap', function (hooks) {
 
     reregisterModalsService(
       this.owner,
-      ModalsService.extend({
-        // eslint-disable-next-line ember/avoid-leaking-state-in-ember-objects
-        focusTrapOptions: {
+      class extends ModalsService {
+        focusTrapOptions = {
           onActivate() {
             assert.notOk(true, 'global onActivate should not have been called');
           },
-        },
-      }),
+        };
+      },
     );
 
     await renderAndOpenModal(this, {
@@ -152,9 +149,9 @@ module('Configuration | focus trap', function (hooks) {
   test('globally disabled focusTrapOptions is overriden when local options are provided', async function (assert) {
     reregisterModalsService(
       this.owner,
-      ModalsService.extend({
-        focusTrapOptions: null,
-      }),
+      class extends ModalsService {
+        focusTrapOptions = null;
+      },
     );
 
     await renderAndOpenModal(this, {

@@ -51,7 +51,8 @@
     "@glimmer/tracking": "^1.1.2",
     "decorator-transforms": "^2.0.0",
     "ember-modifier": "4.2.2",
-    "focus-trap": "^7.0.0"
+    "focus-trap": "^7.0.0",
+    "tracked-built-ins": "^4.0.0"
   },
   "devDependencies": {
     "@babel/core": "7.28.0",
