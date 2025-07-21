@@ -14,7 +14,7 @@ throw new TypeError("@@toPrimitive must return a primitive value.")}return Strin
 return"symbol"==typeof t?t:t+""}(t))in e?Object.defineProperty(e,t,{value:o,enumerable:!0,configurable:!0,writable:!0}):e[t]=o,e}m=u,(0,c.g)(m.prototype,"_deferredOutAnimation",[a.tracked],function(){})
 class h extends(r()){get count(){return this._stack.filter(e=>!e.isClosing).length}get top(){return this._stack.at(-1)}constructor(){super(...arguments),p(this,"_stack",new n.I0([])),p(this,"focusTrapOptions",void 0),null!==this.focusTrapOptions&&(this.focusTrapOptions={...this.focusTrapOptions??{},clickOutsideDeactivates:this.focusTrapOptions?.clickOutsideDeactivates??!0})}willDestroy(){this._onLastModalRemoved(),this._onModalAnimationEnd(),this._destroyModals(),super.willDestroy(...arguments)}open(e,t,o){let i=new u(this,e,t,o)
 return this._stack.push(i),1===this._stack.length&&this._onFirstModalAdded(),i}_destroyModals(){for(let e of this._stack)e._destroy()}_onFirstModalAdded(){document.body.classList.add("epm-scrolling-disabled")}_onLastModalRemoved(){document.body.classList.remove("epm-scrolling-disabled")}_onModalAnimationStart(){document.body.classList.add("epm-animating")}_onModalAnimationEnd(){document.body.classList.remove("epm-animating")}}},32:e=>{"use strict"
-e.exports=require("ember-tracked-storage-polyfill")},130:e=>{"use strict"
+e.exports=require("ember-tracked-storage-polyfill")},76:function(e,t){window._eai_r=require,window._eai_d=define},130:e=>{"use strict"
 e.exports=require("@ember/destroyable")},190:(e,t,o)=>{"use strict"
 o.r(t),o.d(t,{default:()=>c})
 const i=require("@ember/component/helper")
@@ -28,14 +28,13 @@ return"symbol"==typeof t?t:t+""}(t))in e?Object.defineProperty(e,t,{value:o,enum
 class c extends(n()){constructor(...e){var t,o
 super(...e),t=m,o=void(0,a.i)(this,"modals"),function(e,t){if(t.has(e))throw new TypeError("Cannot initialize the same private elements twice on an object")}(this,t),t.set(this,o),l(this,"modal",null),l(this,"once",!1)}compute([e,t,o],{close:i}){this.modal||this.once||(this.once=!0,this.showModal(e,t,o,i))}async showModal(e,t,o,i){this.modal=this.modals.open(e,t,o)
 let r=await this.modal
-this.modal=null,i?.(r)}hideModal(){this.modal?.close()}willDestroy(){this.hideModal(),super.willDestroy(...arguments)}}r=c,(0,a.g)(r.prototype,"modals",[s.inject])},196:(e,t,o)=>{e.exports=function(){var e=_eai_d,t=_eai_r
-function i(e){return e&&e.__esModule?e:Object.assign({default:e},e)}window.emberAutoImportDynamic=function(e){return 1===arguments.length?t("_eai_dyn_"+e):t("_eai_dynt_"+e)(Array.prototype.slice.call(arguments,1))},window.emberAutoImportSync=function(e){return t("_eai_sync_"+e)(Array.prototype.slice.call(arguments,1))},e("ember-promise-modals/components/epm-modal",["@ember/service","@glimmer/component","@glimmer/tracking","@ember/application","@ember/modifier","@ember/destroyable","@ember/component","@ember/template-factory"],function(){return i(o(584))}),e("ember-promise-modals/components/epm-modal-container",["@ember/service","@glimmer/component","@ember/component","@ember/template-factory"],function(){return i(o(234))}),e("ember-promise-modals/helpers/open-modal",["@ember/service"],function(){return i(o(190))}),e("ember-promise-modals/services/modals",["@ember/service","@glimmer/tracking","@ember/debug","ember-tracked-storage-polyfill"],function(){return i(o(23))}),e("ember-resolver",[],function(){return i(o(732))})}()},234:(e,t,o)=>{"use strict"
+this.modal=null,i?.(r)}hideModal(){this.modal?.close()}willDestroy(){this.hideModal(),super.willDestroy(...arguments)}}r=c,(0,a.g)(r.prototype,"modals",[s.inject])},234:(e,t,o)=>{"use strict"
 o.r(t),o.d(t,{default:()=>d})
 var i,r=o(735),n=o(855),s=o.n(n),a=o(809),l=o(663),m=(0,o(465).createTemplateFactory)({id:"QdHRsrV1",block:'[[[42,[28,[37,1],[[28,[37,1],[[30,0,["modals","_stack"]]],null]],null],null,[[[1,"  "],[10,0],[15,0,[29,["epm-backdrop ",[52,[30,1,["isClosing"]],"epm-out"]]]],[14,"tabindex","-1"],[14,"role","presentation"],[14,"aria-hidden","true"],[15,"data-test-epm-backdrop",[29,[[30,2]]]],[12],[13],[1,"\\n  "],[10,0],[14,0,"epm-modal-container"],[12],[1,"\\n    "],[8,[39,4],[[16,"data-test-epm-modal",[29,[[30,2]]]]],[["@modal"],[[30,1]]],null],[1,"\\n  "],[13],[1,"\\n"]],[1,2]],null]],["modal","index"],["each","-track-array","div","if","epm-modal"]]',moduleName:"/home/runner/work/ember-promise-modals/ember-promise-modals/packages/ember-promise-modals/dist/components/epm-modal-container.js",isStrictMode:!1}),c=new WeakMap
 class d extends(s()){constructor(...e){var t,o
 super(...e),t=c,o=void(0,a.i)(this,"modals"),function(e,t){if(t.has(e))throw new TypeError("Cannot initialize the same private elements twice on an object")}(this,t),t.set(this,o)}}i=d,(0,a.g)(i.prototype,"modals",[r.inject]),(0,l.setComponentTemplate)(m,d)},294:e=>{"use strict"
 e.exports=require("@ember/application")},377:e=>{"use strict"
-e.exports=require("@ember/modifier")},401:function(e,t){window._eai_r=require,window._eai_d=define},465:e=>{"use strict"
+e.exports=require("@ember/modifier")},465:e=>{"use strict"
 e.exports=require("@ember/template-factory")},473:e=>{"use strict"
 e.exports=require("@glimmer/tracking")},584:(e,t,o)=>{"use strict"
 o.r(t),o.d(t,{default:()=>b})
@@ -52,7 +51,8 @@ return void 0!==t?t:e}constructor(){super(...arguments),h(this,_,void(0,d.i)(thi
 let e={...this.focusTrapOptions,fallbackFocus:this.element,onDeactivate:(...e)=>{this.focusTrapOptions.onDeactivate?.(...e),this.isDestroyed||this.isDestroying||this.closeModal()}}
 this.focusTrap=(0,c.K)(this.element,e),this.focusTrap.activate()}_removeFocusTrap(e=this.focusTrapOptions?.onDeactivate){this.focusTrap&&this.focusTrap.deactivate({onDeactivate:e})}_addAnimationListeners(){this._animationEnd=({target:e,animationName:t})=>{e===this.element&&(this.modals._onModalAnimationEnd(),"-out"===t.substring(t.length-4)&&this.args.modal._remove())},this.element&&this.element.addEventListener("animationend",this._animationEnd)}_removeAnimationListeners(){this._animationEnd&&(this.element&&this.element.removeEventListener("animationend",this._animationEnd),this._animationEnd=null)}destroyModal(){this._removeFocusTrap(null),this._removeAnimationListeners(),this.args.modal._remove()}closeModal(e){""===this.animatingClass&&(this.modals._onModalAnimationStart(),this.animatingClass=this.outAnimationClass,this.args.modal._resolve(e))}close(e){this.closeModal(e),this._removeFocusTrap()}}r=b,(0,d.g)(r.prototype,"modals",[n.inject]),(0,d.g)(r.prototype,"animatingClass",[l.tracked],function(){return""}),(0,d.n)(r.prototype,"close",[i.action]),(0,u.setComponentTemplate)(f,b)},603:e=>{"use strict"
 e.exports=require("@ember/debug")},663:e=>{"use strict"
-e.exports=require("@ember/component")},735:e=>{"use strict"
+e.exports=require("@ember/component")},689:(e,t,o)=>{e.exports=function(){var e=_eai_d,t=_eai_r
+function i(e){return e&&e.__esModule?e:Object.assign({default:e},e)}window.emberAutoImportDynamic=function(e){return 1===arguments.length?t("_eai_dyn_"+e):t("_eai_dynt_"+e)(Array.prototype.slice.call(arguments,1))},window.emberAutoImportSync=function(e){return t("_eai_sync_"+e)(Array.prototype.slice.call(arguments,1))},e("ember-promise-modals/components/epm-modal",["@ember/service","@glimmer/component","@glimmer/tracking","@ember/application","@ember/modifier","@ember/destroyable","@ember/component","@ember/template-factory"],function(){return i(o(584))}),e("ember-promise-modals/components/epm-modal-container",["@ember/service","@glimmer/component","@ember/component","@ember/template-factory"],function(){return i(o(234))}),e("ember-promise-modals/helpers/open-modal",["@ember/service"],function(){return i(o(190))}),e("ember-promise-modals/services/modals",["@ember/service","@glimmer/tracking","@ember/debug","ember-tracked-storage-polyfill"],function(){return i(o(23))}),e("ember-resolver",[],function(){return i(o(732))})}()},735:e=>{"use strict"
 e.exports=require("@ember/service")},855:e=>{"use strict"
 e.exports=require("@glimmer/component")}},o={}
 function i(e){var r=o[e]
@@ -71,6 +71,6 @@ var t=(t,o)=>{var r,n,[s,a,l]=o,m=0
 if(s.some(t=>0!==e[t])){for(r in a)i.o(a,r)&&(i.m[r]=a[r])
 if(l)var c=l(i)}for(t&&t(o);m<s.length;m++)n=s[m],i.o(e,n)&&e[n]&&e[n][0](),e[n]=0
 return i.O(c)},o=globalThis.webpackChunk_ember_auto_import_=globalThis.webpackChunk_ember_auto_import_||[]
-o.forEach(t.bind(null,0)),o.push=t.bind(null,o.push.bind(o))})(),i.O(void 0,[976],()=>i(401))
-var r=i.O(void 0,[976],()=>i(196))
+o.forEach(t.bind(null,0)),o.push=t.bind(null,o.push.bind(o))})(),i.O(void 0,[976],()=>i(76))
+var r=i.O(void 0,[976],()=>i(689))
 r=i.O(r),__ember_auto_import__=r})()
