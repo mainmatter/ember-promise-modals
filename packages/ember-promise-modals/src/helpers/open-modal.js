@@ -5,8 +5,15 @@ export default class OpenModalHelper extends Helper {
   @service modals;
 
   modal = null;
+  once = false;
 
   compute([modalComponent, data, options], { close }) {
+    if (this.modal || this.once) {
+      return;
+    }
+
+    this.once = true;
+
     this.showModal(modalComponent, data, options, close);
   }
 
@@ -17,9 +24,7 @@ export default class OpenModalHelper extends Helper {
 
     this.modal = null;
 
-    if (close) {
-      close(success);
-    }
+    close?.(success);
   }
 
   hideModal() {
