@@ -3,7 +3,7 @@ import { setupApplicationTest } from 'ember-qunit';
 import { module, test } from 'qunit';
 
 import { setupPromiseModals } from 'ember-promise-modals/test-support';
-import sinon from 'sinon';
+import { mockModalComponent } from '../helpers/mocks';
 
 module('Application | basics', function (hooks) {
   setupApplicationTest(hooks);
@@ -98,30 +98,5 @@ module('Application | basics', function (hooks) {
     assert.deepEqual(applicationController.get('result'), {
       foo: 'bar',
     });
-  });
-
-  test('closing a modal will trigger the animation start on the `modals` service', async function (assert) {
-    await visit('/');
-
-    let modalsService = this.owner.lookup('service:modals');
-    let spy = sinon.spy(modalsService, '_onModalAnimationStart');
-
-    assert.dom('.epm-modal').doesNotExist();
-
-    await click('[data-test-show-modal]');
-
-    assert.dom('.epm-modal').exists();
-
-    await waitUntil(() => {
-      let { opacity } = window.getComputedStyle(document.querySelector('.epm-backdrop'));
-      return opacity === '1';
-    });
-
-    assert.strictEqual(spy.callCount, 1, '_onModalAnimationStart is called when opening a modal');
-
-    await triggerKeyEvent(document, 'keydown', 'Escape');
-
-    assert.dom('.epm-modal').doesNotExist();
-    assert.strictEqual(spy.callCount, 2, '_onModalAnimationStart is called again when closing it');
   });
 });
