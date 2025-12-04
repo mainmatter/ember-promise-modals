@@ -70,8 +70,8 @@ importers:
         specifier: 6.0.4
         version: 6.0.4(@babel/core@7.28.5)(rollup@4.45.1)
       ember-template-lint:
-        specifier: 7.9.1
-        version: 7.9.1
+        specifier: 7.9.3
+        version: 7.9.3
       eslint:
         specifier: 8.57.1
         version: 8.57.1
@@ -187,8 +187,8 @@ importers:
         specifier: 3.0.0
         version: 3.0.0(encoding@0.1.13)
       ember-template-lint:
-        specifier: 7.9.1
-        version: 7.9.1
+        specifier: 7.9.3
+        version: 7.9.3
       ember-try:
         specifier: 4.0.0
         version: 4.0.0(encoding@0.1.13)
@@ -3021,8 +3021,8 @@ packages:
     peerDependencies:
       '@glimmer/component': '>= 1.1.2'
 
-  ember-template-lint@7.9.1:
-    resolution: {integrity: sha512-uh5WU2sJKkQgDgIQovwv1D0fw2/RJnmyAHqIhaTYk68CfKQ/O5v31c1iXNu71qv3xeONi3QPl/rBW0EMdIFXWA==}
+  ember-template-lint@7.9.3:
+    resolution: {integrity: sha512-iqC4rv/oVlXViGuf7hlOA/bC550ZqacZKAc8WvQV0ueeCtIYPkYYK+Tc7FwpM8qGx3jiwu/ZsTuNfPInI5pL7Q==}
     engines: {node: ^18.18.0 || >= 20.9.0}
     hasBin: true
 
@@ -10507,7 +10507,7 @@ snapshots:
       - rsvp
       - supports-color
 
-  ember-template-lint@7.9.1:
+  ember-template-lint@7.9.3:
     dependencies:
       '@lint-todo/utils': 13.1.1
       content-tag: 3.1.3
