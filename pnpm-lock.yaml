@@ -176,7 +176,7 @@ importers:
         version: link:../ember-promise-modals
       ember-qunit:
         specifier: 8.1.1
-        version: 8.1.1(@ember/test-helpers@5.2.2(@babel/core@7.28.5))(ember-source@6.6.0(@glimmer/component@1.1.2(@babel/core@7.28.5))(rsvp@4.8.5))(qunit@2.24.1)
+        version: 8.1.1(@ember/test-helpers@5.2.2(@babel/core@7.28.5))(ember-source@6.6.0(@glimmer/component@1.1.2(@babel/core@7.28.5))(rsvp@4.8.5))(qunit@2.24.3)
       ember-resolver:
         specifier: 13.1.1
         version: 13.1.1
@@ -226,8 +226,8 @@ importers:
         specifier: 3.6.2
         version: 3.6.2
       qunit:
-        specifier: 2.24.1
-        version: 2.24.1
+        specifier: 2.24.3
+        version: 2.24.3
       qunit-console-grouper:
         specifier: 0.3.0
         version: 0.3.0
@@ -5386,8 +5386,8 @@ packages:
   qunit-theme-ember@1.0.0:
     resolution: {integrity: sha512-vdMVVo6ecdCkWttMTKeyq1ZTLGHcA6zdze2zhguNuc3ritlJMhOXY5RDseqazOwqZVfCg3rtlmL3fMUyIzUyFQ==}
 
-  qunit@2.24.1:
-    resolution: {integrity: sha512-Eu0k/5JDjx0QnqxsE1WavnDNDgL1zgMZKsMw/AoAxnsl9p4RgyLODyo2N7abZY7CEAnvl5YUqFZdkImzbgXzSg==}
+  qunit@2.24.3:
+    resolution: {integrity: sha512-JTHwSfHf2Cw8TqusZo2tT4F9d+XA/pp/veoxUDiPNHtB1Wc1VPctiHHIv6HA3vrXNOBu9LSzFM7YU2OV9Gz4vQ==}
     engines: {node: '>=10'}
     hasBin: true
 
@@ -10425,14 +10425,14 @@ snapshots:
       - '@babel/core'
       - supports-color
 
-  ember-qunit@8.1.1(@ember/test-helpers@5.2.2(@babel/core@7.28.5))(ember-source@6.6.0(@glimmer/component@1.1.2(@babel/core@7.28.5))(rsvp@4.8.5))(qunit@2.24.1):
+  ember-qunit@8.1.1(@ember/test-helpers@5.2.2(@babel/core@7.28.5))(ember-source@6.6.0(@glimmer/component@1.1.2(@babel/core@7.28.5))(rsvp@4.8.5))(qunit@2.24.3):
     dependencies:
       '@ember/test-helpers': 5.2.2(@babel/core@7.28.5)
       '@embroider/addon-shim': 1.10.0
       '@embroider/macros': 1.18.3
       ember-cli-test-loader: 3.1.0
       ember-source: 6.6.0(@glimmer/component@1.1.2(@babel/core@7.28.5))(rsvp@4.8.5)
-      qunit: 2.24.1
+      qunit: 2.24.3
       qunit-theme-ember: 1.0.0
     transitivePeerDependencies:
       - '@glint/template'
@@ -13215,7 +13215,7 @@ snapshots:
 
   qunit-theme-ember@1.0.0: {}
 
-  qunit@2.24.1:
+  qunit@2.24.3:
     dependencies:
       commander: 7.2.0
       node-watch: 0.7.3
