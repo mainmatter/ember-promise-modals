@@ -63,7 +63,7 @@
     "@embroider/addon-dev": "8.1.2",
     "@glimmer/component": "1.1.2",
     "@rollup/plugin-babel": "6.0.4",
-    "ember-template-lint": "7.9.1",
+    "ember-template-lint": "7.9.3",
     "eslint": "8.57.1",
     "eslint-config-prettier": "9.1.2",
     "eslint-plugin-ember": "12.6.0",
