@@ -85,8 +85,8 @@ importers:
         specifier: 2.0.1
         version: 2.0.1(eslint@8.57.1)
       eslint-plugin-n:
-        specifier: 17.21.0
-        version: 17.21.0(eslint@8.57.1)(typescript@5.8.3)
+        specifier: 17.21.3
+        version: 17.21.3(eslint@8.57.1)(typescript@5.8.3)
       eslint-plugin-prettier:
         specifier: 5.5.3
         version: 5.5.3(@types/eslint@8.56.12)(eslint-config-prettier@9.1.2(eslint@8.57.1))(eslint@8.57.1)(prettier@3.6.2)
@@ -205,8 +205,8 @@ importers:
         specifier: 2.0.1
         version: 2.0.1(eslint@8.57.1)
       eslint-plugin-n:
-        specifier: 17.21.0
-        version: 17.21.0(eslint@8.57.1)(typescript@5.8.3)
+        specifier: 17.21.3
+        version: 17.21.3(eslint@8.57.1)(typescript@5.8.3)
       eslint-plugin-prettier:
         specifier: 5.5.3
         version: 5.5.3(@types/eslint@8.56.12)(eslint-config-prettier@9.1.2(eslint@8.57.1))(eslint@8.57.1)(prettier@3.6.2)
@@ -3179,8 +3179,8 @@ packages:
     peerDependencies:
       eslint: 9.x
 
-  eslint-plugin-n@17.21.0:
-    resolution: {integrity: sha512-1+iZ8We4ZlwVMtb/DcHG3y5/bZOdazIpa/4TySo22MLKdwrLcfrX0hbadnCvykSQCCmkAnWmIP8jZVb2AAq29A==}
+  eslint-plugin-n@17.21.3:
+    resolution: {integrity: sha512-MtxYjDZhMQgsWRm/4xYLL0i2EhusWT7itDxlJ80l1NND2AL2Vi5Mvneqv/ikG9+zpran0VsVRXTEHrpLmUZRNw==}
     engines: {node: ^18.18.0 || ^20.9.0 || >=21.1.0}
     peerDependencies:
       eslint: '>=8.23.0'
@@ -10735,7 +10735,7 @@ snapshots:
     dependencies:
       eslint: 8.57.1
 
-  eslint-plugin-n@17.21.0(eslint@8.57.1)(typescript@5.8.3):
+  eslint-plugin-n@17.21.3(eslint@8.57.1)(typescript@5.8.3):
     dependencies:
       '@eslint-community/eslint-utils': 4.7.0(eslint@8.57.1)
       enhanced-resolve: 5.18.2
@@ -10743,8 +10743,8 @@ snapshots:
       eslint-plugin-es-x: 7.8.0(eslint@8.57.1)
       get-tsconfig: 4.10.1
       globals: 15.15.0
+      globrex: 0.1.2
       ignore: 5.3.2
-      minimatch: 9.0.5
       semver: 7.7.2
       ts-declaration-location: 1.0.7(typescript@5.8.3)
     transitivePeerDependencies:
