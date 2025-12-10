@@ -1,5 +1,16 @@
 # Changelog
 
+## Release (2025-12-10)
+
+* ember-promise-modals 5.0.2 (patch)
+
+#### :house: Internal
+* `ember-promise-modals`
+  * [#1031](https://github.com/mainmatter/ember-promise-modals/pull/1031) Refactor: Use native classes over classic ember objects ([@pichfl](https://github.com/pichfl))
+
+#### Committers: 1
+- Florian Pichler ([@pichfl](https://github.com/pichfl))
+
 ## Release (2025-07-16)
 
 * ember-promise-modals 5.0.1 (patch)
