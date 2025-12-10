@@ -2,17 +2,17 @@
   "solution": {
     "ember-promise-modals": {
       "impact": "patch",
-      "oldVersion": "5.0.0",
-      "newVersion": "5.0.1",
+      "oldVersion": "5.0.1",
+      "newVersion": "5.0.2",
       "tagName": "latest",
       "constraints": [
         {
           "impact": "patch",
-          "reason": "Appears in changelog section :bug: Bug Fix"
+          "reason": "Appears in changelog section :house: Internal"
         }
       ],
       "pkgJSONPath": "./packages/ember-promise-modals/package.json"
     }
   },
-  "description": "## Release (2025-07-16)\n\n* ember-promise-modals 5.0.1 (patch)\n\n#### :bug: Bug Fix\n* `ember-promise-modals`\n  * [#982](https://github.com/mainmatter/ember-promise-modals/pull/982) Update to Glimmer components to support Ember 6 ([@pichfl](https://github.com/pichfl))\n\n#### Committers: 1\n- Florian Pichler ([@pichfl](https://github.com/pichfl))\n"
+  "description": "## Release (2025-12-10)\n\n* ember-promise-modals 5.0.2 (patch)\n\n#### :house: Internal\n* `ember-promise-modals`\n  * [#1031](https://github.com/mainmatter/ember-promise-modals/pull/1031) Refactor: Use native classes over classic ember objects ([@pichfl](https://github.com/pichfl))\n\n#### Committers: 1\n- Florian Pichler ([@pichfl](https://github.com/pichfl))\n"
 }
