@@ -139,8 +139,8 @@ importers:
         specifier: 3.0.0
         version: 3.0.0
       ember-auto-import:
-        specifier: 2.10.1
-        version: 2.10.1(webpack@5.100.2)
+        specifier: 2.12.0
+        version: 2.12.0(webpack@5.100.2)
       ember-cli:
         specifier: 4.12.3
         version: 4.12.3(handlebars@4.7.8)(underscore@1.13.7)
@@ -2865,8 +2865,8 @@ packages:
   electron-to-chromium@1.5.180:
     resolution: {integrity: sha512-ED+GEyEh3kYMwt2faNmgMB0b8O5qtATGgR4RmRsIp4T6p7B8vdMbIedYndnvZfsaXvSzegtpfqRMDNCjjiSduA==}
 
-  ember-auto-import@2.10.1:
-    resolution: {integrity: sha512-5K4lYSEBch3DKQn1VElFHDHcHTvhTJnB6aebf24VyIobLL+OMWORcCK1fiwyfPiVABztyuLXH2GiXDweNUtntA==}
+  ember-auto-import@2.12.0:
+    resolution: {integrity: sha512-J9wVTddnpx1ZPf6CgtMs8byp5t9ZZITUX9v+H+PgSDSgbYbDrVlKr2RGDfJLrnaTpuWwZqh1b54/9jLaERr6QA==}
     engines: {node: 12.* || 14.* || >= 16}
 
   ember-cli-babel-plugin-helpers@1.1.1:
@@ -9947,7 +9947,7 @@ snapshots:
 
   electron-to-chromium@1.5.180: {}
 
-  ember-auto-import@2.10.1(webpack@5.100.2):
+  ember-auto-import@2.12.0(webpack@5.100.2):
     dependencies:
       '@babel/core': 7.28.5
       '@babel/plugin-proposal-class-properties': 7.18.6(@babel/core@7.28.5)
@@ -9956,6 +9956,7 @@ snapshots:
       '@babel/plugin-transform-class-static-block': 7.27.1(@babel/core@7.28.5)
       '@babel/preset-env': 7.28.0(@babel/core@7.28.5)
       '@embroider/macros': 1.18.3
+      '@embroider/reverse-exports': 0.2.0
       '@embroider/shared-internals': 2.9.1
       babel-loader: 8.4.1(@babel/core@7.28.5)(webpack@5.100.2)
       babel-plugin-ember-modules-api-polyfill: 3.5.0
