@@ -32,7 +32,7 @@ jobs:
         run: pnpm build:test-app
 
       - name: Deploy
-        uses: JamesIves/github-pages-deploy-action@v4.7.3
+        uses: JamesIves/github-pages-deploy-action@v4.7.6
         with:
           branch: gh-pages
           folder: packages/test-app/dist
