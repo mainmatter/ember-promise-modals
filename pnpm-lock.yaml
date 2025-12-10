@@ -127,8 +127,8 @@ importers:
         specifier: 5.2.2
         version: 5.2.2(@babel/core@7.28.5)
       '@embroider/macros':
-        specifier: 1.18.3
-        version: 1.18.3
+        specifier: 1.19.5
+        version: 1.19.5
       '@embroider/test-setup':
         specifier: 4.0.0
         version: 4.0.0(@embroider/core@3.5.7)
@@ -949,15 +949,6 @@ packages:
 
   '@embroider/macros@1.18.0':
     resolution: {integrity: sha512-KanP80XxNK4bmQ1HKTcUjy/cdCt9n7knPMLK1vzHdOFymACHo+GbhgUjXjYdOCuBTv+ZwcjL2P2XDmBcYS9r8g==}
-    engines: {node: 12.* || 14.* || >= 16}
-    peerDependencies:
-      '@glint/template': ^1.0.0
-    peerDependenciesMeta:
-      '@glint/template':
-        optional: true
-
-  '@embroider/macros@1.18.3':
-    resolution: {integrity: sha512-VplyaFQMpDi30pQI4Qmk26GdopX04WpKAzpP2EpQezVondZ1aQL50CkxO8lQz+rKHJo5x7XRpi3nzlZrJf6scw==}
     engines: {node: 12.* || 14.* || >= 16}
     peerDependencies:
       '@glint/template': ^1.0.0
@@ -7689,19 +7680,6 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  '@embroider/macros@1.18.3':
-    dependencies:
-      '@embroider/shared-internals': 3.0.1
-      assert-never: 1.4.0
-      babel-import-util: 3.0.1
-      ember-cli-babel: 7.26.11
-      find-up: 5.0.0
-      lodash: 4.17.21
-      resolve: 1.22.10
-      semver: 7.7.2
-    transitivePeerDependencies:
-      - supports-color
-
   '@embroider/macros@1.19.5':
     dependencies:
       '@embroider/shared-internals': 3.0.1
@@ -9955,7 +9933,7 @@ snapshots:
       '@babel/plugin-proposal-private-methods': 7.18.6(@babel/core@7.28.5)
       '@babel/plugin-transform-class-static-block': 7.27.1(@babel/core@7.28.5)
       '@babel/preset-env': 7.28.0(@babel/core@7.28.5)
-      '@embroider/macros': 1.18.3
+      '@embroider/macros': 1.19.5
       '@embroider/shared-internals': 2.9.1
       babel-loader: 8.4.1(@babel/core@7.28.5)(webpack@5.100.2)
       babel-plugin-ember-modules-api-polyfill: 3.5.0
@@ -10429,7 +10407,7 @@ snapshots:
     dependencies:
       '@ember/test-helpers': 5.2.2(@babel/core@7.28.5)
       '@embroider/addon-shim': 1.10.0
-      '@embroider/macros': 1.18.3
+      '@embroider/macros': 1.19.5
       ember-cli-test-loader: 3.1.0
       ember-source: 6.6.0(@glimmer/component@1.1.2(@babel/core@7.28.5))(rsvp@4.8.5)
       qunit: 2.24.3
