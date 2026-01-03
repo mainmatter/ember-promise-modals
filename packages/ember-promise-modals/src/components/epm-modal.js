@@ -15,13 +15,13 @@ export default class EpmModal extends Component {
 
   @tracked animatingClass = '';
 
-  get optionsClassName() {
-    return this.args.modal._options.className;
+  get options() {
+    return this.args.modal._options ?? {};
   }
 
   get focusTrapOptions() {
     let { focusTrapOptions: globalFocusTrapOptions } = this.modals;
-    let { focusTrapOptions: localFocusTrapOptions } = this.args.modal._options;
+    let { focusTrapOptions: localFocusTrapOptions } = this.options;
 
     if (localFocusTrapOptions !== undefined) {
       return localFocusTrapOptions;
@@ -94,6 +94,8 @@ export default class EpmModal extends Component {
       if (isOutAnimation) {
         this.args.modal._remove();
       }
+
+      this.options.onAnimationModalInEnd?.(animationName);
     };
 
     if (this.element) {

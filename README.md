@@ -147,6 +147,9 @@ this.modals.open(
     // optional: a hook that is called when the closing animation of
     //           the modal (so not the backdrop) has finished.
     onAnimationModalOutEnd: () => {},
+    // optional: a hook that is called when the opening animation of
+    //           the modal (so not the backdrop) has finished.
+    onAnimationModalInEnd: () => {},
   },
 );
 ```
