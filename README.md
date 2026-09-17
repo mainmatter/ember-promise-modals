@@ -30,7 +30,7 @@ To use EPM in your project, add the target for the modals to your `application.h
 Then you can inject the `modals` [service](https://guides.emberjs.com/release/services/#toc_accessing-services) wherever you need and call its `open` method with a component class to render it as a modal.
 
 ```js
-import { inject as service } from '@ember/service';
+import { service } from '@ember/service';
 import ConfirmationModal from 'my-app/components/confirmation-modal';
 
 export default class extends Component {
