@@ -175,8 +175,8 @@ importers:
         specifier: workspace:*
         version: link:../ember-promise-modals
       ember-qunit:
-        specifier: 8.1.1
-        version: 8.1.1(@ember/test-helpers@5.2.2(@babel/core@7.28.5))(ember-source@6.6.0(@glimmer/component@1.1.2(@babel/core@7.28.5))(rsvp@4.8.5))(qunit@2.24.3)
+        specifier: 9.2.1
+        version: 9.2.1(@ember/test-helpers@5.2.2(@babel/core@7.28.5))(qunit@2.24.3)
       ember-resolver:
         specifier: 13.1.1
         version: 13.1.1
@@ -919,6 +919,10 @@ packages:
 
   '@embroider/addon-shim@1.10.0':
     resolution: {integrity: sha512-gcJuHiXgnrzaU8NyU+2bMbtS6PNOr5v5B8OXBqaBvTCsMpXLvKo8OBOQFCoUN0rPX2J6VaFqrbi/371sMvzZug==}
+    engines: {node: 12.* || 14.* || >= 16}
+
+  '@embroider/addon-shim@1.11.0':
+    resolution: {integrity: sha512-vXjhIOtvrns9IBFlgEN1imSeXtuVIlLypaDexu7xzsvB4Ef6yruhH33DNd9OmO0nXIB4SbwdkIwEsLYnhrujqA==}
     engines: {node: 12.* || 14.* || >= 16}
 
   '@embroider/core@3.5.7':
@@ -2954,10 +2958,6 @@ packages:
     resolution: {integrity: sha512-Ej77K+YhCZImotoi/CU2cfsoZaswoPlGaM5TB3LvjvPDlVPRhxUHO2RsaUVC5lsGeRLRiHCOxVtoJ6GyqexzFA==}
     engines: {node: 10.* || 12.* || >= 14}
 
-  ember-cli-test-loader@3.1.0:
-    resolution: {integrity: sha512-0aocZV9SIoOHiU3hrH3IuLR6busWhTX6UVXgd490hmJkIymmOXNH2+jJoC7Ebkeo3PiOfAdjqhb765QDlHSJOw==}
-    engines: {node: 10.* || >= 12}
-
   ember-cli-typescript-blueprint-polyfill@0.1.0:
     resolution: {integrity: sha512-g0weUTOnHmPGqVZzkQTl3Nbk9fzEdFkEXydCs5mT1qBjXh8eQ6VlmjjGD5/998UXKuA0pLSCVVMbSp/linLzGA==}
 
@@ -3015,12 +3015,11 @@ packages:
   ember-modifier@4.2.2:
     resolution: {integrity: sha512-pPYBAGyczX0hedGWQFQOEiL9s45KS9efKxJxUQkMLjQyh+1Uef1mcmAGsdw2KmvNupITkE/nXxmVO1kZ9tt3ag==}
 
-  ember-qunit@8.1.1:
-    resolution: {integrity: sha512-nT+6s74j3BKNn+QQY/hINC3Xw3kn0NF0cU9zlgVQmCBWoyis1J24xWrY2LFOMThPmF6lHqcrUb5JwvBD4BXEXg==}
+  ember-qunit@9.2.1:
+    resolution: {integrity: sha512-aZfX6A6092b1bTL6g+dj4gQT0a75YPli3/HBcTaS7AcGCqj/j2CU3FfPIz/ZZkeAe8oVGedttR1FB3Bs6LTEGw==}
     peerDependencies:
       '@ember/test-helpers': '>=3.0.3'
-      ember-source: '>=4.0.0'
-      qunit: ^2.13.0
+      qunit: ^2.13.0 || ^3.0.0
 
   ember-resolver@13.1.1:
     resolution: {integrity: sha512-rA4RDuTm/F9AzYX2+g7EY3QWU48kyF9+Ck8IE8VQipnlwv2Q42kdRWiw7hfeQbRxx6XoSZCak6nzAG9ePd/+Ug==}
@@ -7630,6 +7629,8 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
+  '@embroider/addon-shim@1.11.0': {}
+
   '@embroider/core@3.5.7':
     dependencies:
       '@babel/core': 7.28.5
@@ -10213,12 +10214,6 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  ember-cli-test-loader@3.1.0:
-    dependencies:
-      ember-cli-babel: 7.26.11
-    transitivePeerDependencies:
-      - supports-color
-
   ember-cli-typescript-blueprint-polyfill@0.1.0:
     dependencies:
       chalk: 4.1.2
@@ -10487,18 +10482,12 @@ snapshots:
       - '@babel/core'
       - supports-color
 
-  ember-qunit@8.1.1(@ember/test-helpers@5.2.2(@babel/core@7.28.5))(ember-source@6.6.0(@glimmer/component@1.1.2(@babel/core@7.28.5))(rsvp@4.8.5))(qunit@2.24.3):
+  ember-qunit@9.2.1(@ember/test-helpers@5.2.2(@babel/core@7.28.5))(qunit@2.24.3):
     dependencies:
       '@ember/test-helpers': 5.2.2(@babel/core@7.28.5)
-      '@embroider/addon-shim': 1.10.0
-      '@embroider/macros': 1.18.3
-      ember-cli-test-loader: 3.1.0
-      ember-source: 6.6.0(@glimmer/component@1.1.2(@babel/core@7.28.5))(rsvp@4.8.5)
+      '@embroider/addon-shim': 1.11.0
       qunit: 2.24.3
       qunit-theme-ember: 1.0.0
-    transitivePeerDependencies:
-      - '@glint/template'
-      - supports-color
 
   ember-resolver@13.1.1:
     dependencies:
