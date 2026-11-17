@@ -94,6 +94,7 @@ module('Configuration | focus trap', function (hooks) {
     assert.verifySteps(['onActivate was called']);
   });
 
+  // eslint-disable-next-line qunit/require-expect
   test('local focus trap options override service options', async function (assert) {
     assert.expect(2);
 

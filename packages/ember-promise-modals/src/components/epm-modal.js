@@ -1,10 +1,12 @@
 import { action } from '@ember/object';
-import { inject as service } from '@ember/service';
+import * as emberService from '@ember/service';
 
 import Component from '@glimmer/component';
 import { tracked } from '@glimmer/tracking';
 import { modifier } from 'ember-modifier';
 import { createFocusTrap } from 'focus-trap';
+
+const service = emberService.service ?? emberService.inject;
 
 export default class EpmModal extends Component {
   @service modals;
