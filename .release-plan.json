@@ -1,18 +1,22 @@
 {
   "solution": {
     "ember-promise-modals": {
-      "impact": "patch",
-      "oldVersion": "5.0.0",
-      "newVersion": "5.0.1",
+      "impact": "minor",
+      "oldVersion": "5.0.1",
+      "newVersion": "5.1.0",
       "tagName": "latest",
       "constraints": [
         {
+          "impact": "minor",
+          "reason": "Appears in changelog section :rocket: Enhancement"
+        },
+        {
           "impact": "patch",
-          "reason": "Appears in changelog section :bug: Bug Fix"
+          "reason": "Appears in changelog section :house: Internal"
         }
       ],
       "pkgJSONPath": "./packages/ember-promise-modals/package.json"
     }
   },
-  "description": "## Release (2025-07-16)\n\n* ember-promise-modals 5.0.1 (patch)\n\n#### :bug: Bug Fix\n* `ember-promise-modals`\n  * [#982](https://github.com/mainmatter/ember-promise-modals/pull/982) Update to Glimmer components to support Ember 6 ([@pichfl](https://github.com/pichfl))\n\n#### Committers: 1\n- Florian Pichler ([@pichfl](https://github.com/pichfl))\n"
+  "description": "## Release (2026-11-17)\n\n* ember-promise-modals 5.1.0 (minor)\n\n#### :rocket: Enhancement\n* `ember-promise-modals`\n  * [#1063](https://github.com/mainmatter/ember-promise-modals/pull/1063) Unpin ember-modifier ([@Windvis](https://github.com/Windvis))\n  * [#1061](https://github.com/mainmatter/ember-promise-modals/pull/1061) Resolve the `importing-inject-from-ember-service` deprecation ([@Windvis](https://github.com/Windvis))\n\n#### :house: Internal\n* Other\n  * [#1064](https://github.com/mainmatter/ember-promise-modals/pull/1064) chore: update release-plan. setup OIDC ([@BobrImperator](https://github.com/BobrImperator))\n* `ember-promise-modals`\n  * [#1031](https://github.com/mainmatter/ember-promise-modals/pull/1031) Refactor: Use native classes over classic ember objects ([@pichfl](https://github.com/pichfl))\n\n#### Committers: 3\n- Bartlomiej Dudzik ([@BobrImperator](https://github.com/BobrImperator))\n- Florian Pichler ([@pichfl](https://github.com/pichfl))\n- Sam Van Campenhout ([@Windvis](https://github.com/Windvis))\n"
 }
