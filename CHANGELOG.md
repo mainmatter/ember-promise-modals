@@ -1,5 +1,25 @@
 # Changelog
 
+## Release (2026-11-17)
+
+* ember-promise-modals 5.1.0 (minor)
+
+#### :rocket: Enhancement
+* `ember-promise-modals`
+  * [#1063](https://github.com/mainmatter/ember-promise-modals/pull/1063) Unpin ember-modifier ([@Windvis](https://github.com/Windvis))
+  * [#1061](https://github.com/mainmatter/ember-promise-modals/pull/1061) Resolve the `importing-inject-from-ember-service` deprecation ([@Windvis](https://github.com/Windvis))
+
+#### :house: Internal
+* Other
+  * [#1064](https://github.com/mainmatter/ember-promise-modals/pull/1064) chore: update release-plan. setup OIDC ([@BobrImperator](https://github.com/BobrImperator))
+* `ember-promise-modals`
+  * [#1031](https://github.com/mainmatter/ember-promise-modals/pull/1031) Refactor: Use native classes over classic ember objects ([@pichfl](https://github.com/pichfl))
+
+#### Committers: 3
+- Bartlomiej Dudzik ([@BobrImperator](https://github.com/BobrImperator))
+- Florian Pichler ([@pichfl](https://github.com/pichfl))
+- Sam Van Campenhout ([@Windvis](https://github.com/Windvis))
+
 ## Release (2025-07-16)
 
 * ember-promise-modals 5.0.1 (patch)
