@@ -25,7 +25,7 @@
   "devDependencies": {
     "@babel/eslint-parser": "7.28.5",
     "@ember/optional-features": "2.3.0",
-    "@ember/string": "3.1.1",
+    "@ember/string": "4.0.1",
     "@ember/test-helpers": "5.2.2",
     "@embroider/macros": "1.18.3",
     "@embroider/test-setup": "4.0.0",
