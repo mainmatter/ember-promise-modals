@@ -20,6 +20,9 @@ module.exports = function (environment) {
     APP: {
       // Here you can pass flags/options to your application instance
       // when it is created
+
+      // set by ember-cli-build.js, read by tests/integration/styles-test.js
+      skipCssImport: process.env.EPM_SKIP_CSS_IMPORT === 'true',
     },
   };
 

@@ -56,6 +56,34 @@ jobs:
         run: pnpm run test
         working-directory: packages/test-app
 
+  skip-css-import:
+    name: "Skip CSS import (strict CSP)"
+    runs-on: ubuntu-latest
+    env:
+      # Build the test-app with the addon's `skipCssImport` option, see packages/test-app/ember-cli-build.js
+      EPM_SKIP_CSS_IMPORT: 'true'
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v4
+      - name: Install Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 18.x
+          cache: pnpm
+      - name: Install Dependencies
+        run: pnpm install
+      - name: Build addon
+        run: pnpm run build:addon
+      - name: Run Tests
+        run: pnpm run test
+        working-directory: packages/test-app
+      - name: Run Tests (embroider-optimized)
+        run: pnpm exec ember try:one embroider-optimized
+        working-directory: packages/test-app
+
   try-scenarios:
     name: ${{ matrix.try-scenario }}
     runs-on: ubuntu-latest
