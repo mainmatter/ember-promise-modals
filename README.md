@@ -113,6 +113,41 @@ Named arguments:
 
 - `close` is called asynchronously with the data returned by the modals `@close` action when it is closed
 
+## Build-time options
+
+The addon's build-time options are set through
+[`@embroider/macros`](https://github.com/embroider-build/embroider/tree/main/packages/macros)
+in your `ember-cli-build.js`:
+
+```js
+const app = new EmberApp(defaults, {
+  '@embroider/macros': {
+    setConfig: {
+      'ember-promise-modals': {
+        skipCssImport: true,
+      },
+    },
+  },
+});
+```
+
+| Option          | Default | Description                                                                                                                   |
+| --------------- | ------- | ----------------------------------------------------------------------------------------------------------------------------- |
+| `skipCssImport` | `false` | When `true`, the addon does not import its stylesheet from JavaScript. You must then ship the stylesheet yourself, see below. |
+
+### Serving the stylesheet yourself (strict CSP)
+
+The addon imports its stylesheet from JavaScript. Production builds extract it
+into a regular CSS file, but in non-production builds (development, test, or
+any other environment you deploy) the bundler injects it as an inline `<style>`
+element, which a Content Security Policy without `'unsafe-inline'` (or a style
+nonce) blocks. If you enforce such a policy for those builds, set
+`skipCssImport: true` and serve the file yourself:
+
+```js
+app.import('node_modules/ember-promise-modals/dist/components/epm-modal-container.css');
+```
+
 ## Animation
 
 This addon uses CSS animations. You can either replace the

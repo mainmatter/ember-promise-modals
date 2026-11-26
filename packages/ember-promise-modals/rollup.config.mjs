@@ -60,6 +60,15 @@ export default {
     // Remove leftover build artifacts when starting a new build.
     addon.clean(),
 
+    // The stylesheet is pulled in with `importSync` (behind a macro, so apps can opt out), which rollup does not follow.
+    // keepAssets only emits CSS that rollup reaches through a static import, so copy it explicitly.
+    copy({
+      targets: [
+        { src: 'src/components/epm-modal-container.css', dest: 'dist/components' },
+      ],
+      hook: 'writeBundle',
+    }),
+
     // Copy Readme and License into published package
     copy({
       targets: [
