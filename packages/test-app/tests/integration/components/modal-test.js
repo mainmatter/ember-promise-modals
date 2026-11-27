@@ -1,4 +1,4 @@
-import { render, settled, waitFor } from '@ember/test-helpers';
+import { click, render, settled, waitFor } from '@ember/test-helpers';
 import { setupRenderingTest } from 'ember-qunit';
 import { module, test } from 'qunit';
 
@@ -31,4 +31,29 @@ module('Component | Modal', function (hooks) {
 
     assert.ok(spy.calledOnce, 'modal._resolve() was called only once');
   });
+
+  test('opening a modal runs callbacks when animation starts and ends', async function (assert) {
+    await render(hbs`<EpmModalContainer />`);
+
+    let modals = this.owner.lookup('service:modals');
+
+    assert.step('open')
+
+    let modal = modals.open(mockModalComponent(), undefined, {
+      onAnimationModalInEnd: () => {
+        assert.step('onAnimationModalInEnd');
+      },
+      onAnimationModalOutEnd: () => {
+        assert.step('onAnimationModalOutEnd');
+      },
+    });
+
+    await settled();
+
+    modal.close();
+
+    await settled();
+
+    assert.verifySteps(['open', 'onAnimationModalInEnd', 'onAnimationModalOutEnd']);
+  })
 });
